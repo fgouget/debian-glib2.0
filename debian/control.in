@@ -1,37 +1,48 @@
 Source: glib@APIVER@
 Section: libs
 Priority: optional
-Maintainer: Loic Minier <lool@dooz.org>
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: @GNOME_TEAM@
-Build-Depends: debhelper (>> 5.0.22),
-               pkg-config (>= 0.14.0),
+Build-Depends: debhelper (>= 8.1.3),
+               cdbs (>= 0.4.93),
+               dh-autoreconf,
+               pkg-config (>= 0.16.0),
                gettext,
                autotools-dev,
                gnome-pkg-tools (>= 0.11),
-               quilt,
-               dpkg-dev (>= 1.14.13),
-               libpcre3-dev (>= 7.4-1~),
+               dpkg-dev (>= 1.16.0),
+               libelf-dev,
+               libpcre3-dev (>= 8.11),
                desktop-file-utils,
-               gtk-doc-tools,
+               gtk-doc-tools (>= 1.15),
                libselinux1-dev [linux-any],
                linux-libc-dev [linux-any],
                libgamin-dev [!linux-any] | libfam-dev [!linux-any],
-               zlib1g-dev
-Standards-Version: 3.9.0
+               zlib1g-dev,
+               dbus,
+               dbus-x11,
+               shared-mime-info,
+               python (>= 2.5),
+               python-dbus,
+               python-gobject-2,
+               libxml2-utils,
+               libffi-dev (>= 3.0.0)
+Standards-Version: 3.9.3
 Homepage: http://www.gtk.org/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-gnome/desktop/unstable/glib2.0/
 Vcs-Svn: svn://svn.debian.org/svn/pkg-gnome/desktop/unstable/glib2.0/
 
 Package: @SHARED_PKG@
-Section: libs
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Recommends: @DATA_PKG@,
             shared-mime-info
-Conflicts: libpango1.0-0 (<< 1.11)
+Breaks: gvfs (<< 1.8)
 Replaces: @DEV_PKG@ (<< 2.23.2-2)
-Description: The GLib library of C routines
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Description: GLib library of C routines
  GLib is a library containing many useful C routines for things such
  as trees, hashes, lists, and strings.  It is a useful general-purpose
  C library used by projects such as GTK+, GIMP, and GNOME.
@@ -41,11 +52,10 @@ Description: The GLib library of C routines
 Package: libglib@APIVER@-udeb
 Section: debian-installer
 XC-Package-Type: udeb
-Priority: optional
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
-Description: The GLib library of C routines - minimal runtime
+Description: GLib library of C routines - minimal runtime
  This is a udeb, or a microdeb, for the debian-installer.
  .
  GLib is a library containing many useful C routines for things such
@@ -55,18 +65,38 @@ Description: The GLib library of C routines - minimal runtime
  This package contains the minimal runtime library needed by the Debian
  installer.
 
+Package: @BIN_PKG@
+Section: misc
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         @SHARED_PKG@ (= ${binary:Version}),
+         @DATA_PKG@
+Pre-Depends: ${misc:Pre-Depends}
+Conflicts: @SHARED_PKG@ (<< 2.25.11-2),
+Replaces: @SHARED_PKG@ (<< 2.25.11-2),
+          @DEV_PKG@ (<< 2.25.11-2)
+Multi-Arch: foreign
+Description: Programs for the GLib library
+ GLib is a library containing many useful C routines for things such
+ as trees, hashes, lists, and strings.  It is a useful general-purpose
+ C library used by projects such as GTK+, GIMP, and GNOME.
+ .
+ This package contains the program files which is used for the libraries
+ and others.
+
 Package: @DEV_PKG@
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          @SHARED_PKG@ (= ${binary:Version}),
-         pkg-config (>= 0.14.0),
+         @BIN_PKG@ (= ${binary:Version}),
+         libpcre3-dev (>= 8.11),
+         pkg-config (>= 0.16.0),
          zlib1g-dev
 Recommends: python
 Suggests: @DOC_PKG@
-Replaces: libglib1.3-dev
-Conflicts: libglib1.3-dev
 Description: Development files for the GLib library
  GLib is a library containing many useful C routines for things such
  as trees, hashes, lists, and strings.  It is a useful general-purpose
@@ -84,7 +114,7 @@ Depends: ${misc:Depends},
          @SHARED_PKG@ (= ${binary:Version})
 Conflicts: libglib2.0-dbg
 Replaces: libglib2.0-dbg
-Description: The GLib libraries and debugging symbols
+Description: Debugging symbols for the GLib libraries
  GLib is a library containing many useful C routines for things such
  as trees, hashes, lists, and strings.  It is a useful general-purpose
  C library used by projects such as GTK+, GIMP, and GNOME.
@@ -95,11 +125,8 @@ Description: The GLib libraries and debugging symbols
 
 Package: @DATA_PKG@
 Architecture: all
-Depends: ${misc:Depends},
-         @SHARED_PKG@ (>= ${source:Version})
-Replaces: libglib1.3,
-          libglib1.3-data
-Conflicts: libglib1.3-data
+Depends: ${misc:Depends}
+Multi-Arch: foreign
 Description: Common files for GLib library
  GLib is a library containing many useful C routines for things such
  as trees, hashes, lists, and strings.  It is a useful general-purpose
@@ -111,11 +138,9 @@ Description: Common files for GLib library
 Package: @DOC_PKG@
 Section: doc
 Architecture: all
-Depends: ${misc:Depends},
-         lynx | www-browser
-Replaces: libglib1.3-doc
-Conflicts: libglib1.3-doc
-Suggests: libgtk2.0-doc
+Depends: ${misc:Depends}
+Suggests: devhelp
+Multi-Arch: foreign
 Description: Documentation files for the GLib library
  GLib is a library containing many useful C routines for things such
  as trees, hashes, lists, and strings.  It is a useful general-purpose
@@ -125,10 +150,11 @@ Description: Documentation files for the GLib library
  in /usr/share/doc/@DOC_PKG@/ .
 
 Package: libgio-fam
-Architecture: hurd-i386 kfreebsd-i386 kfreebsd-amd64
+Architecture: hurd-any kfreebsd-any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Recommends: gamin
+Multi-Arch: same
 Description: GLib Input, Output and Streaming Library (fam module)
  GIO is the input, output and streaming API of GLib. This package
  provides a fam file and directory monitoring backend for it.
@@ -140,11 +166,12 @@ Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          @SHARED_PKG@ (= ${binary:Version})
-Description: The GLib library of C routines - refdbg library
+Multi-Arch: same
+Description: GLib library of C routines - refdbg library
  GLib is a library containing many useful C routines for things such
  as trees, hashes, lists, and strings.  It is a useful general-purpose
  C library used by projects such as GTK+, GIMP, and GNOME.
  .
  This package contains the shared library built with
- --disable-visibility so that it can be used with refdbg, a GObject
+ --disable-Bsymbolic so that it can be used with refdbg, a GObject
  refcount debugger.

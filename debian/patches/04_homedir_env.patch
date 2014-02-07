@@ -1,10 +1,16 @@
-Index: glib-2.18.3/docs/reference/glib/running.sgml
+Description: Handle the G_HOME environment variable to override the passwd entry
+ This will allow to fix various kinds of build failures due to restricted
+ build environments.
+Author: Josselin Mouette <joss@debian.org>
+Origin: vendor
+
+Index: glib2.0/docs/reference/glib/running.sgml
 ===================================================================
---- glib-2.18.3.orig/docs/reference/glib/running.sgml	2008-11-26 12:01:53.559365436 +0100
-+++ glib-2.18.3/docs/reference/glib/running.sgml	2008-11-26 12:25:58.155366255 +0100
-@@ -194,6 +194,22 @@ variables like <envar>LANG</envar>, <env
+--- glib2.0.orig/docs/reference/glib/running.sgml	2011-11-28 22:40:42.000000000 -0200
++++ glib2.0/docs/reference/glib/running.sgml	2012-03-02 00:38:00.230665860 -0300
+@@ -244,6 +244,22 @@
    </para>
- </formalpara> 
+ </formalpara>
  
 +<formalpara id="G_HOME">
 +  <title><envar>G_HOME</envar></title>
@@ -25,11 +31,11 @@ Index: glib-2.18.3/docs/reference/glib/running.sgml
  </refsect2>
  
  <refsect2 id="setlocale">
-Index: glib-2.18.3/glib/gutils.c
+Index: glib2.0/glib/gutils.c
 ===================================================================
---- glib-2.18.3.orig/glib/gutils.c	2008-11-26 11:50:38.607861683 +0100
-+++ glib-2.18.3/glib/gutils.c	2008-11-26 12:00:29.035360081 +0100
-@@ -1520,11 +1520,14 @@ g_get_any_init_do (void)
+--- glib2.0.orig/glib/gutils.c	2012-01-03 14:44:55.000000000 -0200
++++ glib2.0/glib/gutils.c	2012-03-02 00:38:00.230665860 -0300
+@@ -686,11 +686,14 @@
      }
  #endif	/* !G_OS_WIN32 */
    
@@ -45,7 +51,7 @@ Index: glib-2.18.3/glib/gutils.c
  
    /* Only believe HOME if it is an absolute path and exists */
    if (g_home_dir)
-@@ -1820,6 +1823,11 @@ g_get_real_name (void)
+@@ -986,6 +989,11 @@
   *      homedir = g_get_home_dir (<!-- -->);
   * ]|
   *
@@ -56,4 +62,4 @@ Index: glib-2.18.3/glib/gutils.c
 + *
   * Returns: the current user's home directory
   */
- G_CONST_RETURN gchar*
+ const gchar *

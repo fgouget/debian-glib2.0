@@ -1,21 +1,887 @@
-glib2.0 (2.24.2-1) unstable; urgency=low
+glib2.0 (2.33.12+really2.32.4-5) unstable; urgency=low
 
+  * Fix the closing fi in the if statement in postrm.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 09 Jan 2013 16:14:49 +0100
+
+glib2.0 (2.33.12+really2.32.4-4) unstable; urgency=low
+
+  * Take into account multiarch when removing the cache files in postrm:
+    Remove /usr/lib/gio/modules/giomodule.cache only for the native
+    architecture for which this cache file was created.
+    After removing /usr/share/glib-2.0/schemas/gschemas.compiled on purge,
+    run dpkg-trigger explicitly, so in case libglib2.0-0 is installed for
+    other architectures, the cache file is re-created. (Closes: #696389)
+  * Drop the various Breaks from libglib2.0-0. Those are causing APT to fail
+    on a dist-upgrade from squeeze to wheezy. (Closes: #676485)
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 08 Jan 2013 23:30:04 +0100
+
+glib2.0 (2.33.12+really2.32.4-3) unstable; urgency=low
+
+  * Team upload
+  * 92_kfreebsd_credentials.patch: use the FreeBSD credentials-passing
+    implementation on kFreeBSD too, making gnome-terminal and lightdm
+    work on kFreeBSD (Closes: #631968)
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 24 Oct 2012 10:51:08 +0100
+
+glib2.0 (2.33.12+really2.32.4-2) unstable; urgency=medium
+
+  * Revert link adding for gdbus-object-manager-example. While it is 
+    useful to have in /usr/share/doc as an example, it must not be 
+    shipped with the system documentation.
+  * 20_glib-compile-resources_leak.patch: new patch. Fix a leak 
+    introduced in version 2.32.4. Thanks Niels Thykier!
+  * SECURITY: add 11_CVE-2012-3524_setuid.patch from upstream. Prevents 
+    using DBus in a setuid binary. Fixes CVE-2012-3524.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 06 Oct 2012 01:15:16 +0200
+
+glib2.0 (2.33.12+really2.32.4-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * 10_gdbus_race.patch: stolen from upstream git. Fix a race condition 
+    that would make gnome-shell crash on startup under some conditions.
+  * libglib2.0-bin.install: bash completions have moved to /usr/share.
+  * libglib2.0-bin.maintscript: remove old conffiles.
+  * Add appropriate pre-dependency.
+  * libglib2.0-doc.links: add link for gdbus-object-manager-example.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 22 Sep 2012 17:59:34 +0200
+
+glib2.0 (2.33.12+really2.32.3-2) unstable; urgency=low
+
+  * Explicitly set the shlibs version to 2.32.3 to not generate overly strict
+    dependencies for udeb packages.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 19 Sep 2012 21:25:56 +0200
+
+glib2.0 (2.33.12+really2.32.3-1) unstable; urgency=low
+
+  * Brown paper bag upload
+  * Re-upload version previously in unstable to superseded
+    experimental-targetted version previously mistakenly uploaded there.
+
+ -- Iain Lane <laney@debian.org>  Mon, 10 Sep 2012 22:52:32 +0100
+
+glib2.0 (2.32.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove debian/patches/95_configure-Fix-typo-in-ELF-check.patch and
+    debian/patches/96_configure-Reset-LIBS-after-ELF-check.patch, merged
+    upstream.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 15 May 2012 16:12:21 +0200
+
+glib2.0 (2.32.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh patches.
+  * Remove debian/patches/git_powerpc_gresources.patch, merged upstream.
+  * debian/patches/95_configure-Fix-typo-in-ELF-check.patch: Fix typo in ELF
+    configure check. Patch cherry-picked from upstream Git.
+  * debian/patches/96_configure-Reset-LIBS-after-ELF-check.patch: Reset LIBS
+    after running the ELF checks otherwise we end up linking everything
+    against libelf. Patch cherry-picked from upstream Git.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 01 May 2012 20:02:21 +0200
+
+glib2.0 (2.32.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh patches.
+  * debian/patches/git_powerpc_gresources.patch: Upstream fix for gresource on
+    big endian architectures, i.e powerpc. Closes: #669130
+  * debian/patches/revert_schema_path_warning.patch: Revert upstream commit
+    which generates a warning for applications using a non-recommended
+    gsettings path. Final freeze is not the time to start fixing the gsettings
+    paths of all packages. This avoids tons of spewage from the gsettings
+    trigger during package installation.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 26 Apr 2012 23:13:28 +0200
+
+glib2.0 (2.32.0-4) unstable; urgency=low
+
+  * Set --sourcedir for the different flavors when running dh_install. This
+    way the .install files can be simplified a lot which makes them much more
+    readable.
+  * Bump Standards-Version to 3.9.3.
+  * Add Breaks against emacs23, eog and gwaei. Those applications were broken
+    due to changes in GApplication and the way they interacted with
+    GdkThreads so they needed to be fixed to correctly work with glib 2.32.
+    Closes: #668019
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 09 Apr 2012 14:16:26 +0200
+
+glib2.0 (2.32.0-3) unstable; urgency=low
+
+  [ Martin Pitt ]
+  * 01_gettext-desktopfiles.patch: Use official "Keywords" key now,
+    X-GNOME-Keywords has been deprecated for a while now. (LP: #949864)
+  * debian/libglib2.0-0.postrm.in: Only remove the compiled schemas on purge,
+    not during upgrades. Otherwise we have no schemas available until the new
+    postinst is run, which leads to applications aborting on missing schemas.
+
+  [ Michael Biebl ]
+  * Don't enforce single include for glib/gversionmacros.h since this header
+    is included from glib/gtypes.h which is widely used.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 30 Mar 2012 23:55:41 +0200
+
+glib2.0 (2.32.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Revert upstream commit for now which makes single includes mandatory as
+    the list of affected packages is still a bit too long.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 30 Mar 2012 08:25:15 +0200
+
+glib2.0 (2.32.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Add single-include guard for gbytes.h. Patch cherry-picked from
+    upstream Git.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 26 Mar 2012 18:41:49 +0200
+
+glib2.0 (2.31.22-1) experimental; urgency=low
+
+  * New upstream development release.
+  * debian/libglib2.0-0.symbols: Add new symbol.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 20 Mar 2012 02:00:06 +0100
+
+glib2.0 (2.31.20-1) experimental; urgency=low
+
+  * New upstream development release.
+  * debian/patches/61_glib-compile-binaries-path.patch: Refreshed.
+  * debian/libglib2.0-0.symbols: Add new symbols.
+  * Override list-missing target with an implementation that better handles
+    multiple flavors (copied from the gtk+3.0 package).
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 06 Mar 2012 02:28:12 +0100
+
+glib2.0 (2.31.18-3) experimental; urgency=low
+
+  * debian/control.in: Add Build-Depends on python-dbus, python-gobject-2, and
+    libxml2-utils (xmllint). Required to run the test-suite.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 04 Mar 2012 20:27:09 +0100
+
+glib2.0 (2.31.18-2) experimental; urgency=low
+
+  * debian/control.in:
+  - add libpcre3-dev to the list of dependencies of libglib2.0-dev
+  - add libelf-dev as a build dependency to make gresource able to deal
+    with ELF files
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Sat, 03 Mar 2012 17:29:51 -0300
+
+glib2.0 (2.31.18-1) experimental; urgency=low
+
+  [ Gustavo Noronha Silva ]
+  * New development release
+  - Yeah, 2.31.8 was a mistake =/
+  * debian/libglib2.0-0.symbols:
+  - fix version declared for 2.31.8 symbols to not have -1
+  - updated for 2.31.8 symbols
+  * debian/patches/61_glib-compile-schemas-path.patch,
+    debian/patches/61_glib-compile-binaries-path.patch:
+  - renamed, and updated to also cover glib-compile-resources
+  * debian/libglib2.0-0.install.in:
+  - add glib-compile-resources
+
+  [ Michael Biebl ]
+  * debian/libglib2.0-bin.install: Install new gresource binary and the man
+    pages for gresource and glib-compile-resources.
+  * debian/libglib2.0-bin.links.in: Add symlink in /usr/bin for
+    glib-compile-resources since we install the binary in a multiarch path.
+  * debian/rules: Re-enable test-suite on kfreebsd but keep it non-fatal for
+    now.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 03 Mar 2012 02:36:26 +0100
+
+glib2.0 (2.31.8-1) experimental; urgency=low
+
+  * New development release
+  * debian/patches/*:
+  - refreshed;
+  * debian/patches/95-gmain-get-rid-of-poll_waiting.patch,
+    debian/patches/96-fix-one-bit-mutex-test-on-some-platforms.patch,
+    debian/patches/97-silence-compiler-warnings.patch,
+    debian/patches/98-disable-two-more-GDBus-tests-using-fork.patch:
+  - removed; applied upstream
+  * debian/libglib2.0-0.symbols:
+  - updated with new symbols
+   NOTES:
+    + g_simple_action_get_parameter_type (from 2.28.0)
+      was made static in 09429e2c820118918e6132d32884eb02203136d4
+    + g_unix_resolver_get_type (from 2.22.0) was removed
+      by 5a30712dc7e4adc36b0e8fd82cf5ccec19bbbdc5, with the
+      removal of !g_thread_supported code paths
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Fri, 02 Mar 2012 00:34:30 -0300
+
+glib2.0 (2.30.2-7) UNRELEASED; urgency=low
+
+  * libglib2.0-0.postinst.in:
+    + Encapsulate gio-querymodules calls in || true statements.
+      Closes: #659588.
+    + Only run gio-querymodules on the non-multiarch path for the host 
+      architecture.
+  * rules: add substitution for #ARCH# for the above change.
+
+ -- Josselin Mouette <joss@debian.org>  Thu, 16 Feb 2012 12:21:51 +0100
+
+glib2.0 (2.30.2-6) unstable; urgency=low
+
+  * Revert the patches added in 2.30.2-5 which changed the handling of return
+    types from libffi. They didn't actually fix the build failures on s390x
+    and had some unpleasant side effects, like making other packages FTBFS.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 25 Jan 2012 12:17:29 +0100
+
+glib2.0 (2.30.2-5) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Drop deprecated build-dependencies on pygobject & python-dbus.
+  * Retain one on python for the script that uses it.
+
+  [ Loïc Minier ]
+  * Avoid harmless warnings when processing triggers of libglib2.0-0
+    ("Unable to open directory /usr/lib/gio/modules: Error opening
+    directory '/usr/lib/gio/modules': No such file or directory").
+
+  [ Michael Biebl ]
+  * Cherry-pick patches from upstream Git which fix handling of ENUMs and
+    integral return types on 64-bit BE platforms. Closes: #653308
+    - Add d/p/94-closure-fix-handling-of-ENUMs-and-integral-return-ty.patch.
+    - Add d/p/93-gvalue-Add-explicitly-signed-g_value_get_schar-and-g.patch.
+    - Update symbols file accordingly.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 18 Jan 2012 13:50:56 +0100
+
+glib2.0 (2.30.2-4) unstable; urgency=low
+
+  * Upload to unstable.
+  * Disable test suite on kfreebsd-* for now.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 18 Nov 2011 19:38:40 +0100
+
+glib2.0 (2.30.2-3) experimental; urgency=low
+
+  * debian/patches/98-disable-two-more-GDBus-tests-using-fork.patch:
+    - Added. Disable gdbus test which use GMainContext over a fork, see
+      https://bugzilla.gnome.org/show_bug.cgi?id=658999 for more details
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Thu, 17 Nov 2011 22:20:48 +0000
+
+glib2.0 (2.30.2-2) experimental; urgency=low
+
+  * debian/patches/95-gmain-get-rid-of-poll_waiting.patch:
+    - Added, Fix race conditions with g_main_quit being called from other
+      threads by getting rid of the poll_waiting flag. (Backported from git
+      master)
+  * debian/patches/96-fix-one-bit-mutex-test-on-some-platforms.patch:
+    - Added, Fix the 1 bit mutex failing on platforms that have pointers
+      aligned to 32 bits instead of 64 bits (bgo#201322).
+  * debian/patches/97-silence-compiler-warnings.patch:
+    - Added, Fix various compiler warnings
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Wed, 16 Nov 2011 22:21:52 +0000
+
+glib2.0 (2.30.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches/70-fix-race-in-gdbus-connection-test.patch:
+    - Removed, merged upstream.
+  * debian/patches/80_gtk_doc_out_of_tree.patch:
+    - Removed, merged upstream.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 13 Nov 2011 01:24:28 +0100
+
+glib2.0 (2.30.1-2) experimental; urgency=low
+
+  [ Martin Pitt ]
+  * debian/patches/01_gettext-desktopfiles.patch:
+    - Translate X-GNOME-FullName and X-GNOME-Keywords, too.
+
+  [ Sjoerd Simons ]
+  * debian/patches/80_gtk_doc_out_of_tree.patch:
+    - Added. Fix documentation generation when build out of tree
+
+  [ Michael Biebl ]
+  * Transition to multiarch, thanks Steve. Closes: #634099
+    The following modifications were made to the original patch:
+    - Drop the libtool .la files, since we break existing references anyway.
+    - Don't mark libglib2.0-0-dbg as Multi-Arch: same and install into
+      /usr/lib/debug, not /usr/lib/<triplet>/debug.
+    - Guard the for loops in debian/rules with "set -e".
+  * debian/libglib2.0-dev.install.in:
+    - Install gdb auto-load files.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 21 Oct 2011 21:26:48 +0200
+
+glib2.0 (2.30.1-1) experimental; urgency=low
+
+  [ Michael Biebl ]
+  * New upstream release.
+    - Avoid assertion in GDBus if we fail to authenticate twice.
+      Closes: #634312
+  * Bump debhelper compatibility level to 8.
+    - Bump Build-Depends on debhelper.
+    - Don't pass --dbg-package= without an argument to dh_strip as commands
+      will fail rather than warn when they are passed unknown options.
+  * Don't use brace expansion in debian/libglib2.0-0.install and
+    debian/libglib2.0-dev.install.
+  * debian/control.in
+    - Use architecture wildcard for kfreebsd and hurd.
+    - Bump Standards-Version to 3.9.2. No further changes.
+    - Set pkg-gnome-maintainers@lists.alioth.debian.org as Maintainer.
+    - Add Build-Depends on libffi-dev (>= 3.0.0).
+  * debian/libglib2.0-dev.install
+    - Install gdbus-codegen binary and manpage.
+    - Install gtester and gtester-report manpage.
+  * debian/libglib2.0-bin.install
+    - Install bash completion files for gdbus and gsettings.
+  * debian/libglib2.0-0.symbols
+    - Update symbols file. The GAction API had an incompatible change. As a
+      result g_action_set_state has been renamed to g_action_change_state.
+      See upstream commit 5ff65d869543587d10d78c123698e47effc5fb8c for further
+      details and on the impact of this change.
+  * debian/watch:
+    - Track .xz tarballs.
+  * Update patches
+    - Remove 03_blacklist-directories.patch, merged upstream.
+    - Remove 10_gdesktopappinfo_set_last_used.patch, fixed upstream.
+    - Remove 60_wait-longer-for-threads-to-die.patch, fixed upstream using a
+      counter.
+    - Refresh remaining patches.
+
+  [ Josselin Mouette ]
+  * Break gtk3 < 3.0.12 because it uses an internal symbol that ceases 
+    to work with glib 2.30.
+
+  [ Sjoerd Simons ]
+  * debian/rules: Explicitely build gtk-doc
+  * debian/patches/70-fix-race-in-gdbus-connection-test.patch:
+    - Added, fix race condition in the GDBusConnection life-cycle test
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sun, 16 Oct 2011 11:50:31 +0100
+
+glib2.0 (2.28.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch:
+    - Update to version 3.
+    - Track .xz tarballs.
+  * Bump debhelper compatibility level to 8.
+    - Bump Build-Depends on debhelper.
+    - Don't pass --dbg-package= without an argument to dh_strip as commands
+      will fail rather than warn when they are passed unknown options.
+  * Don't use brace expansion in debian/libglib2.0-0.install and
+    debian/libglib2.0-dev.install.
+  * debian/control.in
+    - Use architecture wildcard for kfreebsd and hurd.
+    - Bump Standards-Version to 3.9.2. No further changes.
+    - Set pkg-gnome-maintainers@lists.alioth.debian.org as Maintainer.
+  * Refresh patches.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 15 Oct 2011 18:09:05 +0200
+
+glib2.0 (2.28.6-4) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 14 Oct 2011 10:42:58 +0200
+
+glib2.0 (2.28.6-3) experimental; urgency=low
+
+  * Break gnome-session < 3.0.0-3 for the updated defaults.list taking 
+    x-scheme-* into account.
+  * Break gdm < 3.0.3 to avoid adding a security hole to it.
+  * 10_gdesktopappinfo_set_last_used.patch: new patch. When calling 
+    g_app_info_set_as_last_used_for_type, correctly inherit the default 
+    filled in the file from the system default. This avoids 
+    gnome-control-center breaking file associations just by opening the 
+    info dialog.
+
+ -- Josselin Mouette <joss@debian.org>  Sun, 04 Sep 2011 23:07:46 +0200
+
+glib2.0 (2.28.6-2) experimental; urgency=low
+
+  * Team upload.
+  * Drop 20_mime_extension_point.patch and add Breaks against gvfs
+    and gnome-control-center to ensure they have been updated at the
+    same time.
+  * Drop Conflicts against pango, it's no longer relevant (even for
+    oldstable).
+  * Fix watch file.
+  * Drop leading article in descriptions as recommended by lintian.
+  * Add lintian overrides for package-name-doesnt-match-sonames, it's a
+    deliberate choice.
+  * Add some copyright holders to debian/copyright to appease lintian.
+  * Drop unneeded section/priority fields as they duplicate the default
+    values.
+  * Add some DEP-3 descriptions to patches that had no description at
+    all.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Thu, 14 Apr 2011 10:51:16 +0200
+
+glib2.0 (2.28.6-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 14 Apr 2011 09:18:31 +0200
+
+glib2.0 (2.28.4-1) unstable; urgency=low
+
+  * debian/control.in:
+    + Build depend on dbus, dbus-x11,  shared-mime-info, python-gobject
+      and python-dbus, needed by the test suite.
+    + libglib2.0-data doesn't need to depend on libglib2.0-0, since
+      it only ships translations. This will avoid making glib
+      uninstallable on the buildds when it is uploaded until the new
+      version has been built.
+  * d/p/0001-Run-gio-tests-with-a-dbus-session.patch:
+    + New patch. Run gio tests through dbus-launch, since some of them
+      need a running dbus session.
+  * debian/control.in,
+    debian/rules:
+    + Add autoreconf magic, needed by the above patch.
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 28 Mar 2011 19:53:02 +0100
+
+glib2.0 (2.28.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 11 Mar 2011 21:05:36 +0000
+
+glib2.0 (2.28.1-1) unstable; urgency=low
+
+  * New upstream release.
+    + Fixes g_timeout_add overflowing with large timeouts. Closes: #606618.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 19 Feb 2011 21:24:21 +0000
+
+glib2.0 (2.28.0-2) unstable; urgency=low
+
+  * 20_mime_extension_point.patch: temporary revert the upstream change 
+    in URI schemes handling. Closes: #612876.
+    Note for later: it must absolutely be reverted in a synchronized 
+    upload with gvfs 1.8 and control-center 3.0.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 18 Feb 2011 19:36:42 +0100
+
+glib2.0 (2.28.0-1) unstable; urgency=low
+
+  * debian/control.in:
+    + Drop obsolete conflicts/replaces with libglib1.3.
+    + Don't suggest libgtk2.0-doc in the doc package.
+  * New upstream stable release.
+    + debian/control.in:
+      - Bump the libpcre3-dev build dependency.
+    + debian/patches/01_gettext-desktopfiles.patch,
+      debian/patches/02_gettext-desktopfiles-ubuntu.patch,
+      debian/patches/04_homedir_env.patch,
+      debian/patches/61_glib-compile-schemas-path.patch:
+      - Refreshed.
+    + debian/libglib2.0-0.symbols:
+      - Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 09 Feb 2011 21:52:02 +0000
+
+glib2.0 (2.27.91-1) experimental; urgency=low
+
+  * debian/rules:
+    - Don't exclude .sgml and .devhelp files from being compressed.
+      The former are already excluded by dh_compress and the later
+      can be compressed now that devhelp can handle them.
+    - Fix variable substitution.
+  * New upstream release.
+    - debian/patches/62_dont_crash_without_desktop_filename.patch:
+      + Removed, included upstream.
+  * debian/control.in:
+    - Standards-Version is 3.9.1, no changes needed.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 11 Jan 2011 22:59:07 +0000
+
+glib2.0 (2.27.90-2) experimental; urgency=low
+
+  * debian/patches/62_dont_crash_without_desktop_filename.patch
+    * Added. Fix crash when launching application without a desktop file (From
+      upstream git)
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 07 Jan 2011 11:28:34 +0000
+
+glib2.0 (2.27.90-1) experimental; urgency=low
+
+  * Switch to CDBS' flavors system.
+  * Switch to source format 3.0 (quilt).
+  * Stop symlinking /usr/share/doc/$pkg directories.
+  * debian/rules:
+    - Explicitly link with --no-as-needed, as --as-needed might be the
+      default and is harmful for us.
+    - Run the test suite but don't make it fatal yet.
+  * New upstream release.
+    - debian/libglib2.0-0.symbols:
+      + Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 06 Jan 2011 12:46:00 +0000
+
+glib2.0 (2.27.5-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/libglib2.0-0.symbols:
+      - Updated.
+  * debian/rules:
+    + Make the shlibs always depend on the latest upstream version.
+      We have symbols file anyway, and manually bumping the shver is
+      error prone.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 23 Dec 2010 01:44:45 +0000
+
+glib2.0 (2.27.4-2) experimental; urgency=low
+
+  * debian/rules: Change --disable-visibility to --disable-Bsymbolic for
+    the refdbg package.
+
+ -- Jonny Lamb <jonny@debian.org>  Wed, 15 Dec 2010 21:52:29 +0000
+
+glib2.0 (2.27.4-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/libglib2.0-0.symbols:
+      - Updated.
+    + debian/rules:
+      - Bump the SHVER.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 30 Nov 2010 00:48:49 +0100
+
+glib2.0 (2.27.3-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/libglib2.0-0.symbols:
+      - Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 15 Nov 2010 23:05:29 +0100
+
+glib2.0 (2.27.2-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/patches/*:
+      - Refreshed.
+    + debian/libglib2.0-0.symbols:
+      - Updated
+    + debian/patches/70_dtrace.patch:
+      - Dropped, merged upstream.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 01 Nov 2010 10:53:15 +0100
+
+glib2.0 (2.27.1-1) experimental; urgency=low
+
+  [ Josselin Mouette ]
+  * Drop lynx dependency in the -doc package. Suggest devhelp instead.
+    Closes: #599743.
+
+  [ Sebastian Dröge ]
+  * New upstream development release:
+    + debian/patches/70_fix-header-cleaup-fallout.patch:
+      - Dropped, merged upstream.
+    + debian/patches/*:
+      - Refreshed.
+    + debian/libglib2.0-0.symbols:
+      - Updated
+    + debian/patches/70_dtrace.patch:
+      - Patch from upstream GIT to not enable DTrace if it's not
+        available. Fixes the build on kFreeBSD (Closes: #592024).
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 29 Oct 2010 11:32:02 +0200
+
+glib2.0 (2.27.0-1) experimental; urgency=low
+
+  [ Sjoerd Simons ]
+  * New upstream experimental release
+  * debian/libglib2.0-0.symbols
+    + Updated
+  * debian/patches/70_fix-header-cleaup-fallout.patch
+    + Added. Fix complilation error (from upstream git)
+
+  [ Sebastian Dröge ]
+  * Upload to experimental.
+  * debian/rules:
+    + Update SHVER to 2.27.0.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 12 Oct 2010 10:56:13 +0200
+
+glib2.0 (2.26.0-1) experimental; urgency=low
+
+  * New upstream stable release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for the new version.
+    + debian/patches/90_gregex-system-pcre.patch:
+      - Dropped, merged upstream.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 27 Sep 2010 22:43:13 +0200
+
+glib2.0 (2.25.16-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for the new version.
+    + debian/patches/90_gregex-system-pcre.patch:
+      - Fix GRegex compilation with the system pcre.
+
+ -- Sebastian Dröge <slomo@debian.org>  Sat, 18 Sep 2010 07:15:26 +0200
+
+glib2.0 (2.25.15-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for the new version.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 31 Aug 2010 11:26:25 +0200
+
+glib2.0 (2.25.14-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for the new version.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 17 Aug 2010 11:37:23 +0200
+
+glib2.0 (2.25.13-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/patches/90_git_glibconfig_build.patch,
+    + debian/patches/99_autoreconf.patch:
+      - Dropped, merged upstream.
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for the new version.
+    + debian/control.in:
+      - (Build-) depend on pkg-config >= 0.16.0.
+
+ -- Sebastian Dröge <slomo@debian.org>  Sat, 07 Aug 2010 09:34:16 +0200
+
+glib2.0 (2.25.12-2) experimental; urgency=low
+
+  [ Sebastien Bacher ]
+  * debian/rules:
+    + clean the distributed glibconfig.h it has 64 bits values
+      which leaded to the issues on 32 bits architectures
+      (Closes: #591075, #591492).
+  * debian/patches/90_git_glibconfig_build.patch:
+    + git change to use the builddir glibconfig.h and not the srcdir one
+
+  [ Sebastian Dröge ]
+  * debian/patches/99_autoreconf.patch:
+    + Regenerated autotools files for the above patch.
+  * debian/rules:
+    + Call dh_installdirs to actually use the .dirs files.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 06 Aug 2010 18:50:27 +0200
+
+glib2.0 (2.25.12-1) experimental; urgency=low
+
+  [ Josselin Mouette ]
+  * Don’t run the triggers when executed from a nonexistent directory.
+    Closes: #589693.
+
+  [ Sebastian Dröge ]
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API changes.
+    + debian/patches/99_gsocket-create-socket-cloexec.patch:
+      - Dropped, merged upstream.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 30 Jul 2010 12:29:10 +0200
+
+glib2.0 (2.25.11-3) experimental; urgency=low
+
+  * debian/patches/99_gsocket-create-socket-cloexec.patch:
+    Patch by Julien Cristau:
+    Just because SOCK_CLOEXEC was defined at build time doesn't mean the
+    kernel we're running on supports it.  So if socket() fails with EINVAL,
+    try again without the flag.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 15 Jul 2010 20:23:30 +0200
+
+glib2.0 (2.25.11-2) experimental; urgency=low
+
+  * debian/control.in,
+    debian/libglib2.0-bin.links,
+    debian/libglib2.0-0.links:
+    + Move links to the -bin package again but let the -dev package
+      depend on the -bin package. Having the links in the shared library
+      package will cause conflicts when the soname changes but the
+      links in /usr/bin must be there at least if the -dev package is
+      installed because build systems might assume that the applications
+      are in $PATH.
+  * debian/patches/61_glib-compile-schemas-path.patch:
+    + Adjust path to glib-compile-schemas in the pkg-config file.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 13 Jul 2010 14:06:28 +0200
+
+glib2.0 (2.25.11-1) experimental; urgency=low
+
+  [ Josselin Mouette ]
   * Drop type-handling usage. Closes: #587863.
   * Bump standards version accordingly.
-  * Ship gio-querymodules in a versioned directory.
-  * Run it on installation, not only when triggered.
-  * Purge the modules cache in the postrm.
-  * New upstream bugfix release.
-    + Works around the race condition in gtester that causes random 
-      FTBFSes.
+  * Patch from Ubuntu, thanks Sébastien Bacher. Closes: #587661.
+    * debian/libglib2.0-bin.install:
+      - Install glib-compile-schemas
+    * debian/libglib2.0-bin.postinst:
+      - Run glib-compile-schemas when schemas modified
+    * debian/libglib2.0-bin.triggers:
+      - Watch for schema changes
+    * debian/libglib2.0-dev.install:
+      - glib-compile-schemas moved to libglib2.0-bin
+    * debian/libglib2.0-dev.install:
+    - install the new gdb python macros since the gdb version is recent 
+      enough now to use those
+  * Put gio-querymodules and glib-compile-schemas in a private, 
+    versioned directory in libglib2.0-0 to avoid a dependency loop.
+  * Move back the triggers to libglib2.0-0.
+  * Add a purge of the necessary files in the postinst.
+  * Stop recommending libglib2.0-bin since the necessary stuff is in 
+    libglib2.0-0 now.
+  * Add symlinks to keep the binaries at their place in libglib2.0-bin.
+  * Tighten the dependency between libglib2.0-bin and libglib2.0-0.
 
- -- Josselin Mouette <joss@debian.org>  Wed, 08 Sep 2010 20:39:43 +0200
+  [ Sebastian Dröge ]
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API changes.
+  * debian/libglib2.0-0.dirs:
+    + Create empty directories for the triggers to actually work.
+  * debian/libglib2.0-0.links,
+    debian/control.in:
+    + Add links for gio-querymodules and glib-compile-schemas in
+      /usr/bin.
 
-glib2.0 (2.24.1-1) unstable; urgency=low
+ -- Sebastian Dröge <slomo@debian.org>  Sun, 11 Jul 2010 20:13:58 +0200
 
-  * New upstream bugfix release.
+glib2.0 (2.25.10-1) experimental; urgency=low
 
- -- Sebastian Dröge <slomo@debian.org>  Mon, 03 May 2010 07:14:09 +0200
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API changes.
+    + debian/libglib2.0-dev.install:
+      - Drop gsettings-schema-convert.
+    + debian/patches/*:
+      - Refreshed all patches.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 24 Jun 2010 19:59:54 +0200
+
+glib2.0 (2.25.9-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 18 Jun 2010 06:24:03 +0200
+
+glib2.0 (2.25.8-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 08 Jun 2010 11:07:18 +0200
+
+glib2.0 (2.25.7-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 25 May 2010 11:29:07 +0200
+
+glib2.0 (2.25.6-1) experimental; urgency=low
+
+  * New upstream development release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 20 May 2010 10:27:41 +0200
+
+glib2.0 (2.25.5-1) experimental; urgency=low
+
+  * New upstream development release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Sat, 15 May 2010 09:44:10 +0200
+
+glib2.0 (2.25.4-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+    + debian/libglib2.0-bin.install:
+      - Add gdbus utility and manpage.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 14 May 2010 18:25:58 +0200
+
+glib2.0 (2.25.3-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+    + debian/libglib2.0-dev.install:
+      - gschema-compile was renamed to glib-compile-schemas.
+    + debian/control.in,
+      debian/rules:
+      - Manpages are now properly shipped with the tarballs,
+        drop xsltproc, etc. build dependencies.
+
+ -- Sebastian Dröge <slomo@debian.org>  Sat, 24 Apr 2010 06:16:59 +0200
+
+glib2.0 (2.25.2-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/libglib2.0-0.install,
+      debian/libglib2.0-0.triggers,
+      debian/control.in,
+      debian/rules,
+      debian/libglib2.0-bin.install,
+      debian/libglib2.0-bin.triggers:
+      - Move binaries to an unversioned, separate package.
+      - Add new gsettings tool.
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 23 Apr 2010 06:14:47 +0200
+
+glib2.0 (2.25.1-1) experimental; urgency=low
+
+  * New upstream development release:
+    + debian/rules,
+      debian/libglib2.0-0.symbols:
+      - Update for API additions.
+    + debian/libglib2.0-dev.install,
+      debian/libglib2.0-0.install:
+      - Install new GSettings utitilies and manpages.
+  * debian/control.in,
+    debian/rules:
+    + Enable manpage generation via xsltproc for now until
+      https://bugzilla.gnome.org/show_bug.cgi?id=616264
+      is fixed.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 20 Apr 2010 09:24:20 +0200
 
 glib2.0 (2.24.0-1) unstable; urgency=low
 
