@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -35,22 +33,21 @@
 
 /**
  * g_io_error_quark:
- * 
+ *
  * Gets the GIO Error Quark.
  *
- * Return value: a #GQuark.
+ * Returns: a #GQuark.
  **/
-GQuark
-g_io_error_quark (void)
-{
-  return g_quark_from_static_string ("g-io-error-quark");
-}
+G_DEFINE_QUARK (g-io-error-quark, g_io_error)
 
 /**
  * g_io_error_from_errno:
  * @err_no: Error number as defined in errno.h.
  *
- * Converts errno.h error codes into GIO error codes.
+ * Converts errno.h error codes into GIO error codes. The fallback
+ * value %G_IO_ERROR_FAILED is returned for error codes not currently
+ * handled (but note that future GLib releases may return a more
+ * specific value instead).
  *
  * Returns: #GIOErrorEnum value for the given errno.h error number.
  **/
@@ -217,6 +214,12 @@ g_io_error_from_errno (gint err_no)
       break;
 #endif
 
+#ifdef EPIPE
+    case EPIPE:
+      return G_IO_ERROR_BROKEN_PIPE;
+      break;
+#endif
+
     default:
       return G_IO_ERROR_FAILED;
       break;
@@ -229,9 +232,10 @@ g_io_error_from_errno (gint err_no)
  * g_io_error_from_win32_error:
  * @error_code: Windows error number.
  *
- * Converts some common error codes into GIO error codes. The
- * fallback value G_IO_ERROR_FAILED is returned for error codes not
- * handled.
+ * Converts some common error codes into GIO error codes. The fallback
+ * value %G_IO_ERROR_FAILED is returned for error codes not currently
+ * handled (but note that future GLib releases may return a more
+ * specific value instead).
  *
  * Returns: #GIOErrorEnum value for the given error number.
  *

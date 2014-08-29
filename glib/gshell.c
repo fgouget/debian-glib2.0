@@ -31,6 +31,7 @@
 #include "gstring.h"
 #include "gtestutils.h"
 #include "glibintl.h"
+#include "gthread.h"
 
 /**
  * SECTION:shell
@@ -54,11 +55,7 @@
  *
  * Error codes returned by shell functions.
  **/
-GQuark
-g_shell_error_quark (void)
-{
-  return g_quark_from_static_string ("g-shell-error-quark");
-}
+G_DEFINE_QUARK (g-shell-error-quark, g_shell_error)
 
 /* Single quotes preserve the literal string exactly. escape
  * sequences are not allowed; not even \' - if you want a '
@@ -194,7 +191,7 @@ unquote_string_inplace (gchar* str, gchar** end, GError** err)
  * quoting style used is undefined (single or double quotes may be
  * used).
  * 
- * Return value: quoted string
+ * Returns: quoted string
  **/
 gchar*
 g_shell_quote (const gchar *unquoted_string)
@@ -260,7 +257,7 @@ g_shell_quote (const gchar *unquoted_string)
  * be escaped with backslash. Otherwise double quotes preserve things
  * literally.
  *
- * Return value: an unquoted string
+ * Returns: an unquoted string
  **/
 gchar*
 g_shell_unquote (const gchar *quoted_string,
@@ -521,10 +518,28 @@ tokenize_command_line (const gchar *command_line,
               g_string_append_c (current_token, *p);
 
               /* FALL THRU */
-              
-            case '#':
             case '\\':
               current_quote = *p;
+              break;
+
+            case '#':
+              if (p == command_line)
+	        { /* '#' was the first char */
+                  current_quote = *p;
+                  break;
+                }
+              switch(*(p-1))
+                {
+                  case ' ':
+                  case '\n':
+                  case '\0':
+                    current_quote = *p;
+                    break;
+                  default:
+                    ensure_token (&current_token);
+                    g_string_append_c (current_token, *p);
+		    break;
+                }
               break;
 
             default:
@@ -610,7 +625,7 @@ tokenize_command_line (const gchar *command_line,
  * literally. Possible errors are those from the #G_SHELL_ERROR
  * domain. Free the returned vector with g_strfreev().
  * 
- * Return value: %TRUE on success, %FALSE if error set
+ * Returns: %TRUE on success, %FALSE if error set
  **/
 gboolean
 g_shell_parse_argv (const gchar *command_line,

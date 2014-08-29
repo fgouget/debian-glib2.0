@@ -23,6 +23,20 @@
 
 #include <fcntl.h>
 
+/* For _CrtSetReportMode, we don't want Windows CRT (2005 and later)
+ * to terminate the process if a bad file descriptor is passed into
+ * _get_osfhandle().  This is necessary because we use _get_osfhandle()
+ * to check the validity of the fd before we try to call close() on
+ * it as attempting to close an invalid fd will cause the Windows CRT
+ * to abort() this program internally.
+ *
+ * Please see http://msdn.microsoft.com/zh-tw/library/ks2530z6%28v=vs.80%29.aspx
+ * for an explanation on this.
+ */
+#if (defined (_MSC_VER) && _MSC_VER >= 1400)
+#include <crtdbg.h>
+#endif
+
 #undef G_LOG_DOMAIN
 #include "glib.h"
 #define GSPAWN_HELPER
@@ -147,6 +161,34 @@ protect_wargv (wchar_t  **wargv,
   return argc;
 }
 
+#if (defined (_MSC_VER) && _MSC_VER >= 1400)
+/*
+ * This is the (empty) invalid parameter handler
+ * that is used for Visual C++ 2005 (and later) builds
+ * so that we can use this instead of the system automatically
+ * aborting the process.
+ *
+ * This is necessary as we use _get_oshandle() to check the validity
+ * of the file descriptors as we close them, so when an invalid file
+ * descriptor is passed into that function as we check on it, we get
+ * -1 as the result, instead of the gspawn helper program aborting.
+ *
+ * Please see http://msdn.microsoft.com/zh-tw/library/ks2530z6%28v=vs.80%29.aspx
+ * for an explanation on this.
+ */
+void myInvalidParameterHandler(
+   const wchar_t * expression,
+   const wchar_t * function,
+   const wchar_t * file,
+   unsigned int line,
+   uintptr_t pReserved
+)
+{
+  return;
+}
+#endif
+
+
 #ifndef HELPER_CONSOLE
 int _stdcall
 WinMain (struct HINSTANCE__ *hInstance,
@@ -172,6 +214,17 @@ main (int ignored_argc, char **ignored_argv)
   wchar_t **wargv, **wenvp;
   _startupinfo si = { 0 };
   char c;
+
+#if (defined (_MSC_VER) && _MSC_VER >= 1400)
+  /* set up our empty invalid parameter handler */
+  _invalid_parameter_handler oldHandler, newHandler;
+  newHandler = myInvalidParameterHandler;
+  oldHandler = _set_invalid_parameter_handler(newHandler);
+
+  /* Disable the message box for assertions. */
+  _CrtSetReportMode(_CRT_ASSERT, 0);
+#endif
+
 
   g_assert (__argc >= ARG_COUNT);
 
@@ -287,7 +340,8 @@ main (int ignored_argc, char **ignored_argv)
   if (__argv[ARG_CLOSE_DESCRIPTORS][0] == 'y')
     for (i = 3; i < 1000; i++)	/* FIXME real limit? */
       if (i != child_err_report_fd && i != helper_sync_fd)
-	close (i);
+        if (_get_osfhandle (i) != -1)
+          close (i);
 
   /* We don't want our child to inherit the error report and
    * helper sync fds.

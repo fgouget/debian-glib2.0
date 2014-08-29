@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -24,12 +22,12 @@
  * GLib at ftp://ftp.gtk.org/pub/gtk/.
  */
 
+#ifndef __G_TYPES_H__
+#define __G_TYPES_H__
+
 #if !defined (__GLIB_H_INSIDE__) && !defined (GLIB_COMPILATION)
 #error "Only <glib.h> can be included directly."
 #endif
-
-#ifndef __G_TYPES_H__
-#define __G_TYPES_H__
 
 #include <glibconfig.h>
 #include <glib/gmacros.h>
@@ -183,8 +181,8 @@ typedef const gchar *   (*GTranslateFunc)       (const gchar   *str,
 #if defined (__GNUC__) && (__GNUC__ >= 2) && defined (__OPTIMIZE__)
 
 #  if __GNUC__ >= 4 && defined (__GNUC_MINOR__) && __GNUC_MINOR__ >= 3
-#    define GUINT32_SWAP_LE_BE(val) ((guint32) __builtin_bswap32 ((gint32) val))
-#    define GUINT64_SWAP_LE_BE(val) ((guint64) __builtin_bswap64 ((gint64) val))
+#    define GUINT32_SWAP_LE_BE(val) ((guint32) __builtin_bswap32 ((gint32) (val)))
+#    define GUINT64_SWAP_LE_BE(val) ((guint64) __builtin_bswap64 ((gint64) (val)))
 #  endif
 
 #  if defined (__i386__)
@@ -477,7 +475,7 @@ G_END_DECLS
 #      endif /* !GLIB_COMPILATION */
 #    endif /* !GLIB_STATIC_COMPILATION */
 #  else /* !G_PLATFORM_WIN32 */
-#    define GLIB_VAR extern
+#    define GLIB_VAR _GLIB_EXTERN
 #  endif /* !G_PLATFORM_WIN32 */
 #endif /* GLIB_VAR */
 

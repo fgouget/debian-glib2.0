@@ -1,11 +1,9 @@
-Index: glib-2.32.2/gio/giomodule.c
-===================================================================
---- glib-2.32.2.orig/gio/giomodule.c	2012-04-30 18:24:02.000000000 +0200
-+++ glib-2.32.2/gio/giomodule.c	2012-05-01 17:02:18.503885029 +0200
-@@ -905,6 +905,8 @@
+--- a/gio/giomodule.c
++++ b/gio/giomodule.c
+@@ -1049,6 +1049,8 @@
+         module_dir = GIO_MODULE_DIR;
  
-       /* Then load the compiled in path */
-       g_io_modules_scan_all_in_directory_with_scope (GIO_MODULE_DIR, scope);
+       g_io_modules_scan_all_in_directory_with_scope (module_dir, scope);
 +      /* Hard-coded fallback directory for pre-multiarch compatibility */
 +      g_io_modules_scan_all_in_directory ("/usr/lib/gio/modules");
  

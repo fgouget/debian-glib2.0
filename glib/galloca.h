@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -24,16 +22,18 @@
  * GLib at ftp://ftp.gtk.org/pub/gtk/.
  */
 
+#ifndef __G_ALLOCA_H__
+#define __G_ALLOCA_H__
+
 #if !defined (__GLIB_H_INSIDE__) && !defined (GLIB_COMPILATION)
 #error "Only <glib.h> can be included directly."
 #endif
 
-#ifndef __G_ALLOCA_H__
-#define __G_ALLOCA_H__
-
 #include <glib/gtypes.h>
 
-#ifdef  __GNUC__
+#if defined(__BIONIC__) && defined (GLIB_HAVE_ALLOCA_H)
+# include <alloca.h>
+#elif defined(__GNUC__)
 /* GCC does the right thing */
 # undef alloca
 # define alloca(size)   __builtin_alloca (size)

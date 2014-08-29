@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Ryan Lortie <desrt@desrt.ca>
  */
@@ -22,13 +20,13 @@
 #include "config.h"
 
 #include "gsimpleaction.h"
-#include "gactiongroup.h"
 #include "gactionmap.h"
 #include "gaction.h"
 
 /**
  * SECTION:gactionmap
  * @title: GActionMap
+ * @include: gio/gio.h
  * @short_description: Interface for action containers
  *
  * The GActionMap interface is implemented by #GActionGroup
@@ -55,7 +53,7 @@
  * Since: 2.32
  **/
 
-G_DEFINE_INTERFACE (GActionMap, g_action_map, G_TYPE_ACTION_GROUP)
+G_DEFINE_INTERFACE (GActionMap, g_action_map, G_TYPE_OBJECT)
 
 static void
 g_action_map_default_init (GActionMapInterface *iface)
@@ -152,8 +150,8 @@ g_action_map_remove_action (GActionMap  *action_map,
 /**
  * g_action_map_add_action_entries:
  * @action_map: a #GActionMap
- * @entries: a pointer to the first item in an array of #GActionEntry
- *           structs
+ * @entries: (array length=n_entries) (element-type GActionEntry): a pointer to
+ *           the first item in an array of #GActionEntry structs
  * @n_entries: the length of @entries, or -1 if @entries is %NULL-terminated
  * @user_data: the user data for signal connections
  *
@@ -162,9 +160,7 @@ g_action_map_remove_action (GActionMap  *action_map,
  *
  * Each action is constructed as per one #GActionEntry.
  *
- * <example>
- * <title>Using g_action_map_add_action_entries()</title>
- * <programlisting>
+ * |[<!-- language="C" -->
  * static void
  * activate_quit (GSimpleAction *simple,
  *                GVariant      *parameter,
@@ -195,8 +191,7 @@ g_action_map_remove_action (GActionMap  *action_map,
  *
  *   return G_ACTION_GROUP (group);
  * }
- * </programlisting>
- * </example>
+ * ]|
  *
  * Since: 2.32
  */

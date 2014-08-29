@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -110,9 +108,9 @@ static gint wakeup_thread_serial = 0;
 /* Here all unused threads are waiting  */
 static GAsyncQueue *unused_thread_queue = NULL;
 static gint unused_threads = 0;
-static gint max_unused_threads = 0;
+static gint max_unused_threads = 2;
 static gint kill_unused_threads = 0;
-static guint max_idle_time = 0;
+static guint max_idle_time = 15 * 1000;
 
 static void             g_thread_pool_queue_push_unlocked (GRealThreadPool  *pool,
                                                            gpointer          data);
@@ -455,7 +453,7 @@ g_thread_pool_start_thread (GRealThreadPool  *pool,
  * errors. An error can only occur when @exclusive is set to %TRUE
  * and not all @max_threads threads could be created.
  *
- * Return value: the new #GThreadPool
+ * Returns: the new #GThreadPool
  */
 GThreadPool *
 g_thread_pool_new (GFunc      func,
@@ -533,7 +531,7 @@ g_thread_pool_new (GFunc      func,
  *
  * Before version 2.32, this function did not return a success status.
  *
- * Return value: %TRUE on success, %FALSE if an error occurred
+ * Returns: %TRUE on success, %FALSE if an error occurred
  */
 gboolean
 g_thread_pool_push (GThreadPool  *pool,
@@ -598,7 +596,7 @@ g_thread_pool_push (GThreadPool  *pool,
  *
  * Before version 2.32, this function did not return a success status.
  *
- * Return value: %TRUE on success, %FALSE if an error occurred
+ * Returns: %TRUE on success, %FALSE if an error occurred
  */
 gboolean
 g_thread_pool_set_max_threads (GThreadPool  *pool,
@@ -650,7 +648,7 @@ g_thread_pool_set_max_threads (GThreadPool  *pool,
  *
  * Returns the maximal number of threads for @pool.
  *
- * Return value: the maximal number of threads
+ * Returns: the maximal number of threads
  */
 gint
 g_thread_pool_get_max_threads (GThreadPool *pool)
@@ -676,7 +674,7 @@ g_thread_pool_get_max_threads (GThreadPool *pool)
  *
  * Returns the number of threads currently running in @pool.
  *
- * Return value: the number of threads currently running
+ * Returns: the number of threads currently running
  */
 guint
 g_thread_pool_get_num_threads (GThreadPool *pool)
@@ -702,7 +700,7 @@ g_thread_pool_get_num_threads (GThreadPool *pool)
  *
  * Returns the number of tasks still unprocessed in @pool.
  *
- * Return value: the number of unprocessed tasks
+ * Returns: the number of unprocessed tasks
  */
 guint
 g_thread_pool_unprocessed (GThreadPool *pool)
@@ -818,8 +816,14 @@ g_thread_pool_wakeup_and_stop_all (GRealThreadPool *pool)
 
   pool->immediate = TRUE;
 
+  /*
+   * So here we're sending bogus data to the pool threads, which
+   * should cause them each to wake up, and check the above
+   * pool->immediate condition. However we don't want that
+   * data to be sorted (since it'll crash the sorter).
+   */
   for (i = 0; i < pool->num_threads; i++)
-    g_thread_pool_queue_push_unlocked (pool, GUINT_TO_POINTER (1));
+    g_async_queue_push_unlocked (pool->queue, GUINT_TO_POINTER (1));
 }
 
 /**
@@ -829,6 +833,8 @@ g_thread_pool_wakeup_and_stop_all (GRealThreadPool *pool)
  * Sets the maximal number of unused threads to @max_threads.
  * If @max_threads is -1, no limit is imposed on the number
  * of unused threads.
+ *
+ * The default value is 2.
  */
 void
 g_thread_pool_set_max_unused_threads (gint max_threads)
@@ -864,7 +870,7 @@ g_thread_pool_set_max_unused_threads (gint max_threads)
  *
  * Returns the maximal allowed number of unused threads.
  *
- * Return value: the maximal number of unused threads
+ * Returns: the maximal number of unused threads
  */
 gint
 g_thread_pool_get_max_unused_threads (void)
@@ -877,7 +883,7 @@ g_thread_pool_get_max_unused_threads (void)
  *
  * Returns the number of currently unused threads.
  *
- * Return value: the number of currently unused threads
+ * Returns: the number of currently unused threads
  */
 guint
 g_thread_pool_get_num_unused_threads (void)
@@ -964,8 +970,7 @@ g_thread_pool_set_sort_function (GThreadPool      *pool,
  *
  * By setting @interval to 0, idle threads will not be stopped.
  *
- * This function makes use of g_async_queue_timed_pop () using
- * @interval.
+ * The default value is 15000 (15 seconds).
  *
  * Since: 2.10
  */
@@ -1003,7 +1008,7 @@ g_thread_pool_set_max_idle_time (guint interval)
  * If this function returns 0, threads waiting in the thread
  * pool for new work are not stopped.
  *
- * Return value: the maximum @interval (milliseconds) to wait
+ * Returns: the maximum @interval (milliseconds) to wait
  *     for new tasks in the thread pool before stopping the
  *     thread
  *
