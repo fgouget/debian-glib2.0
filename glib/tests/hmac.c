@@ -1,10 +1,5 @@
-#include "config.h"
-
 #include <glib.h>
 #include <string.h>
-#ifdef HAVE_UNISTD_H
-#include <unistd.h>
-#endif
 #include <stdlib.h>
 
 /* HMAC-MD5 test vectors as per RFC 2202 */
@@ -161,11 +156,11 @@ guint8 result_sha1_test7[] = {
 
 typedef struct {
   GChecksumType digest_type;
-  gpointer key;
+  gconstpointer key;
   gsize key_len;
-  gpointer data;
+  gconstpointer data;
   gsize data_len;
-  gpointer result;
+  gconstpointer result;
 } HmacCase;
 
 HmacCase hmac_md5_tests[] = {

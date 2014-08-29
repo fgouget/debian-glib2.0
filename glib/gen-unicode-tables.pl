@@ -14,9 +14,7 @@
 #    GNU General Public License for more details.
 
 #    You should have received a copy of the GNU General Public License
-#    along with this program; if not, write to the Free Software
-#    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-#    02111-1307, USA.
+#    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 # Contributer(s):
 #   Andrew Taylor <andrew.taylor@montage.ca>
@@ -143,6 +141,7 @@ $FOLDING_MAPPING = 2;
      'PO' => "G_UNICODE_BREAK_POSTFIX",
      'PR' => "G_UNICODE_BREAK_PREFIX",
      'QU' => "G_UNICODE_BREAK_QUOTATION",
+     'RI' => "G_UNICODE_BREAK_REGIONAL_INDICATOR",
      'SA' => "G_UNICODE_BREAK_COMPLEX_CONTEXT",
      'SG' => "G_UNICODE_BREAK_SURROGATE",
      'SP' => "G_UNICODE_BREAK_SPACE",

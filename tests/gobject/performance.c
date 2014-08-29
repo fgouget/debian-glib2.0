@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <math.h>
@@ -150,6 +148,7 @@ run_test (PerformanceTest *test)
  * with no properties, no signals, implementing no interfaces
  *************************************************************/
 
+static GType simple_object_get_type (void);
 #define SIMPLE_TYPE_OBJECT        (simple_object_get_type ())
 typedef struct _SimpleObject      SimpleObject;
 typedef struct _SimpleObjectClass   SimpleObjectClass;
@@ -201,6 +200,12 @@ struct _TestIfaceClass
   void (*method) (TestIface *obj);
 };
 
+static GType test_iface1_get_type (void);
+static GType test_iface2_get_type (void);
+static GType test_iface3_get_type (void);
+static GType test_iface4_get_type (void);
+static GType test_iface5_get_type (void);
+
 #define TEST_TYPE_IFACE1 (test_iface1_get_type ())
 #define TEST_TYPE_IFACE2 (test_iface2_get_type ())
 #define TEST_TYPE_IFACE3 (test_iface3_get_type ())
@@ -218,6 +223,7 @@ static DEFINE_IFACE (TestIface5, test_iface5,  NULL, NULL)
  * construct properties, signals and implementing an interface.
  *************************************************************/
 
+static GType complex_object_get_type (void);
 #define COMPLEX_TYPE_OBJECT        (complex_object_get_type ())
 typedef struct _ComplexObject      ComplexObject;
 typedef struct _ComplexObjectClass ComplexObjectClass;
@@ -267,6 +273,7 @@ enum {
   COMPLEX_SIGNAL_EMPTY,
   COMPLEX_SIGNAL_GENERIC,
   COMPLEX_SIGNAL_GENERIC_EMPTY,
+  COMPLEX_SIGNAL_ARGS,
   COMPLEX_LAST_SIGNAL
 };
 
@@ -373,6 +380,15 @@ complex_object_class_init (ComplexObjectClass *class)
 		  NULL,
 		  G_TYPE_NONE, 0);
 
+  complex_signals[COMPLEX_SIGNAL_ARGS] =
+    g_signal_new ("signal-args",
+                  G_TYPE_FROM_CLASS (object_class),
+                  G_SIGNAL_RUN_FIRST,
+                  G_STRUCT_OFFSET (ComplexObjectClass, signal),
+                  NULL, NULL,
+                  g_cclosure_marshal_VOID__UINT_POINTER,
+                  G_TYPE_NONE, 2, G_TYPE_UINT, G_TYPE_POINTER);
+
   g_object_class_install_property (object_class,
 				   PROP_VAL1,
 				   g_param_spec_int ("val1",
@@ -434,7 +450,7 @@ test_construction_setup (PerformanceTest *test)
   struct ConstructionTest *data;
 
   data = g_new0 (struct ConstructionTest, 1);
-  data->type = ((GType (*)())test->extra_data)();
+  data->type = ((GType (*)(void))test->extra_data)();
 
   return data;
 }
@@ -591,7 +607,7 @@ test_type_check_teardown (PerformanceTest *test,
 }
 
 /*************************************************************
- * Test signal unhandled emissions performance
+ * Test signal emissions performance (common code)
  *************************************************************/
 
 #define NUM_EMISSIONS_PER_ROUND 10000
@@ -601,6 +617,34 @@ struct EmissionTest {
   int n_checks;
   int signal_id;
 };
+
+static void
+test_emission_run (PerformanceTest *test,
+                             gpointer _data)
+{
+  struct EmissionTest *data = _data;
+  GObject *object = data->object;
+  int i;
+
+  for (i = 0; i < data->n_checks; i++)
+    g_signal_emit (object, data->signal_id, 0);
+}
+
+static void
+test_emission_run_args (PerformanceTest *test,
+                        gpointer _data)
+{
+  struct EmissionTest *data = _data;
+  GObject *object = data->object;
+  int i;
+
+  for (i = 0; i < data->n_checks; i++)
+    g_signal_emit (object, data->signal_id, 0, 0, NULL);
+}
+
+/*************************************************************
+ * Test signal unhandled emissions performance
+ *************************************************************/
 
 static gpointer
 test_emission_unhandled_setup (PerformanceTest *test)
@@ -621,20 +665,6 @@ test_emission_unhandled_init (PerformanceTest *test,
   struct EmissionTest *data = _data;
 
   data->n_checks = factor * NUM_EMISSIONS_PER_ROUND;
-}
-
-static void
-test_emission_unhandled_run (PerformanceTest *test,
-                             gpointer _data)
-{
-  struct EmissionTest *data = _data;
-  GObject *object = data->object;
-  int i;
-
-  for (i = 0; i < data->n_checks; i++)
-    g_signal_emit (object,
-		   data->signal_id,
-		   0);
 }
 
 static void
@@ -693,6 +723,9 @@ test_emission_handled_setup (PerformanceTest *test)
   g_signal_connect (data->object, "signal-generic-empty",
                     G_CALLBACK (test_emission_handled_handler),
                     NULL);
+  g_signal_connect (data->object, "signal-args",
+                    G_CALLBACK (test_emission_handled_handler),
+                    NULL);
 
   return data;
 }
@@ -705,20 +738,6 @@ test_emission_handled_init (PerformanceTest *test,
   struct EmissionTest *data = _data;
 
   data->n_checks = factor * NUM_EMISSIONS_PER_ROUND;
-}
-
-static void
-test_emission_handled_run (PerformanceTest *test,
-                           gpointer _data)
-{
-  struct EmissionTest *data = _data;
-  GObject *object = data->object;
-  int i;
-
-  for (i = 0; i < data->n_checks; i++)
-    g_signal_emit (object,
-		   data->signal_id,
-		   0);
 }
 
 static void
@@ -788,7 +807,7 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL),
     test_emission_unhandled_setup,
     test_emission_unhandled_init,
-    test_emission_unhandled_run,
+    test_emission_run,
     test_emission_unhandled_finish,
     test_emission_unhandled_teardown,
     test_emission_unhandled_print_result
@@ -798,7 +817,7 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL_EMPTY),
     test_emission_unhandled_setup,
     test_emission_unhandled_init,
-    test_emission_unhandled_run,
+    test_emission_run,
     test_emission_unhandled_finish,
     test_emission_unhandled_teardown,
     test_emission_unhandled_print_result
@@ -808,7 +827,7 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL_GENERIC),
     test_emission_unhandled_setup,
     test_emission_unhandled_init,
-    test_emission_unhandled_run,
+    test_emission_run,
     test_emission_unhandled_finish,
     test_emission_unhandled_teardown,
     test_emission_unhandled_print_result
@@ -818,7 +837,17 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL_GENERIC_EMPTY),
     test_emission_unhandled_setup,
     test_emission_unhandled_init,
-    test_emission_unhandled_run,
+    test_emission_run,
+    test_emission_unhandled_finish,
+    test_emission_unhandled_teardown,
+    test_emission_unhandled_print_result
+  },
+  {
+    "emit-unhandled-args",
+    GINT_TO_POINTER (COMPLEX_SIGNAL_ARGS),
+    test_emission_unhandled_setup,
+    test_emission_unhandled_init,
+    test_emission_run_args,
     test_emission_unhandled_finish,
     test_emission_unhandled_teardown,
     test_emission_unhandled_print_result
@@ -828,7 +857,7 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL),
     test_emission_handled_setup,
     test_emission_handled_init,
-    test_emission_handled_run,
+    test_emission_run,
     test_emission_handled_finish,
     test_emission_handled_teardown,
     test_emission_handled_print_result
@@ -838,7 +867,7 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL_EMPTY),
     test_emission_handled_setup,
     test_emission_handled_init,
-    test_emission_handled_run,
+    test_emission_run,
     test_emission_handled_finish,
     test_emission_handled_teardown,
     test_emission_handled_print_result
@@ -848,7 +877,7 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL_GENERIC),
     test_emission_handled_setup,
     test_emission_handled_init,
-    test_emission_handled_run,
+    test_emission_run,
     test_emission_handled_finish,
     test_emission_handled_teardown,
     test_emission_handled_print_result
@@ -858,7 +887,17 @@ static PerformanceTest tests[] = {
     GINT_TO_POINTER (COMPLEX_SIGNAL_GENERIC_EMPTY),
     test_emission_handled_setup,
     test_emission_handled_init,
-    test_emission_handled_run,
+    test_emission_run,
+    test_emission_handled_finish,
+    test_emission_handled_teardown,
+    test_emission_handled_print_result
+  },
+  {
+    "emit-handled-args",
+    GINT_TO_POINTER (COMPLEX_SIGNAL_ARGS),
+    test_emission_handled_setup,
+    test_emission_handled_init,
+    test_emission_run_args,
     test_emission_handled_finish,
     test_emission_handled_teardown,
     test_emission_handled_print_result
@@ -884,8 +923,6 @@ main (int   argc,
   GOptionContext *context;
   GError *error = NULL;
   int i;
-
-  g_type_init ();
 
   context = g_option_context_new ("GObject performance tests");
   g_option_context_add_main_entries (context, cmd_entries, NULL);

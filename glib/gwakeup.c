@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Ryan Lortie <desrt@desrt.ca>
  */
@@ -22,7 +20,7 @@
 #include "config.h"
 
 
-/* gwakeup.h is special -- GIO and some test cases include it.  As such,
+/* gwakeup.c is special -- GIO and some test cases include it.  As such,
  * it cannot include other glib headers without triggering the single
  * includes warnings.  We have to manually include its dependencies here
  * (and at all other use sites).
@@ -230,11 +228,20 @@ void
 g_wakeup_signal (GWakeup *wakeup)
 {
   guint64 one = 1;
+  int res;
 
   if (wakeup->fds[1] == -1)
-    write (wakeup->fds[0], &one, sizeof one);
+    {
+      do
+        res = write (wakeup->fds[0], &one, sizeof one);
+      while (G_UNLIKELY (res == -1 && errno == EINTR));
+    }
   else
-    write (wakeup->fds[1], &one, 1);
+    {
+      do
+        res = write (wakeup->fds[1], &one, 1);
+      while (G_UNLIKELY (res == -1 && errno == EINTR));
+    }
 }
 
 /**

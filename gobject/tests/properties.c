@@ -67,6 +67,13 @@ test_object_finalize (GObject *gobject)
 {
   g_free (((TestObject *) gobject)->baz);
 
+  /* When the ref_count of an object is zero it is still
+   * possible to notify the property, but it should do
+   * nothing and silenty quit (bug #705570)
+   */
+  g_object_notify (gobject, "foo");
+  g_object_notify_by_pspec (gobject, properties[PROP_BAR]);
+
   G_OBJECT_CLASS (test_object_parent_class)->finalize (gobject);
 }
 
@@ -208,11 +215,51 @@ properties_notify (void)
   g_object_unref (obj);
 }
 
+typedef struct {
+  GParamSpec *pspec[3];
+  gint pos;
+} Notifys;
+
+static void
+on_notify2 (GObject    *gobject,
+            GParamSpec *pspec,
+            Notifys    *n)
+{
+  g_assert (n->pspec[n->pos] == pspec);
+  n->pos++;
+}
+
+static void
+properties_notify_queue (void)
+{
+  TestObject *obj = g_object_new (test_object_get_type (), NULL);
+  Notifys n;
+
+  g_assert (properties[PROP_FOO] != NULL);
+
+  n.pspec[0] = properties[PROP_BAZ];
+  n.pspec[1] = properties[PROP_BAR];
+  n.pspec[2] = properties[PROP_FOO];
+  n.pos = 0;
+
+  g_signal_connect (obj, "notify", G_CALLBACK (on_notify2), &n);
+
+  g_object_freeze_notify (G_OBJECT (obj));
+  g_object_set (obj, "foo", 47, NULL);
+  g_object_set (obj, "bar", TRUE, "foo", 42, "baz", "abc", NULL);
+  g_object_thaw_notify (G_OBJECT (obj));
+  g_assert (n.pos == 3);
+
+  g_object_unref (obj);
+}
+
 static void
 properties_construct (void)
 {
   TestObject *obj;
   gint val;
+  gboolean b;
+  gchar *s;
 
   g_test_bug ("630357");
 
@@ -223,11 +270,13 @@ properties_construct (void)
                       "foo", 3,
                       "foo", 4,
                       "foo", 5,
+                      "bar", FALSE,
                       "foo", 6,
                       "foo", 7,
                       "foo", 8,
                       "foo", 9,
                       "foo", 10,
+                      "baz", "boo",
                       "foo", 11,
                       "foo", 12,
                       "foo", 13,
@@ -240,6 +289,11 @@ properties_construct (void)
 
   g_object_get (obj, "foo", &val, NULL);
   g_assert (val == 18);
+  g_object_get (obj, "bar", &b, NULL);
+  g_assert (!b);
+  g_object_get (obj, "baz", &s, NULL);
+  g_assert_cmpstr (s, ==, "boo");
+  g_free (s);
 
   g_object_unref (obj);
 }
@@ -247,13 +301,13 @@ properties_construct (void)
 int
 main (int argc, char *argv[])
 {
-  g_type_init ();
   g_test_init (&argc, &argv, NULL);
 
   g_test_bug_base ("http://bugzilla.gnome.org/");
 
   g_test_add_func ("/properties/install", properties_install);
   g_test_add_func ("/properties/notify", properties_notify);
+  g_test_add_func ("/properties/notify-queue", properties_notify_queue);
   g_test_add_func ("/properties/construct", properties_construct);
 
   return g_test_run ();

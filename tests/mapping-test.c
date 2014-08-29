@@ -12,22 +12,19 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
-#include "config.h"
-
 #include <stdlib.h>
 #include <string.h>
-#ifdef HAVE_UNISTD_H
-#include <unistd.h>
-#endif
 #include <sys/types.h>
 #include <signal.h>
 
 #include "glib.h"
 #include "gstdio.h"
+
+#ifdef G_OS_UNIX
+#include <unistd.h>
+#endif
 
 static gchar *dir, *filename, *displayname, *childname;
 
@@ -244,13 +241,22 @@ int
 main (int argc, 
       char *argv[])
 {
+  int ret;
+
   dir = g_get_current_dir ();
   filename = g_build_filename (dir, "maptest", NULL);
   displayname = g_filename_display_name (filename);
   childname = g_build_filename (dir, "mapchild", NULL);
 
   if (argc > 1)
-    return child_main (argc, argv);
+    ret = child_main (argc, argv);
   else 
-    return parent_main (argc, argv);
+    ret = parent_main (argc, argv);
+
+  g_free (childname);
+  g_free (filename);
+  g_free (displayname);
+  g_free (dir);
+
+  return ret;
 }

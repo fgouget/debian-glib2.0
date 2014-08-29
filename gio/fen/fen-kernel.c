@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Lin Ma <lin.ma@sun.com>
  */
@@ -39,7 +37,7 @@
 #define FK_W(...) GAM_DEBUG(DEBUG_INFO, __VA_ARGS__)
 #endif
 
-G_GNUC_INTERNAL G_LOCK_DEFINE (fen_lock);
+G_LOCK_DEFINE (fen_lock);
 
 static ulong max_port_events = 512;
 static GList *pn_visible_list;	/* the queue of ports which don't have the max objs */

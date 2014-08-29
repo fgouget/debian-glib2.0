@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -47,6 +45,7 @@
 #include "gslice.h"
 #include "gmessages.h"
 #include "gstrfuncs.h"
+#include "gmain.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -54,17 +53,17 @@
 #include <errno.h>
 #include <pthread.h>
 
-#ifdef HAVE_SYS_TIME_H
-# include <sys/time.h>
-#endif
-#ifdef HAVE_UNISTD_H
-# include <unistd.h>
-#endif
+#include <sys/time.h>
+#include <unistd.h>
+
 #ifdef HAVE_SCHED_H
 #include <sched.h>
 #endif
 #ifdef HAVE_SYS_PRCTL_H
 #include <sys/prctl.h>
+#endif
+#ifdef G_OS_WIN32
+#include <windows.h>
 #endif
 
 static void
@@ -90,10 +89,12 @@ g_mutex_impl_new (void)
     g_thread_abort (errno, "malloc");
 
 #ifdef PTHREAD_ADAPTIVE_MUTEX_INITIALIZER_NP
-  pthread_mutexattr_t attr;
-  pthread_mutexattr_init (&attr);
-  pthread_mutexattr_settype (&attr, PTHREAD_MUTEX_ADAPTIVE_NP);
-  pattr = &attr;
+  {
+    pthread_mutexattr_t attr;
+    pthread_mutexattr_init (&attr);
+    pthread_mutexattr_settype (&attr, PTHREAD_MUTEX_ADAPTIVE_NP);
+    pattr = &attr;
+  }
 #endif
 
   if G_UNLIKELY ((status = pthread_mutex_init (mutex, pattr)) != 0)
@@ -116,7 +117,7 @@ g_mutex_impl_free (pthread_mutex_t *mutex)
 static pthread_mutex_t *
 g_mutex_get_impl (GMutex *mutex)
 {
-  pthread_mutex_t *impl = mutex->p;
+  pthread_mutex_t *impl = g_atomic_pointer_get (&mutex->p);
 
   if G_UNLIKELY (impl == NULL)
     {
@@ -139,9 +140,9 @@ g_mutex_get_impl (GMutex *mutex)
  * This function is useful to initialize a mutex that has been
  * allocated on the stack, or as part of a larger structure.
  * It is not necessary to initialize a mutex that has been
- * created that has been statically allocated.
+ * statically allocated.
  *
- * |[
+ * |[<!-- language="C" --> 
  *   typedef struct {
  *     GMutex m;
  *     ...
@@ -195,10 +196,10 @@ g_mutex_clear (GMutex *mutex)
  * current thread will block until @mutex is unlocked by the other
  * thread.
  *
- * <note>#GMutex is neither guaranteed to be recursive nor to be
+ * #GMutex is neither guaranteed to be recursive nor to be
  * non-recursive.  As such, calling g_mutex_lock() on a #GMutex that has
  * already been locked by the same thread results in undefined behaviour
- * (including but not limited to deadlocks).</note>
+ * (including but not limited to deadlocks).
  */
 void
 g_mutex_lock (GMutex *mutex)
@@ -236,11 +237,10 @@ g_mutex_unlock (GMutex *mutex)
  * it immediately returns %FALSE. Otherwise it locks @mutex and returns
  * %TRUE.
  *
- * <note>#GMutex is neither guaranteed to be recursive nor to be
+ * #GMutex is neither guaranteed to be recursive nor to be
  * non-recursive.  As such, calling g_mutex_lock() on a #GMutex that has
  * already been locked by the same thread results in undefined behaviour
  * (including but not limited to deadlocks or arbitrary return values).
- * </note>
 
  * Returns: %TRUE if @mutex could be locked
  */
@@ -266,7 +266,10 @@ g_rec_mutex_impl_new (void)
   pthread_mutexattr_t attr;
   pthread_mutex_t *mutex;
 
-  mutex = g_slice_new (pthread_mutex_t);
+  mutex = malloc (sizeof (pthread_mutex_t));
+  if G_UNLIKELY (mutex == NULL)
+    g_thread_abort (errno, "malloc");
+
   pthread_mutexattr_init (&attr);
   pthread_mutexattr_settype (&attr, PTHREAD_MUTEX_RECURSIVE);
   pthread_mutex_init (mutex, &attr);
@@ -279,13 +282,13 @@ static void
 g_rec_mutex_impl_free (pthread_mutex_t *mutex)
 {
   pthread_mutex_destroy (mutex);
-  g_slice_free (pthread_mutex_t, mutex);
+  free (mutex);
 }
 
 static pthread_mutex_t *
 g_rec_mutex_get_impl (GRecMutex *rec_mutex)
 {
-  pthread_mutex_t *impl = rec_mutex->p;
+  pthread_mutex_t *impl = g_atomic_pointer_get (&rec_mutex->p);
 
   if G_UNLIKELY (impl == NULL)
     {
@@ -311,7 +314,7 @@ g_rec_mutex_get_impl (GRecMutex *rec_mutex)
  * It is not necessary to initialise a recursive mutex that has been
  * statically allocated.
  *
- * |[
+ * |[<!-- language="C" --> 
  *   typedef struct {
  *     GRecMutex m;
  *     ...
@@ -445,7 +448,7 @@ g_rw_lock_impl_free (pthread_rwlock_t *rwlock)
 static pthread_rwlock_t *
 g_rw_lock_get_impl (GRWLock *lock)
 {
-  pthread_rwlock_t *impl = lock->p;
+  pthread_rwlock_t *impl = g_atomic_pointer_get (&lock->p);
 
   if G_UNLIKELY (impl == NULL)
     {
@@ -469,7 +472,7 @@ g_rw_lock_get_impl (GRWLock *lock)
  * necessary to initialise a reader-writer lock that has been statically
  * allocated.
  *
- * |[
+ * |[<!-- language="C" --> 
  *   typedef struct {
  *     GRWLock l;
  *     ...
@@ -636,8 +639,13 @@ g_cond_impl_new (void)
   gint status;
 
   pthread_condattr_init (&attr);
-#if defined (HAVE_PTHREAD_CONDATTR_SETCLOCK) && defined (CLOCK_MONOTONIC)
-  pthread_condattr_setclock (&attr, CLOCK_MONOTONIC);
+
+#ifdef HAVE_PTHREAD_COND_TIMEDWAIT_RELATIVE_NP
+#elif defined (HAVE_PTHREAD_CONDATTR_SETCLOCK) && defined (CLOCK_MONOTONIC)
+  if G_UNLIKELY ((status = pthread_condattr_setclock (&attr, CLOCK_MONOTONIC)) != 0)
+    g_thread_abort (status, "pthread_condattr_setclock");
+#else
+#error Cannot support GCond on your platform.
 #endif
 
   cond = malloc (sizeof (pthread_cond_t));
@@ -662,7 +670,7 @@ g_cond_impl_free (pthread_cond_t *cond)
 static pthread_cond_t *
 g_cond_get_impl (GCond *cond)
 {
-  pthread_cond_t *impl = cond->p;
+  pthread_cond_t *impl = g_atomic_pointer_get (&cond->p);
 
   if G_UNLIKELY (impl == NULL)
     {
@@ -725,6 +733,8 @@ g_cond_clear (GCond *cond)
  * @mutex: a #GMutex that is currently locked
  *
  * Atomically releases @mutex and waits until @cond is signalled.
+ * When this function returns, @mutex is locked again and owned by the
+ * calling thread.
  *
  * When using condition variables, it is possible that a spurious wakeup
  * may occur (ie: g_cond_wait() returns even though g_cond_signal() was
@@ -800,10 +810,10 @@ g_cond_broadcast (GCond *cond)
  * passed.
  *
  * The following code shows how to correctly perform a timed wait on a
- * condition variable (extended the example presented in the
+ * condition variable (extending the example presented in the
  * documentation for #GCond):
  *
- * |[
+ * |[<!-- language="C" --> 
  * gpointer
  * pop_data_timed (void)
  * {
@@ -849,11 +859,42 @@ g_cond_wait_until (GCond  *cond,
   struct timespec ts;
   gint status;
 
-  ts.tv_sec = end_time / 1000000;
-  ts.tv_nsec = (end_time % 1000000) * 1000;
+#ifdef HAVE_PTHREAD_COND_TIMEDWAIT_RELATIVE_NP
+  /* end_time is given relative to the monotonic clock as returned by
+   * g_get_monotonic_time().
+   *
+   * Since this pthreads wants the relative time, convert it back again.
+   */
+  {
+    gint64 now = g_get_monotonic_time ();
+    gint64 relative;
 
-  if ((status = pthread_cond_timedwait (g_cond_get_impl (cond), g_mutex_get_impl (mutex), &ts)) == 0)
-    return TRUE;
+    if (end_time <= now)
+      return FALSE;
+
+    relative = end_time - now;
+
+    ts.tv_sec = relative / 1000000;
+    ts.tv_nsec = (relative % 1000000) * 1000;
+
+    if ((status = pthread_cond_timedwait_relative_np (g_cond_get_impl (cond), g_mutex_get_impl (mutex), &ts)) == 0)
+      return TRUE;
+  }
+#elif defined (HAVE_PTHREAD_CONDATTR_SETCLOCK) && defined (CLOCK_MONOTONIC)
+  /* This is the exact check we used during init to set the clock to
+   * monotonic, so if we're in this branch, timedwait() will already be
+   * expecting a monotonic clock.
+   */
+  {
+    ts.tv_sec = end_time / 1000000;
+    ts.tv_nsec = (end_time % 1000000) * 1000;
+
+    if ((status = pthread_cond_timedwait (g_cond_get_impl (cond), g_mutex_get_impl (mutex), &ts)) == 0)
+      return TRUE;
+  }
+#else
+#error Cannot support GCond on your platform.
+#endif
 
   if G_UNLIKELY (status != ETIMEDOUT)
     g_thread_abort (status, "pthread_cond_timedwait");
@@ -882,7 +923,7 @@ g_cond_wait_until (GCond  *cond,
  * See G_PRIVATE_INIT() for a couple of examples.
  *
  * The #GPrivate structure should be considered opaque.  It should only
- * be accessed via the <function>g_private_</function> functions.
+ * be accessed via the g_private_ functions.
  */
 
 /**
@@ -904,7 +945,7 @@ g_cond_wait_until (GCond  *cond,
  * be properly initialised by default (ie: to all zeros).  See the
  * examples below.
  *
- * |[
+ * |[<!-- language="C" --> 
  * static GPrivate name_key = G_PRIVATE_INIT (g_free);
  *
  * // return value should not be freed
@@ -969,7 +1010,7 @@ g_private_impl_free (pthread_key_t *key)
 static pthread_key_t *
 g_private_get_impl (GPrivate *key)
 {
-  pthread_key_t *impl = key->p;
+  pthread_key_t *impl = g_atomic_pointer_get (&key->p);
 
   if G_UNLIKELY (impl == NULL)
     {
@@ -1172,7 +1213,9 @@ void
 g_system_thread_set_name (const gchar *name)
 {
 #ifdef HAVE_SYS_PRCTL_H
+#ifdef PR_SET_NAME
   prctl (PR_SET_NAME, name, 0, 0, 0, 0);
+#endif
 #endif
 }
 
