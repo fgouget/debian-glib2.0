@@ -8,7 +8,7 @@
 <link rel="up" href="glib-core.html" title="GLib Core Application Support">
 <link rel="prev" href="glib-Dynamic-Loading-of-Modules.html" title="Dynamic Loading of Modules">
 <link rel="next" href="glib-Memory-Slices.html" title="Memory Slices">
-<meta name="generator" content="GTK-Doc V1.20.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -630,7 +630,7 @@ and <em class="parameter"><code>mem</code></em>
 <tr>
 <td class="parameter_name"><p>mem</p></td>
 <td class="parameter_description"><p> the memory to reallocate. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>n_bytes</p></td>
@@ -729,7 +729,7 @@ on failure. If <em class="parameter"><code>mem</code></em>
 <tr>
 <td class="parameter_name"><p>mem</p></td>
 <td class="parameter_description"><p> previously-allocated memory, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>n_bytes</p></td>
@@ -846,7 +846,7 @@ but care is taken to detect possible overflow during multiplication.</p>
 <tr>
 <td class="parameter_name"><p>mem</p></td>
 <td class="parameter_description"><p> the memory to reallocate. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>n_blocks</p></td>
@@ -969,7 +969,7 @@ but care is taken to detect possible overflow during multiplication.</p>
 <tr>
 <td class="parameter_name"><p>mem</p></td>
 <td class="parameter_description"><p> previously-allocated memory, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>n_blocks</p></td>
@@ -1011,7 +1011,7 @@ If <em class="parameter"><code>mem</code></em>
 <tbody><tr>
 <td class="parameter_name"><p>mem</p></td>
 <td class="parameter_description"><p> the memory to free. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -1029,12 +1029,10 @@ g_clear_pointer (<em class="parameter"><code><a class="link" href="glib-Basic-Ty
 Otherwise, the variable is destroyed using <em class="parameter"><code>destroy</code></em>
  and the
 pointer is set to <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
-<p>This function is threadsafe and modifies the pointer atomically,
-using memory barriers where needed.</p>
 <p>A macro is also included that allows this function to be used without
 pointer casts.</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.21.9"></a><h4>Parameters</h4>
+<a name="id-1.4.7.7.21.8"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1066,38 +1064,24 @@ pointer casts.</p>
  bytes on the stack; these bytes will be freed when the current
 stack frame is cleaned up. This macro essentially just wraps the <code class="function">alloca()</code>
 function present on most UNIX variants.
-Thus it provides the same advantages and pitfalls as <code class="function">alloca()</code>:
-&lt;variablelist&gt;
-  &lt;varlistentry&gt;&lt;term&gt;&lt;/term&gt;&lt;listitem&gt;&lt;para&gt;</p>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-<p>alloca() is very fast, as on most systems it's implemented by just adjusting
-the stack pointer register.
-&lt;/para&gt;&lt;/listitem&gt;&lt;/varlistentry&gt;
-&lt;varlistentry&gt;&lt;term&gt;&lt;/term&gt;&lt;listitem&gt;&lt;para&gt;</p>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+Thus it provides the same advantages and pitfalls as <code class="function">alloca()</code>:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>alloca() is very fast, as on most systems it's implemented by just adjusting
+the stack pointer register.</p></li>
 <li class="listitem"><p>It doesn't cause any memory fragmentation, within its scope, separate <code class="function">alloca()</code>
-blocks just build up and are released together at function end.
-&lt;/para&gt;&lt;/listitem&gt;&lt;/varlistentry&gt;
-&lt;varlistentry&gt;&lt;term&gt;&lt;/term&gt;&lt;listitem&gt;&lt;para&gt;</p></li>
+blocks just build up and are released together at function end.</p></li>
 <li class="listitem"><p>Allocation sizes have to fit into the current stack frame. For instance in a
 threaded environment on Linux, the per-thread stack size is limited to 2 Megabytes,
-so be sparse with <code class="function">alloca()</code> uses.
-&lt;/para&gt;&lt;/listitem&gt;&lt;/varlistentry&gt;
-&lt;varlistentry&gt;&lt;term&gt;&lt;/term&gt;&lt;listitem&gt;&lt;para&gt;</p></li>
+so be sparse with <code class="function">alloca()</code> uses.</p></li>
 <li class="listitem"><p>Allocation failure due to insufficient stack space is not indicated with a <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 return like e.g. with <code class="function">malloc()</code>. Instead, most systems probably handle it the same
 way as out of stack space situations from infinite function recursion, i.e.
-with a segmentation fault.
-&lt;/para&gt;&lt;/listitem&gt;&lt;/varlistentry&gt;
-&lt;varlistentry&gt;&lt;term&gt;&lt;/term&gt;&lt;listitem&gt;&lt;para&gt;</p></li>
+with a segmentation fault.</p></li>
 <li class="listitem"><p>Special care has to be taken when mixing <code class="function">alloca()</code> with GNU C variable sized arrays.
 Stack space allocated with <code class="function">alloca()</code> in the same scope as a variable sized array
 will be freed together with the variable sized array upon exit of that scope, and
-not upon exit of the enclosing function scope.
-&lt;/para&gt;&lt;/listitem&gt;&lt;/varlistentry&gt;
-&lt;/variablelist&gt;</p></li>
+not upon exit of the enclosing function scope.</p></li>
 </ul></div>
-</li></ul></div>
 <div class="refsect3">
 <a name="id-1.4.7.7.22.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -1386,6 +1370,6 @@ of your program.</p>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.20.1</div>
+          Generated by GTK-Doc V1.21.1</div>
 </body>
 </html>

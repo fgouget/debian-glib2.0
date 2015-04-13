@@ -8,7 +8,7 @@
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Hook-Functions.html" title="Hook Functions">
 <link rel="next" href="glib-Lexical-Scanner.html" title="Lexical Scanner">
-<meta name="generator" content="GTK-Doc V1.20.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -589,7 +589,7 @@ provided list <em class="parameter"><code>envp</code></em>
 <td class="parameter_description"><p> an environment
 list (eg, as returned from <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-get-environ" title="g_get_environ ()"><code class="function">g_get_environ()</code></a>), or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 for an empty environment list. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>variable</p></td>
@@ -641,7 +641,7 @@ g_environ_setenv (<em class="parameter"><code><a class="link" href="glib-Basic-T
 environment list that can be freed using <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a> (e.g., as
 returned from <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-get-environ" title="g_get_environ ()"><code class="function">g_get_environ()</code></a>), or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> for an empty
 environment list. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>variable</p></td>
@@ -693,7 +693,7 @@ environment <em class="parameter"><code>envp</code></em>
 <td class="parameter_description"><p> an environment
 list that can be freed using <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a> (e.g., as returned from <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-get-environ" title="g_get_environ ()"><code class="function">g_get_environ()</code></a>),
 or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> for an empty environment list. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>variable</p></td>
@@ -760,7 +760,7 @@ they can be arbitrary byte strings. On Windows, they should be in
 UTF-8.</p>
 <p>Note that on some systems, when variables are overwritten, the memory
 used for the previous variables and its value isn't reclaimed.</p>
-<p>You should be mindful fo the fact that environment variable handling
+<p>You should be mindful of the fact that environment variable handling
 in UNIX is not thread-safe, and your program may crash if one thread
 calls <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-setenv" title="g_setenv ()"><code class="function">g_setenv()</code></a> while another thread is calling <code class="function">getenv()</code>. (And note
 that many functions, such as <code class="function">gettext()</code>, call <code class="function">getenv()</code> internally.)
@@ -1941,7 +1941,7 @@ are printed out to standard error.</p>
 <td class="parameter_name"><p>string</p></td>
 <td class="parameter_description"><p> a list of debug options separated by colons, spaces, or
 commas, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>keys</p></td>
@@ -2269,6 +2269,6 @@ Used in <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-parse-
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.20.1</div>
+          Generated by GTK-Doc V1.21.1</div>
 </body>
 </html>

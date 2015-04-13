@@ -23,7 +23,7 @@ Build-Depends: debhelper (>= 9),
                dbus-x11,
                shared-mime-info,
                xterm,
-               python:any (>= 2.6.6-3~),
+               python:any (>= 2.7.5-5~),
                python-dbus,
                python-gi,
                libxml2-utils,
@@ -39,7 +39,8 @@ Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Recommends: @DATA_PKG@,
-            shared-mime-info
+            shared-mime-info,
+            xdg-user-dirs
 Breaks: gvfs (<< 1.8),
         glib-networking (<< 2.33.12),
         python-gi (<< 3.7.2),
