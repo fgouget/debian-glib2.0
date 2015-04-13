@@ -8,7 +8,7 @@
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Pointer-Arrays.html" title="Pointer Arrays">
 <link rel="next" href="glib-Balanced-Binary-Trees.html" title="Balanced Binary Trees">
-<meta name="generator" content="GTK-Doc V1.20.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -327,22 +327,22 @@ of bytes which grow automatically as elements are added.</p>
 14
 15
 16</pre></td>
-        <td class="listing_code"><pre class="programlisting">GByteArray <span class="gtkdoc opt">*</span>gbarray<span class="gtkdoc opt">;</span>
-gint i<span class="gtkdoc opt">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">GByteArray</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">gbarray</span><span class="symbol">;</span>
+<span class="usertype">gint</span><span class="normal"> i</span><span class="symbol">;</span>
 
-gbarray <span class="gtkdoc opt">=</span> <span class="function"><a href="glib-Byte-Arrays.html#g-byte-array-new">g_byte_array_new</a></span> <span class="gtkdoc opt">();</span>
-<span class="keyword">for</span> <span class="gtkdoc opt">(</span>i <span class="gtkdoc opt">=</span> <span class="number">0</span><span class="gtkdoc opt">;</span> i <span class="gtkdoc opt">&lt;</span> <span class="number">10000</span><span class="gtkdoc opt">;</span> i<span class="gtkdoc opt">++)</span>
-  <span class="function"><a href="glib-Byte-Arrays.html#g-byte-array-append">g_byte_array_append</a></span> <span class="gtkdoc opt">(</span>gbarray<span class="gtkdoc opt">, (</span>guint8<span class="gtkdoc opt">*)</span> <span class="string">&quot;abcd&quot;</span><span class="gtkdoc opt">,</span> <span class="number">4</span><span class="gtkdoc opt">);</span>
+<span class="normal">gbarray </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="glib-Byte-Arrays.html#g-byte-array-new">g_byte_array_new</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="keyword">for</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">i </span><span class="symbol">=</span><span class="normal"> </span><span class="number">0</span><span class="symbol">;</span><span class="normal"> i </span><span class="symbol">&lt;</span><span class="normal"> </span><span class="number">10000</span><span class="symbol">;</span><span class="normal"> i</span><span class="symbol">++)</span>
+<span class="normal">  </span><span class="function"><a href="glib-Byte-Arrays.html#g-byte-array-append">g_byte_array_append</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">gbarray</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="glib-Basic-Types.html#guint8">guint8</a></span><span class="symbol">*)</span><span class="normal"> </span><span class="string">"abcd"</span><span class="symbol">,</span><span class="normal"> </span><span class="number">4</span><span class="symbol">);</span>
 
-<span class="keyword">for</span> <span class="gtkdoc opt">(</span>i <span class="gtkdoc opt">=</span> <span class="number">0</span><span class="gtkdoc opt">;</span> i <span class="gtkdoc opt">&lt;</span> <span class="number">10000</span><span class="gtkdoc opt">;</span> i<span class="gtkdoc opt">++)</span>
-  <span class="gtkdoc opt">{</span>
-    <span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span> <span class="gtkdoc opt">(</span>gbarray<span class="gtkdoc opt">-&gt;</span>data<span class="gtkdoc opt">[</span><span class="number">4</span><span class="gtkdoc opt">*</span>i<span class="gtkdoc opt">] ==</span> <span class="string">'a'</span><span class="gtkdoc opt">);</span>
-    <span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span> <span class="gtkdoc opt">(</span>gbarray<span class="gtkdoc opt">-&gt;</span>data<span class="gtkdoc opt">[</span><span class="number">4</span><span class="gtkdoc opt">*</span>i<span class="gtkdoc opt">+</span><span class="number">1</span><span class="gtkdoc opt">] ==</span> <span class="string">'b'</span><span class="gtkdoc opt">);</span>
-    <span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span> <span class="gtkdoc opt">(</span>gbarray<span class="gtkdoc opt">-&gt;</span>data<span class="gtkdoc opt">[</span><span class="number">4</span><span class="gtkdoc opt">*</span>i<span class="gtkdoc opt">+</span><span class="number">2</span><span class="gtkdoc opt">] ==</span> <span class="string">'c'</span><span class="gtkdoc opt">);</span>
-    <span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span> <span class="gtkdoc opt">(</span>gbarray<span class="gtkdoc opt">-&gt;</span>data<span class="gtkdoc opt">[</span><span class="number">4</span><span class="gtkdoc opt">*</span>i<span class="gtkdoc opt">+</span><span class="number">3</span><span class="gtkdoc opt">] ==</span> <span class="string">'d'</span><span class="gtkdoc opt">);</span>
-  <span class="gtkdoc opt">}</span>
+<span class="keyword">for</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">i </span><span class="symbol">=</span><span class="normal"> </span><span class="number">0</span><span class="symbol">;</span><span class="normal"> i </span><span class="symbol">&lt;</span><span class="normal"> </span><span class="number">10000</span><span class="symbol">;</span><span class="normal"> i</span><span class="symbol">++)</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">gbarray</span><span class="symbol">-&gt;</span><span class="normal">data</span><span class="symbol">[</span><span class="number">4</span><span class="symbol">*</span><span class="normal">i</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="string">'a'</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">gbarray</span><span class="symbol">-&gt;</span><span class="normal">data</span><span class="symbol">[</span><span class="number">4</span><span class="symbol">*</span><span class="normal">i</span><span class="symbol">+</span><span class="number">1</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="string">'b'</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">gbarray</span><span class="symbol">-&gt;</span><span class="normal">data</span><span class="symbol">[</span><span class="number">4</span><span class="symbol">*</span><span class="normal">i</span><span class="symbol">+</span><span class="number">2</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="string">'c'</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="function"><a href="glib-Testing.html#g-assert">g_assert</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">gbarray</span><span class="symbol">-&gt;</span><span class="normal">data</span><span class="symbol">[</span><span class="number">4</span><span class="symbol">*</span><span class="normal">i</span><span class="symbol">+</span><span class="number">3</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="string">'d'</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span>
 
-<span class="function"><a href="glib-Byte-Arrays.html#g-byte-array-free">g_byte_array_free</a></span> <span class="gtkdoc opt">(</span>gbarray<span class="gtkdoc opt">,</span> TRUE<span class="gtkdoc opt">);</span></pre></td>
+<span class="function"><a href="glib-Byte-Arrays.html#g-byte-array-free">g_byte_array_free</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">gbarray</span><span class="symbol">,</span><span class="normal"> <a href="glib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -908,7 +908,7 @@ g_bytes_new (<em class="parameter"><code><a class="link" href="glib-Basic-Types.
 <tr>
 <td class="parameter_name"><p>data</p></td>
 <td class="parameter_description"><p>       the data to be used for the bytes. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -959,7 +959,7 @@ functions that wrap these calls (such as <a class="link" href="glib-Memory-Alloc
 <tr>
 <td class="parameter_name"><p>data</p></td>
 <td class="parameter_description"><p>          the data to be used for the bytes. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -1000,7 +1000,7 @@ is 0.</p>
 <tr>
 <td class="parameter_name"><p>data</p></td>
 <td class="parameter_description"><p>          the data to be used for the bytes. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -1051,7 +1051,7 @@ been called to indicate that the bytes is no longer in use.</p>
 <tr>
 <td class="parameter_name"><p>data</p></td>
 <td class="parameter_description"><p> the data to be used for the bytes. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -1161,7 +1161,7 @@ not be returned if <em class="parameter"><code>size</code></em>
 <tr>
 <td class="parameter_name"><p>size</p></td>
 <td class="parameter_description"><p> location to return size of byte data. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -1170,7 +1170,7 @@ not be returned if <em class="parameter"><code>size</code></em>
 <a name="id-1.6.12.7.22.8"></a><h4>Returns</h4>
 <p> a pointer to the
 byte data, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> guint8][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> guint8][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
 </div>
 <p class="since">Since 2.32</p>
 </div>
@@ -1209,7 +1209,7 @@ g_bytes_get_size (<em class="parameter"><code><a class="link" href="glib-Byte-Ar
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
 g_bytes_hash (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> bytes</code></em>);</pre>
 <p>Creates an integer hash code for the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.</p>
-<p>This function can be passed to <a class="link" href="glib-Hash-Tables.html#g-hash-table-new" title="g_hash_table_new ()"><code class="function">g_hash_table_new()</code></a> as the <em class="parameter"><code>key_equal_func</code></em>
+<p>This function can be passed to <a class="link" href="glib-Hash-Tables.html#g-hash-table-new" title="g_hash_table_new ()"><code class="function">g_hash_table_new()</code></a> as the <em class="parameter"><code>key_hash_func</code></em>
 
 parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> pointers as keys in a <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.</p>
 <div class="refsect3">
@@ -1362,7 +1362,7 @@ freed.</p>
 <tbody><tr>
 <td class="parameter_name"><p>bytes</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -1508,6 +1508,6 @@ a mutable <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct 
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.20.1</div>
+          Generated by GTK-Doc V1.21.1</div>
 </body>
 </html>

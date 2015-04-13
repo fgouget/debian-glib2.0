@@ -38,10 +38,10 @@
 #define GETTEXT_PACKAGE "glib20"
 
 /* Define to the GLIB binary age */
-#define GLIB_BINARY_AGE 4000
+#define GLIB_BINARY_AGE 4201
 
 /* Define to the GLIB interface age */
-#define GLIB_INTERFACE_AGE 0
+#define GLIB_INTERFACE_AGE 1
 
 /* Define the location where the catalogs will be installed */
 #define GLIB_LOCALE_DIR "NONE/share/locale"
@@ -50,10 +50,10 @@
 #define GLIB_MAJOR_VERSION 2
 
 /* Define to the GLIB micro version */
-#define GLIB_MICRO_VERSION 0
+#define GLIB_MICRO_VERSION 1
 
 /* Define to the GLIB minor version */
-#define GLIB_MINOR_VERSION 40
+#define GLIB_MINOR_VERSION 42
 
 /* Have inline keyword */
 #ifndef _MSC_VER
@@ -207,18 +207,24 @@
 /* Define to 1 if you have the `hasmntopt' function. */
 /* #undef HAVE_HASMNTOPT */
 
+/* Target the Windows XP API */
+#ifndef _WIN32_WINNT
+#define _WIN32_WINNT 0x0501
+#endif
+
+#if _WIN32_WINNT >= 0x0600
+/* if_indextoname() and if_nametoindex() are available on Windows Vista/Server
+ * 2008 or later, so we can make use of them when building agaist Vista/Server
+ * 2008 or later.
+ */
+
 /* Define to 1 if you have the `if_indextoname' function. */
-/* This is available on Windows, but the catch is that this will require */
-/* Windows Vista/Server 2008, so disabled for now-please see */
-/* http://msdn.microsoft.com/en-us/library/windows/desktop/bb408408%28v=vs.85%29.aspx */
-/* #undef HAVE_IF_INDEXTONAME */
+#define HAVE_IF_INDEXTONAME 1
 
 /* Define to 1 if you have the `if_nametoindex' function. */
-/* This is available on Windows, but the catch is that this will require */
-/* Windows Vista/Server 2008, so disabled for now-please see */
-/* http://msdn.microsoft.com/en-us/library/windows/desktop/bb408409%28v=vs.85%29.aspx */
-/* A workaround for Windows XP is under review in Bug 668071 */
-/* #undef HAVE_IF_NAMETOINDEX */
+#define HAVE_IF_NAMETOINDEX 1
+
+#endif
 
 /* Define to 1 if you have the `inotify_init1' function. */
 /* #undef HAVE_INOTIFY_INIT1 */
@@ -703,7 +709,7 @@
 #define PACKAGE_NAME "glib"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "glib 2.40.0"
+#define PACKAGE_STRING "glib 2.42.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "glib"
@@ -712,7 +718,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "2.40.0"
+#define PACKAGE_VERSION "2.42.1"
 
 /* define if posix_memalign() can allocate any size */
 /* #undef POSIX_MEMALIGN_WITH_COMPLIANT_ALLOCS */
@@ -852,9 +858,6 @@
 
 /* Define to 1 if you need to in order for `stat' and other things to work. */
 /* #undef _POSIX_SOURCE */
-
-/* Target the Windows XP API */
-#define _WIN32_WINNT 0x0501
 
 /* Needed to get declarations for msg_control and msg_controllen on Solaris */
 /* #undef _XOPEN_SOURCE */

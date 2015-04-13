@@ -92,6 +92,8 @@
     <sub name="Index of new symbols in 2.34" link="api-index-2-34.html"/>
     <sub name="Index of new symbols in 2.36" link="api-index-2-36.html"/>
     <sub name="Index of new symbols in 2.38" link="api-index-2-38.html"/>
+    <sub name="Index of new symbols in 2.40" link="api-index-2-40.html"/>
+    <sub name="Index of new symbols in 2.42" link="api-index-2-42.html"/>
     <sub name="Annotation Glossary" link="annotation-glossary.html"/>
   </chapters>
   <functions>
@@ -117,6 +119,7 @@
     <keyword type="macro" name="G_TYPE_CHECK_INSTANCE()" link="gobject-Type-Information.html#G-TYPE-CHECK-INSTANCE:CAPS"/>
     <keyword type="macro" name="G_TYPE_CHECK_INSTANCE_CAST()" link="gobject-Type-Information.html#G-TYPE-CHECK-INSTANCE-CAST:CAPS"/>
     <keyword type="macro" name="G_TYPE_CHECK_INSTANCE_TYPE()" link="gobject-Type-Information.html#G-TYPE-CHECK-INSTANCE-TYPE:CAPS"/>
+    <keyword type="macro" name="G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE()" link="gobject-Type-Information.html#G-TYPE-CHECK-INSTANCE-FUNDAMENTAL-TYPE:CAPS"/>
     <keyword type="macro" name="G_TYPE_CHECK_CLASS_CAST()" link="gobject-Type-Information.html#G-TYPE-CHECK-CLASS-CAST:CAPS"/>
     <keyword type="macro" name="G_TYPE_CHECK_CLASS_TYPE()" link="gobject-Type-Information.html#G-TYPE-CHECK-CLASS-TYPE:CAPS"/>
     <keyword type="macro" name="G_TYPE_CHECK_VALUE()" link="gobject-Type-Information.html#G-TYPE-CHECK-VALUE:CAPS"/>
@@ -407,6 +410,7 @@
     <keyword type="function" name="g_value_copy ()" link="gobject-Generic-values.html#g-value-copy"/>
     <keyword type="function" name="g_value_reset ()" link="gobject-Generic-values.html#g-value-reset"/>
     <keyword type="function" name="g_value_unset ()" link="gobject-Generic-values.html#g-value-unset"/>
+    <keyword type="function" name="g_value_init_from_instance ()" link="gobject-Generic-values.html#g-value-init-from-instance" since="2.42"/>
     <keyword type="function" name="g_value_set_instance ()" link="gobject-Generic-values.html#g-value-set-instance"/>
     <keyword type="function" name="g_value_fits_pointer ()" link="gobject-Generic-values.html#g-value-fits-pointer"/>
     <keyword type="function" name="g_value_peek_pointer ()" link="gobject-Generic-values.html#g-value-peek-pointer"/>
@@ -650,8 +654,7 @@
     <keyword type="function" name="g_param_spec_pool_list_owned ()" link="gobject-GParamSpec.html#g-param-spec-pool-list-owned"/>
     <keyword type="struct" name="struct GParamSpec" link="gobject-GParamSpec.html#GParamSpec"/>
     <keyword type="struct" name="struct GParamSpecClass" link="gobject-GParamSpec.html#GParamSpecClass"/>
-    <keyword type="enum" name="enum GParamFlags" link="gobject-GParamSpec.html#GParamFlags" deprecated=""/>
-    <keyword type="macro" name="G_PARAM_READWRITE" link="gobject-GParamSpec.html#G-PARAM-READWRITE:CAPS"/>
+    <keyword type="enum" name="enum GParamFlags" link="gobject-GParamSpec.html#GParamFlags"/>
     <keyword type="macro" name="G_PARAM_MASK" link="gobject-GParamSpec.html#G-PARAM-MASK:CAPS"/>
     <keyword type="macro" name="G_PARAM_USER_SHIFT" link="gobject-GParamSpec.html#G-PARAM-USER-SHIFT:CAPS"/>
     <keyword type="struct" name="struct GParamSpecTypeInfo" link="gobject-GParamSpec.html#GParamSpecTypeInfo"/>
@@ -714,7 +717,7 @@
     <keyword type="struct" name="struct GSignalInvocationHint" link="gobject-Signals.html#GSignalInvocationHint"/>
     <keyword type="typedef" name="GSignalCMarshaller" link="gobject-Signals.html#GSignalCMarshaller"/>
     <keyword type="typedef" name="GSignalCVaMarshaller" link="gobject-Signals.html#GSignalCVaMarshaller"/>
-    <keyword type="enum" name="enum GSignalFlags" link="gobject-Signals.html#GSignalFlags" deprecated=""/>
+    <keyword type="enum" name="enum GSignalFlags" link="gobject-Signals.html#GSignalFlags"/>
     <keyword type="enum" name="enum GSignalMatchType" link="gobject-Signals.html#GSignalMatchType"/>
     <keyword type="struct" name="struct GSignalQuery" link="gobject-Signals.html#GSignalQuery"/>
     <keyword type="macro" name="G_SIGNAL_MATCH_MASK" link="gobject-Signals.html#G-SIGNAL-MATCH-MASK:CAPS"/>
