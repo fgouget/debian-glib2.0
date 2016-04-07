@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: Owning Bus Names</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Owning Bus Names: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-convenience.html" title="High-level D-Bus Support">
 <link rel="prev" href="gdbus-convenience.html" title="High-level D-Bus Support">
 <link rel="next" href="gio-Watching-Bus-Names.html" title="Watching Bus Names">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gio-Owning-Bus-Names.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -108,7 +108,7 @@
 </div>
 <div class="refsect1">
 <a name="gio-Owning-Bus-Names.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -141,7 +141,7 @@
 <p>Invoked when a connection to a message bus has been obtained.</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -166,7 +166,7 @@
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -178,7 +178,7 @@
 <p>Invoked when the name is acquired.</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -203,7 +203,7 @@
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -216,7 +216,7 @@
  has been closed.</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -242,7 +242,7 @@ the connection was disconnected.</p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -320,7 +320,7 @@ unregister the objects (if any) in <em class="parameter"><code>name_lost_handler
 .</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.7.5.13"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -378,9 +378,8 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 <a name="id-1.4.18.2.7.5.14"></a><h4>Returns</h4>
 <p> an identifier (never 0) that an be used with
 <a class="link" href="gio-Owning-Bus-Names.html#g-bus-unown-name" title="g_bus_unown_name ()"><code class="function">g_bus_unown_name()</code></a> to stop owning the name.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -397,7 +396,7 @@ g_bus_own_name_on_connection (<em class="parameter"><code><a class="link" href="
 <a class="link" href="GDBusConnection.html#GBusType" title="enum GBusType"><span class="type">GBusType</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.7.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -449,9 +448,8 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 <a name="id-1.4.18.2.7.6.6"></a><h4>Returns</h4>
 <p> an identifier (never 0) that an be used with
 <a class="link" href="gio-Owning-Bus-Names.html#g-bus-unown-name" title="g_bus_unown_name ()"><code class="function">g_bus_unown_name()</code></a> to stop owning the name</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -461,7 +459,7 @@ g_bus_unown_name (<em class="parameter"><code><a href="https://developer.gnome.o
 <p>Stops owning a name.</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.7.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -474,7 +472,7 @@ g_bus_unown_name (<em class="parameter"><code><a href="https://developer.gnome.o
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -488,9 +486,10 @@ g_bus_own_name_with_closures (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *name_lost_closure</code></em>);</pre>
 <p>Version of <a class="link" href="gio-Owning-Bus-Names.html#g-bus-own-name" title="g_bus_own_name ()"><code class="function">g_bus_own_name()</code></a> using closures instead of callbacks for
 easier binding in other languages.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> g_bus_own_name]</span></p>
 <div class="refsect3">
-<a name="id-1.4.18.2.7.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.18.2.7.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -537,13 +536,11 @@ is lost or
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.2.7.8.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.2.7.8.7"></a><h4>Returns</h4>
 <p> an identifier (never 0) that an be used with
 <a class="link" href="gio-Owning-Bus-Names.html#g-bus-unown-name" title="g_bus_unown_name ()"><code class="function">g_bus_unown_name()</code></a> to stop owning the name.</p>
-<p>Rename to: g_bus_own_name</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -557,9 +554,10 @@ g_bus_own_name_on_connection_with_closures
                                 <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *name_lost_closure</code></em>);</pre>
 <p>Version of <a class="link" href="gio-Owning-Bus-Names.html#g-bus-own-name-on-connection" title="g_bus_own_name_on_connection ()"><code class="function">g_bus_own_name_on_connection()</code></a> using closures instead of
 callbacks for easier binding in other languages.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> g_bus_own_name_on_connection]</span></p>
 <div class="refsect3">
-<a name="id-1.4.18.2.7.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.18.2.7.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -599,13 +597,11 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.2.7.9.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.2.7.9.7"></a><h4>Returns</h4>
 <p> an identifier (never 0) that an be used with
 <a class="link" href="gio-Owning-Bus-Names.html#g-bus-unown-name" title="g_bus_unown_name ()"><code class="function">g_bus_unown_name()</code></a> to stop owning the name.</p>
-<p>Rename to: g_bus_own_name_on_connection</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -615,7 +611,7 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 <p>Flags used in <a class="link" href="gio-Owning-Bus-Names.html#g-bus-own-name" title="g_bus_own_name ()"><code class="function">g_bus_own_name()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.18.2.8.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -647,12 +643,11 @@ specified <a class="link" href="gio-Owning-Bus-Names.html#G-BUS-NAME-OWNER-FLAGS
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

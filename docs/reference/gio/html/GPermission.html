@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GPermission</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GPermission: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="permissions.html" title="Permissions">
 <link rel="prev" href="permissions.html" title="Permissions">
 <link rel="next" href="GSimplePermission.html" title="GSimplePermission">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GPermission.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -127,7 +127,7 @@
 </div>
 <div class="refsect1">
 <a name="GPermission.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -154,7 +154,7 @@
 </div>
 <div class="refsect1">
 <a name="GPermission.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -204,7 +204,7 @@ the caller currently has permission to perform the action that
  represents the permission to perform.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -220,9 +220,8 @@ the caller currently has permission to perform the action that
 <div class="refsect3">
 <a name="id-1.4.21.2.9.2.6"></a><h4>Returns</h4>
 <p> the value of the 'allowed' property</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -234,7 +233,7 @@ if it is generally possible to acquire the permission by calling
 <a class="link" href="GPermission.html#g-permission-acquire" title="g_permission_acquire ()"><code class="function">g_permission_acquire()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -250,9 +249,8 @@ if it is generally possible to acquire the permission by calling
 <div class="refsect3">
 <a name="id-1.4.21.2.9.3.6"></a><h4>Returns</h4>
 <p> the value of the 'can-acquire' property</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -264,7 +262,7 @@ if it is generally possible to release the permission by calling
 <a class="link" href="GPermission.html#g-permission-release" title="g_permission_release ()"><code class="function">g_permission_release()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -280,9 +278,8 @@ if it is generally possible to release the permission by calling
 <div class="refsect3">
 <a name="id-1.4.21.2.9.4.6"></a><h4>Returns</h4>
 <p> the value of the 'can-release' property</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -306,7 +303,7 @@ user interaction is required).  See <a class="link" href="GPermission.html#g-per
 the non-blocking version.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.5.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -334,9 +331,8 @@ the non-blocking version.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.5.10"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the permission was successfully acquired</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -352,7 +348,7 @@ g_permission_acquire_async (<em class="parameter"><code><a class="link" href="GP
 <a class="link" href="GPermission.html#g-permission-acquire" title="g_permission_acquire ()"><code class="function">g_permission_acquire()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -383,7 +379,7 @@ g_permission_acquire_async (<em class="parameter"><code><a class="link" href="GP
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -399,7 +395,7 @@ represented by <em class="parameter"><code>permission</code></em>
 <a class="link" href="GPermission.html#g-permission-acquire" title="g_permission_acquire ()"><code class="function">g_permission_acquire()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -427,9 +423,8 @@ represented by <em class="parameter"><code>permission</code></em>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.7.7"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the permission was successfully acquired</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -453,7 +448,7 @@ user interaction is required).  See <a class="link" href="GPermission.html#g-per
 the non-blocking version.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.8.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -481,9 +476,8 @@ the non-blocking version.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.8.10"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the permission was successfully released</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -499,7 +493,7 @@ g_permission_release_async (<em class="parameter"><code><a class="link" href="GP
 <a class="link" href="GPermission.html#g-permission-release" title="g_permission_release ()"><code class="function">g_permission_release()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -530,7 +524,7 @@ g_permission_release_async (<em class="parameter"><code><a class="link" href="GP
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -546,7 +540,7 @@ represented by <em class="parameter"><code>permission</code></em>
 <a class="link" href="GPermission.html#g-permission-release" title="g_permission_release ()"><code class="function">g_permission_release()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -574,9 +568,8 @@ represented by <em class="parameter"><code>permission</code></em>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.10.7"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the permission was successfully released</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -592,7 +585,7 @@ function except from a <a class="link" href="GPermission.html" title="GPermissio
 <p>GObject notify signals are generated, as appropriate.</p>
 <div class="refsect3">
 <a name="id-1.4.21.2.9.11.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -622,7 +615,7 @@ function except from a <a class="link" href="GPermission.html" title="GPermissio
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -666,7 +659,6 @@ using the following functions.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

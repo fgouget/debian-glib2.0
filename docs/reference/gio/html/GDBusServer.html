@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GDBusServer</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GDBusServer: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Low-level D-Bus Support">
 <link rel="prev" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation">
 <link rel="next" href="GDBusAuthObserver.html" title="GDBusAuthObserver">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GDBusServer.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -102,7 +102,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusServer.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -148,7 +148,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusServer.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -157,13 +157,13 @@
 <tbody><tr>
 <td class="signal_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
 <td class="signal_name"><a class="link" href="GDBusServer.html#GDBusServer-new-connection" title="The “new-connection” signal">new-connection</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GDBusServer.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -182,9 +182,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusServer.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GFlags
-    <span class="lineart">╰──</span> GDBusServerFlags
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> GDBusServer
 </pre>
 </div>
@@ -236,7 +234,7 @@ incoming connections.</p>
 <code class="function">g_dbus_server_new()</code> for the asynchronous version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.2.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -281,9 +279,8 @@ incoming connections.</p>
 <p> A <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Free with
 <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -294,7 +291,7 @@ g_dbus_server_start (<em class="parameter"><code><a class="link" href="GDBusServ
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -307,7 +304,7 @@ g_dbus_server_start (<em class="parameter"><code><a class="link" href="GDBusServ
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -318,7 +315,7 @@ g_dbus_server_stop (<em class="parameter"><code><a class="link" href="GDBusServe
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -331,7 +328,7 @@ g_dbus_server_stop (<em class="parameter"><code><a class="link" href="GDBusServe
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -342,7 +339,7 @@ g_dbus_server_is_active (<em class="parameter"><code><a class="link" href="GDBus
  is active.</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -358,9 +355,8 @@ g_dbus_server_is_active (<em class="parameter"><code><a class="link" href="GDBus
 <div class="refsect3">
 <a name="id-1.4.17.9.11.5.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if server is active, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -371,7 +367,7 @@ g_dbus_server_get_guid (<em class="parameter"><code><a class="link" href="GDBusS
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -388,9 +384,8 @@ g_dbus_server_get_guid (<em class="parameter"><code><a class="link" href="GDBusS
 <a name="id-1.4.17.9.11.6.6"></a><h4>Returns</h4>
 <p> A D-Bus GUID. Do not free this string, it is owned by <em class="parameter"><code>server</code></em>
 .</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -401,7 +396,7 @@ g_dbus_server_get_flags (<em class="parameter"><code><a class="link" href="GDBus
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -417,9 +412,8 @@ g_dbus_server_get_flags (<em class="parameter"><code><a class="link" href="GDBus
 <div class="refsect3">
 <a name="id-1.4.17.9.11.7.6"></a><h4>Returns</h4>
 <p> A set of flags from the <a class="link" href="GDBusServer.html#GDBusServerFlags" title="enum GDBusServerFlags"><span class="type">GDBusServerFlags</span></a> enumeration.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -431,7 +425,7 @@ to <em class="parameter"><code>server</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.11.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -449,9 +443,8 @@ to <em class="parameter"><code>server</code></em>
 <p> A D-Bus address string. Do not free, the string is owned
 by <em class="parameter"><code>server</code></em>
 .</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -461,7 +454,7 @@ by <em class="parameter"><code>server</code></em>
 <pre class="programlisting">typedef struct _GDBusServer GDBusServer;</pre>
 <p>The <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> structure contains only private data and
 should only be accessed using the provided API.</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -469,7 +462,7 @@ should only be accessed using the provided API.</p>
 <p>Flags used when creating a <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.12.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -503,7 +496,7 @@ authentication method.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -514,7 +507,7 @@ authentication method.</p>
 <p>Whether the server is currently active.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -523,7 +516,7 @@ authentication method.</p>
 <p>The D-Bus address to listen on.</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -531,7 +524,7 @@ authentication method.</p>
 <pre class="programlisting">  “authentication-observer”  <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a> *</pre>
 <p>A <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a> object to assist in the authentication process or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>Flags: Read / Write / Construct Only</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -540,7 +533,7 @@ authentication method.</p>
 <p>The D-Bus address that clients can use.</p>
 <p>Flags: Read</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -548,7 +541,7 @@ authentication method.</p>
 <pre class="programlisting">  “flags”                    <a class="link" href="GDBusServer.html#GDBusServerFlags" title="enum GDBusServerFlags"><span class="type">GDBusServerFlags</span></a></pre>
 <p>Flags from the <a class="link" href="GDBusServer.html#GDBusServerFlags" title="enum GDBusServerFlags"><span class="type">GDBusServerFlags</span></a> enumeration.</p>
 <p>Flags: Read / Write / Construct Only</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -557,7 +550,7 @@ authentication method.</p>
 <p>The guid of the server.</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -591,7 +584,7 @@ that it's suitable to call <a class="link" href="GDBusConnection.html#g-dbus-con
 similar from the signal handler.</p>
 <div class="refsect3">
 <a name="id-1.4.17.9.14.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -621,15 +614,13 @@ similar from the signal handler.</p>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to claim <em class="parameter"><code>connection</code></em>
 , <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to let other handlers
 run.</p>
-<p></p>
 </div>
-<p>Flags: Run Last</p>
-<p class="since">Since 2.26</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

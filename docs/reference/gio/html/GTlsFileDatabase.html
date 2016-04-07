@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GTlsFileDatabase</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GTlsFileDatabase: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="tls.html" title="TLS (SSL) support">
 <link rel="prev" href="GTlsDatabase.html" title="GTlsDatabase">
 <link rel="next" href="GTlsInteraction.html" title="GTlsInteraction">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GTlsFileDatabase.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -53,7 +53,7 @@
 </div>
 <div class="refsect1">
 <a name="GTlsFileDatabase.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -69,7 +69,7 @@
 </div>
 <div class="refsect1">
 <a name="GTlsFileDatabase.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -88,7 +88,7 @@
 </div>
 <div class="refsect1">
 <a name="GTlsFileDatabase.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GTlsFileDatabase
 </pre>
 </div>
@@ -122,8 +122,8 @@ in <em class="parameter"><code>anchors</code></em>
 <p>The certificates in <em class="parameter"><code>anchors</code></em>
  must be PEM encoded.</p>
 <div class="refsect3">
-<a name="id-1.4.15.9.10.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.15.12.10.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -144,12 +144,12 @@ in <em class="parameter"><code>anchors</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.15.9.10.2.7"></a><h4>Returns</h4>
+<a name="id-1.4.15.12.10.2.7"></a><h4>Returns</h4>
 <p> the new
 <a class="link" href="GTlsFileDatabase.html" title="GTlsFileDatabase"><span class="type">GTlsFileDatabase</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GTlsFileDatabase]</span></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -159,7 +159,7 @@ in <em class="parameter"><code>anchors</code></em>
 <pre class="programlisting">typedef struct _GTlsFileDatabase GTlsFileDatabase;</pre>
 <p>Implemented by a <a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a> which allows you to load certificates
 from a file.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -170,8 +170,8 @@ from a file.</p>
 </pre>
 <p>Provides an interface for <a class="link" href="GTlsFileDatabase.html" title="GTlsFileDatabase"><span class="type">GTlsFileDatabase</span></a> implementations.</p>
 <div class="refsect3">
-<a name="id-1.4.15.9.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.15.12.11.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -197,12 +197,11 @@ root authorities for the purpose of verifying other certificates
 via the <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a> operation.</p>
 <p>Flags: Read / Write / Construct</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

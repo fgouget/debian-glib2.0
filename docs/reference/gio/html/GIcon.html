@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GIcon</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GIcon: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="icons.html" title="Icons">
 <link rel="prev" href="icons.html" title="Icons">
 <link rel="next" href="GFileIcon.html" title="GFileIcon">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GIcon.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -96,7 +96,7 @@
 </div>
 <div class="refsect1">
 <a name="GIcon.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -115,7 +115,7 @@
 </div>
 <div class="refsect1">
 <a name="GIcon.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GIcon
 </pre>
 </div>
@@ -135,7 +135,7 @@ GIcon is required by
 <a name="GIcon.implementations"></a><h2>Known Implementations</h2>
 <p>
 GIcon is implemented by
- <a class="link" href="GEmblem.html" title="GEmblem">GEmblem</a>,  <a class="link" href="GEmblemedIcon.html" title="GEmblemedIcon">GEmblemedIcon</a>,  <a class="link" href="GFileIcon.html" title="GFileIcon">GFileIcon</a> and  <a class="link" href="GThemedIcon.html" title="GThemedIcon">GThemedIcon</a>.</p>
+ <a class="link" href="GBytesIcon.html" title="GBytesIcon">GBytesIcon</a>,  <a class="link" href="GEmblem.html" title="GEmblem">GEmblem</a>,  <a class="link" href="GEmblemedIcon.html" title="GEmblemedIcon">GEmblemedIcon</a>,  <a class="link" href="GFileIcon.html" title="GFileIcon">GFileIcon</a> and  <a class="link" href="GThemedIcon.html" title="GThemedIcon">GThemedIcon</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GIcon.includes"></a><h2>Includes</h2>
@@ -177,7 +177,7 @@ g_icon_hash (<em class="parameter"><code><a href="https://developer.gnome.org/gl
 <p>Virtual: hash</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.11.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -185,8 +185,8 @@ g_icon_hash (<em class="parameter"><code><a href="https://developer.gnome.org/gl
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>icon</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> to an icon object.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> to an icon object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -195,7 +195,6 @@ g_icon_hash (<em class="parameter"><code><a href="https://developer.gnome.org/gl
 <p> a <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> containing a hash for the <em class="parameter"><code>icon</code></em>
 , suitable for
 use in a <a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> or similar data structure.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -207,7 +206,7 @@ g_icon_equal (<em class="parameter"><code><a class="link" href="GIcon.html" titl
 <p>Checks if two icons are equal.</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.11.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -232,7 +231,6 @@ g_icon_equal (<em class="parameter"><code><a class="link" href="GIcon.html" titl
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>icon1</code></em>
 is equal to <em class="parameter"><code>icon2</code></em>
 . <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -264,7 +262,7 @@ simply the name (such as <code class="literal">network-server</code>).</p></li>
 <p>Virtual: to_tokens</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.11.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -284,7 +282,7 @@ simply the name (such as <code class="literal">network-server</code>).</p></li>
 can't be serialized. Use <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> to free. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -301,7 +299,7 @@ implementations you need to ensure that each <a href="https://developer.gnome.or
 with the type system prior to calling <a class="link" href="GIcon.html#g-icon-new-for-string" title="g_icon_new_for_string ()"><code class="function">g_icon_new_for_string()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.11.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -328,7 +326,7 @@ interface or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Ma
 is set. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -342,7 +340,7 @@ makes sense to transfer the <a href="https://developer.gnome.org/glib/unstable/g
 (as opposed to over the network), and within the same file system namespace.</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.11.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -360,7 +358,7 @@ makes sense to transfer the <a href="https://developer.gnome.org/glib/unstable/g
 <p> a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> when serialization fails. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.38</p>
+<p class="since">Since: <a class="link" href="api-index-2-38.html#api-index-2.38">2.38</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -370,7 +368,7 @@ g_icon_deserialize (<em class="parameter"><code><a href="https://developer.gnome
 <p>Deserializes a <a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a> previously serialized using <a class="link" href="GIcon.html#g-icon-serialize" title="g_icon_serialize ()"><code class="function">g_icon_serialize()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.11.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -388,7 +386,7 @@ g_icon_deserialize (<em class="parameter"><code><a href="https://developer.gnome
 <p> a <a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> when deserialization fails. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.38</p>
+<p class="since">Since: <a class="link" href="api-index-2-38.html#api-index-2.38">2.38</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -425,7 +423,7 @@ different systems. See <a class="link" href="GThemedIcon.html" title="GThemedIco
 examples of how to implement this interface.</p>
 <div class="refsect3">
 <a name="id-1.4.10.2.12.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -463,8 +461,8 @@ serialized (Since 2.20).</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><em class="structfield"><code><a name="GIconIface.serialize"></a>serialize</code></em> ()</p></td>
-<td> </td>
-<td> </td>
+<td class="struct_member_description"><p>Serializes a <a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a> into a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>. Since: 2.38</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
@@ -473,7 +471,6 @@ serialized (Since 2.20).</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

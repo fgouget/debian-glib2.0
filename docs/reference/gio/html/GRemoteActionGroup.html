@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GRemoteActionGroup</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GRemoteActionGroup: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="application.html" title="Application support">
-<link rel="prev" href="gio-GPropertyAction.html" title="GPropertyAction">
+<link rel="prev" href="GPropertyAction.html" title="GPropertyAction">
 <link rel="next" href="gio-GActionGroup-exporter.html" title="GActionGroup exporter">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -22,7 +22,7 @@
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="application.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
-<td><a accesskey="p" href="gio-GPropertyAction.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="GPropertyAction.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
 <td><a accesskey="n" href="gio-GActionGroup-exporter.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="refentry">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GRemoteActionGroup.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -63,7 +63,7 @@
 </div>
 <div class="refsect1">
 <a name="GRemoteActionGroup.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -82,7 +82,7 @@
 </div>
 <div class="refsect1">
 <a name="GRemoteActionGroup.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GRemoteActionGroup
 </pre>
 </div>
@@ -143,8 +143,8 @@ interaction timestamp or startup notification information.</p>
  must be non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and must have the type
 <a href="https://developer.gnome.org/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-VARDICT:CAPS"><code class="literal">G_VARIANT_TYPE_VARDICT</code></a>.  If it is floating, it will be consumed.</p>
 <div class="refsect3">
-<a name="id-1.4.22.10.10.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.10.10.2.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -174,7 +174,7 @@ interaction timestamp or startup notification information.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -194,8 +194,8 @@ user interaction timestamp or startup notification information.</p>
  must be non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and must have the type
 <a href="https://developer.gnome.org/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-VARDICT:CAPS"><code class="literal">G_VARIANT_TYPE_VARDICT</code></a>.  If it is floating, it will be consumed.</p>
 <div class="refsect3">
-<a name="id-1.4.22.10.10.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.10.10.3.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -225,7 +225,7 @@ user interaction timestamp or startup notification information.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -233,6 +233,8 @@ user interaction timestamp or startup notification information.</p>
 <div class="refsect2">
 <a name="GRemoteActionGroup-struct"></a><h3>GRemoteActionGroup</h3>
 <pre class="programlisting">typedef struct _GRemoteActionGroup GRemoteActionGroup;</pre>
+<p><a class="link" href="GRemoteActionGroup.html" title="GRemoteActionGroup"><span class="type">GRemoteActionGroup</span></a> is an opaque data structure and can only be accessed
+using the following functions.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -253,8 +255,8 @@ user interaction timestamp or startup notification information.</p>
 </pre>
 <p>The virtual function table for <a class="link" href="GRemoteActionGroup.html" title="GRemoteActionGroup"><span class="type">GRemoteActionGroup</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.10.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.10.11.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -279,12 +281,11 @@ user interaction timestamp or startup notification information.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

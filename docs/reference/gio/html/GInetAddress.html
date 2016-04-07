@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GInetAddress</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GInetAddress: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="networking.html" title="Low-level network support">
-<link rel="prev" href="GSocket.html" title="GSocket">
-<link rel="next" href="gio-GInetAddressMask.html" title="GInetAddressMask">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<link rel="prev" href="GDatagramBased.html" title="GDatagramBased">
+<link rel="next" href="GInetAddressMask.html" title="GInetAddressMask">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -21,8 +21,8 @@
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="networking.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
-<td><a accesskey="p" href="GSocket.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
-<td><a accesskey="n" href="gio-GInetAddressMask.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+<td><a accesskey="p" href="GDatagramBased.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GInetAddressMask.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="refentry">
 <a name="GInetAddress"></a><div class="titlepage"></div>
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GInetAddress.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -197,7 +197,7 @@
 </div>
 <div class="refsect1">
 <a name="GInetAddress.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -269,7 +269,7 @@
 </div>
 <div class="refsect1">
 <a name="GInetAddress.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -312,8 +312,8 @@ g_inet_address_new_from_string (<em class="parameter"><code>const <a href="https
 <p>Parses <em class="parameter"><code>string</code></em>
  as an IP address and creates a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -327,14 +327,14 @@ g_inet_address_new_from_string (<em class="parameter"><code>const <a href="https
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.2.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.2.6"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> corresponding to <em class="parameter"><code>string</code></em>
 , or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 <em class="parameter"><code>string</code></em>
-could not be parsed.</p>
-<p></p>
+could not be parsed.
+Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -349,8 +349,8 @@ g_inet_address_new_from_bytes (<em class="parameter"><code>const <a href="https:
  should be 4 bytes for <a class="link" href="GSocketAddress.html#G-SOCKET-FAMILY-IPV4:CAPS"><code class="literal">G_SOCKET_FAMILY_IPV4</code></a> and 16 bytes for
 <a class="link" href="GSocketAddress.html#G-SOCKET-FAMILY-IPV6:CAPS"><code class="literal">G_SOCKET_FAMILY_IPV6</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -372,13 +372,13 @@ g_inet_address_new_from_bytes (<em class="parameter"><code>const <a href="https:
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.3.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.3.6"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> corresponding to <em class="parameter"><code>family</code></em>
 and <em class="parameter"><code>bytes</code></em>
-.</p>
-<p></p>
+.
+Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -389,8 +389,8 @@ g_inet_address_new_any (<em class="parameter"><code><a class="link" href="GSocke
 care") for <em class="parameter"><code>family</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -404,13 +404,13 @@ care") for <em class="parameter"><code>family</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.4.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.4.6"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> corresponding to the "any" address
 for <em class="parameter"><code>family</code></em>
-.</p>
-<p></p>
+.
+Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -420,8 +420,8 @@ g_inet_address_new_loopback (<em class="parameter"><code><a class="link" href="G
 <p>Creates a <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> for the loopback address for <em class="parameter"><code>family</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -435,13 +435,13 @@ g_inet_address_new_loopback (<em class="parameter"><code><a class="link" href="G
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.5.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.5.6"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> corresponding to the loopback address
 for <em class="parameter"><code>family</code></em>
-.</p>
-<p></p>
+.
+Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -451,8 +451,8 @@ g_inet_address_equal (<em class="parameter"><code><a class="link" href="GInetAdd
                       <em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *other_address</code></em>);</pre>
 <p>Checks if two <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> instances are equal, e.g. the same address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -473,13 +473,12 @@ g_inet_address_equal (<em class="parameter"><code><a class="link" href="GInetAdd
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.6.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.6.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 and <em class="parameter"><code>other_address</code></em>
 are equal, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -488,9 +487,10 @@ are equal, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macr
 g_inet_address_to_bytes (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>Gets the raw binary address data from <em class="parameter"><code>address</code></em>
 .</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -504,14 +504,13 @@ g_inet_address_to_bytes (<em class="parameter"><code><a class="link" href="GInet
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.7.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.7.7"></a><h4>Returns</h4>
 <p> a pointer to an internal array of the bytes in <em class="parameter"><code>address</code></em>
 ,
 which should not be modified, stored, or freed. The size of this
 array can be gotten with <a class="link" href="GInetAddress.html#g-inet-address-get-native-size" title="g_inet_address_get_native_size ()"><code class="function">g_inet_address_get_native_size()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -522,8 +521,8 @@ g_inet_address_get_native_size (<em class="parameter"><code><a class="link" href
 . This
 is the size of the data that you get from <a class="link" href="GInetAddress.html#g-inet-address-to-bytes" title="g_inet_address_to_bytes ()"><code class="function">g_inet_address_to_bytes()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -537,12 +536,11 @@ is the size of the data that you get from <a class="link" href="GInetAddress.htm
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.8.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.8.6"></a><h4>Returns</h4>
 <p> the number of bytes used for the native version of <em class="parameter"><code>address</code></em>
 .</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -552,8 +550,8 @@ g_inet_address_to_string (<em class="parameter"><code><a class="link" href="GIne
 <p>Converts <em class="parameter"><code>address</code></em>
  to string form.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -567,13 +565,12 @@ g_inet_address_to_string (<em class="parameter"><code><a class="link" href="GIne
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.9.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.9.6"></a><h4>Returns</h4>
 <p> a representation of <em class="parameter"><code>address</code></em>
 as a string, which should be
 freed after use.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -583,8 +580,8 @@ g_inet_address_get_family (<em class="parameter"><code><a class="link" href="GIn
 <p>Gets <em class="parameter"><code>address</code></em>
 's family</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -598,12 +595,11 @@ g_inet_address_get_family (<em class="parameter"><code><a class="link" href="GIn
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.10.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.10.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>address</code></em>
 's family</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -613,8 +609,8 @@ g_inet_address_get_is_any (<em class="parameter"><code><a class="link" href="GIn
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is the "any" address for its family.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -628,12 +624,11 @@ g_inet_address_get_is_any (<em class="parameter"><code><a class="link" href="GIn
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.11.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.11.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is the "any" address for its family.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -643,8 +638,8 @@ g_inet_address_get_is_loopback (<em class="parameter"><code><a class="link" href
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is the loopback address for its family.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -658,12 +653,11 @@ g_inet_address_get_is_loopback (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.12.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.12.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is the loopback address for its family.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -675,8 +669,8 @@ g_inet_address_get_is_link_local (<em class="parameter"><code><a class="link" hr
 identifies a host on a local network that is not connected to the
 Internet).</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -690,12 +684,11 @@ Internet).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.13.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.13.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a link-local address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -708,8 +701,8 @@ g_inet_address_get_is_site_local (<em class="parameter"><code><a class="link" hr
 not be reached directly from the Internet, but which may have
 outgoing Internet connectivity via a NAT or firewall).</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -723,12 +716,11 @@ outgoing Internet connectivity via a NAT or firewall).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.14.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.14.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a site-local address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -738,8 +730,8 @@ g_inet_address_get_is_multicast (<em class="parameter"><code><a class="link" hre
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is a multicast address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -753,12 +745,11 @@ g_inet_address_get_is_multicast (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.15.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.15.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a multicast address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -768,8 +759,8 @@ g_inet_address_get_is_mc_link_local (<em class="parameter"><code><a class="link"
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is a link-local multicast address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -783,12 +774,11 @@ g_inet_address_get_is_mc_link_local (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.16.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.16.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a link-local multicast address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -798,8 +788,8 @@ g_inet_address_get_is_mc_node_local (<em class="parameter"><code><a class="link"
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is a node-local multicast address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -813,12 +803,11 @@ g_inet_address_get_is_mc_node_local (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.17.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.17.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a node-local multicast address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -828,8 +817,8 @@ g_inet_address_get_is_mc_site_local (<em class="parameter"><code><a class="link"
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is a site-local multicast address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -843,12 +832,11 @@ g_inet_address_get_is_mc_site_local (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.18.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.18.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a site-local multicast address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -858,8 +846,8 @@ g_inet_address_get_is_mc_org_local (<em class="parameter"><code><a class="link" 
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is an organization-local multicast address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -873,12 +861,11 @@ g_inet_address_get_is_mc_org_local (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.19.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.19.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is an organization-local multicast address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -888,8 +875,8 @@ g_inet_address_get_is_mc_global (<em class="parameter"><code><a class="link" hre
 <p>Tests whether <em class="parameter"><code>address</code></em>
  is a global multicast address.</p>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.13.4.9.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -903,12 +890,11 @@ g_inet_address_get_is_mc_global (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.13.3.9.20.6"></a><h4>Returns</h4>
+<a name="id-1.4.13.4.9.20.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>address</code></em>
 is a global multicast address.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -943,7 +929,7 @@ is a global multicast address.</p>
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-any" title="g_inet_address_get_is_any ()"><code class="function">g_inet_address_get_is_any()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -953,7 +939,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-any" title="g_
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-link-local" title="g_inet_address_get_is_link_local ()"><code class="function">g_inet_address_get_is_link_local()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -963,7 +949,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-link-local" ti
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" title="g_inet_address_get_is_loopback ()"><code class="function">g_inet_address_get_is_loopback()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -973,7 +959,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" titl
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-global" title="g_inet_address_get_is_mc_global ()"><code class="function">g_inet_address_get_is_mc_global()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -983,7 +969,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-global" tit
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-link-local" title="g_inet_address_get_is_mc_link_local ()"><code class="function">g_inet_address_get_is_mc_link_local()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -993,7 +979,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-link-local"
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-node-local" title="g_inet_address_get_is_mc_node_local ()"><code class="function">g_inet_address_get_is_mc_node_local()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1003,7 +989,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-node-local"
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-org-local" title="g_inet_address_get_is_mc_org_local ()"><code class="function">g_inet_address_get_is_mc_org_local()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1013,7 +999,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-org-local" 
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-site-local" title="g_inet_address_get_is_mc_site_local ()"><code class="function">g_inet_address_get_is_mc_site_local()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1023,7 +1009,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-site-local"
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-multicast" title="g_inet_address_get_is_multicast ()"><code class="function">g_inet_address_get_is_multicast()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1033,12 +1019,11 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-multicast" tit
 See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" title="g_inet_address_get_is_loopback ()"><code class="function">g_inet_address_get_is_loopback()</code></a>.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

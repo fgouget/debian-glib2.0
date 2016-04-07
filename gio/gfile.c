@@ -126,9 +126,15 @@
  * the operation, producing a GAsyncResult which is then passed to the
  * function's matching _finish() operation.
  *
- * Some #GFile operations do not have synchronous analogs, as they may
- * take a very long time to finish, and blocking may leave an application
- * unusable. Notable cases include:
+ * It is highly recommended to use asynchronous calls when running within a
+ * shared main loop, such as in the main thread of an application. This avoids
+ * I/O operations blocking other sources on the main loop from being dispatched.
+ * Synchronous I/O operations should be performed from worker threads. See the
+ * [introduction to asynchronous programming section][async-programming] for
+ * more.
+ *
+ * Some #GFile operations almost always take a noticeable amount of time, and
+ * so do not have synchronous analogs. Notable cases include:
  * - g_file_mount_mountable() to mount a mountable file.
  * - g_file_unmount_mountable_with_operation() to unmount a mountable file.
  * - g_file_eject_mountable_with_operation() to eject a mountable file.
@@ -506,7 +512,8 @@ g_file_get_basename (GFile *file)
  * g_file_get_path:
  * @file: input #GFile
  *
- * Gets the local pathname for #GFile, if one exists.
+ * Gets the local pathname for #GFile, if one exists. If non-%NULL, this is
+ * guaranteed to be an absolute, canonical path. It might contain symlinks.
  *
  * This call does no blocking I/O.
  *
@@ -641,7 +648,7 @@ g_file_hash (gconstpointer file)
  * @file1: the first #GFile
  * @file2: the second #GFile
  *
- * Checks equality of two given #GFiles.
+ * Checks if the two given #GFiles refer to the same file.
  *
  * Note that two #GFiles that differ can still refer to the same
  * file on the filesystem due to various forms of filename
@@ -659,6 +666,9 @@ g_file_equal (GFile *file1,
 
   g_return_val_if_fail (G_IS_FILE (file1), FALSE);
   g_return_val_if_fail (G_IS_FILE (file2), FALSE);
+
+  if (file1 == file2)
+    return TRUE;
 
   if (G_TYPE_FROM_INSTANCE (file1) != G_TYPE_FROM_INSTANCE (file2))
     return FALSE;
@@ -704,10 +714,10 @@ g_file_get_parent (GFile *file)
  *
  * If @parent is %NULL then this function returns %TRUE if @file has any
  * parent at all.  If @parent is non-%NULL then %TRUE is only returned
- * if @file is a child of @parent.
+ * if @file is an immediate child of @parent.
  *
- * Returns: %TRUE if @file is a child of @parent (or any parent in the
- *          case that @parent is %NULL).
+ * Returns: %TRUE if @file is an immediate child of @parent (or any parent in
+ *          the case that @parent is %NULL).
  *
  * Since: 2.24
  */
@@ -809,6 +819,9 @@ g_file_get_child_for_display_name (GFile      *file,
  * pathname match @prefix. Only full pathname elements are matched,
  * so a path like /foo is not considered a prefix of /foobar, only
  * of /foo/bar.
+ *
+ * A #GFile is not a prefix of itself. If you want to check for
+ * equality, use g_file_equal().
  *
  * This call does no I/O, as it works purely on names. As such it can
  * sometimes return %FALSE even if @file is inside a @prefix (from a
@@ -1718,14 +1731,14 @@ g_file_create (GFile             *file,
  * operation was cancelled, the error %G_IO_ERROR_CANCELLED will be
  * returned.
  *
- * If you pass in a non-%NULL @etag value, then this value is
- * compared to the current entity tag of the file, and if they differ
- * an %G_IO_ERROR_WRONG_ETAG error is returned. This generally means
- * that the file has been changed since you last read it. You can get
- * the new etag from g_file_output_stream_get_etag() after you've
- * finished writing and closed the #GFileOutputStream. When you load
- * a new file you can use g_file_input_stream_query_info() to get
- * the etag of the file.
+ * If you pass in a non-%NULL @etag value and @file already exists, then
+ * this value is compared to the current entity tag of the file, and if
+ * they differ an %G_IO_ERROR_WRONG_ETAG error is returned. This
+ * generally means that the file has been changed since you last read
+ * it. You can get the new etag from g_file_output_stream_get_etag()
+ * after you've finished writing and closed the #GFileOutputStream. When
+ * you load a new file you can use g_file_input_stream_query_info() to
+ * get the etag of the file.
  *
  * If @make_backup is %TRUE, this function will attempt to make a
  * backup of the current file before overwriting it. If this fails
@@ -3751,8 +3764,13 @@ g_file_make_directory_with_parents (GFile         *file,
   if (g_cancellable_set_error_if_cancelled (cancellable, error))
     return FALSE;
 
+  /* Try for the simple case of not having to create any parent
+   * directories.  If any parent directory needs to be created, this
+   * call will fail with NOT_FOUND. If that happens, then that value of
+   * my_error persists into the while loop below.
+   */
   g_file_make_directory (file, cancellable, &my_error);
-  if (my_error == NULL || my_error->code != G_IO_ERROR_NOT_FOUND)
+  if (!g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
     {
       if (my_error)
         g_propagate_error (error, my_error);
@@ -3761,7 +3779,14 @@ g_file_make_directory_with_parents (GFile         *file,
 
   work_file = g_object_ref (file);
 
-  while (my_error != NULL && my_error->code == G_IO_ERROR_NOT_FOUND)
+  /* Creates the parent directories as needed. In case any particular
+   * creation operation fails for lack of other parent directories
+   * (NOT_FOUND), the directory is added to a list of directories to
+   * create later, and the value of my_error is retained until the next
+   * iteration of the loop.  After the loop my_error should either be
+   * empty or contain a real failure condition.
+   */
+  while (g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
     {
       GFile *parent_file;
 
@@ -3771,19 +3796,31 @@ g_file_make_directory_with_parents (GFile         *file,
 
       g_clear_error (&my_error);
       g_file_make_directory (parent_file, cancellable, &my_error);
+      /* Another process may have created the directory in between the
+       * G_IO_ERROR_NOT_FOUND and now
+       */
+      if (g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
+        g_clear_error (&my_error);
 
       g_object_unref (work_file);
       work_file = g_object_ref (parent_file);
 
-      if (my_error != NULL && my_error->code == G_IO_ERROR_NOT_FOUND)
+      if (g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
         list = g_list_prepend (list, parent_file);  /* Transfer ownership of ref */
       else
         g_object_unref (parent_file);
     }
 
+  /* All directories should be able to be created now, so an error at
+   * this point means the whole operation must fail -- except an EXISTS
+   * error, which means that another process already created the
+   * directory in between the previous failure and now.
+   */
   for (l = list; my_error == NULL && l; l = l->next)
     {
       g_file_make_directory ((GFile *) l->data, cancellable, &my_error);
+      if (g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
+        g_clear_error (&my_error);
     }
 
   if (work_file)
@@ -3796,6 +3833,10 @@ g_file_make_directory_with_parents (GFile         *file,
       list = g_list_remove (list, list->data);
     }
 
+  /* At this point an error in my_error means a that something
+   * unexpected failed in either of the loops above, so the whole
+   * operation must fail.
+   */
   if (my_error != NULL)
     {
       g_propagate_error (error, my_error);
@@ -4297,9 +4338,14 @@ g_file_query_writable_namespaces (GFile         *file,
 
   if (list == NULL)
     {
+      g_warn_if_reached();
+      list = g_file_attribute_info_list_new ();
+    }
+
+  if (my_error != NULL)
+    {
       if (my_error->domain == G_IO_ERROR && my_error->code == G_IO_ERROR_NOT_SUPPORTED)
         {
-          list = g_file_attribute_info_list_new ();
           g_error_free (my_error);
         }
       else
@@ -7092,7 +7138,9 @@ g_file_load_contents_finish (GFile         *file,
  * or the error %G_IO_ERROR_WRONG_ETAG will be returned.
  *
  * If @make_backup is %TRUE, this function will attempt to make a backup
- * of @file.
+ * of @file. Internally, it uses g_file_replace(), so will try to replace the
+ * file contents in the safest way possible. For example, atomic renames are
+ * used when replacing local files’ contents.
  *
  * If @cancellable is not %NULL, then the operation can be cancelled by
  * triggering the cancellable object from another thread. If the operation

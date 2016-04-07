@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GLib Reference Manual: IO Channels</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>IO Channels: GLib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-core.html" title="GLib Core Application Support">
 <link rel="prev" href="glib-Memory-Slices.html" title="Memory Slices">
 <link rel="next" href="glib-Error-Reporting.html" title="Error Reporting">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="glib-IO-Channels.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -49,7 +49,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>
+<a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="returnvalue">gint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="glib-IO-Channels.html#g-io-channel-unix-get-fd" title="g_io_channel_unix_get_fd ()">g_io_channel_unix_get_fd</a> <span class="c_punctuation">()</span>
@@ -209,7 +209,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="glib-IO-Channels.html#g-io-add-watch" title="g_io_add_watch ()">g_io_add_watch</a> <span class="c_punctuation">()</span>
@@ -217,7 +217,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="glib-IO-Channels.html#g-io-add-watch-full" title="g_io_add_watch_full ()">g_io_add_watch_full</a> <span class="c_punctuation">()</span>
@@ -370,7 +370,7 @@
 </div>
 <div class="refsect1">
 <a name="glib-IO-Channels.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -477,7 +477,7 @@ valid file descriptor and socket. If that happens a warning is
 issued, and GLib assumes that it is the file descriptor you mean.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.2.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -493,20 +493,19 @@ issued, and GLib assumes that it is the file descriptor you mean.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.2.10"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-io-channel-unix-get-fd"></a><h3>g_io_channel_unix_get_fd ()</h3>
-<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>
+<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="returnvalue">gint</span></a>
 g_io_channel_unix_get_fd (<em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> *channel</code></em>);</pre>
 <p>Returns the file descriptor of the <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 <p>On Windows this function returns the file descriptor or socket of
 the <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -522,14 +521,13 @@ the <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOCha
 <div class="refsect3">
 <a name="id-1.4.9.7.3.7"></a><h4>Returns</h4>
 <p> the file descriptor of the <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-io-channel-win32-new-fd"></a><h3>g_io_channel_win32_new_fd ()</h3>
 <pre class="programlisting"><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="returnvalue">GIOChannel</span></a> *
-g_io_channel_win32_new_fd (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> fd</code></em>);</pre>
+g_io_channel_win32_new_fd (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> fd</code></em>);</pre>
 <p>Creates a new <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> given a file descriptor on Windows. This
 works for file descriptors from the C runtime.</p>
 <p>This function works for file descriptors as returned by the <code class="function">open()</code>,
@@ -551,7 +549,7 @@ thread. Your code should call only <a class="link" href="glib-IO-Channels.html#g
 <p>This function is available only in GLib on Windows.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.4.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -567,14 +565,13 @@ thread. Your code should call only <a class="link" href="glib-IO-Channels.html#g
 <div class="refsect3">
 <a name="id-1.4.9.7.4.10"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-io-channel-win32-new-socket"></a><h3>g_io_channel_win32_new_socket ()</h3>
 <pre class="programlisting"><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="returnvalue">GIOChannel</span></a> *
-g_io_channel_win32_new_socket (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> socket</code></em>);</pre>
+g_io_channel_win32_new_socket (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> socket</code></em>);</pre>
 <p>Creates a new <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> given a socket on Windows.</p>
 <p>This function works for sockets created by Winsock. It's available
 only in GLib on Windows.</p>
@@ -583,7 +580,7 @@ socket in non-blocking mode. This is a side-effect of the
 implementation and unavoidable.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -599,7 +596,6 @@ implementation and unavoidable.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.5.8"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -612,7 +608,7 @@ g_io_channel_win32_new_messages (<em class="parameter"><code><a class="link" hre
 Windows messages for the window in question.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -628,7 +624,6 @@ Windows messages for the window in question.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.6.7"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -642,7 +637,7 @@ g_io_channel_init (<em class="parameter"><code><a class="link" href="glib-IO-Cha
 programmer (unless you are creating a new type of <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>).</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -672,7 +667,7 @@ so will not cause problems, as long as no attempt is made to
 access the channel after it is closed).</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -701,7 +696,6 @@ the same meaning as in <code class="function">fopen()</code></p></td>
 <div class="refsect3">
 <a name="id-1.4.9.7.8.6"></a><h4>Returns</h4>
 <p> A <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> on success, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> on failure.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -716,7 +710,7 @@ g_io_channel_read_chars (<em class="parameter"><code><a class="link" href="glib-
 <p>Replacement for <a class="link" href="glib-IO-Channels.html#g-io-channel-read" title="g_io_channel_read ()"><code class="function">g_io_channel_read()</code></a> with the new API.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -760,7 +754,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <div class="refsect3">
 <a name="id-1.4.9.7.9.6"></a><h4>Returns</h4>
 <p> the status of the operation.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -775,7 +768,7 @@ g_io_channel_read_unichar (<em class="parameter"><code><a class="link" href="gli
 This function cannot be called on a channel with <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> encoding.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -804,7 +797,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <div class="refsect3">
 <a name="id-1.4.9.7.10.6"></a><h4>Returns</h4>
 <p> a <a class="link" href="glib-IO-Channels.html#GIOStatus" title="enum GIOStatus"><span class="type">GIOStatus</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -823,7 +815,7 @@ from a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIO
 is <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-NORMAL:CAPS"><code class="literal">G_IO_STATUS_NORMAL</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -866,7 +858,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <div class="refsect3">
 <a name="id-1.4.9.7.11.6"></a><h4>Returns</h4>
 <p> the status of the operation.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -880,7 +871,7 @@ g_io_channel_read_line_string (<em class="parameter"><code><a class="link" href=
 <p>Reads a line from a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>, using a <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> as a buffer.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -917,7 +908,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <div class="refsect3">
 <a name="id-1.4.9.7.12.6"></a><h4>Returns</h4>
 <p> the status of the operation.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -931,7 +921,7 @@ g_io_channel_read_to_end (<em class="parameter"><code><a class="link" href="glib
 <p>Reads all the remaining data from the file.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -970,7 +960,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <a name="id-1.4.9.7.13.6"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-NORMAL:CAPS"><code class="literal">G_IO_STATUS_NORMAL</code></a> on success.
 This function never returns <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-EOF:CAPS"><code class="literal">G_IO_STATUS_EOF</code></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -989,7 +978,7 @@ may only be made on a channel from which data has been read in the
 cases described in the documentation for <a class="link" href="glib-IO-Channels.html#g-io-channel-set-encoding" title="g_io_channel_set_encoding ()"><code class="function">g_io_channel_set_encoding()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.14.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1035,7 +1024,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <div class="refsect3">
 <a name="id-1.4.9.7.14.7"></a><h4>Returns</h4>
 <p> the status of the operation.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1050,7 +1038,7 @@ g_io_channel_write_unichar (<em class="parameter"><code><a class="link" href="gl
 This function cannot be called on a channel with <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> encoding.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1079,7 +1067,6 @@ or <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOC
 <div class="refsect3">
 <a name="id-1.4.9.7.15.6"></a><h4>Returns</h4>
 <p> a <a class="link" href="glib-IO-Channels.html#GIOStatus" title="enum GIOStatus"><span class="type">GIOStatus</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1091,7 +1078,7 @@ g_io_channel_flush (<em class="parameter"><code><a class="link" href="glib-IO-Ch
 <p>Flushes the write buffer for the GIOChannel.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1116,7 +1103,6 @@ g_io_channel_flush (<em class="parameter"><code><a class="link" href="glib-IO-Ch
 <p> the status of the operation: One of
 <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-NORMAL:CAPS"><span class="type">G_IO_STATUS_NORMAL</span></a>, <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-AGAIN:CAPS"><span class="type">G_IO_STATUS_AGAIN</span></a>, or
 <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-ERROR:CAPS"><span class="type">G_IO_STATUS_ERROR</span></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1130,7 +1116,7 @@ g_io_channel_seek_position (<em class="parameter"><code><a class="link" href="gl
 <p>Replacement for <a class="link" href="glib-IO-Channels.html#g-io-channel-seek" title="g_io_channel_seek ()"><code class="function">g_io_channel_seek()</code></a> with the new API.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1167,7 +1153,6 @@ is allowed. See the documentation for
 <div class="refsect3">
 <a name="id-1.4.9.7.17.6"></a><h4>Returns</h4>
 <p> the status of the operation.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1183,7 +1168,7 @@ flushed if <em class="parameter"><code>flush</code></em>
 last reference is dropped using <a class="link" href="glib-IO-Channels.html#g-io-channel-unref" title="g_io_channel_unref ()"><code class="function">g_io_channel_unref()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1211,18 +1196,17 @@ last reference is dropped using <a class="link" href="glib-IO-Channels.html#g-io
 <div class="refsect3">
 <a name="id-1.4.9.7.18.6"></a><h4>Returns</h4>
 <p> the status of the operation.</p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-io-channel-error-from-errno"></a><h3>g_io_channel_error_from_errno ()</h3>
 <pre class="programlisting"><a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOChannelError"><span class="returnvalue">GIOChannelError</span></a>
-g_io_channel_error_from_errno (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> en</code></em>);</pre>
+g_io_channel_error_from_errno (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> en</code></em>);</pre>
 <p>Converts an <code class="literal">errno</code> error number to a <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOChannelError"><span class="type">GIOChannelError</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1239,7 +1223,6 @@ g_io_channel_error_from_errno (<em class="parameter"><code><a class="link" href=
 <a name="id-1.4.9.7.19.6"></a><h4>Returns</h4>
 <p> a <a class="link" href="glib-IO-Channels.html#GIOChannelError" title="enum GIOChannelError"><span class="type">GIOChannelError</span></a> error number, e.g.
 <a class="link" href="glib-IO-Channels.html#G-IO-CHANNEL-ERROR-INVAL:CAPS"><code class="literal">G_IO_CHANNEL_ERROR_INVAL</code></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1250,7 +1233,7 @@ g_io_channel_ref (<em class="parameter"><code><a class="link" href="glib-IO-Chan
 <p>Increments the reference count of a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1267,7 +1250,6 @@ g_io_channel_ref (<em class="parameter"><code><a class="link" href="glib-IO-Chan
 <a name="id-1.4.9.7.20.6"></a><h4>Returns</h4>
 <p> the <em class="parameter"><code>channel</code></em>
 that was passed in (since 2.6)</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1278,7 +1260,7 @@ g_io_channel_unref (<em class="parameter"><code><a class="link" href="glib-IO-Ch
 <p>Decrements the reference count of a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1311,7 +1293,7 @@ puts the socket in non-blocking mode. This is a side-effect of the
 implementation and unavoidable.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1334,13 +1316,12 @@ implementation and unavoidable.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.22.8"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-The-Main-Event-Loop.html#GSource" title="struct GSource"><span class="type">GSource</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-io-add-watch"></a><h3>g_io_add_watch ()</h3>
-<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 g_io_add_watch (<em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> *channel</code></em>,
                 <em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOCondition" title="enum GIOCondition"><span class="type">GIOCondition</span></a> condition</code></em>,
                 <em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOFunc" title="GIOFunc ()"><span class="type">GIOFunc</span></a> func</code></em>,
@@ -1349,7 +1330,7 @@ g_io_add_watch (<em class="parameter"><code><a class="link" href="glib-IO-Channe
 with the default priority.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1383,15 +1364,14 @@ with the default priority.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.23.6"></a><h4>Returns</h4>
 <p> the event source id</p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-io-add-watch-full"></a><h3>g_io_add_watch_full ()</h3>
-<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 g_io_add_watch_full (<em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> *channel</code></em>,
-                     <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> priority</code></em>,
+                     <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> priority</code></em>,
                      <em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOCondition" title="enum GIOCondition"><span class="type">GIOCondition</span></a> condition</code></em>,
                      <em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOFunc" title="GIOFunc ()"><span class="type">GIOFunc</span></a> func</code></em>,
                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
@@ -1401,9 +1381,10 @@ with the given priority.</p>
 <p>This internally creates a main loop source using <a class="link" href="glib-IO-Channels.html#g-io-create-watch" title="g_io_create_watch ()"><code class="function">g_io_create_watch()</code></a>
 and attaches it to the main loop context with <a class="link" href="glib-The-Main-Event-Loop.html#g-source-attach" title="g_source_attach ()"><code class="function">g_source_attach()</code></a>.
 You can do these steps manually if you need greater control.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> g_io_add_watch]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.24.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.24.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1445,10 +1426,8 @@ You can do these steps manually if you need greater control.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.9.7.24.7"></a><h4>Returns</h4>
-<p> the event source id
-Rename to: g_io_add_watch</p>
-<p></p>
+<a name="id-1.4.9.7.24.8"></a><h4>Returns</h4>
+<p> the event source id</p>
 </div>
 </div>
 <hr>
@@ -1463,7 +1442,7 @@ Rename to: g_io_add_watch</p>
 on a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> is satisfied.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1492,7 +1471,6 @@ on a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOCh
 <a name="id-1.4.9.7.25.6"></a><h4>Returns</h4>
 <p> the function should return <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if the event source
 should be removed</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1503,7 +1481,7 @@ g_io_channel_get_buffer_size (<em class="parameter"><code><a class="link" href="
 <p>Gets the buffer size.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1519,7 +1497,6 @@ g_io_channel_get_buffer_size (<em class="parameter"><code><a class="link" href="
 <div class="refsect3">
 <a name="id-1.4.9.7.26.6"></a><h4>Returns</h4>
 <p> the size of the buffer.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1531,7 +1508,7 @@ g_io_channel_set_buffer_size (<em class="parameter"><code><a class="link" href="
 <p>Sets the buffer size.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1562,7 +1539,7 @@ is data to be read/space to write data in the internal buffers in
 the <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>. Only the flags <a class="link" href="glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> and <a class="link" href="glib-IO-Channels.html#G-IO-OUT:CAPS"><code class="literal">G_IO_OUT</code></a> may be set.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1578,7 +1555,6 @@ the <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOCha
 <div class="refsect3">
 <a name="id-1.4.9.7.28.6"></a><h4>Returns</h4>
 <p> A <a class="link" href="glib-IO-Channels.html#GIOCondition" title="enum GIOCondition"><span class="type">GIOCondition</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1596,7 +1572,7 @@ should immediately call <a class="link" href="glib-IO-Channels.html#g-io-channel
 the internal values of these flags.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.29.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1612,7 +1588,6 @@ the internal values of these flags.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.29.7"></a><h4>Returns</h4>
 <p> the flags which are set on the channel</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1627,7 +1602,7 @@ g_io_channel_set_flags (<em class="parameter"><code><a class="link" href="glib-I
  &amp; <a class="link" href="glib-IO-Channels.html#G-IO-FLAG-SET-MASK:CAPS"><code class="literal">G_IO_FLAG_SET_MASK</code></a>).</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1655,7 +1630,6 @@ g_io_channel_set_flags (<em class="parameter"><code><a class="link" href="glib-I
 <div class="refsect3">
 <a name="id-1.4.9.7.30.6"></a><h4>Returns</h4>
 <p> the status of the operation. </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1663,13 +1637,13 @@ g_io_channel_set_flags (<em class="parameter"><code><a class="link" href="glib-I
 <a name="g-io-channel-get-line-term"></a><h3>g_io_channel_get_line_term ()</h3>
 <pre class="programlisting">const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="returnvalue">gchar</span></a> *
 g_io_channel_get_line_term (<em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> *channel</code></em>,
-                            <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *length</code></em>);</pre>
+                            <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> *length</code></em>);</pre>
 <p>This returns the string that <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> uses to determine
 where in the file a line break occurs. A value of <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 indicates autodetection.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.31.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1693,7 +1667,6 @@ indicates autodetection.</p>
 <a name="id-1.4.9.7.31.6"></a><h4>Returns</h4>
 <p> The line termination string. This value
 is owned by GLib and must not be freed.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1702,12 +1675,12 @@ is owned by GLib and must not be freed.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 g_io_channel_set_line_term (<em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> *channel</code></em>,
                             <em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *line_term</code></em>,
-                            <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> length</code></em>);</pre>
+                            <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> length</code></em>);</pre>
 <p>This sets the string that <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> uses to determine
 where in the file a line break occurs.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1747,7 +1720,7 @@ g_io_channel_get_buffered (<em class="parameter"><code><a class="link" href="gli
  is buffered.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1764,7 +1737,6 @@ g_io_channel_get_buffered (<em class="parameter"><code><a class="link" href="gli
 <a name="id-1.4.9.7.33.6"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <em class="parameter"><code>channel</code></em>
 is buffered. </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1791,7 +1763,7 @@ maintaining old code.</p>
 <p>The default state of the channel is buffered.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.34.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1822,7 +1794,7 @@ The internal encoding is always UTF-8. The encoding <a class="link" href="glib-S
 makes the channel safe for binary data.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.35.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1839,7 +1811,6 @@ makes the channel safe for binary data.</p>
 <a name="id-1.4.9.7.35.6"></a><h4>Returns</h4>
 <p> A string containing the encoding, this string is
 owned by GLib and must not be freed.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1878,7 +1849,7 @@ they are "seekable", cannot call <a class="link" href="glib-IO-Channels.html#g-i
 calling one of the API "read" functions.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.36.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1906,7 +1877,6 @@ calling one of the API "read" functions.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.36.10"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-IO-Channels.html#G-IO-STATUS-NORMAL:CAPS"><code class="literal">G_IO_STATUS_NORMAL</code></a> if the encoding was successfully set</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1922,7 +1892,7 @@ destroyed. The default value of this is <a class="link" href="glib-Standard-Macr
 by <a class="link" href="glib-IO-Channels.html#g-io-channel-new-file" title="g_io_channel_new_file ()"><code class="function">g_io_channel_new_file()</code></a>, and <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> for all other channels.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.37.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1939,7 +1909,6 @@ by <a class="link" href="glib-IO-Channels.html#g-io-channel-new-file" title="g_i
 <a name="id-1.4.9.7.37.6"></a><h4>Returns</h4>
 <p> Whether the channel will be closed on the final unref of
 the GIOChannel data structure.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1952,7 +1921,7 @@ g_io_channel_set_close_on_unref (<em class="parameter"><code><a class="link" hre
 can cause problems.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.38.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1991,7 +1960,7 @@ g_io_channel_read (<em class="parameter"><code><a class="link" href="glib-IO-Cha
 <p>Reads data from a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.39.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2025,7 +1994,6 @@ count bytes long)</p></td>
 <div class="refsect3">
 <a name="id-1.4.9.7.39.7"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-IO-Channels.html#G-IO-ERROR-NONE:CAPS"><code class="literal">G_IO_ERROR_NONE</code></a> if the operation was successful. </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2043,7 +2011,7 @@ g_io_channel_write (<em class="parameter"><code><a class="link" href="glib-IO-Ch
 <p>Writes data to a <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.40.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2076,7 +2044,6 @@ g_io_channel_write (<em class="parameter"><code><a class="link" href="glib-IO-Ch
 <div class="refsect3">
 <a name="id-1.4.9.7.40.7"></a><h4>Returns</h4>
 <p>  <a class="link" href="glib-IO-Channels.html#G-IO-ERROR-NONE:CAPS"><code class="literal">G_IO_ERROR_NONE</code></a> if the operation was successful.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2094,7 +2061,7 @@ g_io_channel_seek (<em class="parameter"><code><a class="link" href="glib-IO-Cha
 library function <code class="function">fseek()</code>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.41.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2126,7 +2093,6 @@ position), <a class="link" href="glib-IO-Channels.html#G-SEEK-SET:CAPS"><code cl
 <div class="refsect3">
 <a name="id-1.4.9.7.41.7"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-IO-Channels.html#G-IO-ERROR-NONE:CAPS"><code class="literal">G_IO_ERROR_NONE</code></a> if the operation was successful.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2143,7 +2109,7 @@ flushed, ignoring errors. The channel will not be freed until the
 last reference is dropped using <a class="link" href="glib-IO-Channels.html#g-io-channel-unref" title="g_io_channel_unref ()"><code class="function">g_io_channel_unref()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.42.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2176,7 +2142,7 @@ functions.</p>
 <a class="link" href="glib-IO-Channels.html#g-io-channel-seek-position" title="g_io_channel_seek_position ()"><code class="function">g_io_channel_seek_position()</code></a> operation.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2214,7 +2180,7 @@ functions.</p>
 <p>Stati returned by most of the <a class="link" href="glib-IO-Channels.html#GIOFuncs" title="struct GIOFuncs"><span class="type">GIOFuncs</span></a> functions.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2259,7 +2225,7 @@ functions.</p>
 <p>Error codes returned by <a class="link" href="glib-IO-Channels.html#GIOChannel" title="struct GIOChannel"><span class="type">GIOChannel</span></a> operations.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.5.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2349,7 +2315,7 @@ information on error domains.</p>
 event source.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.7.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2436,7 +2402,7 @@ event source.</p>
 in a generic way.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.8.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2516,7 +2482,7 @@ read with <a class="link" href="glib-IO-Channels.html#g-io-channel-get-flags" ti
 <a class="link" href="glib-IO-Channels.html#g-io-channel-set-flags" title="g_io_channel_set_flags ()"><code class="function">g_io_channel_set_flags()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.9.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2609,7 +2575,7 @@ read with <a class="link" href="glib-IO-Channels.html#g-io-channel-get-flags" ti
 <a class="link" href="glib-IO-Channels.html#g-io-channel-read" title="g_io_channel_read ()"><code class="function">g_io_channel_read()</code></a>, <a class="link" href="glib-IO-Channels.html#g-io-channel-write" title="g_io_channel_write ()"><code class="function">g_io_channel_write()</code></a>, and <a class="link" href="glib-IO-Channels.html#g-io-channel-seek" title="g_io_channel_seek ()"><code class="function">g_io_channel_seek()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.10.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2656,7 +2622,6 @@ read with <a class="link" href="glib-IO-Channels.html#g-io-channel-get-flags" ti
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GLib Reference Manual: Secure HMAC Digests</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Secure HMAC Digests: GLib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Data-Checksums.html" title="Data Checksums">
 <link rel="next" href="glib-I18N.html" title="Internationalization">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="glib-Data-HMACs.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -115,7 +115,7 @@
 </div>
 <div class="refsect1">
 <a name="glib-Data-HMACs.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -169,7 +169,7 @@ on it anymore.</p>
 <p>Support for digests of type <a class="link" href="glib-Data-Checksums.html#G-CHECKSUM-SHA512:CAPS"><code class="literal">G_CHECKSUM_SHA512</code></a> has been added in GLib 2.42.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -198,9 +198,8 @@ on it anymore.</p>
 <a name="id-1.5.7.7.2.8"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="glib-Data-HMACs.html#GHmac" title="GHmac"><span class="type">GHmac</span></a>, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
 Use <a class="link" href="glib-Data-HMACs.html#g-hmac-unref" title="g_hmac_unref ()"><code class="function">g_hmac_unref()</code></a> to free the memory allocated by it.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -213,7 +212,7 @@ g_hmac_copy (<em class="parameter"><code>const <a class="link" href="glib-Data-H
 HMAC will be closed as well.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -230,9 +229,8 @@ HMAC will be closed as well.</p>
 <a name="id-1.5.7.7.3.6"></a><h4>Returns</h4>
 <p> the copy of the passed <a class="link" href="glib-Data-HMACs.html#GHmac" title="GHmac"><span class="type">GHmac</span></a>. Use <a class="link" href="glib-Data-HMACs.html#g-hmac-unref" title="g_hmac_unref ()"><code class="function">g_hmac_unref()</code></a>
 when finished using it.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -244,7 +242,7 @@ g_hmac_ref (<em class="parameter"><code><a class="link" href="glib-Data-HMACs.ht
 <p>This function is MT-safe and may be called from any thread.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -260,9 +258,8 @@ g_hmac_ref (<em class="parameter"><code><a class="link" href="glib-Data-HMACs.ht
 <div class="refsect3">
 <a name="id-1.5.7.7.4.7"></a><h4>Returns</h4>
 <p> the passed in <a class="link" href="glib-Data-HMACs.html#GHmac" title="GHmac"><span class="type">GHmac</span></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -278,7 +275,7 @@ Frees the memory allocated for <em class="parameter"><code>hmac</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -291,7 +288,7 @@ Frees the memory allocated for <em class="parameter"><code>hmac</code></em>
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -307,7 +304,7 @@ g_hmac_update (<em class="parameter"><code><a class="link" href="glib-Data-HMACs
 .</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -332,7 +329,7 @@ g_hmac_update (<em class="parameter"><code><a class="link" href="glib-Data-HMACs
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -345,7 +342,7 @@ updated with <a class="link" href="glib-Data-HMACs.html#g-hmac-update" title="g_
 <p>The hexadecimal characters will be lower case.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -363,9 +360,8 @@ updated with <a class="link" href="glib-Data-HMACs.html#g-hmac-update" title="g_
 <p> the hexadecimal representation of the HMAC. The
 returned string is owned by the HMAC and should not be modified
 or freed.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -382,7 +378,7 @@ into <em class="parameter"><code>buffer</code></em>
 no longer be updated with <a class="link" href="glib-Data-Checksums.html#g-checksum-update" title="g_checksum_update ()"><code class="function">g_checksum_update()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -409,7 +405,7 @@ size of <em class="parameter"><code>buffer</code></em>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -428,7 +424,7 @@ and <a class="link" href="glib-Data-HMACs.html#g-hmac-unref" title="g_hmac_unref
 <p>The hexadecimal string returned will be in lower case.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -468,9 +464,8 @@ and <a class="link" href="glib-Data-HMACs.html#g-hmac-unref" title="g_hmac_unref
 <a name="id-1.5.7.7.9.7"></a><h4>Returns</h4>
 <p> the HMAC of the binary data as a string in hexadecimal.
 The returned string should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a> when done using it.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -485,7 +480,7 @@ g_compute_hmac_for_string (<em class="parameter"><code><a class="link" href="gli
 <p>The hexadecimal string returned will be in lower case.</p>
 <div class="refsect3">
 <a name="id-1.5.7.7.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -525,9 +520,8 @@ g_compute_hmac_for_string (<em class="parameter"><code><a class="link" href="gli
 <p> the HMAC as a hexadecimal string.
 The returned string should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>
 when done using it.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -538,12 +532,11 @@ when done using it.</p>
 <p>An opaque structure representing a HMAC operation.
 To create a new GHmac, use <a class="link" href="glib-Data-HMACs.html#g-hmac-new" title="g_hmac_new ()"><code class="function">g_hmac_new()</code></a>. To free
 a GHmac, use <a class="link" href="glib-Data-HMACs.html#g-hmac-unref" title="g_hmac_unref ()"><code class="function">g_hmac_unref()</code></a>.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>
