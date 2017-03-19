@@ -8,7 +8,7 @@
 <link rel="up" href="tls.html" title="TLS (SSL) support">
 <link rel="prev" href="GDtlsClientConnection.html" title="GDtlsClientConnection">
 <link rel="next" href="GTlsBackend.html" title="GTlsBackend">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -95,7 +95,7 @@
 <a name="GDtlsServerConnection.prerequisites"></a><h2>Prerequisites</h2>
 <p>
 GDtlsServerConnection requires
- <a class="link" href="GDtlsConnection.html" title="GDtlsConnection">GDtlsConnection</a>,  <a class="link" href="GDatagramBased.html" title="GDatagramBased">GDatagramBased</a> and  <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+ <a class="link" href="GDtlsConnection.html" title="GDtlsConnection">GDtlsConnection</a>,  <a class="link" href="GDatagramBased.html" title="GDatagramBased">GDatagramBased</a> and  <a href="../gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GDtlsServerConnection.includes"></a><h2>Includes</h2>
@@ -114,11 +114,11 @@ representing a server-side DTLS connection.</p>
 <pre class="programlisting"><a class="link" href="GDatagramBased.html" title="GDatagramBased"><span class="returnvalue">GDatagramBased</span></a> *
 g_dtls_server_connection_new (<em class="parameter"><code><a class="link" href="GDatagramBased.html" title="GDatagramBased"><span class="type">GDatagramBased</span></a> *base_socket</code></em>,
                               <em class="parameter"><code><a class="link" href="GTlsCertificate.html" title="GTlsCertificate"><span class="type">GTlsCertificate</span></a> *certificate</code></em>,
-                              <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                              <em class="parameter"><code><a href="../glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Creates a new <a class="link" href="GDtlsServerConnection.html" title="GDtlsServerConnection"><span class="type">GDtlsServerConnection</span></a> wrapping <em class="parameter"><code>base_socket</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.15.9.10.2.5"></a><h4>Parameters</h4>
+<a name="g-dtls-server-connection-new.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -133,21 +133,21 @@ g_dtls_server_connection_new (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>certificate</p></td>
-<td class="parameter_description"><p> the default server certificate, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_description"><p> the default server certificate, or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore</p></td>
+<td class="parameter_description"><p><a href="../glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.15.9.10.2.6"></a><h4>Returns</h4>
+<a name="g-dtls-server-connection-new.returns"></a><h4>Returns</h4>
 <p> the new
-<a class="link" href="GDtlsServerConnection.html" title="GDtlsServerConnection"><span class="type">GDtlsServerConnection</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<a class="link" href="GDtlsServerConnection.html" title="GDtlsServerConnection"><span class="type">GDtlsServerConnection</span></a>, or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GDtlsServerConnection]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-48.html#api-index-2.48">2.48</a></p>
@@ -171,18 +171,14 @@ of a <a class="link" href="GDtlsConnection.html" title="GDtlsConnection"><span c
 </pre>
 <p>vtable for a <a class="link" href="GDtlsServerConnection.html" title="GDtlsServerConnection"><span class="type">GDtlsServerConnection</span></a> implementation.</p>
 <div class="refsect3">
-<a name="id-1.4.15.9.11.3.5"></a><h4>Members</h4>
+<a name="GDtlsServerConnectionInterface.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
 <col width="200px" class="struct_members_annotations">
 </colgroup>
-<tbody><tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GTypeInterface"><span class="type">GTypeInterface</span></a> <em class="structfield"><code><a name="GDtlsServerConnectionInterface.g-iface"></a>g_iface</code></em>;</p></td>
-<td class="struct_member_description"><p>The parent interface.</p></td>
-<td class="struct_member_annotations"> </td>
-</tr></tbody>
+<tbody></tbody>
 </table></div>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-48.html#api-index-2.48">2.48</a></p>
@@ -203,6 +199,6 @@ rehandshake with a different mode from the initial handshake.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

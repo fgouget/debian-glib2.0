@@ -111,7 +111,7 @@ check_PROGRAMS = $(am__EXEEXT_9)
 @ENABLE_INSTALLED_TESTS_TRUE@am__append_10 = $(test_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(installed_test_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(test_extra_scripts) \
-@ENABLE_INSTALLED_TESTS_TRUE@	$(test_installed_extra_scripts) \
+@ENABLE_INSTALLED_TESTS_TRUE@	$(installed_test_extra_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_test_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_test_extra_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_installed_test_scripts) \
@@ -562,6 +562,9 @@ thread_SOURCES = thread.c
 thread_OBJECTS = thread.$(OBJEXT)
 thread_LDADD = $(LDADD)
 thread_DEPENDENCIES = $(top_builddir)/glib/libglib-2.0.la
+thread_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(thread_LDFLAGS) $(LDFLAGS) -o $@
 timeout_SOURCES = timeout.c
 timeout_OBJECTS = timeout.$(OBJEXT)
 timeout_LDADD = $(LDADD)
@@ -983,6 +986,8 @@ LIBELF_CFLAGS = @LIBELF_CFLAGS@
 LIBELF_LIBS = @LIBELF_LIBS@
 LIBFFI_CFLAGS = @LIBFFI_CFLAGS@
 LIBFFI_LIBS = @LIBFFI_LIBS@
+LIBMOUNT_CFLAGS = @LIBMOUNT_CFLAGS@
+LIBMOUNT_LIBS = @LIBMOUNT_LIBS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -1116,7 +1121,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -1181,7 +1185,7 @@ all_test_ltlibs = $(test_ltlibraries) $(uninstalled_test_ltlibraries) $(installe
 @ENABLE_INSTALLED_TESTS_TRUE@installed_test_meta_DATA = $(installed_testcases:=.test)
 @USE_SYSTEM_PCRE_FALSE@pcre_lib = $(top_builddir)/glib/pcre/libpcre.la
 @USE_SYSTEM_PCRE_TRUE@pcre_lib = $(PCRE_LIBS)
-@USE_SYSTEM_PCRE_FALSE@pcre_inc = 
+@USE_SYSTEM_PCRE_FALSE@pcre_inc = -DPCRE_STATIC
 @USE_SYSTEM_PCRE_TRUE@pcre_inc = $(PCRE_CFLAGS)
 LDADD = $(top_builddir)/glib/libglib-2.0.la -lm
 AM_CPPFLAGS = -g $(glib_INCLUDES) $(GLIB_DEBUG_FLAGS)
@@ -1272,6 +1276,7 @@ gwakeup_SOURCES = gwakeuptest.c ../../glib/gwakeup.c
 @OS_UNIX_TRUE@XMLLINT = xmllint
 @OS_UNIX_TRUE@GTESTER = $(top_builddir)/glib/gtester
 @OS_UNIX_TRUE@private_LDFLAGS = @G_THREAD_LIBS@
+@OS_UNIX_TRUE@thread_LDFLAGS = @G_THREAD_LIBS@
 @HAVE_EVENTFD_TRUE@gwakeup_fallback_SOURCES = gwakeuptest.c ../../glib/gwakeup.c
 @HAVE_EVENTFD_TRUE@gwakeup_fallback_CFLAGS = $(AM_CFLAGS) -DTEST_EVENTFD_FALLBACK
 all: $(BUILT_SOURCES)
@@ -1724,7 +1729,7 @@ testing$(EXEEXT): $(testing_OBJECTS) $(testing_DEPENDENCIES) $(EXTRA_testing_DEP
 
 thread$(EXEEXT): $(thread_OBJECTS) $(thread_DEPENDENCIES) $(EXTRA_thread_DEPENDENCIES) 
 	@rm -f thread$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(thread_OBJECTS) $(thread_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(thread_LINK) $(thread_OBJECTS) $(thread_LDADD) $(LIBS)
 
 timeout$(EXEEXT): $(timeout_OBJECTS) $(timeout_DEPENDENCIES) $(EXTRA_timeout_DEPENDENCIES) 
 	@rm -f timeout$(EXEEXT)

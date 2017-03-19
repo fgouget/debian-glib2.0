@@ -8,7 +8,7 @@
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Arrays.html" title="Arrays">
 <link rel="next" href="glib-Byte-Arrays.html" title="Byte Arrays">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -285,7 +285,7 @@ array <span class="gtkdoc opt">=</span> <span class="function"><a href="glib-Poi
 g_ptr_array_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Creates a new <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a> with a reference count of 1.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.2.5"></a><h4>Returns</h4>
+<a name="g-ptr-array-new.returns"></a><h4>Returns</h4>
 <p> the new <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a></p>
 </div>
 </div>
@@ -300,7 +300,7 @@ and a reference count of 1. This avoids frequent reallocation, if
 you are going to add many pointers to the array. Note however that
 the size of the array is still 0.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.3.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-sized-new.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -315,7 +315,7 @@ the size of the array is still 0.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.3.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-sized-new.returns"></a><h4>Returns</h4>
 <p> the new <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a></p>
 </div>
 </div>
@@ -331,7 +331,7 @@ either via <a class="link" href="glib-Pointer-Arrays.html#g-ptr-array-unref" tit
 <em class="parameter"><code>free_segment</code></em>
  set to <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> or when removing elements.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.4.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-new-with-free-func.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -348,7 +348,7 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.4.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-new-with-free-func.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
@@ -370,7 +370,7 @@ for freeing each element when the array is destroyed either via
 <em class="parameter"><code>free_segment</code></em>
  set to <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> or when removing elements.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.5.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-new-full.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -394,7 +394,7 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.5.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-new-full.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
@@ -411,7 +411,7 @@ either via <a class="link" href="glib-Pointer-Arrays.html#g-ptr-array-unref" tit
 with <em class="parameter"><code>free_segment</code></em>
  set to <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> or when removing elements.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.6.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-set-free-func.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -445,7 +445,7 @@ g_ptr_array_ref (<em class="parameter"><code><a class="link" href="glib-Pointer-
  by one.
 This function is thread-safe and may be called from any thread.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.7.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-ref.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -460,7 +460,7 @@ This function is thread-safe and may be called from any thread.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.7.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-ref.returns"></a><h4>Returns</h4>
 <p> The passed in <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
@@ -477,7 +477,7 @@ reference count drops to 0, the effect is the same as calling
  set to <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>. This function
 is MT-safe and may be called from any thread.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.8.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-unref.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -502,7 +502,7 @@ g_ptr_array_add (<em class="parameter"><code><a class="link" href="glib-Pointer-
 <p>Adds a pointer to the end of the pointer array. The array will grow
 in size automatically if necessary.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.9.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-add.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -534,7 +534,7 @@ g_ptr_array_insert (<em class="parameter"><code><a class="link" href="glib-Point
 <p>Inserts an element into the pointer array at the given index. The 
 array will grow in size automatically if necessary.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.10.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-insert.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -576,7 +576,7 @@ removed element.</p>
 <p>It returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the pointer was removed, or <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if the
 pointer was not found.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.11.6"></a><h4>Parameters</h4>
+<a name="g-ptr-array-remove.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -598,7 +598,7 @@ pointer was not found.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.11.7"></a><h4>Returns</h4>
+<a name="g-ptr-array-remove.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the pointer is removed, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if the pointer
 is not found in the array</p>
 </div>
@@ -615,7 +615,7 @@ The following elements are moved down one place. If <em class="parameter"><code>
 a non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> function it is called for the removed
 element.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.12.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-remove-index.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -637,7 +637,7 @@ element.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.12.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-remove-index.returns"></a><h4>Returns</h4>
 <p> the pointer which was removed</p>
 </div>
 </div>
@@ -656,7 +656,7 @@ is faster than <a class="link" href="glib-Pointer-Arrays.html#g-ptr-array-remove
 <p>It returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the pointer was removed, or <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if the
 pointer was not found.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.13.6"></a><h4>Parameters</h4>
+<a name="g-ptr-array-remove-fast.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -678,7 +678,7 @@ pointer was not found.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.13.7"></a><h4>Returns</h4>
+<a name="g-ptr-array-remove-fast.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the pointer was found in the array</p>
 </div>
 </div>
@@ -695,7 +695,7 @@ is faster than <a class="link" href="glib-Pointer-Arrays.html#g-ptr-array-remove
  has a non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 <a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> function it is called for the removed element.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.14.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-remove-index-fast.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -717,7 +717,7 @@ is faster than <a class="link" href="glib-Pointer-Arrays.html#g-ptr-array-remove
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.14.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-remove-index-fast.returns"></a><h4>Returns</h4>
 <p> the pointer which was removed</p>
 </div>
 </div>
@@ -734,7 +734,7 @@ gap. If <em class="parameter"><code>array</code></em>
  has a non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> function it is
 called for the removed elements.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.15.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-remove-range.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -762,7 +762,7 @@ called for the removed elements.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.15.6"></a><h4>Returns</h4>
+<a name="g-ptr-array-remove-range.returns"></a><h4>Returns</h4>
 <p> the <em class="parameter"><code>array</code></em>
 </p>
 </div>
@@ -784,7 +784,7 @@ take the pointers from the array as arguments, it takes pointers to
 the pointers in the array.</p>
 <p>This is guaranteed to be a stable sort since version 2.32.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.16.7"></a><h4>Parameters</h4>
+<a name="g-ptr-array-sort.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -820,7 +820,7 @@ doesn't take the pointers from the array as arguments, it takes
 pointers to the pointers in the array.</p>
 <p>This is guaranteed to be a stable sort since version 2.32.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.17.7"></a><h4>Parameters</h4>
+<a name="g-ptr-array-sort-with-data.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -860,7 +860,7 @@ if <em class="parameter"><code>array</code></em>
  has a non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> function then it will be
 called for the removed elements.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.18.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-set-size.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -891,7 +891,7 @@ called for the removed elements.</p>
 ,
 so you are responsible for checking it against the array length.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.19.6"></a><h4>Parameters</h4>
+<a name="g-ptr-array-index.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -913,7 +913,7 @@ so you are responsible for checking it against the array length.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.19.7"></a><h4>Returns</h4>
+<a name="g-ptr-array-index.returns"></a><h4>Returns</h4>
 <p> the pointer at the given index</p>
 </div>
 </div>
@@ -938,7 +938,7 @@ be freed separately if <em class="parameter"><code>free_seg</code></em>
 function has been set for <em class="parameter"><code>array</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.20.6"></a><h4>Parameters</h4>
+<a name="g-ptr-array-free.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -960,7 +960,7 @@ function has been set for <em class="parameter"><code>array</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.11.7.20.7"></a><h4>Returns</h4>
+<a name="g-ptr-array-free.returns"></a><h4>Returns</h4>
 <p> the pointer array if <em class="parameter"><code>free_seg</code></em>
 is <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>, otherwise <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
 The pointer array should be freed using <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>.</p>
@@ -975,7 +975,7 @@ g_ptr_array_foreach (<em class="parameter"><code><a class="link" href="glib-Poin
                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Calls a function for each element of a <a class="link" href="glib-Pointer-Arrays.html#GPtrArray" title="struct GPtrArray"><span class="type">GPtrArray</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.11.7.21.5"></a><h4>Parameters</h4>
+<a name="g-ptr-array-foreach.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1015,7 +1015,7 @@ g_ptr_array_foreach (<em class="parameter"><code><a class="link" href="glib-Poin
 </pre>
 <p>Contains the public fields of a pointer array.</p>
 <div class="refsect3">
-<a name="id-1.6.11.8.2.5"></a><h4>Members</h4>
+<a name="GPtrArray.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
@@ -1041,6 +1041,6 @@ array grows</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

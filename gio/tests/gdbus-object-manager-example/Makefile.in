@@ -549,6 +549,8 @@ LIBELF_CFLAGS = @LIBELF_CFLAGS@
 LIBELF_LIBS = @LIBELF_LIBS@
 LIBFFI_CFLAGS = @LIBFFI_CFLAGS@
 LIBFFI_LIBS = @LIBFFI_LIBS@
+LIBMOUNT_CFLAGS = @LIBMOUNT_CFLAGS@
+LIBMOUNT_LIBS = @LIBMOUNT_LIBS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -682,7 +684,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -1255,17 +1256,6 @@ $(TEST_SUITE_LOG): $(TEST_LOGS)
 	  echo "$$col$$br$$std";					\
 	fi;								\
 	$$success || exit 1
-
-check-TESTS:
-	@list='$(RECHECK_LOGS)';           test -z "$$list" || rm -f $$list
-	@list='$(RECHECK_LOGS:.log=.trs)'; test -z "$$list" || rm -f $$list
-	@test -z "$(TEST_SUITE_LOG)" || rm -f $(TEST_SUITE_LOG)
-	@set +e; $(am__set_TESTS_bases); \
-	log_list=`for i in $$bases; do echo $$i.log; done`; \
-	trs_list=`for i in $$bases; do echo $$i.trs; done`; \
-	log_list=`echo $$log_list`; trs_list=`echo $$trs_list`; \
-	$(MAKE) $(AM_MAKEFLAGS) $(TEST_SUITE_LOG) TEST_LOGS="$$log_list"; \
-	exit $$?;
 recheck: all $(check_LTLIBRARIES) $(check_PROGRAMS) $(check_SCRIPTS) $(check_DATA)
 	@test -z "$(TEST_SUITE_LOG)" || rm -f $(TEST_SUITE_LOG)
 	@set +e; $(am__set_TESTS_bases); \
@@ -1529,6 +1519,8 @@ $(GDBUS_GENERATED) : gdbus-example-objectmanager.xml Makefile $(top_builddir)/gi
 		--generate-docbook gdbus-example-objectmanager-generated \
 		$< \
 		$(NULL)
+
+check-TESTS:
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

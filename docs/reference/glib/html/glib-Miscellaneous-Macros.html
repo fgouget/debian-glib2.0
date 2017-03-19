@@ -8,7 +8,7 @@
 <link rel="up" href="glib-fundamentals.html" title="GLib Fundamentals">
 <link rel="prev" href="glib-Numerical-Definitions.html" title="Numerical Definitions">
 <link rel="next" href="glib-Atomic-Operations.html" title="Atomic Operations">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -165,10 +165,6 @@
 <a class="link" href="glib-Miscellaneous-Macros.html#G-UNLIKELY:CAPS" title="G_UNLIKELY()">G_UNLIKELY</a><span class="c_punctuation">()</span>
 </td>
 </tr>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="glib-Miscellaneous-Macros.html#G-STRFUNC:CAPS" title="G_STRFUNC">G_STRFUNC</a></td>
-</tr>
 </tbody>
 </table></div>
 </div>
@@ -280,6 +276,10 @@
 <td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="glib-Miscellaneous-Macros.html#G-STRLOC:CAPS" title="G_STRLOC">G_STRLOC</a></td>
 </tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="glib-Miscellaneous-Macros.html#G-STRFUNC:CAPS" title="G_STRFUNC">G_STRFUNC</a></td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -365,7 +365,7 @@ for non-error cases.</p>
 initialiser or by ensuring that an _init function will be called on
 it unconditionally before it goes out of scope.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.2.13"></a><h4>Parameters</h4>
+<a name="g-auto.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -460,7 +460,7 @@ initialiser or by ensuring that it is assigned to unconditionally
 before it goes out of scope.</p>
 <p>See also <a class="link" href="glib-Miscellaneous-Macros.html#g-auto" title="g_auto()"><code class="function">g_auto()</code></a>, <a class="link" href="glib-Miscellaneous-Macros.html#g-autofree" title="g_autofree"><code class="function">g_autofree()</code></a> and <a class="link" href="glib-Memory-Allocation.html#g-steal-pointer" title="g_steal_pointer ()"><code class="function">g_steal_pointer()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.3.14"></a><h4>Parameters</h4>
+<a name="g-autoptr.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -503,7 +503,7 @@ type.</p>
 <p>This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.4.11"></a><h4>Parameters</h4>
+<a name="G-DEFINE-AUTOPTR-CLEANUP-FUNC.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -550,7 +550,7 @@ where cleanup is not supported.</p>
 <p>This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.5.10"></a><h4>Parameters</h4>
+<a name="G-DEFINE-AUTO-CLEANUP-CLEAR-FUNC.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -604,7 +604,7 @@ contain this value then the free function will not be called.</p>
 <p>This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.6.11"></a><h4>Parameters</h4>
+<a name="G-DEFINE-AUTO-CLEANUP-FREE-FUNC.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -641,7 +641,7 @@ where cleanup is not supported.</p>
 because this macro may use <code class="function">memmove()</code> and GLib does not include
 string.h for you.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.7.6"></a><h4>Parameters</h4>
+<a name="G-VA-COPY.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -699,7 +699,7 @@ preprocessor argument expansion. For example, the following code:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.8.10"></a><h4>Parameters</h4>
+<a name="G-STRINGIFY.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -762,7 +762,7 @@ GdkColor <span class="gtkdoc opt">*</span>favourite <span class="gtkdoc opt">=</
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.9.10"></a><h4>Parameters</h4>
+<a name="G-PASTE.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -799,7 +799,7 @@ a variable declaration is allowed. For this reason, you should
 not use <a class="link" href="glib-Miscellaneous-Macros.html#G-STATIC-ASSERT:CAPS" title="G_STATIC_ASSERT()"><code class="function">G_STATIC_ASSERT()</code></a> in the middle of blocks of code.</p>
 <p>The macro should only be used once per source code line.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.10.7"></a><h4>Parameters</h4>
+<a name="G-STATIC-ASSERT.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -842,7 +842,7 @@ it as the first argument of a comma expression.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.11.8"></a><h4>Parameters</h4>
+<a name="G-STATIC-ASSERT-EXPR.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -895,7 +895,7 @@ by the <em class="parameter"><code>xth</code></em>
 semicolon.</p>
 <p>See the GNU C documentation for more details.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.13.7"></a><h4>Parameters</h4>
+<a name="G-GNUC-ALLOC-SIZE.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -924,7 +924,7 @@ function parameters.</p>
 semicolon.</p>
 <p>See the GNU C documentation for more details.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.14.7"></a><h4>Parameters</h4>
+<a name="G-GNUC-ALLOC-SIZE2.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -961,7 +961,7 @@ custom deprecation messages.</p>
 You can enclose it in quotes to prevent this. (The quotes will show up
 in the warning, but it's better than showing the macro expansion.)</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.15.8"></a><h4>Parameters</h4>
+<a name="G-GNUC-DEPRECATED-FOR.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1008,7 +1008,7 @@ semicolon.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.16.9"></a><h4>Parameters</h4>
+<a name="G-GNUC-PRINTF.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1041,7 +1041,7 @@ arguments, with the same syntax as <code class="function">scanf()</code>. It all
 to type-check the arguments passed to the function.</p>
 <p>See the GNU C documentation for details.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.17.6"></a><h4>Parameters</h4>
+<a name="G-GNUC-SCANF.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1091,7 +1091,7 @@ semicolon.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.18.9"></a><h4>Parameters</h4>
+<a name="G-GNUC-FORMAT.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1116,7 +1116,7 @@ functions declarations as deprecated. Unlike <a class="link" href="glib-Miscella
 is meant to be portable across different compilers and must be placed
 before the function declaration.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.19.5"></a><h4>Parameters</h4>
+<a name="G-DEPRECATED-FOR.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1141,7 +1141,7 @@ before the function declaration.</p>
 It must be placed before the function declaration. Use of a function
 that has been annotated with this macros will produce a compiler warning.</p>
 <div class="refsect3">
-<a name="id-1.3.9.7.20.5"></a><h4>Parameters</h4>
+<a name="G-UNAVAILABLE.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1186,7 +1186,7 @@ a true value. The compiler may use this information for optimizations.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.21.7"></a><h4>Parameters</h4>
+<a name="G-LIKELY.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1201,7 +1201,7 @@ a true value. The compiler may use this information for optimizations.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.9.7.21.8"></a><h4>Returns</h4>
+<a name="G-LIKELY.returns"></a><h4>Returns</h4>
 <p> the value of <em class="parameter"><code>expr</code></em>
 </p>
 </div>
@@ -1229,7 +1229,7 @@ a true value. The compiler may use this information for optimizations.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.3.9.7.22.7"></a><h4>Parameters</h4>
+<a name="G-UNLIKELY.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1244,19 +1244,11 @@ a true value. The compiler may use this information for optimizations.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.9.7.22.8"></a><h4>Returns</h4>
+<a name="G-UNLIKELY.returns"></a><h4>Returns</h4>
 <p> the value of <em class="parameter"><code>expr</code></em>
 </p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="G-STRFUNC:CAPS"></a><h3>G_STRFUNC</h3>
-<pre class="programlisting">#define G_STRFUNC     ((const char*) (__PRETTY_FUNCTION__))
-</pre>
-<p>Expands to a string identifying the current function.</p>
-<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -1312,9 +1304,9 @@ supported on GCC and clang, the variable must be initialized, etc.</p>
 
   membuf <span class="gtkdoc opt">=</span> <span class="function"><a href="glib-Memory-Allocation.html#g-malloc">g_malloc</a></span> <span class="gtkdoc opt">(</span><span class="number">8192</span><span class="gtkdoc opt">);</span>
 
-  <span class="comment">/* Some computation on membuf */</span>
+  <span class="gtkdoc opt">/&lt;!-- --&gt;*</span> Some computation on membuf <span class="gtkdoc opt">*&lt;!-- --&gt;/</span>
 
-  <span class="comment">/* membuf will be automatically freed here */</span>
+  <span class="gtkdoc opt">/&lt;!-- --&gt;*</span> membuf will be automatically freed here <span class="gtkdoc opt">*&lt;!-- --&gt;/</span>
   <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
 <span class="gtkdoc opt">}</span></pre></td>
       </tr>
@@ -1619,9 +1611,17 @@ before the function declaration.</p>
 </pre>
 <p>Expands to a string identifying the current code position.</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="G-STRFUNC:CAPS"></a><h3>G_STRFUNC</h3>
+<pre class="programlisting">#define G_STRFUNC     ((const char*) (__PRETTY_FUNCTION__))
+</pre>
+<p>Expands to a string identifying the current function.</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
+</div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

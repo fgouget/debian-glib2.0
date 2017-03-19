@@ -8,7 +8,7 @@
 <link rel="up" href="migrating.html" title="Part III. Migrating to GIO">
 <link rel="prev" href="ch32.html" title="Migrating from POSIX to GIO">
 <link rel="next" href="ch33s02.html" title="Operations on multiple files">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -164,10 +164,10 @@
   <span class="keyword">switch</span> <span class="gtkdoc opt">(</span>event_type<span class="gtkdoc opt">)</span>
   <span class="gtkdoc opt">{</span>
   <span class="keyword">case</span> G_FILE_MONITOR_EVENT_DELETED<span class="gtkdoc opt">:</span>
-    <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;'%s' removed from trash</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="GFile.html#g-file-get-basename">g_file_get_basename</a></span> <span class="gtkdoc opt">(</span>child<span class="gtkdoc opt">));</span>
+    <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;&apos;%s&apos; removed from trash</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="GFile.html#g-file-get-basename">g_file_get_basename</a></span> <span class="gtkdoc opt">(</span>child<span class="gtkdoc opt">));</span>
     <span class="keyword">break</span><span class="gtkdoc opt">;</span>
   <span class="keyword">case</span> G_FILE_MONITOR_EVENT_CREATED<span class="gtkdoc opt">:</span>
-    <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;'%s' added to trash</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="GFile.html#g-file-get-basename">g_file_get_basename</a></span> <span class="gtkdoc opt">(</span>child<span class="gtkdoc opt">));</span>
+    <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;&apos;%s&apos; added to trash</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="GFile.html#g-file-get-basename">g_file_get_basename</a></span> <span class="gtkdoc opt">(</span>child<span class="gtkdoc opt">));</span>
     <span class="keyword">break</span><span class="gtkdoc opt">;</span>
   <span class="keyword">default</span><span class="gtkdoc opt">: ;</span>
   <span class="gtkdoc opt">}</span>
@@ -181,9 +181,9 @@
 
   file <span class="gtkdoc opt">=</span> <span class="function"><a href="GFile.html#g-file-new-for-uri">g_file_new_for_uri</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;trash://&quot;</span><span class="gtkdoc opt">);</span>
   monitor <span class="gtkdoc opt">=</span> <span class="function"><a href="GFile.html#g-file-monitor-directory">g_file_monitor_directory</a></span> <span class="gtkdoc opt">(</span>file<span class="gtkdoc opt">,</span> <span class="number">0</span><span class="gtkdoc opt">,</span> NULL<span class="gtkdoc opt">,</span> NULL<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span> <span class="gtkdoc opt">(</span>file<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span> <span class="gtkdoc opt">(</span>file<span class="gtkdoc opt">);</span>
 
-  <span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#g-signal-connect">g_signal_connect</a></span> <span class="gtkdoc opt">(</span>monitor<span class="gtkdoc opt">,</span> <span class="string">&quot;changed&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#G-CALLBACK:CAPS">G_CALLBACK</a></span> <span class="gtkdoc opt">(</span>file_changed<span class="gtkdoc opt">),</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../gobject-Signals.html#g-signal-connect">g_signal_connect</a></span> <span class="gtkdoc opt">(</span>monitor<span class="gtkdoc opt">,</span> <span class="string">&quot;changed&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="../gobject-Closures.html#G-CALLBACK:CAPS">G_CALLBACK</a></span> <span class="gtkdoc opt">(</span>file_changed<span class="gtkdoc opt">),</span> NULL<span class="gtkdoc opt">);</span>
 
   <span class="comment">/* ... */</span>
 
@@ -204,13 +204,13 @@
       </p>
 <p>
         Moving a file to the trash is much simpler with GIO. Instead of
-        using <a href="/usr/share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-2.0-gnome-vfs-directory-find-ops.html#gnome-vfs-find-directory"><code class="function">gnome_vfs_find_directory()</code></a> with <a href="/usr/share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-2.0-gnome-vfs-directory-find-ops.html#GNOME-VFS-DIRECTORY-KIND-TRASH:CAPS"><code class="literal">GNOME_VFS_DIRECTORY_KIND_TRASH</code></a> 
+        using <code class="function">gnome_vfs_find_directory()</code> with <code class="literal">GNOME_VFS_DIRECTORY_KIND_TRASH</code> 
         to find out where to move the trashed file, just use the <a class="link" href="GFile.html#g-file-trash" title="g_file_trash ()"><code class="function">g_file_trash()</code></a>
         function.
       </p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

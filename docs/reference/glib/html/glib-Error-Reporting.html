@@ -7,8 +7,8 @@
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-core.html" title="GLib Core Application Support">
 <link rel="prev" href="glib-IO-Channels.html" title="IO Channels">
-<link rel="next" href="glib-Warnings-and-Assertions.html" title="Message Output and Debugging Functions">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="next" href="glib-Warnings-and-Assertions.html" title="Warnings and Assertions">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -691,7 +691,7 @@ g_error_new (<em class="parameter"><code><a class="link" href="glib-Quarks.html#
 and a message formatted with <em class="parameter"><code>format</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.2.5"></a><h4>Parameters</h4>
+<a name="g-error-new.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -723,7 +723,7 @@ and a message formatted with <em class="parameter"><code>format</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.7.2.6"></a><h4>Returns</h4>
+<a name="g-error-new.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a></p>
 </div>
 </div>
@@ -741,7 +741,7 @@ not a <code class="function">printf()</code>-style format string. Use this funct
  contains text you don't have control over,
 that could include <code class="function">printf()</code> escape sequences.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.3.5"></a><h4>Parameters</h4>
+<a name="g-error-new-literal.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -768,7 +768,7 @@ that could include <code class="function">printf()</code> escape sequences.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.7.3.6"></a><h4>Returns</h4>
+<a name="g-error-new-literal.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a></p>
 </div>
 </div>
@@ -786,7 +786,7 @@ g_error_new_valist (<em class="parameter"><code><a class="link" href="glib-Quark
 and a message formatted with <em class="parameter"><code>format</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.4.5"></a><h4>Parameters</h4>
+<a name="g-error-new-valist.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -818,7 +818,7 @@ and a message formatted with <em class="parameter"><code>format</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.7.4.6"></a><h4>Returns</h4>
+<a name="g-error-new-valist.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
@@ -830,7 +830,7 @@ and a message formatted with <em class="parameter"><code>format</code></em>
 g_error_free (<em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> *error</code></em>);</pre>
 <p>Frees a <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> and associated resources.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.5.5"></a><h4>Parameters</h4>
+<a name="g-error-free.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -853,7 +853,7 @@ g_error_copy (<em class="parameter"><code>const <a class="link" href="glib-Error
 <p>Makes a copy of <em class="parameter"><code>error</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.6.5"></a><h4>Parameters</h4>
+<a name="g-error-copy.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -868,7 +868,7 @@ g_error_copy (<em class="parameter"><code>const <a class="link" href="glib-Error
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.7.6.6"></a><h4>Returns</h4>
+<a name="g-error-copy.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a></p>
 </div>
 </div>
@@ -894,7 +894,7 @@ equivalent to the <code class="literal">FAILED</code> code. This way, if the dom
 extended in the future to provide a more specific error code for
 a certain case, your code will still work.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.7.6"></a><h4>Parameters</h4>
+<a name="g-error-matches.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -921,7 +921,7 @@ a certain case, your code will still work.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.7.7.7"></a><h4>Returns</h4>
+<a name="g-error-matches.returns"></a><h4>Returns</h4>
 <p> whether <em class="parameter"><code>error</code></em>
 has <em class="parameter"><code>domain</code></em>
 and <em class="parameter"><code>code</code></em>
@@ -944,7 +944,7 @@ g_set_error (<em class="parameter"><code><a class="link" href="glib-Error-Report
 must be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. A new <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> is created and assigned to *<em class="parameter"><code>err</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.8.5"></a><h4>Parameters</h4>
+<a name="g-set-error.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1002,7 +1002,7 @@ Use this function if <em class="parameter"><code>message</code></em>
  contains text you don't have control over,
 that could include <code class="function">printf()</code> escape sequences.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.9.5"></a><h4>Parameters</h4>
+<a name="g-set-error-literal.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1055,7 +1055,7 @@ The error variable <em class="parameter"><code>dest</code></em>
 to keep using the same GError*, you need to set it to <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 after calling this function on it.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.10.7"></a><h4>Parameters</h4>
+<a name="g-propagate-error.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1089,7 +1089,7 @@ calls <a class="link" href="glib-Error-Reporting.html#g-error-free" title="g_err
  and sets *<em class="parameter"><code>err</code></em>
  to <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.11.5"></a><h4>Parameters</h4>
+<a name="g-clear-error.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1121,7 +1121,7 @@ nothing.</p>
 error condition) then also do nothing. Whether or not it makes sense
 to take advantage of this feature is up to you.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.12.6"></a><h4>Parameters</h4>
+<a name="g-prefix-error.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1167,7 +1167,7 @@ g_propagate_prefixed_error (<em class="parameter"><code><a class="link" href="gl
  must be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. After the move, add a prefix as with
 <a class="link" href="glib-Error-Reporting.html#g-prefix-error" title="g_prefix_error ()"><code class="function">g_prefix_error()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.10.7.13.5"></a><h4>Parameters</h4>
+<a name="g-propagate-prefixed-error.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1215,7 +1215,7 @@ g_propagate_prefixed_error (<em class="parameter"><code><a class="link" href="gl
 <p>The <code class="literal">GError</code> structure contains information about
 an error that has occurred.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.2.5"></a><h4>Members</h4>
+<a name="GError.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
@@ -1245,6 +1245,6 @@ an error that has occurred.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

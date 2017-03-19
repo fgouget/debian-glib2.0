@@ -159,8 +159,7 @@ TESTS = $(am__EXEEXT_1)
 @ENABLE_DTRACE_TRUE@am__append_16 = gobject_probes.h gobject_probes.lo
 @ENABLE_DTRACE_TRUE@am__append_17 = gobject_probes.h
 @ENABLE_DTRACE_TRUE@am__append_18 = gobject_probes.lo
-@ENABLE_SYSTEMTAP_TRUE@am__append_19 = $(tapset_in_files)
-@ENABLE_SYSTEMTAP_TRUE@am__append_20 = $(tapset_in_files:.stp.in=.stp)
+@ENABLE_SYSTEMTAP_TRUE@am__append_19 = $(tapset_DATA)
 bin_PROGRAMS = gobject-query$(EXEEXT) glib-genmarshal$(EXEEXT)
 subdir = gobject
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -645,6 +644,8 @@ LIBELF_CFLAGS = @LIBELF_CFLAGS@
 LIBELF_LIBS = @LIBELF_LIBS@
 LIBFFI_CFLAGS = @LIBFFI_CFLAGS@
 LIBFFI_LIBS = @LIBFFI_LIBS@
+LIBMOUNT_CFLAGS = @LIBMOUNT_CFLAGS@
+LIBMOUNT_LIBS = @LIBMOUNT_LIBS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -778,7 +779,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -798,7 +798,7 @@ NULL =
 BUILT_SOURCES = $(am__append_16)
 BUILT_EXTRA_DIST = makefile.msc gobject.rc
 CLEANFILES = *.log *.trs $(am__append_14) $(am__append_17) \
-	$(am__append_20) gobject-public-headers.txt $(gen_sources) \
+	$(am__append_19) gobject-public-headers.txt $(gen_sources) \
 	libgobject-gdb.py
 DISTCLEANFILES = 
 MAINTAINERCLEANFILES = 
@@ -807,7 +807,7 @@ MAINTAINERCLEANFILES =
 # auxillary files
 #
 EXTRA_DIST = $(all_dist_test_scripts) $(all_dist_test_data) \
-	$(am__append_19) $(gobject_private_h_sources) \
+	gobject.stp.in $(gobject_private_h_sources) \
 	$(gobject_extra_sources) marshal-genstrings.pl makefile.msc.in \
 	gobject.rc.in libgobject-gdb.py.in glib-mkenums.in
 
@@ -975,11 +975,8 @@ gobject_c_sources = \
 	gvaluetransform.c	\
 	gvaluetypes.c
 
-@ENABLE_DTRACE_TRUE@DTCOMPILE = $(patsubst -W%,,$(LTCOMPILE))
-@ENABLE_DTRACE_TRUE@DTCFLAGS = $(patsubst -W%,,$(CFLAGS))
-@ENABLE_SYSTEMTAP_TRUE@tapset_in_files = gobject.stp.in
-@ENABLE_SYSTEMTAP_TRUE@tapsetdir = @ABS_TAPSET_DIR@
-@ENABLE_SYSTEMTAP_TRUE@tapset_DATA = $(tapset_in_files:.stp.in=.stp)
+tapsetdir = @ABS_TAPSET_DIR@
+@ENABLE_SYSTEMTAP_TRUE@tapset_DATA = libgobject-2.0.so.0.@LT_CURRENT@.@LT_REVISION@.stp
 
 # non-header sources (headers should be specified in the above variables)
 # that don't serve as direct make target sources, i.e. they don't have
@@ -1037,7 +1034,7 @@ _headers_destdir = $(subst /,\\,$(_headers_dest_posix))
 
 # install gdb scripts
 gdbdir = $(datadir)/glib-2.0/gdb
-dist_gdb_SCRIPTS = gobject.py
+dist_gdb_SCRIPTS = gobject_gdb.py
 @HAVE_GLIB_RUNTIME_LIBDIR_FALSE@ABS_GLIB_RUNTIME_LIBDIR = $(libdir)
 @HAVE_GLIB_RUNTIME_LIBDIR_TRUE@ABS_GLIB_RUNTIME_LIBDIR = $(realpath $(libdir)/$(GLIB_RUNTIME_LIBDIR))
 all: $(BUILT_SOURCES)
@@ -2208,12 +2205,15 @@ uninstall-ms-lib:
 
 @ENABLE_DTRACE_TRUE@gobject_probes.h: gobject_probes.d
 @ENABLE_DTRACE_TRUE@	$(AM_V_GEN) $(DTRACE) -C -h -s $< -o $@.tmp
-@ENABLE_DTRACE_TRUE@	@$(SED) -e "s,define STAP_HAS_SEMAPHORES 1,undef STAP_HAS_SEMAPHORES," < $@.tmp > $@ && rm -f $@.tmp
+@ENABLE_DTRACE_TRUE@	@$(SED) \
+@ENABLE_DTRACE_TRUE@		-e "s,define STAP_HAS_SEMAPHORES 1,undef STAP_HAS_SEMAPHORES," \
+@ENABLE_DTRACE_TRUE@		-e "s,define _SDT_HAS_SEMAPHORES 1,undef _SDT_HAS_SEMAPHORES," \
+@ENABLE_DTRACE_TRUE@		< $@.tmp > $@ && rm -f $@.tmp
 
 @ENABLE_DTRACE_TRUE@gobject_probes.lo: gobject_probes.d
-@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) env CC="$(DTCOMPILE)" CFLAGS="$(DTCFLAGS)" $(DTRACE) -G -s $< -o $@
+@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) $(LIBTOOL) --mode=compile $(AM_V_lt) --tag=CC $(DTRACE) -G -s $< -o $@
 
-@ENABLE_SYSTEMTAP_TRUE@$(tapset_DATA): %.stp: %.stp.in Makefile
+@ENABLE_SYSTEMTAP_TRUE@$(tapset_DATA): gobject.stp.in Makefile
 @ENABLE_SYSTEMTAP_TRUE@	$(AM_V_GEN)$(SED) \
 @ENABLE_SYSTEMTAP_TRUE@		-e 's|[@]ABS_GLIB_RUNTIME_LIBDIR[@]|$(ABS_GLIB_RUNTIME_LIBDIR)|g' \
 @ENABLE_SYSTEMTAP_TRUE@		-e 's|[@]LT_CURRENT[@]|$(LT_CURRENT)|g' \
@@ -2263,10 +2263,16 @@ $(1).sourcefiles: $(top_builddir)/build/win32/vs9/$(1).vcproj
 $(1).vs10.sourcefiles: $(top_builddir)/build/win32/vs9/$(1).vcproj
 $(1).vs10.sourcefiles.filters: $(top_builddir)/build/win32/vs9/$(1).vcproj
 
-$(top_builddir)/build/win32/vs9/$(1).vcproj:
+$(top_builddir)/build/win32/vs9/$(1).vcproj: Makefile
 	-$(RM) $(top_builddir)/build/win32/vs9/$(1).vcproj
 	-$(RM) $(top_builddir)/build/win32/vs10/$(1).vcxproj
 	-$(RM) $(top_builddir)/build/win32/vs10/$(1).vcxproj.filters
+	-$(RM) $(top_builddir)/build/win32/vs11/$(1).vcxproj
+	-$(RM) $(top_builddir)/build/win32/vs11/$(1).vcxproj.filters
+	-$(RM) $(top_builddir)/build/win32/vs12/$(1).vcxproj
+	-$(RM) $(top_builddir)/build/win32/vs12/$(1).vcxproj.filters
+	-$(RM) $(top_builddir)/build/win32/vs14/$(1).vcxproj
+	-$(RM) $(top_builddir)/build/win32/vs14/$(1).vcxproj.filters
 
 	for F in $(_proj_files); do \
 		case $$$$F in \
@@ -2289,7 +2295,7 @@ $(top_builddir)/build/win32/vs9/$(1).vcproj:
 
 $(top_builddir)/build/win32/vs10/$(1).vs10.headers: $(top_builddir)/build/win32/vs9/$(1).headers
 
-$(top_builddir)/build/win32/vs9/$(1).headers:
+$(top_builddir)/build/win32/vs9/$(1).headers: Makefile
 	-$(RM) $(top_builddir)/build/win32/vs9/$(1).headers
 	-$(RM) $(top_builddir)/build/win32/vs10/$(1).vs10.headers
 

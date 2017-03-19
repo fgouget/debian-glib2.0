@@ -30,9 +30,9 @@ m4_define(glib_configure_ac)
 # <mclasen> on the unstable (ie master), interface age = 0
 
 m4_define([glib_major_version], [2])
-m4_define([glib_minor_version], [48])
-m4_define([glib_micro_version], [0])
-m4_define([glib_interface_age], [0])
+m4_define([glib_minor_version], [50])
+m4_define([glib_micro_version], [3])
+m4_define([glib_interface_age], [3])
 m4_define([glib_binary_age],
           [m4_eval(100 * glib_minor_version + glib_micro_version)])
 m4_define([glib_version],
@@ -125,6 +125,7 @@ case "$host" in
   *-*-mingw*)
     glib_native_win32=yes
     glib_pid_type='void *'
+    glib_pid_format='p'
     glib_pollfd_format='%#x'
     glib_cv_stack_grows=no
     # Unfortunately the mingw implementations of C99-style snprintf and vsnprintf
@@ -148,6 +149,7 @@ case "$host" in
   *)
     glib_native_win32=no
     glib_pid_type=int
+    glib_pid_format='i'
     glib_pollfd_format='%d'
     ;;
 esac
@@ -709,7 +711,8 @@ AC_CHECK_HEADERS([sys/param.h sys/resource.h mach/mach_time.h])
 AC_CHECK_HEADERS([sys/select.h stdint.h inttypes.h sched.h malloc.h])
 AC_CHECK_HEADERS([sys/vfs.h sys/vmount.h sys/statfs.h sys/statvfs.h sys/filio.h])
 AC_CHECK_HEADERS([mntent.h sys/mnttab.h sys/vfstab.h sys/mntctl.h fstab.h])
-AC_CHECK_HEADERS([linux/magic.h sys/prctl.h])
+AC_CHECK_HEADERS([linux/magic.h])
+AC_CHECK_HEADERS([termios.h])
 
 # Some versions of MSC lack these
 AC_CHECK_HEADERS([dirent.h sys/time.h])
@@ -1064,7 +1067,7 @@ AS_IF([test "$ac_cv_func_statfs" = yes], [
   #ifdef HAVE_SYS_STATFS_H
   #include <sys/statfs.h>
   #endif], [struct statfs st;
-  statfs(NULL, &st);],[
+  statfs("/", &st);],[
     AC_MSG_RESULT([2])
     AC_DEFINE(STATFS_ARGS, 2, [Number of arguments to statfs()])],[
     AC_TRY_COMPILE([#include <unistd.h>
@@ -1080,7 +1083,7 @@ AS_IF([test "$ac_cv_func_statfs" = yes], [
   #ifdef HAVE_SYS_STATFS_H
   #include <sys/statfs.h>
   #endif], [struct statfs st;
-  statfs(NULL, &st, sizeof (st), 0);],[
+  statfs("/", &st, sizeof (st), 0);],[
       AC_MSG_RESULT([4])
       AC_DEFINE(STATFS_ARGS, 4, [Number of arguments to statfs()])],[
       AC_MSG_RESULT(unknown)
@@ -1728,6 +1731,40 @@ if test x$have_libelf = xyes; then
   AC_DEFINE(HAVE_LIBELF, 1, [Define if libelf is available])
 fi
 
+dnl ************************
+dnl *** check for libmount ***
+dnl ************************
+
+dnl The fallback code doesn't really implement the same behaviors - e.g.
+dnl so on linux we want to require libmount unless specifically disabled
+dnl
+enable_libmount_default=${glib_os_linux:-no}
+AC_ARG_ENABLE(libmount,
+              [AS_HELP_STRING([--enable-libmount],
+                              [build with libmount support [default for Linux]])],,
+              [enable_libmount=$enable_libmount_default])
+AS_IF([ test "x$enable_libmount" = "xyes"],[
+PKG_CHECK_MODULES([LIBMOUNT], [mount >= 2.28], [have_libmount=yes], [have_libmount=maybe])
+AS_IF([ test $have_libmount = maybe ], [
+  glib_save_LIBS=$LIBS
+  AC_CHECK_HEADER([libmount/libmount.h], [:], [have_libmount=no])
+  LIBS=$glib_save_LIBS
+
+  if test $have_libmount != no; then
+    LIBMOUNT_LIBS=-lmount
+    have_libmount=yes
+  fi
+])
+if test $have_libmount = no ; then
+   AC_MSG_ERROR([*** Could not find libmount])
+fi
+])
+
+if test x$have_libmount = xyes; then
+  AC_DEFINE(HAVE_LIBMOUNT, 1, [Define if libmount is available])
+fi
+AM_CONDITIONAL(HAVE_LIBMOUNT, [test x$have_libmount = xyes])
+
 dnl ****************************************
 dnl *** platform dependent source checks ***
 dnl ****************************************
@@ -2094,6 +2131,16 @@ AS_IF([ test x"$have_threads" = xposix], [
             [AC_MSG_RESULT(yes)
              AC_DEFINE(HAVE_PTHREAD_SETNAME_NP_WITHOUT_TID,1,
                 [Have function pthread_setname_np(const char*)])],
+            [AC_MSG_RESULT(no)])
+        dnl Sets thread names on Solaris 11.3 & higher
+        AC_MSG_CHECKING(for pthread_setname_np(pthread_t, const char*))
+        AC_LINK_IFELSE(
+            [AC_LANG_PROGRAM(
+                [#include <pthread.h>],
+                [pthread_setname_np(pthread_self(), "example")])],
+            [AC_MSG_RESULT(yes)
+             AC_DEFINE(HAVE_PTHREAD_SETNAME_NP_WITH_TID,1,
+                [Have function pthread_setname_np(pthread_t, const char*)])],
             [AC_MSG_RESULT(no)])
         CPPFLAGS="$glib_save_CPPFLAGS"
 ])
@@ -2874,6 +2921,7 @@ _______EOF
 #define G_MODULE_SUFFIX "$g_module_suffix"
 
 typedef $g_pid_type GPid;
+#define G_PID_FORMAT $g_pid_format
 
 #define GLIB_SYSDEF_AF_UNIX $g_af_unix
 #define GLIB_SYSDEF_AF_INET $g_af_inet
@@ -3156,6 +3204,7 @@ g_gcc_atomic_ops="$glib_cv_gcc_has_builtin_atomic_operations"
 
 g_module_suffix="$glib_gmodule_suffix"
 g_pid_type="$glib_pid_type"
+g_pid_format="\"$glib_pid_format\""
 g_pollfd_format="\"$glib_pollfd_format\""
 
 case $host in

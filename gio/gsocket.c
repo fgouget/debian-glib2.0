@@ -3285,6 +3285,7 @@ g_socket_close (GSocket  *socket,
       break;
     }
 
+  socket->priv->fd = -1;
   socket->priv->connected_read = FALSE;
   socket->priv->connected_write = FALSE;
   socket->priv->closed = TRUE;
@@ -4661,9 +4662,7 @@ g_socket_send_messages_with_timeout (GSocket        *socket,
           {
             /* if we couldn't send all messages, just return how many we did
              * manage to send, provided we managed to send at least one */
-            if (i > 0 &&
-                (g_error_matches (msg_error, G_IO_ERROR, G_IO_ERROR_WOULD_BLOCK) ||
-                 g_error_matches (msg_error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT)))
+            if (i > 0)
               {
                 g_error_free (msg_error);
                 return i;
