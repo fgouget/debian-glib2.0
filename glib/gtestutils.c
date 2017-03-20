@@ -380,7 +380,8 @@
  * an error message is logged and the application is terminated.
  *
  * The macro can be turned off in final releases of code by defining
- * `G_DISABLE_ASSERT` when compiling the application.
+ * `G_DISABLE_ASSERT` when compiling the application, so code must
+ * not depend on any side effects from @expr.
  */
 
 /**
@@ -1785,7 +1786,7 @@ g_test_fail (void)
 
 /**
  * g_test_incomplete:
- * @msg: (allow-none): explanation
+ * @msg: (nullable): explanation
  *
  * Indicates that a test failed because of some incomplete
  * functionality. This function can be called multiple times
@@ -1810,7 +1811,7 @@ g_test_incomplete (const gchar *msg)
 
 /**
  * g_test_skip:
- * @msg: (allow-none): explanation
+ * @msg: (nullable): explanation
  *
  * Indicates that a test was skipped.
  *
@@ -2103,7 +2104,7 @@ g_test_queue_free (gpointer gfree_pointer)
  *
  * This function enqueus a callback @destroy_func to be executed
  * during the next test case teardown phase. This is most useful
- * to auto destruct allocted test resources at the end of a test run.
+ * to auto destruct allocated test resources at the end of a test run.
  * Resources are released in reverse queue order, that means enqueueing
  * callback A before callback B will cause B() to be called before
  * A() during teardown.
@@ -2547,8 +2548,8 @@ g_assertion_message_error (const char     *domain,
 
 /**
  * g_strcmp0:
- * @str1: (allow-none): a C string or %NULL
- * @str2: (allow-none): another C string or %NULL
+ * @str1: (nullable): a C string or %NULL
+ * @str2: (nullable): another C string or %NULL
  *
  * Compares @str1 and @str2 like strcmp(). Handles %NULL
  * gracefully by sorting it before non-%NULL strings.
@@ -2865,7 +2866,7 @@ g_test_trap_fork (guint64        usec_timeout,
 
 /**
  * g_test_trap_subprocess:
- * @test_path: (allow-none): Test to run in a subprocess
+ * @test_path: (nullable): Test to run in a subprocess
  * @usec_timeout: Timeout for the subprocess test in micro seconds.
  * @test_flags:   Flags to modify subprocess behaviour.
  *

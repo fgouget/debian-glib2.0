@@ -65,6 +65,7 @@
       <sub name="Testing" link="glib-Testing.html"/>
       <sub name="UNIX-specific utilities and integration" link="glib-UNIX-specific-utilities-and-integration.html"/>
       <sub name="Windows Compatibility Functions" link="glib-Windows-Compatibility-Functions.html"/>
+      <sub name="GUuid" link="glib-GUuid.html"/>
     </sub>
     <sub name="GLib Data Types" link="glib-data-types.html">
       <sub name="Doubly-Linked Lists" link="glib-Doubly-Linked-Lists.html"/>
@@ -126,6 +127,7 @@
     <sub name="Index of new symbols in 2.46" link="api-index-2-46.html"/>
     <sub name="Index of new symbols in 2.48" link="api-index-2-48.html"/>
     <sub name="Index of new symbols in 2.50" link="api-index-2-50.html"/>
+    <sub name="Index of new symbols in 2.52" link="api-index-2-52.html"/>
     <sub name="Annotation Glossary" link="annotation-glossary.html"/>
   </chapters>
   <functions>
@@ -945,6 +947,7 @@
     <keyword type="function" name="g_utf8_strreverse ()" link="glib-Unicode-Manipulation.html#g-utf8-strreverse" since="2.2"/>
     <keyword type="function" name="g_utf8_substring ()" link="glib-Unicode-Manipulation.html#g-utf8-substring" since="2.30"/>
     <keyword type="function" name="g_utf8_validate ()" link="glib-Unicode-Manipulation.html#g-utf8-validate"/>
+    <keyword type="function" name="g_utf8_make_valid ()" link="glib-Unicode-Manipulation.html#g-utf8-make-valid" since="2.52"/>
     <keyword type="function" name="g_utf8_strup ()" link="glib-Unicode-Manipulation.html#g-utf8-strup"/>
     <keyword type="function" name="g_utf8_strdown ()" link="glib-Unicode-Manipulation.html#g-utf8-strdown"/>
     <keyword type="function" name="g_utf8_casefold ()" link="glib-Unicode-Manipulation.html#g-utf8-casefold"/>
@@ -1723,6 +1726,8 @@
     <keyword type="macro" name="G_WIN32_IS_NT_BASED" link="glib-Windows-Compatibility-Functions.html#G-WIN32-IS-NT-BASED:CAPS" since="2.6"/>
     <keyword type="macro" name="MAXPATHLEN" link="glib-Windows-Compatibility-Functions.html#MAXPATHLEN:CAPS"/>
     <keyword type="enum" name="enum GWin32OSType" link="glib-Windows-Compatibility-Functions.html#GWin32OSType"/>
+    <keyword type="function" name="g_uuid_string_is_valid ()" link="glib-GUuid.html#g-uuid-string-is-valid" since="2.52"/>
+    <keyword type="function" name="g_uuid_string_random ()" link="glib-GUuid.html#g-uuid-string-random" since="2.52"/>
     <keyword type="function" name="g_list_append ()" link="glib-Doubly-Linked-Lists.html#g-list-append"/>
     <keyword type="function" name="g_list_prepend ()" link="glib-Doubly-Linked-Lists.html#g-list-prepend"/>
     <keyword type="function" name="g_list_insert ()" link="glib-Doubly-Linked-Lists.html#g-list-insert"/>
@@ -2699,6 +2704,7 @@
     <keyword type="constant" name="G_CHECKSUM_SHA1" link="glib-Data-Checksums.html#G-CHECKSUM-SHA1:CAPS"/>
     <keyword type="constant" name="G_CHECKSUM_SHA256" link="glib-Data-Checksums.html#G-CHECKSUM-SHA256:CAPS"/>
     <keyword type="constant" name="G_CHECKSUM_SHA512" link="glib-Data-Checksums.html#G-CHECKSUM-SHA512:CAPS"/>
+    <keyword type="constant" name="G_CHECKSUM_SHA384" link="glib-Data-Checksums.html#G-CHECKSUM-SHA384:CAPS"/>
     <keyword type="constant" name="G_DATE_DAY" link="glib-Date-and-Time-Functions.html#G-DATE-DAY:CAPS"/>
     <keyword type="constant" name="G_DATE_MONTH" link="glib-Date-and-Time-Functions.html#G-DATE-MONTH:CAPS"/>
     <keyword type="constant" name="G_DATE_YEAR" link="glib-Date-and-Time-Functions.html#G-DATE-YEAR:CAPS"/>

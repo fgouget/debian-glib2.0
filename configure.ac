@@ -30,9 +30,9 @@ m4_define(glib_configure_ac)
 # <mclasen> on the unstable (ie master), interface age = 0
 
 m4_define([glib_major_version], [2])
-m4_define([glib_minor_version], [50])
-m4_define([glib_micro_version], [3])
-m4_define([glib_interface_age], [3])
+m4_define([glib_minor_version], [52])
+m4_define([glib_micro_version], [0])
+m4_define([glib_interface_age], [0])
 m4_define([glib_binary_age],
           [m4_eval(100 * glib_minor_version + glib_micro_version)])
 m4_define([glib_version],
@@ -223,22 +223,19 @@ AS_IF([test "x$glib_have_carbon" = "xyes"], [
 ], [CARBON_LIBS=""])
 
 AC_SUBST([CARBON_LIBS])
-
+ac_cv_have_os_x_9_or_later="no"
 AS_IF([test "x$glib_have_cocoa" = "xyes"], [
   AC_DEFINE(HAVE_COCOA, 1, [define to 1 if Cocoa is available])
   COCOA_LIBS="-Wl,-framework,Foundation"
   LDFLAGS="$LDFLAGS $COCOA_LIBS"
-
-  osx_version=`sw_vers -productVersion`
-  osx_min_version="10.9.0"
-  AC_MSG_CHECKING([OSX version >= $osx_min_version])
-  AS_VERSION_COMPARE([$osx_version], [$osx_min_version], [
-    AC_MSG_RESULT([no])
-    AC_MSG_ERROR([OSX version is too old!])
-  ])
-  AC_MSG_RESULT([yes])
+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+#include <AvailabilityMacros.h>
+#if MAC_OS_X_VERSION_MIN_REQUIRED < 1090
+#error Compiling for minimum OS X version before 10.9
+#endif
+  ]])],[ac_cv_have_os_x_9_or_later="yes"])
 ], [COCOA_LIBS=""])
-
+AM_CONDITIONAL([MAC_OS_X_9], [test "x$ac_cv_have_os_x_9_or_later" = xyes])
 AC_SUBST([COCOA_LIBS])
 
 dnl declare --enable-* args and collect ac_help strings
@@ -3278,6 +3275,10 @@ AM_CONDITIONAL(HAVE_DBUS1, [test "x$have_dbus1" = "xyes"])
 AC_CHECK_PROGS([DBUS_DAEMON], [dbus-daemon])
 AM_CONDITIONAL([HAVE_DBUS_DAEMON], [test x$DBUS_DAEMON = xdbus-daemon ])
 
+# Check whether MSVC toolset is explicitly set
+AM_CONDITIONAL(MSVC_BASE_NO_TOOLSET_SET, [test x$MSVC_BASE_TOOLSET = x])
+AM_CONDITIONAL(MSVC_NO_TOOLSET_SET, [test x$MSVC_TOOLSET = x])
+
 dnl
 dnl Check for -Bsymbolic-functions linker flag used to avoid
 dnl intra-library PLT jumps, if available.
@@ -3434,13 +3435,15 @@ Makefile
 build/Makefile
 build/win32/Makefile
 build/win32/dirent/Makefile
-build/win32/vs9/Makefile
-build/win32/vs9/glib-version-paths.vsprops
-build/win32/vs10/Makefile
-build/win32/vs10/glib-version-paths.props
-build/win32/vs11/Makefile
-build/win32/vs12/Makefile
-build/win32/vs14/Makefile
+win32/Makefile
+win32/vs9/Makefile
+win32/vs9/glib-version-paths.vsprops
+win32/vs10/Makefile
+win32/vs10/glib-version-paths.props
+win32/vs11/Makefile
+win32/vs12/Makefile
+win32/vs14/Makefile
+win32/vs15/Makefile
 glib/Makefile
 glib/libcharset/Makefile
 glib/gnulib/Makefile

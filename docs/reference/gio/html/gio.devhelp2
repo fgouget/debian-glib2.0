@@ -273,6 +273,7 @@
     <sub name="Index of new symbols in 2.46" link="api-index-2-46.html"/>
     <sub name="Index of new symbols in 2.48" link="api-index-2-48.html"/>
     <sub name="Index of new symbols in 2.50" link="api-index-2-50.html"/>
+    <sub name="Index of new symbols in 2.52" link="api-index-2-52.html"/>
     <sub name="Annotation Glossary" link="annotation-glossary.html"/>
   </chapters>
   <functions>
@@ -507,6 +508,7 @@
     <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-DISPLAY-NAME:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-EDIT-NAME:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_COPY_NAME" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-COPY-NAME:CAPS"/>
+    <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-DESCRIPTION:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_ICON" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-ICON:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-SYMBOLIC-ICON:CAPS" since="2.34"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-CONTENT-TYPE:CAPS"/>
@@ -531,12 +533,12 @@
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-UNIX-DEVICE:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-UNIX-DEVICE-FILE:CAPS" since="2.22"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-HAL-UDI:CAPS"/>
-    <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-CAN-POLL:CAPS" since="2.22"/>
-    <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-IS-MEDIA-CHECK-AUTOMATIC:CAPS" since="2.22"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-CAN-START:CAPS" since="2.22"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-CAN-START-DEGRADED:CAPS" since="2.22"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-CAN-STOP:CAPS" since="2.22"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-START-STOP-TYPE:CAPS" since="2.22"/>
+    <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-CAN-POLL:CAPS" since="2.22"/>
+    <keyword type="macro" name="G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC" link="GFileInfo.html#G-FILE-ATTRIBUTE-MOUNTABLE-IS-MEDIA-CHECK-AUTOMATIC:CAPS" since="2.22"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_TIME_MODIFIED" link="GFileInfo.html#G-FILE-ATTRIBUTE-TIME-MODIFIED:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC" link="GFileInfo.html#G-FILE-ATTRIBUTE-TIME-MODIFIED-USEC:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_TIME_ACCESS" link="GFileInfo.html#G-FILE-ATTRIBUTE-TIME-ACCESS:CAPS"/>
@@ -569,14 +571,14 @@
     <keyword type="macro" name="G_FILE_ATTRIBUTE_FILESYSTEM_USED" link="GFileInfo.html#G-FILE-ATTRIBUTE-FILESYSTEM-USED:CAPS" since="2.32"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_FILESYSTEM_TYPE" link="GFileInfo.html#G-FILE-ATTRIBUTE-FILESYSTEM-TYPE:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_FILESYSTEM_READONLY" link="GFileInfo.html#G-FILE-ATTRIBUTE-FILESYSTEM-READONLY:CAPS"/>
+    <keyword type="macro" name="G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW" link="GFileInfo.html#G-FILE-ATTRIBUTE-FILESYSTEM-USE-PREVIEW:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE" link="GFileInfo.html#G-FILE-ATTRIBUTE-FILESYSTEM-REMOTE:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_GVFS_BACKEND" link="GFileInfo.html#G-FILE-ATTRIBUTE-GVFS-BACKEND:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_SELINUX_CONTEXT" link="GFileInfo.html#G-FILE-ATTRIBUTE-SELINUX-CONTEXT:CAPS"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT" link="GFileInfo.html#G-FILE-ATTRIBUTE-TRASH-ITEM-COUNT:CAPS"/>
-    <keyword type="macro" name="G_FILE_ATTRIBUTE_TRASH_DELETION_DATE" link="GFileInfo.html#G-FILE-ATTRIBUTE-TRASH-DELETION-DATE:CAPS" since="2.24"/>
     <keyword type="macro" name="G_FILE_ATTRIBUTE_TRASH_ORIG_PATH" link="GFileInfo.html#G-FILE-ATTRIBUTE-TRASH-ORIG-PATH:CAPS" since="2.24"/>
-    <keyword type="macro" name="G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW" link="GFileInfo.html#G-FILE-ATTRIBUTE-FILESYSTEM-USE-PREVIEW:CAPS"/>
-    <keyword type="macro" name="G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION" link="GFileInfo.html#G-FILE-ATTRIBUTE-STANDARD-DESCRIPTION:CAPS"/>
+    <keyword type="macro" name="G_FILE_ATTRIBUTE_TRASH_DELETION_DATE" link="GFileInfo.html#G-FILE-ATTRIBUTE-TRASH-DELETION-DATE:CAPS" since="2.24"/>
+    <keyword type="macro" name="G_FILE_ATTRIBUTE_RECENT_MODIFIED" link="GFileInfo.html#G-FILE-ATTRIBUTE-RECENT-MODIFIED:CAPS" since="2.52"/>
     <keyword type="function" name="g_file_enumerator_iterate ()" link="GFileEnumerator.html#g-file-enumerator-iterate" since="2.44"/>
     <keyword type="function" name="g_file_enumerator_next_file ()" link="GFileEnumerator.html#g-file-enumerator-next-file"/>
     <keyword type="function" name="g_file_enumerator_close ()" link="GFileEnumerator.html#g-file-enumerator-close"/>
@@ -996,6 +998,7 @@
     <keyword type="function" name="g_pollable_stream_write_all ()" link="gio-gpollableutils.html#g-pollable-stream-write-all" since="2.34"/>
     <keyword type="function" name="g_content_type_equals ()" link="gio-GContentType.html#g-content-type-equals"/>
     <keyword type="function" name="g_content_type_is_a ()" link="gio-GContentType.html#g-content-type-is-a"/>
+    <keyword type="function" name="g_content_type_is_mime_type ()" link="gio-GContentType.html#g-content-type-is-mime-type" since="2.52"/>
     <keyword type="function" name="g_content_type_is_unknown ()" link="gio-GContentType.html#g-content-type-is-unknown"/>
     <keyword type="function" name="g_content_type_get_description ()" link="gio-GContentType.html#g-content-type-get-description"/>
     <keyword type="function" name="g_content_type_get_mime_type ()" link="gio-GContentType.html#g-content-type-get-mime-type"/>

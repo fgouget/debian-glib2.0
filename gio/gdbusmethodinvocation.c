@@ -325,12 +325,12 @@ g_dbus_method_invocation_get_user_data (GDBusMethodInvocation *invocation)
 
 /* < internal >
  * _g_dbus_method_invocation_new:
- * @sender: (allow-none): The bus name that invoked the method or %NULL if @connection is not a bus connection.
+ * @sender: (nullable): The bus name that invoked the method or %NULL if @connection is not a bus connection.
  * @object_path: The object path the method was invoked on.
  * @interface_name: The name of the D-Bus interface the method was invoked on.
  * @method_name: The name of the method that was invoked.
- * @method_info: (allow-none): Information about the method call or %NULL.
- * @property_info: (allow-none): Information about the property or %NULL.
+ * @method_info: (nullable): Information about the method call or %NULL.
+ * @property_info: (nullable): Information about the property or %NULL.
  * @connection: The #GDBusConnection the method was invoked on.
  * @message: The D-Bus message as a #GDBusMessage.
  * @parameters: The parameters as a #GVariant tuple.
@@ -529,14 +529,35 @@ g_dbus_method_invocation_return_value_internal (GDBusMethodInvocation *invocatio
 /**
  * g_dbus_method_invocation_return_value:
  * @invocation: (transfer full): A #GDBusMethodInvocation.
- * @parameters: (allow-none): A #GVariant tuple with out parameters for the method or %NULL if not passing any parameters.
+ * @parameters: (nullable): A #GVariant tuple with out parameters for the method or %NULL if not passing any parameters.
  *
  * Finishes handling a D-Bus method call by returning @parameters.
  * If the @parameters GVariant is floating, it is consumed.
  *
- * It is an error if @parameters is not of the right format.
+ * It is an error if @parameters is not of the right format: it must be a tuple
+ * containing the out-parameters of the D-Bus method. Even if the method has a
+ * single out-parameter, it must be contained in a tuple. If the method has no
+ * out-parameters, @parameters may be %NULL or an empty tuple.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * |[<!-- language="C" -->
+ * GDBusMethodInvocation *invocation = some_invocation;
+ * g_autofree gchar *result_string = NULL;
+ * g_autoptr (GError) error = NULL;
+ *
+ * result_string = calculate_result (&error);
+ *
+ * if (error != NULL)
+ *   g_dbus_method_invocation_return_gerror (invocation, error);
+ * else
+ *   g_dbus_method_invocation_return_value (invocation,
+ *                                          g_variant_new ("(s)", result_string));
+ *
+ * /<!-- -->* Do not free @invocation here; returning a value does that *<!-- -->/
+ * ]|
+ *
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since 2.48, if the method call requested for a reply not to be sent
  * then this call will sink @parameters and free @invocation, but
@@ -556,14 +577,16 @@ g_dbus_method_invocation_return_value (GDBusMethodInvocation *invocation,
 /**
  * g_dbus_method_invocation_return_value_with_unix_fd_list:
  * @invocation: (transfer full): A #GDBusMethodInvocation.
- * @parameters: (allow-none): A #GVariant tuple with out parameters for the method or %NULL if not passing any parameters.
- * @fd_list: (allow-none): A #GUnixFDList or %NULL.
+ * @parameters: (nullable): A #GVariant tuple with out parameters for the method or %NULL if not passing any parameters.
+ * @fd_list: (nullable): A #GUnixFDList or %NULL.
  *
  * Like g_dbus_method_invocation_return_value() but also takes a #GUnixFDList.
  *
  * This method is only available on UNIX.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since: 2.30
  */
@@ -599,7 +622,9 @@ g_dbus_method_invocation_return_value_with_unix_fd_list (GDBusMethodInvocation *
  * always register errors with g_dbus_error_register_error()
  * or use g_dbus_method_invocation_return_dbus_error().
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since 2.48, if the method call requested for a reply not to be sent
  * then this call will free @invocation but otherwise do nothing (as per
@@ -639,7 +664,9 @@ g_dbus_method_invocation_return_error (GDBusMethodInvocation *invocation,
  * Like g_dbus_method_invocation_return_error() but intended for
  * language bindings.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since: 2.26
  */
@@ -672,7 +699,9 @@ g_dbus_method_invocation_return_error_valist (GDBusMethodInvocation *invocation,
  *
  * Like g_dbus_method_invocation_return_error() but without printf()-style formatting.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since: 2.26
  */
@@ -700,7 +729,9 @@ g_dbus_method_invocation_return_error_literal (GDBusMethodInvocation *invocation
  * Like g_dbus_method_invocation_return_error() but takes a #GError
  * instead of the error domain, error code and message.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since: 2.26
  */
@@ -729,7 +760,9 @@ g_dbus_method_invocation_return_gerror (GDBusMethodInvocation *invocation,
  * Like g_dbus_method_invocation_return_gerror() but takes ownership
  * of @error so the caller does not need to free it.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since: 2.30
  */
@@ -751,7 +784,9 @@ g_dbus_method_invocation_take_error (GDBusMethodInvocation *invocation,
  *
  * Finishes handling a D-Bus method call by returning an error.
  *
- * This method will free @invocation, you cannot use it afterwards.
+ * This method will take ownership of @invocation. See
+ * #GDBusInterfaceVTable for more information about the ownership of
+ * @invocation.
  *
  * Since: 2.26
  */
