@@ -36,6 +36,7 @@ SHARED_PKG := libglib$(APIVER)-$(SONAME)
 DATA_PKG := libglib$(APIVER)-data
 TEST_PKG := libglib$(APIVER)-tests
 DEV_PKG := libglib$(APIVER)-dev
+DEVBIN_PKG := $(DEV_PKG)-bin
 BIN_PKG := libglib$(APIVER)-bin
 UDEB_PKG := libglib$(APIVER)-udeb
 DOC_PKG := libglib$(APIVER)-doc
@@ -121,15 +122,16 @@ binary-install/libglib2.0-0::
 		    > debian/$(cdbs_curpkg).$$script ; \
 	done
 
-binary-install/libglib2.0-dev::
-	dh_python2 -plibglib2.0-dev /usr/share/glib-2.0/codegen
+binary-install/libglib2.0-dev-bin::
+	dh_python2 -plibglib2.0-dev-bin /usr/share/glib-2.0/codegen
 
 common-install-arch::
 	set -e; for file in libgio-fam.install libglib2.0-0.install \
 	            libglib2.0-0-refdbg.install libglib2.0-dbg.install \
-	            libglib2.0-dev.install libglib2.0-udeb.install \
+	            libglib2.0-dev.install libglib2.0-dev-bin.install \
+	            libglib2.0-udeb.install \
 		    libglib2.0-bin.links libglib2.0-dev.links \
-	            libglib2.0-0.dirs libglib2.0-0.triggers; \
+		    libglib2.0-0.dirs libglib2.0-0.triggers; \
 	do \
 		sed -e"s,\$${DEB_HOST_MULTIARCH},${DEB_HOST_MULTIARCH},g" \
 		        debian/$${file}.in > debian/$$file; \
@@ -144,6 +146,7 @@ clean::
 		-e "s#@BIN_PKG@#$(BIN_PKG)#g" \
 		-e "s#@DATA_PKG@#$(DATA_PKG)#g" \
 		-e "s#@DEV_PKG@#$(DEV_PKG)#g" \
+		-e "s#@DEVBIN_PKG@#$(DEVBIN_PKG)#g" \
 		-e "s#@UDEB_PKG@#$(UDEB_PKG)#g" \
 		-e "s#@DOC_PKG@#$(DOC_PKG)#g" \
 		-e "s#@DEBUG_PKG@#$(DEBUG_PKG)#g" \

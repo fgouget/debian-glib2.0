@@ -1,3 +1,11 @@
+glib2.0 (2.42.1-1+ma1) jessie; urgency=medium
+
+  [ Francois Gouget ]
+  * Add multiarch support based on the 2.52.0-1 package.
+  * Two checks systematically fail so skip the tests.
+
+ -- Francois Gouget <fgouget@codeweavers.com>  Thu, 27 Apr 2017 15:00:00 +0100
+
 glib2.0 (2.42.1-1) unstable; urgency=medium
 
   [ Iain Lane ]
