@@ -1651,8 +1651,8 @@ done_query:
  * ]|
  *
  * Note also that, even if no other structured fields are specified, there
- * must always be a "MESSAGE" key before the format string. The "MESSAGE"-format
- * pair has to be the last of the key-value pairs, and "MESSAGE" is the only
+ * must always be a `MESSAGE` key before the format string. The `MESSAGE`-format
+ * pair has to be the last of the key-value pairs, and `MESSAGE` is the only
  * field for which printf()-style formatting is supported.
  *
  * The default writer function for `stdout` and `stderr` will automatically
@@ -2995,20 +2995,9 @@ g_log_default_handler (const gchar   *log_domain,
 		       const gchar   *message,
 		       gpointer	      unused_data)
 {
-  const gchar *domains;
   GLogField fields[4];
   int n_fields = 0;
 
-  if ((log_level & DEFAULT_LEVELS) || (log_level >> G_LOG_LEVEL_USER_SHIFT))
-    goto emit;
-
-  domains = g_getenv ("G_MESSAGES_DEBUG");
-  if (((log_level & INFO_LEVELS) == 0) ||
-      domains == NULL ||
-      (strcmp (domains, "all") != 0 && (!log_domain || !strstr (domains, log_domain))))
-    return;
-
- emit:
   /* we can be called externally with recursion for whatever reason */
   if (log_level & G_LOG_FLAG_RECURSION)
     {

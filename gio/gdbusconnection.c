@@ -2688,7 +2688,10 @@ g_dbus_connection_new (GIOStream            *stream,
                        GAsyncReadyCallback   callback,
                        gpointer              user_data)
 {
+  _g_dbus_initialize ();
+
   g_return_if_fail (G_IS_IO_STREAM (stream));
+
   g_async_initable_new_async (G_TYPE_DBUS_CONNECTION,
                               G_PRIORITY_DEFAULT,
                               cancellable,
@@ -2773,6 +2776,7 @@ g_dbus_connection_new_sync (GIOStream             *stream,
                             GCancellable          *cancellable,
                             GError               **error)
 {
+  _g_dbus_initialize ();
   g_return_val_if_fail (G_IS_IO_STREAM (stream), NULL);
   g_return_val_if_fail (error == NULL || *error == NULL, NULL);
   return g_initable_new (G_TYPE_DBUS_CONNECTION,
@@ -2828,7 +2832,10 @@ g_dbus_connection_new_for_address (const gchar          *address,
                                    GAsyncReadyCallback   callback,
                                    gpointer              user_data)
 {
+  _g_dbus_initialize ();
+
   g_return_if_fail (address != NULL);
+
   g_async_initable_new_async (G_TYPE_DBUS_CONNECTION,
                               G_PRIORITY_DEFAULT,
                               cancellable,
@@ -2912,6 +2919,8 @@ g_dbus_connection_new_for_address_sync (const gchar           *address,
                                         GCancellable          *cancellable,
                                         GError               **error)
 {
+  _g_dbus_initialize ();
+
   g_return_val_if_fail (address != NULL, NULL);
   g_return_val_if_fail (error == NULL || *error == NULL, NULL);
   return g_initable_new (G_TYPE_DBUS_CONNECTION,
@@ -3166,18 +3175,21 @@ g_dbus_connection_remove_filter (GDBusConnection *connection,
                                  guint            filter_id)
 {
   guint n;
+  gboolean found;
   FilterData *to_destroy;
 
   g_return_if_fail (G_IS_DBUS_CONNECTION (connection));
   g_return_if_fail (check_initialized (connection));
 
   CONNECTION_LOCK (connection);
+  found = FALSE;
   to_destroy = NULL;
   for (n = 0; n < connection->filters->len; n++)
     {
       FilterData *data = connection->filters->pdata[n];
       if (data->id == filter_id)
         {
+          found = TRUE;
           g_ptr_array_remove_index (connection->filters, n);
           data->ref_count--;
           if (data->ref_count == 0)
@@ -3195,7 +3207,7 @@ g_dbus_connection_remove_filter (GDBusConnection *connection,
       g_main_context_unref (to_destroy->context);
       g_free (to_destroy);
     }
-  else
+  else if (!found)
     {
       g_warning ("g_dbus_connection_remove_filter: No filter found for filter_id %d", filter_id);
     }
@@ -7252,6 +7264,8 @@ g_bus_get_sync (GBusType       bus_type,
 {
   GDBusConnection *connection;
 
+  _g_dbus_initialize ();
+
   g_return_val_if_fail (error == NULL || *error == NULL, NULL);
 
   connection = get_uninitialized_connection (bus_type, cancellable, error);
@@ -7317,6 +7331,8 @@ g_bus_get (GBusType             bus_type,
   GDBusConnection *connection;
   GTask *task;
   GError *error = NULL;
+
+  _g_dbus_initialize ();
 
   task = g_task_new (NULL, cancellable, callback, user_data);
   g_task_set_source_tag (task, g_bus_get);
