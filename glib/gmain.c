@@ -277,7 +277,8 @@ struct _GMainContext
 
   guint next_id;
   GList *source_lists;
-  gint in_check_or_prepare;
+  gboolean in_check_or_prepare;
+  gboolean need_wakeup;
 
   GPollRec *poll_records;
   guint n_poll_records;
@@ -651,6 +652,7 @@ g_main_context_new (void)
   
   context->pending_dispatches = g_ptr_array_new ();
   
+  context->need_wakeup = FALSE;
   context->time_is_fresh = FALSE;
   
   context->wakeup = g_wakeup_new ();
@@ -1118,6 +1120,23 @@ source_remove_from_context (GSource      *source,
     }
 }
 
+/* See https://bugzilla.gnome.org/show_bug.cgi?id=761102 for
+ * the introduction of this.
+ *
+ * The main optimization is to avoid waking up the main
+ * context if a change is made by the current owner.
+ */
+static void
+conditional_wakeup (GMainContext *context)
+{
+  /* This flag is set if at the start of prepare() we have no other ready
+   * sources, and hence would wait in poll(). In that case, any other threads
+   * attaching sources will need to signal a wakeup.
+   */
+  if (context->need_wakeup)
+    g_wakeup_signal (context->wakeup);
+}
+
 static guint
 g_source_attach_unlocked (GSource      *source,
                           GMainContext *context,
@@ -1164,8 +1183,8 @@ g_source_attach_unlocked (GSource      *source,
   /* If another thread has acquired the context, wake it up since it
    * might be in poll() right now.
    */
-  if (do_wakeup && context->owner && context->owner != G_THREAD_SELF)
-    g_wakeup_signal (context->wakeup);
+  if (do_wakeup)
+    conditional_wakeup (context);
 
   return source->source_id;
 }
@@ -1809,6 +1828,9 @@ g_source_get_priority (GSource *source)
  * for both sources is reached during the same main context iteration
  * then the order of dispatch is undefined.
  *
+ * It is a no-op to call this function on a #GSource which has already been
+ * destroyed with g_source_destroy().
+ *
  * This API is only intended to be used by implementations of #GSource.
  * Do not call this API on a #GSource that you did not create.
  *
@@ -1839,8 +1861,7 @@ g_source_set_ready_time (GSource *source,
     {
       /* Quite likely that we need to change the timeout on the poll */
       if (!SOURCE_BLOCKED (source))
-        if (context->owner && context->owner != G_THREAD_SELF)
-          g_wakeup_signal (context->wakeup);
+        conditional_wakeup (context);
       UNLOCK_CONTEXT (context);
     }
 }
@@ -2091,11 +2112,15 @@ g_source_unref_internal (GSource      *source,
 
       if (source->source_funcs->finalize)
 	{
+          /* Temporarily increase the ref count again so that GSource methods
+           * can be called from finalize(). */
+          source->ref_count++;
 	  if (context)
 	    UNLOCK_CONTEXT (context);
 	  source->source_funcs->finalize (source);
 	  if (context)
 	    LOCK_CONTEXT (context);
+          source->ref_count--;
 	}
 
       g_free (source->name);
@@ -3063,6 +3088,12 @@ g_main_current_source (void)
  * }
  * ]|
  *
+ * Calls to this function from a thread other than the one acquired by the
+ * #GMainContext the #GSource is attached to are typically redundant, as the
+ * source could be destroyed immediately after this function returns. However,
+ * once a source is destroyed it cannot be un-destroyed, so this function can be
+ * used for opportunistic checks from any thread.
+ *
  * Returns: %TRUE if the source has been destroyed
  *
  * Since: 2.12
@@ -3438,6 +3469,10 @@ g_main_context_prepare (GMainContext *context,
   
   LOCK_CONTEXT (context);
 
+  /* context->need_wakeup is protected by LOCK_CONTEXT/UNLOCK_CONTEXT,
+   * so need not set it yet.
+   */
+
   context->time_is_fresh = FALSE;
 
   if (context->in_check_or_prepare)
@@ -3563,6 +3598,8 @@ g_main_context_prepare (GMainContext *context,
 	}
     }
   g_source_iter_clear (&iter);
+  /* See conditional_wakeup() where this is used */
+  context->need_wakeup = (n_ready == 0);
 
   TRACE (GLIB_MAIN_CONTEXT_AFTER_PREPARE (context, current_priority, n_ready));
 
@@ -3697,6 +3734,12 @@ g_main_context_check (GMainContext *context,
 
   TRACE (GLIB_MAIN_CONTEXT_BEFORE_CHECK (context, max_priority, fds, n_fds));
 
+  /* We don't need to wakeup during check or dispatch, because
+   * all sources will be re-evaluated during prepare/query.
+   */
+  context->need_wakeup = FALSE;
+
+  /* And if we have a wakeup pending, acknowledge it */
   for (i = 0; i < n_fds; i++)
     {
       if (fds[i].fd == context->wake_up_rec.fd)
@@ -4352,8 +4395,7 @@ g_main_context_add_poll_unlocked (GMainContext *context,
   context->poll_changed = TRUE;
 
   /* Now wake up the main loop if it is waiting in the poll() */
-  if (context->owner && context->owner != G_THREAD_SELF)
-    g_wakeup_signal (context->wakeup);
+  conditional_wakeup (context);
 }
 
 /**
@@ -4411,10 +4453,9 @@ g_main_context_remove_poll_unlocked (GMainContext *context,
     }
 
   context->poll_changed = TRUE;
-  
+
   /* Now wake up the main loop if it is waiting in the poll() */
-  if (context->owner && context->owner != G_THREAD_SELF)
-    g_wakeup_signal (context->wakeup);
+  conditional_wakeup (context);
 }
 
 /**
