@@ -271,9 +271,6 @@
    <File RelativePath="..\..\..\gio\gioenumtypes.c" />
    <File RelativePath="..\..\..\gio\glistmodel.c" />
    <File RelativePath="..\..\..\gio\gliststore.c" />
-   <File RelativePath="..\..\..\gio\gfiledescriptorbased.c" />
-   <File RelativePath="..\..\..\gio\gfdonotificationbackend.c" />
-   <File RelativePath="..\..\..\gio\ggtknotificationbackend.c" />
    <File RelativePath="..\..\..\gio\gapplication.c" />
    <File RelativePath="..\..\..\gio\gapplicationcommandline.c" />
    <File RelativePath="..\..\..\gio\gapplicationimpl-dbus.c" />
@@ -292,15 +289,6 @@
    <File RelativePath="..\..\..\gio\gdbusmenumodel.c" />
    <File RelativePath="..\..\..\gio\gnotification.c" />
    <File RelativePath="..\..\..\gio\gnotificationbackend.c" />
-   <File RelativePath="..\..\..\gio\gvdb\gvdb-reader.c" />
-   <File RelativePath="..\..\..\gio\gdelayedsettingsbackend.c" />
-   <File RelativePath="..\..\..\gio\gkeyfilesettingsbackend.c" />
-   <File RelativePath="..\..\..\gio\gmemorysettingsbackend.c" />
-   <File RelativePath="..\..\..\gio\gnullsettingsbackend.c" />
-   <File RelativePath="..\..\..\gio\gsettingsbackend.c" />
-   <File RelativePath="..\..\..\gio\gsettingsschema.c" />
-   <File RelativePath="..\..\..\gio\gsettings-mapping.c" />
-   <File RelativePath="..\..\..\gio\gsettings.c" />
    <File RelativePath="..\..\..\gio\gdbusutils.c" />
    <File RelativePath="..\..\..\gio\gdbusaddress.c" />
    <File RelativePath="..\..\..\gio\gdbusauthobserver.c" />
@@ -357,6 +345,15 @@
    <File RelativePath="..\..\..\gio\win32\gwinhttpvfs.c" />
    <File RelativePath="..\..\..\gio\win32\gwin32fsmonitorutils.c" />
    <File RelativePath="..\..\..\gio\win32\gwin32filemonitor.c" />
+   <File RelativePath="..\..\..\gio\gvdb\gvdb-reader.c" />
+   <File RelativePath="..\..\..\gio\gdelayedsettingsbackend.c" />
+   <File RelativePath="..\..\..\gio\gkeyfilesettingsbackend.c" />
+   <File RelativePath="..\..\..\gio\gmemorysettingsbackend.c" />
+   <File RelativePath="..\..\..\gio\gnullsettingsbackend.c" />
+   <File RelativePath="..\..\..\gio\gsettingsbackend.c" />
+   <File RelativePath="..\..\..\gio\gsettingsschema.c" />
+   <File RelativePath="..\..\..\gio\gsettings-mapping.c" />
+   <File RelativePath="..\..\..\gio\gsettings.c" />
   </Filter>
   <Filter
    Name="Header Files"

@@ -162,7 +162,7 @@ TESTS = $(am__EXEEXT_5)
 @ENABLE_DTRACE_TRUE@am__append_19 = glib_probes.h glib_probes.lo
 @ENABLE_DTRACE_TRUE@am__append_20 = glib_probes.h glib_probes.h.tmp
 @ENABLE_DTRACE_TRUE@am__append_21 = glib_probes.lo
-@ENABLE_SYSTEMTAP_TRUE@am__append_22 = $(tapset_in_files:.stp.in=.stp)
+@ENABLE_SYSTEMTAP_TRUE@am__append_22 = $(tapset_DATA)
 @OS_WIN32_TRUE@@OS_WIN32_X64_TRUE@am__append_23 = gspawn-win64-helper gspawn-win64-helper-console
 @OS_WIN32_TRUE@@OS_WIN32_X64_FALSE@am__append_24 = gspawn-win32-helper gspawn-win32-helper-console
 bin_PROGRAMS = $(am__EXEEXT_4)
@@ -749,6 +749,8 @@ LIBELF_CFLAGS = @LIBELF_CFLAGS@
 LIBELF_LIBS = @LIBELF_LIBS@
 LIBFFI_CFLAGS = @LIBFFI_CFLAGS@
 LIBFFI_LIBS = @LIBFFI_LIBS@
+LIBMOUNT_CFLAGS = @LIBMOUNT_CFLAGS@
+LIBMOUNT_LIBS = @LIBMOUNT_LIBS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -882,7 +884,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -923,7 +924,7 @@ EXTRA_DIST = $(all_dist_test_scripts) $(all_dist_test_data) \
 	makefile.msc.in glib.rc.in gen-unicode-tables.pl \
 	glibconfig.h.win32.in gregex.c gregex.h win_iconv.c \
 	libglib-gdb.py.in docs.c gconstructor.h \
-	$(MIRRORING_TAB_SOURCE) $(tapset_in_files) $(am__append_26)
+	$(MIRRORING_TAB_SOURCE) glib.stp.in $(am__append_26)
 
 # We support a fairly large range of possible variables.  It is expected that all types of files in a test suite
 # will belong in exactly one of the following variables.
@@ -1163,11 +1164,11 @@ glibsubinclude_HEADERS = \
 @USE_SYSTEM_PCRE_TRUE@pcre_lib = $(PCRE_LIBS)
 @USE_SYSTEM_PCRE_FALSE@pcre_inc = 
 @USE_SYSTEM_PCRE_TRUE@pcre_inc = $(PCRE_CFLAGS)
-libglib_2_0_la_CFLAGS = $(AM_CFLAGS) $(GLIB_HIDDEN_VISIBILITY_CFLAGS)
+libglib_2_0_la_CFLAGS = $(AM_CFLAGS) $(GLIB_HIDDEN_VISIBILITY_CFLAGS) $(LIBSYSTEMD_CFLAGS)
 libglib_2_0_la_LIBADD = libcharset/libcharset.la $(printf_la) @GIO@ \
 	@GSPAWN@ @PLATFORMDEP@ @ICONV_LIBS@ @G_LIBS_EXTRA@ $(pcre_lib) \
 	$(G_THREAD_LIBS_EXTRA) $(G_THREAD_LIBS_FOR_GTHREAD) \
-	$(am__append_21)
+	$(LIBSYSTEMD_LIBS) $(am__append_21)
 libglib_2_0_la_DEPENDENCIES = libcharset/libcharset.la $(printf_la) @GIO@ @GSPAWN@ @PLATFORMDEP@ $(glib_win32_res) $(glib_def)
 libglib_2_0_la_LDFLAGS = $(GLIB_LINK_FLAGS) \
 	 $(glib_win32_res_ldflag) \
@@ -1175,11 +1176,8 @@ libglib_2_0_la_LDFLAGS = $(GLIB_LINK_FLAGS) \
 	-export-dynamic $(no_undefined)
 
 INSTALL_PROGS = $(am__append_23) $(am__append_24) $(am__append_25)
-@ENABLE_DTRACE_TRUE@DTCOMPILE = $(patsubst -W%,,$(LTCOMPILE))
-@ENABLE_DTRACE_TRUE@DTCFLAGS = $(patsubst -W%,,$(CFLAGS))
-tapset_in_files = glib.stp.in
 tapsetdir = @ABS_TAPSET_DIR@
-@ENABLE_SYSTEMTAP_TRUE@tapset_DATA = $(tapset_in_files:.stp.in=.stp)
+@ENABLE_SYSTEMTAP_TRUE@tapset_DATA = libglib-2.0.so.0.@LT_CURRENT@.@LT_REVISION@.stp
 @OS_WIN32_TRUE@@OS_WIN32_X64_TRUE@gspawn_win64_helper_LDADD = libglib-2.0.la
 @OS_WIN32_TRUE@@OS_WIN32_X64_TRUE@gspawn_win64_helper_LDFLAGS = -mwindows
 @OS_WIN32_TRUE@@OS_WIN32_X64_TRUE@gspawn_win64_helper_console_LDADD = libglib-2.0.la
@@ -1218,7 +1216,7 @@ _headers_destdir = $(subst /,\\,$(_headers_dest_posix))
 
 # install gdb scripts
 gdbdir = $(datadir)/glib-2.0/gdb
-dist_gdb_SCRIPTS = glib.py
+dist_gdb_SCRIPTS = glib_gdb.py
 @HAVE_GLIB_RUNTIME_LIBDIR_FALSE@ABS_GLIB_RUNTIME_LIBDIR = $(libdir)
 @HAVE_GLIB_RUNTIME_LIBDIR_TRUE@ABS_GLIB_RUNTIME_LIBDIR = $(realpath $(libdir)/$(GLIB_RUNTIME_LIBDIR))
 all: $(BUILT_SOURCES)
@@ -3066,12 +3064,15 @@ uninstall-local: uninstall-ms-lib uninstall-gdb
 
 @ENABLE_DTRACE_TRUE@glib_probes.h: glib_probes.d
 @ENABLE_DTRACE_TRUE@	$(AM_V_GEN) $(DTRACE) -C -h -s $< -o $@.tmp
-@ENABLE_DTRACE_TRUE@	@$(SED) -e "s,define STAP_HAS_SEMAPHORES 1,undef STAP_HAS_SEMAPHORES," < $@.tmp > $@ && rm -f $@.tmp
+@ENABLE_DTRACE_TRUE@	@$(SED) \
+@ENABLE_DTRACE_TRUE@		-e "s,define STAP_HAS_SEMAPHORES 1,undef STAP_HAS_SEMAPHORES," \
+@ENABLE_DTRACE_TRUE@		-e "s,define _SDT_HAS_SEMAPHORES 1,undef _SDT_HAS_SEMAPHORES," \
+@ENABLE_DTRACE_TRUE@		< $@.tmp > $@ && rm -f $@.tmp
 
 @ENABLE_DTRACE_TRUE@glib_probes.lo: glib_probes.d
-@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) env CC="$(DTCOMPILE)" CFLAGS="$(DTCFLAGS)" $(DTRACE) -G -s $< -o $@
+@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) $(LIBTOOL) --mode=compile $(AM_V_lt) --tag=CC $(DTRACE) -G -s $< -o $@
 
-@ENABLE_SYSTEMTAP_TRUE@$(tapset_DATA): %.stp: %.stp.in Makefile
+@ENABLE_SYSTEMTAP_TRUE@$(tapset_DATA): glib.stp.in Makefile
 @ENABLE_SYSTEMTAP_TRUE@	$(AM_V_GEN)$(SED) \
 @ENABLE_SYSTEMTAP_TRUE@		-e 's|[@]ABS_GLIB_RUNTIME_LIBDIR[@]|$(ABS_GLIB_RUNTIME_LIBDIR)|g' \
 @ENABLE_SYSTEMTAP_TRUE@		-e 's|[@]LT_CURRENT[@]|$(LT_CURRENT)|g' \
@@ -3122,10 +3123,16 @@ $(1).sourcefiles: $(top_builddir)/build/win32/vs9/$(1).vcproj
 $(1).vs10.sourcefiles: $(top_builddir)/build/win32/vs9/$(1).vcproj
 $(1).vs10.sourcefiles.filters: $(top_builddir)/build/win32/vs9/$(1).vcproj
 
-$(top_builddir)/build/win32/vs9/$(1).vcproj:
+$(top_builddir)/build/win32/vs9/$(1).vcproj: Makefile
 	-$(RM) $(top_builddir)/build/win32/vs9/$(1).vcproj
 	-$(RM) $(top_builddir)/build/win32/vs10/$(1).vcxproj
 	-$(RM) $(top_builddir)/build/win32/vs10/$(1).vcxproj.filters
+	-$(RM) $(top_builddir)/build/win32/vs11/$(1).vcxproj
+	-$(RM) $(top_builddir)/build/win32/vs11/$(1).vcxproj.filters
+	-$(RM) $(top_builddir)/build/win32/vs12/$(1).vcxproj
+	-$(RM) $(top_builddir)/build/win32/vs12/$(1).vcxproj.filters
+	-$(RM) $(top_builddir)/build/win32/vs14/$(1).vcxproj
+	-$(RM) $(top_builddir)/build/win32/vs14/$(1).vcxproj.filters
 
 	for F in $(_proj_files); do \
 		case $$$$F in \
@@ -3148,7 +3155,7 @@ $(top_builddir)/build/win32/vs9/$(1).vcproj:
 
 $(top_builddir)/build/win32/vs10/$(1).vs10.headers: $(top_builddir)/build/win32/vs9/$(1).headers
 
-$(top_builddir)/build/win32/vs9/$(1).headers:
+$(top_builddir)/build/win32/vs9/$(1).headers: Makefile
 	-$(RM) $(top_builddir)/build/win32/vs9/$(1).headers
 	-$(RM) $(top_builddir)/build/win32/vs10/$(1).vs10.headers
 

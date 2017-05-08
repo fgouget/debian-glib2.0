@@ -8,7 +8,7 @@
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Date-and-Time-Functions.html" title="Date and Time Functions">
 <link rel="next" href="glib-GDateTime.html" title="GDateTime">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -173,7 +173,7 @@ g_time_zone_unref (<em class="parameter"><code><a class="link" href="glib-GTimeZ
 <p>Decreases the reference count on <em class="parameter"><code>tz</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.2.5"></a><h4>Parameters</h4>
+<a name="g-time-zone-unref.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -197,7 +197,7 @@ g_time_zone_ref (<em class="parameter"><code><a class="link" href="glib-GTimeZon
 <p>Increases the reference count on <em class="parameter"><code>tz</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.3.5"></a><h4>Parameters</h4>
+<a name="g-time-zone-ref.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -212,7 +212,7 @@ g_time_zone_ref (<em class="parameter"><code><a class="link" href="glib-GTimeZon
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.3.6"></a><h4>Returns</h4>
+<a name="g-time-zone-ref.returns"></a><h4>Returns</h4>
 <p> a new reference to <em class="parameter"><code>tz</code></em>
 .</p>
 </div>
@@ -282,7 +282,7 @@ for the list of time zones on Windows.</p>
 <p>You should release the return value by calling <a class="link" href="glib-GTimeZone.html#g-time-zone-unref" title="g_time_zone_unref ()"><code class="function">g_time_zone_unref()</code></a>
 when you are done with it.</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.4.14"></a><h4>Parameters</h4>
+<a name="g-time-zone-new.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -297,7 +297,7 @@ when you are done with it.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.4.15"></a><h4>Returns</h4>
+<a name="g-time-zone-new.returns"></a><h4>Returns</h4>
 <p> the requested timezone</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
@@ -315,7 +315,7 @@ the <code class="literal">TZ</code> environment variable (including the possibil
 <p>You should release the return value by calling <a class="link" href="glib-GTimeZone.html#g-time-zone-unref" title="g_time_zone_unref ()"><code class="function">g_time_zone_unref()</code></a>
 when you are done with it.</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.5.7"></a><h4>Returns</h4>
+<a name="g-time-zone-new-local.returns"></a><h4>Returns</h4>
 <p> the local timezone</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
@@ -331,7 +331,7 @@ g_time_zone_new_utc (<em class="parameter"><code><span class="type">void</span><
 <p>You should release the return value by calling <a class="link" href="glib-GTimeZone.html#g-time-zone-unref" title="g_time_zone_unref ()"><code class="function">g_time_zone_unref()</code></a>
 when you are done with it.</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.6.7"></a><h4>Returns</h4>
+<a name="g-time-zone-new-utc.returns"></a><h4>Returns</h4>
 <p> the universal timezone</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
@@ -367,7 +367,7 @@ example, 02:00 on March 14th 2010 does not exist (due to the leap
 forward to begin daylight savings time).  -1 is returned in that
 case.</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.7.8"></a><h4>Parameters</h4>
+<a name="g-time-zone-find-interval.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -395,7 +395,7 @@ case.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.7.9"></a><h4>Returns</h4>
+<a name="g-time-zone-find-interval.returns"></a><h4>Returns</h4>
 <p> the interval containing <em class="parameter"><code>time_</code></em>
 , or -1 in case of failure</p>
 </div>
@@ -431,7 +431,7 @@ adjust <em class="parameter"><code>time_</code></em>
  to be 03:00 and return the interval containing the
 adjusted time.</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.8.8"></a><h4>Parameters</h4>
+<a name="g-time-zone-adjust-time.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -459,7 +459,7 @@ adjusted time.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.8.9"></a><h4>Returns</h4>
+<a name="g-time-zone-adjust-time.returns"></a><h4>Returns</h4>
 <p> the interval containing <em class="parameter"><code>time_</code></em>
 , never -1</p>
 </div>
@@ -479,7 +479,7 @@ g_time_zone_get_abbreviation (<em class="parameter"><code><a class="link" href="
 months and "EDT" during the summer months when daylight savings time
 is in effect.</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.9.6"></a><h4>Parameters</h4>
+<a name="g-time-zone-get-abbreviation.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -501,7 +501,7 @@ is in effect.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.9.7"></a><h4>Returns</h4>
+<a name="g-time-zone-get-abbreviation.returns"></a><h4>Returns</h4>
 <p> the time zone abbreviation, which belongs to <em class="parameter"><code>tz</code></em>
 </p>
 </div>
@@ -522,7 +522,7 @@ arrive at local time for <em class="parameter"><code>tz</code></em>
  (ie: negative numbers for time zones
 west of GMT, positive numbers for east).</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.10.6"></a><h4>Parameters</h4>
+<a name="g-time-zone-get-offset.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -544,7 +544,7 @@ west of GMT, positive numbers for east).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.10.7"></a><h4>Returns</h4>
+<a name="g-time-zone-get-offset.returns"></a><h4>Returns</h4>
 <p> the number of seconds that should be added to UTC to get the
 local time in <em class="parameter"><code>tz</code></em>
 </p>
@@ -562,7 +562,7 @@ g_time_zone_is_dst (<em class="parameter"><code><a class="link" href="glib-GTime
  of time in the time zone <em class="parameter"><code>tz</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.10.7.11.5"></a><h4>Parameters</h4>
+<a name="g-time-zone-is-dst.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -584,7 +584,7 @@ g_time_zone_is_dst (<em class="parameter"><code><a class="link" href="glib-GTime
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.10.7.11.6"></a><h4>Returns</h4>
+<a name="g-time-zone-is-dst.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if daylight savings time is in effect</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
@@ -609,7 +609,7 @@ standard time or local daylight time.  This is important for the case
 where the same local time occurs twice (during daylight savings time
 transitions, for example).</p>
 <div class="refsect3">
-<a name="id-1.5.10.8.3.6"></a><h4>Members</h4>
+<a name="GTimeType.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
@@ -649,6 +649,6 @@ transitions, for example).</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

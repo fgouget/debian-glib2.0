@@ -439,7 +439,7 @@ static inline gboolean
 g_unichar_iswide_bsearch (gunichar ch)
 {
   int lower = 0;
-  int upper = G_N_ELEMENTS (g_unicode_width_table_wide) + 1;
+  int upper = G_N_ELEMENTS (g_unicode_width_table_wide) - 1;
   static int saved_mid = G_WIDTH_TABLE_MIDPOINT;
   int mid = saved_mid;
 
@@ -1421,6 +1421,14 @@ static const guint32 iso15924_tags[] =
     PACK ('M','u','l','t'), /* G_UNICODE_SCRIPT_MULTANI */
     PACK ('H','u','n','g'), /* G_UNICODE_SCRIPT_OLD_HUNGARIAN */
     PACK ('S','g','n','w'), /* G_UNICODE_SCRIPT_SIGNWRITING */
+
+  /* Unicode 9.0 additions */
+    PACK ('A','d','l','m'), /* G_UNICODE_SCRIPT_ADLAM */
+    PACK ('B','h','k','s'), /* G_UNICODE_SCRIPT_BHAIKSUKI */
+    PACK ('M','a','r','c'), /* G_UNICODE_SCRIPT_MARCHEN */
+    PACK ('N','e','w','a'), /* G_UNICODE_SCRIPT_NEWA */
+    PACK ('O','s','g','e'), /* G_UNICODE_SCRIPT_OSAGE */
+    PACK ('T','a','n','g'), /* G_UNICODE_SCRIPT_TANGUT */
 #undef PACK
 };
 

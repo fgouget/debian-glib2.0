@@ -111,7 +111,7 @@ check_PROGRAMS = $(am__EXEEXT_16)
 @ENABLE_INSTALLED_TESTS_TRUE@am__append_10 = $(test_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(installed_test_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(test_extra_scripts) \
-@ENABLE_INSTALLED_TESTS_TRUE@	$(test_installed_extra_scripts) \
+@ENABLE_INSTALLED_TESTS_TRUE@	$(installed_test_extra_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_test_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_test_extra_scripts) \
 @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_installed_test_scripts) \
@@ -238,7 +238,7 @@ check_PROGRAMS = $(am__EXEEXT_16)
 # See http://lists.gnu.org/archive/html/bug-libtool/2013-05/msg00009.html
 @CROSS_COMPILING_FALSE@@ENABLE_INSTALLED_TESTS_FALSE@am__append_32 = -rpath /
 @CROSS_COMPILING_FALSE@am__append_33 = test.gresource.xml test1.txt test2.gresource.xml test2.txt test3.gresource.xml test3.txt test4.gresource.xml
-@CROSS_COMPILING_FALSE@am__append_34 = test_resources.c test_resources2.[ch] plugin_resources.c test.gresource
+@CROSS_COMPILING_FALSE@am__append_34 = test-generated.txt test_resources.c test_resources2.[ch] plugin_resources.c test.gresource
 subdir = gio/tests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4macros/attributes.m4 \
@@ -1966,6 +1966,8 @@ LIBELF_CFLAGS = @LIBELF_CFLAGS@
 LIBELF_LIBS = @LIBELF_LIBS@
 LIBFFI_CFLAGS = @LIBFFI_CFLAGS@
 LIBFFI_LIBS = @LIBFFI_LIBS@
+LIBMOUNT_CFLAGS = @LIBMOUNT_CFLAGS@
+LIBMOUNT_LIBS = @LIBMOUNT_LIBS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -2099,7 +2101,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -4673,6 +4674,10 @@ uninstall-am: uninstall-installed_testLTLIBRARIES \
 @HAVE_DBUS_DAEMON_TRUE@@OS_UNIX_TRUE@gdbus-test-codegen-generated.c: gdbus-test-codegen-generated.h
 @HAVE_DBUS_DAEMON_TRUE@@OS_UNIX_TRUE@	@: # Generated as side-effect of .h
 
+@CROSS_COMPILING_FALSE@test-generated.txt: test1.txt
+@CROSS_COMPILING_FALSE@	$(AM_V_GEN) echo "Generated" > $@ && \
+@CROSS_COMPILING_FALSE@	  cat $< >> $@
+
 @CROSS_COMPILING_FALSE@resources.o: test_resources2.h
 @CROSS_COMPILING_FALSE@test_resources.c: test2.gresource.xml Makefile $(shell $(glib_compile_resources) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/test2.gresource.xml)
 @CROSS_COMPILING_FALSE@	$(AM_V_GEN) $(glib_compile_resources) --target=$@ --sourcedir=$(srcdir) --generate-source --c-name _g_test1 $<
@@ -4683,8 +4688,8 @@ uninstall-am: uninstall-installed_testLTLIBRARIES \
 @CROSS_COMPILING_FALSE@plugin_resources.c: test4.gresource.xml Makefile $(shell $(glib_compile_resources) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/test4.gresource.xml)
 @CROSS_COMPILING_FALSE@	$(AM_V_GEN) $(glib_compile_resources) --target=$@ --sourcedir=$(srcdir) --generate-source --c-name _g_plugin $<
 
-@CROSS_COMPILING_FALSE@test.gresource: test.gresource.xml Makefile $(shell $(glib_compile_resources) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/test.gresource.xml)
-@CROSS_COMPILING_FALSE@	$(AM_V_GEN) $(glib_compile_resources) --target=$@ --sourcedir=$(srcdir) $<
+@CROSS_COMPILING_FALSE@test.gresource: test.gresource.xml Makefile $(shell $(glib_compile_resources) --sourcedir=. --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/test.gresource.xml)
+@CROSS_COMPILING_FALSE@	$(AM_V_GEN) $(glib_compile_resources) --target=$@ --sourcedir=. --sourcedir=$(srcdir) $<
 
 giotypefuncs.c: Makefile
 	$(AM_V_GEN) echo '#include <gio/gio.h>' > xgen-giosrc.c && \

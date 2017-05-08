@@ -8,7 +8,7 @@
 <link rel="up" href="pt02.html" title="Part IV. Tutorial">
 <link rel="prev" href="howto-gobject-chainup.html" title="Chaining up">
 <link rel="next" href="howto-interface-implement.html" title="Implementing interfaces">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -230,11 +230,11 @@ G_END_DECLS
 <span class="gtkdoc opt">{</span>
   ViewerEditableInterface <span class="gtkdoc opt">*</span>iface<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   iface <span class="gtkdoc opt">=</span> <span class="function">VIEWER_EDITABLE_GET_IFACE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>save <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>save <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
   iface<span class="gtkdoc opt">-&gt;</span><span class="function">save</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span>
 
@@ -244,10 +244,10 @@ G_END_DECLS
 <span class="gtkdoc opt">{</span>
   ViewerEditableInterface <span class="gtkdoc opt">*</span>iface<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
 
   iface <span class="gtkdoc opt">=</span> <span class="function">VIEWER_EDITABLE_GET_IFACE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>undo <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>undo <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
   iface<span class="gtkdoc opt">-&gt;</span><span class="function">undo</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">,</span> n_steps<span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span>
 
@@ -257,10 +257,10 @@ G_END_DECLS
 <span class="gtkdoc opt">{</span>
   ViewerEditableInterface <span class="gtkdoc opt">*</span>iface<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
 
   iface <span class="gtkdoc opt">=</span> <span class="function">VIEWER_EDITABLE_GET_IFACE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>redo <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>redo <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
   iface<span class="gtkdoc opt">-&gt;</span><span class="function">redo</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">,</span> n_steps<span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span></pre></td>
       </tr>
@@ -273,6 +273,6 @@ G_END_DECLS
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

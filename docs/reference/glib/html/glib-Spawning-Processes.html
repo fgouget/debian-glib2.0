@@ -8,7 +8,7 @@
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Timers.html" title="Timers">
 <link rel="next" href="glib-File-Utilities.html" title="File Utilities">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -146,7 +146,7 @@ convenient than the bare UNIX <code class="function">fork()</code> and <code cla
 and asynchronous variants (<a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a>, <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>),
 as well as convenience variants that take a complete shell-like
 commandline (<a class="link" href="glib-Spawning-Processes.html#g-spawn-command-line-sync" title="g_spawn_command_line_sync ()"><code class="function">g_spawn_command_line_sync()</code></a>, <a class="link" href="glib-Spawning-Processes.html#g-spawn-command-line-async" title="g_spawn_command_line_async ()"><code class="function">g_spawn_command_line_async()</code></a>).</p>
-<p>See <a href="https://developer.gnome.org/gio/unstable/GSubprocess.html"><span class="type">GSubprocess</span></a> in GIO for a higher-level API that provides
+<p>See <a href="https://developer.gnome.org/gio/unstable/GSubprocess.html#GSubprocess-struct"><span class="type">GSubprocess</span></a> in GIO for a higher-level API that provides
 stream interfaces for communication with child processes.</p>
 </div>
 <div class="refsect1">
@@ -182,7 +182,7 @@ the parent, you should use <a class="link" href="glib-Miscellaneous-Utility-Func
 and <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-environ-unsetenv" title="g_environ_unsetenv ()"><code class="function">g_environ_unsetenv()</code></a>, and then pass the complete environment
 list to the <code class="literal">g_spawn...</code> function.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.2.9"></a><h4>Parameters</h4>
+<a name="GSpawnChildSetupFunc.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -385,7 +385,7 @@ are spawning is a graphical application, too, then you may
 want to use <code class="function">gdk_spawn_on_screen_with_pipes()</code> instead to ensure that
 the spawned program opens its windows on the right screen.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.3.24"></a><h4>Parameters</h4>
+<a name="g-spawn-async-with-pipes.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -396,7 +396,7 @@ the spawned program opens its windows on the right screen.</p>
 <tr>
 <td class="parameter_name"><p>working_directory</p></td>
 <td class="parameter_description"><p> child's current working directory, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to inherit parent's, in the GLib file name encoding. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
@@ -453,7 +453,7 @@ the spawned program opens its windows on the right screen.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.17.7.3.25"></a><h4>Returns</h4>
+<a name="g-spawn-async-with-pipes.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error was set</p>
 </div>
 </div>
@@ -482,7 +482,7 @@ opens its windows on the right screen.</p>
 process and not its identifier. Process handles and process identifiers
 are different concepts on Windows.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.4.8"></a><h4>Parameters</h4>
+<a name="g-spawn-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -493,7 +493,7 @@ are different concepts on Windows.</p>
 <tr>
 <td class="parameter_name"><p>working_directory</p></td>
 <td class="parameter_description"><p> child's current working directory, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to inherit parent's. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
@@ -535,7 +535,7 @@ are different concepts on Windows.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.17.7.4.9"></a><h4>Returns</h4>
+<a name="g-spawn-async.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if error is set</p>
 </div>
 </div>
@@ -578,7 +578,7 @@ Note that it is invalid to pass <a class="link" href="glib-Spawning-Processes.ht
 function for full details on the other parameters and details on
 how these functions work on Windows.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.5.8"></a><h4>Parameters</h4>
+<a name="g-spawn-sync.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -589,7 +589,7 @@ how these functions work on Windows.</p>
 <tr>
 <td class="parameter_name"><p>working_directory</p></td>
 <td class="parameter_description"><p> child's current working directory, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to inherit parent's. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
@@ -641,7 +641,7 @@ how these functions work on Windows.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.17.7.5.9"></a><h4>Returns</h4>
+<a name="g-spawn-sync.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error was set</p>
 </div>
 </div>
@@ -691,7 +691,7 @@ the available platform via a macro such as <a class="link" href="glib-Standard-M
 to scan or parse the error message string; it may be translated and/or
 change in future versions of GLib.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.6.12"></a><h4>Parameters</h4>
+<a name="g-spawn-check-exit-status.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -713,7 +713,7 @@ change in future versions of GLib.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.17.7.6.13"></a><h4>Returns</h4>
+<a name="g-spawn-check-exit-status.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if child exited successfully, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> otherwise (and
 <em class="parameter"><code>error</code></em>
 will be set)</p>
@@ -735,7 +735,7 @@ consider using <a class="link" href="glib-Spawning-Processes.html#g-spawn-async"
 errors are those from <a class="link" href="glib-Shell-related-Utilities.html#g-shell-parse-argv" title="g_shell_parse_argv ()"><code class="function">g_shell_parse_argv()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a>.</p>
 <p>The same concerns on Windows apply as for <a class="link" href="glib-Spawning-Processes.html#g-spawn-command-line-sync" title="g_spawn_command_line_sync ()"><code class="function">g_spawn_command_line_sync()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.7.6"></a><h4>Parameters</h4>
+<a name="g-spawn-command-line-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -757,7 +757,7 @@ errors are those from <a class="link" href="glib-Shell-related-Utilities.html#g-
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.17.7.7.7"></a><h4>Returns</h4>
+<a name="g-spawn-command-line-async.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if error is set</p>
 </div>
 </div>
@@ -795,7 +795,7 @@ the backslashes will be eaten, and the space will act as a
 separator. You need to enclose such paths with single quotes, like
 "'c:\program files\app\app.exe' 'e:\folder\argument.txt'".</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.8.7"></a><h4>Parameters</h4>
+<a name="g-spawn-command-line-sync.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -832,7 +832,7 @@ separator. You need to enclose such paths with single quotes, like
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.17.7.8.8"></a><h4>Returns</h4>
+<a name="g-spawn-command-line-sync.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error was set</p>
 </div>
 </div>
@@ -846,7 +846,7 @@ which must be closed to prevent resource leaking. <a class="link" href="glib-Spa
 is provided for this purpose. It should be used on all platforms, even
 though it doesn't do anything under UNIX.</p>
 <div class="refsect3">
-<a name="id-1.5.17.7.9.5"></a><h4>Parameters</h4>
+<a name="g-spawn-close-pid.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -868,7 +868,7 @@ though it doesn't do anything under UNIX.</p>
 <a name="GSpawnError"></a><h3>enum GSpawnError</h3>
 <p>Error codes returned by spawning processes.</p>
 <div class="refsect3">
-<a name="id-1.5.17.8.2.4"></a><h4>Members</h4>
+<a name="GSpawnError.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
@@ -1042,7 +1042,7 @@ error domains.</p>
 <a name="GSpawnFlags"></a><h3>enum GSpawnFlags</h3>
 <p>Flags passed to <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a>, <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.17.8.4.4"></a><h4>Members</h4>
+<a name="GSpawnFlags.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
@@ -1148,6 +1148,6 @@ will be the program exit code.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

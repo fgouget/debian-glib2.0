@@ -8,7 +8,7 @@
 <link rel="up" href="howto-gobject.html" title="How to define and implement a new GObject">
 <link rel="prev" href="howto-gobject-destruction.html" title="Object destruction">
 <link rel="next" href="howto-gobject-chainup.html" title="Chaining up">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -79,8 +79,8 @@
 <span class="function">viewer_file_open</span> <span class="gtkdoc opt">(</span>ViewerFile  <span class="gtkdoc opt">*</span>self<span class="gtkdoc opt">,</span>
                   GError     <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
 <span class="gtkdoc opt">{</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   <span class="comment">/* do stuff here. */</span>
 <span class="gtkdoc opt">}</span></pre></td>
@@ -193,11 +193,11 @@
 <span class="gtkdoc opt">{</span>
   ViewerFileClass <span class="gtkdoc opt">*</span>klass<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   klass <span class="gtkdoc opt">=</span> <span class="function">VIEWER_FILE_GET_CLASS</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>klass<span class="gtkdoc opt">-&gt;</span>open <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>klass<span class="gtkdoc opt">-&gt;</span>open <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
 
   klass<span class="gtkdoc opt">-&gt;</span><span class="function">open</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span></pre></td>
@@ -302,8 +302,8 @@
 <span class="gtkdoc opt">{</span>
   ViewerFileClass <span class="gtkdoc opt">*</span>klass<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   klass <span class="gtkdoc opt">=</span> <span class="function">VIEWER_FILE_GET_CLASS</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
 
@@ -312,7 +312,7 @@
 <span class="comment">   * depending on the intent of the class, either ignore it silently</span>
 <span class="comment">   * or warn the user.</span>
 <span class="comment">   */</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>klass<span class="gtkdoc opt">-&gt;</span>open <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>klass<span class="gtkdoc opt">-&gt;</span>open <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
   klass<span class="gtkdoc opt">-&gt;</span><span class="function">open</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span>
 
@@ -322,8 +322,8 @@
 <span class="gtkdoc opt">{</span>
   ViewerFileClass <span class="gtkdoc opt">*</span>klass<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   klass <span class="gtkdoc opt">=</span> <span class="function">VIEWER_FILE_GET_CLASS</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
   <span class="keyword">if</span> <span class="gtkdoc opt">(</span>klass<span class="gtkdoc opt">-&gt;</span>close <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">)</span>
@@ -380,7 +380,7 @@
 
   <span class="comment">/* Private helper function to work out whether the file can be loaded via</span>
 <span class="comment">   * memory mapped I/O, or whether it has to be read as a stream. */</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean">gboolean</a></span> <span class="gtkdoc opt">(*</span>can_memory_map<span class="gtkdoc opt">) (</span>ViewerFile <span class="gtkdoc opt">*</span>self<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Basic-Types.html#gboolean">gboolean</a></span> <span class="gtkdoc opt">(*</span>can_memory_map<span class="gtkdoc opt">) (</span>ViewerFile <span class="gtkdoc opt">*</span>self<span class="gtkdoc opt">);</span>
 
   <span class="comment">/* Padding to allow adding up to 12 new virtual functions without</span>
 <span class="comment">   * breaking ABI. */</span>
@@ -439,8 +439,8 @@
 <span class="function">viewer_file_open</span> <span class="gtkdoc opt">(</span>ViewerFile  <span class="gtkdoc opt">*</span>self<span class="gtkdoc opt">,</span>
                   GError     <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
 <span class="gtkdoc opt">{</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_FILE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   <span class="comment">/*</span>
 <span class="comment">   * Try to load the file using memory mapped I/O, if the implementation of the</span>
@@ -538,6 +538,6 @@
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

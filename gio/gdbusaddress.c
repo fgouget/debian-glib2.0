@@ -865,6 +865,7 @@ g_dbus_address_get_stream (const gchar         *address,
   data->address = g_strdup (address);
 
   task = g_task_new (NULL, cancellable, callback, user_data);
+  g_task_set_source_tag (task, g_dbus_address_get_stream);
   g_task_set_task_data (task, data, (GDestroyNotify) get_stream_data_free);
   g_task_run_in_thread (task, get_stream_thread_func);
   g_object_unref (task);
@@ -1068,6 +1069,13 @@ get_session_address_dbus_launch (GError **error)
   if (machine_id == NULL)
     {
       g_prefix_error (error, _("Cannot spawn a message bus without a machine-id: "));
+      goto out;
+    }
+
+  if (g_getenv ("DISPLAY") == NULL)
+    {
+      g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                   _("Cannot autolaunch D-Bus without X11 $DISPLAY"));
       goto out;
     }
 

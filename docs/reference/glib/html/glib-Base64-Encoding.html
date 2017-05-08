@@ -8,7 +8,7 @@
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Unicode-Manipulation.html" title="Unicode Manipulation">
 <link rel="next" href="glib-Data-Checksums.html" title="Data Checksums">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -143,7 +143,7 @@ Note however that it breaks the lines with <code class="literal">LF</code> chara
 <code class="literal">CR LF</code> sequences, so the result cannot be passed directly to SMTP
 or certain other protocols.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.2.8"></a><h4>Parameters</h4>
+<a name="g-base64-encode-step.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -186,7 +186,7 @@ or certain other protocols.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.2.9"></a><h4>Returns</h4>
+<a name="g-base64-encode-step.returns"></a><h4>Returns</h4>
 <p> The number of bytes of output that was written</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
@@ -204,7 +204,7 @@ g_base64_encode_close (<em class="parameter"><code><a class="link" href="glib-Ba
 be written to it. It will need up to 4 bytes, or up to 5 bytes if
 line-breaking is enabled.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.3.6"></a><h4>Parameters</h4>
+<a name="g-base64-encode-close.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -236,7 +236,7 @@ line-breaking is enabled.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.3.7"></a><h4>Returns</h4>
+<a name="g-base64-encode-close.returns"></a><h4>Returns</h4>
 <p> The number of bytes of output that was written</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
@@ -250,7 +250,7 @@ g_base64_encode (<em class="parameter"><code>const <a class="link" href="glib-Ba
 <p>Encode a sequence of binary data into its Base-64 stringified
 representation.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.4.5"></a><h4>Parameters</h4>
+<a name="g-base64-encode.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -273,7 +273,7 @@ representation.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.4.6"></a><h4>Returns</h4>
+<a name="g-base64-encode.returns"></a><h4>Returns</h4>
 <p> a newly allocated, zero-terminated Base-64
 encoded string representing <em class="parameter"><code>data</code></em>
 . The returned string must
@@ -300,7 +300,7 @@ at least: (<em class="parameter"><code>len</code></em>
  / 4) * 3 + 3 bytes (+ 3 may be needed in case of non-zero
 state).</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.5.6"></a><h4>Parameters</h4>
+<a name="g-base64-decode-step.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -338,7 +338,7 @@ data to decode</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.5.7"></a><h4>Returns</h4>
+<a name="g-base64-decode-step.returns"></a><h4>Returns</h4>
 <p> The number of bytes of output that was written</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
@@ -353,7 +353,7 @@ g_base64_decode (<em class="parameter"><code>const <a class="link" href="glib-Ba
 that the returned binary data is not necessarily zero-terminated,
 so it should not be used as a character string.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.6.5"></a><h4>Parameters</h4>
+<a name="g-base64-decode.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -375,7 +375,7 @@ so it should not be used as a character string.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.6.6"></a><h4>Returns</h4>
+<a name="g-base64-decode.returns"></a><h4>Returns</h4>
 <p>              newly allocated buffer containing the binary data
 that <em class="parameter"><code>text</code></em>
 represents. The returned buffer must
@@ -393,7 +393,7 @@ g_base64_decode_inplace (<em class="parameter"><code><a class="link" href="glib-
 <p>Decode a sequence of Base-64 encoded text into binary data
 by overwriting the input data.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.7.5"></a><h4>Parameters</h4>
+<a name="g-base64-decode-inplace.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -416,7 +416,7 @@ string with base64 text to decode. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.7.6"></a><h4>Returns</h4>
+<a name="g-base64-decode-inplace.returns"></a><h4>Returns</h4>
 <p> The binary data that <em class="parameter"><code>text</code></em>
 responds. This pointer
 is the same as the input <em class="parameter"><code>text</code></em>
@@ -431,6 +431,6 @@ is the same as the input <em class="parameter"><code>text</code></em>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

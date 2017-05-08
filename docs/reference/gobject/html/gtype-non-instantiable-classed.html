@@ -8,7 +8,7 @@
 <link rel="up" href="chapter-gtype.html" title="The GLib Dynamic Type System">
 <link rel="prev" href="gtype-instantiable-classed.html" title="Instantiable classed types: objects">
 <link rel="next" href="chapter-gobject.html" title="The GObject base class">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -97,11 +97,11 @@
 <span class="gtkdoc opt">{</span>
   ViewerEditableinterface <span class="gtkdoc opt">*</span>iface<span class="gtkdoc opt">;</span>
 
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span><span class="function">VIEWER_IS_EDITABLE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">));</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>error <span class="gtkdoc opt">==</span> NULL <span class="gtkdoc opt">|| *</span>error <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">);</span>
 
   iface <span class="gtkdoc opt">=</span> <span class="function">VIEWER_EDITABLE_GET_INTERFACE</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>save <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-return-if-fail">g_return_if_fail</a></span> <span class="gtkdoc opt">(</span>iface<span class="gtkdoc opt">-&gt;</span>save <span class="gtkdoc opt">!=</span> NULL<span class="gtkdoc opt">);</span>
   iface<span class="gtkdoc opt">-&gt;</span><span class="function">save</span> <span class="gtkdoc opt">(</span>self<span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span></pre></td>
       </tr>
@@ -149,7 +149,7 @@
         <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static void</span>
 <span class="function">viewer_file_save</span> <span class="gtkdoc opt">(</span>ViewerEditable <span class="gtkdoc opt">*</span>self<span class="gtkdoc opt">)</span>
 <span class="gtkdoc opt">{</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;File implementation of editable interface save method.</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;File implementation of editable interface save method.</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span>
 
 <span class="gtkdoc kwb">static void</span>
@@ -228,7 +228,7 @@
         <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static void</span>
 <span class="function">viewer_file_save</span> <span class="gtkdoc opt">(</span>ViewerEditable <span class="gtkdoc opt">*</span>editable<span class="gtkdoc opt">)</span>
 <span class="gtkdoc opt">{</span>
-  <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;File implementation of editable interface save method.</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="../glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;File implementation of editable interface save method.</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">);</span>
 <span class="gtkdoc opt">}</span>
 
 <span class="gtkdoc kwb">static void</span>
@@ -414,7 +414,7 @@ GType
 <span class="function">viewer_editable_get_type</span> <span class="gtkdoc opt">(</span><span class="gtkdoc kwb">void</span><span class="gtkdoc opt">)</span>
 <span class="gtkdoc opt">{</span>
   <span class="gtkdoc kwb">static</span> <span class="gtkdoc kwc">volatile</span> gsize type_id <span class="gtkdoc opt">=</span> <span class="number">0</span><span class="gtkdoc opt">;</span>
-  <span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Threads.html#g-once-init-enter">g_once_init_enter</a></span> <span class="gtkdoc opt">(&amp;</span>type_id<span class="gtkdoc opt">)) {</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="../glib-Threads.html#g-once-init-enter">g_once_init_enter</a></span> <span class="gtkdoc opt">(&amp;</span>type_id<span class="gtkdoc opt">)) {</span>
     <span class="gtkdoc kwb">const</span> GTypeInfo info <span class="gtkdoc opt">= {</span>
       <span class="keyword">sizeof</span> <span class="gtkdoc opt">(</span>ViewerEditableInterface<span class="gtkdoc opt">),</span>
       NULL<span class="gtkdoc opt">,</span>   <span class="comment">/* base_init */</span>
@@ -429,7 +429,7 @@ GType
     GType type <span class="gtkdoc opt">=</span> <span class="function"><a href="gobject-Type-Information.html#g-type-register-static">g_type_register_static</a></span> <span class="gtkdoc opt">(</span>G_TYPE_INTERFACE<span class="gtkdoc opt">,</span>
                                          <span class="string">&quot;ViewerEditable&quot;</span><span class="gtkdoc opt">,</span>
                                          <span class="gtkdoc opt">&amp;</span>info<span class="gtkdoc opt">,</span> <span class="number">0</span><span class="gtkdoc opt">);</span>
-    <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Threads.html#g-once-init-leave">g_once_init_leave</a></span> <span class="gtkdoc opt">(&amp;</span>type_id<span class="gtkdoc opt">,</span> type<span class="gtkdoc opt">);</span>
+    <span class="function"><a href="../glib-Threads.html#g-once-init-leave">g_once_init_leave</a></span> <span class="gtkdoc opt">(&amp;</span>type_id<span class="gtkdoc opt">,</span> type<span class="gtkdoc opt">);</span>
   <span class="gtkdoc opt">}</span>
   <span class="keyword">return</span> type_id<span class="gtkdoc opt">;</span>
 <span class="gtkdoc opt">}</span>
@@ -559,6 +559,6 @@ GType
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

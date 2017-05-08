@@ -8,7 +8,7 @@
 <link rel="up" href="glib-core.html" title="GLib Core Application Support">
 <link rel="prev" href="glib-Threads.html" title="Threads">
 <link rel="next" href="glib-Asynchronous-Queues.html" title="Asynchronous Queues">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -254,7 +254,7 @@ and not all <em class="parameter"><code>max_threads</code></em>
 See <a class="link" href="glib-Threads.html#GThreadError" title="enum GThreadError"><span class="type">GThreadError</span></a> for possible errors that may occur.
 Note, even in case of error a valid <a class="link" href="glib-Thread-Pools.html#GThreadPool" title="struct GThreadPool"><span class="type">GThreadPool</span></a> is returned.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.2.8"></a><h4>Parameters</h4>
+<a name="g-thread-pool-new.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -294,7 +294,7 @@ in  the new thread pool, -1 means no limit</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.2.9"></a><h4>Returns</h4>
+<a name="g-thread-pool-new.returns"></a><h4>Returns</h4>
 <p> the new <a class="link" href="glib-Thread-Pools.html#GThreadPool" title="struct GThreadPool"><span class="type">GThreadPool</span></a></p>
 </div>
 </div>
@@ -323,7 +323,7 @@ created. In that case <em class="parameter"><code>data</code></em>
 work to do.</p>
 <p>Before version 2.32, this function did not return a success status.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.3.8"></a><h4>Parameters</h4>
+<a name="g-thread-pool-push.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -351,7 +351,7 @@ work to do.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.3.9"></a><h4>Returns</h4>
+<a name="g-thread-pool-push.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error occurred</p>
 </div>
 </div>
@@ -387,7 +387,7 @@ errors. An error can only occur when a new thread couldn't be
 created.</p>
 <p>Before version 2.32, this function did not return a success status.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.4.9"></a><h4>Parameters</h4>
+<a name="g-thread-pool-set-max-threads.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -416,7 +416,7 @@ or -1 for unlimited</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.4.10"></a><h4>Returns</h4>
+<a name="g-thread-pool-set-max-threads.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error occurred</p>
 </div>
 </div>
@@ -428,7 +428,7 @@ g_thread_pool_get_max_threads (<em class="parameter"><code><a class="link" href=
 <p>Returns the maximal number of threads for <em class="parameter"><code>pool</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.5.5"></a><h4>Parameters</h4>
+<a name="g-thread-pool-get-max-threads.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -443,7 +443,7 @@ g_thread_pool_get_max_threads (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.5.6"></a><h4>Returns</h4>
+<a name="g-thread-pool-get-max-threads.returns"></a><h4>Returns</h4>
 <p> the maximal number of threads</p>
 </div>
 </div>
@@ -455,7 +455,7 @@ g_thread_pool_get_num_threads (<em class="parameter"><code><a class="link" href=
 <p>Returns the number of threads currently running in <em class="parameter"><code>pool</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.6.5"></a><h4>Parameters</h4>
+<a name="g-thread-pool-get-num-threads.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -470,7 +470,7 @@ g_thread_pool_get_num_threads (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.6.6"></a><h4>Returns</h4>
+<a name="g-thread-pool-get-num-threads.returns"></a><h4>Returns</h4>
 <p> the number of threads currently running</p>
 </div>
 </div>
@@ -482,7 +482,7 @@ g_thread_pool_unprocessed (<em class="parameter"><code><a class="link" href="gli
 <p>Returns the number of tasks still unprocessed in <em class="parameter"><code>pool</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.7.5"></a><h4>Parameters</h4>
+<a name="g-thread-pool-unprocessed.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -497,7 +497,7 @@ g_thread_pool_unprocessed (<em class="parameter"><code><a class="link" href="gli
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.7.6"></a><h4>Returns</h4>
+<a name="g-thread-pool-unprocessed.returns"></a><h4>Returns</h4>
 <p> the number of unprocessed tasks</p>
 </div>
 </div>
@@ -528,7 +528,7 @@ Otherwise the function returns immediately.</p>
 <p>After calling this function <em class="parameter"><code>pool</code></em>
  must not be used anymore.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.8.8"></a><h4>Parameters</h4>
+<a name="g-thread-pool-free.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -568,7 +568,7 @@ If <em class="parameter"><code>max_threads</code></em>
 of unused threads.</p>
 <p>The default value is 2.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.9.6"></a><h4>Parameters</h4>
+<a name="g-thread-pool-set-max-unused-threads.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -590,7 +590,7 @@ of unused threads.</p>
 g_thread_pool_get_max_unused_threads (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Returns the maximal allowed number of unused threads.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.10.5"></a><h4>Returns</h4>
+<a name="g-thread-pool-get-max-unused-threads.returns"></a><h4>Returns</h4>
 <p> the maximal number of unused threads</p>
 </div>
 </div>
@@ -601,7 +601,7 @@ g_thread_pool_get_max_unused_threads (<em class="parameter"><code><span class="t
 g_thread_pool_get_num_unused_threads (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Returns the number of currently unused threads.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.11.5"></a><h4>Returns</h4>
+<a name="g-thread-pool-get-num-unused-threads.returns"></a><h4>Returns</h4>
 <p> the number of currently unused threads</p>
 </div>
 </div>
@@ -631,7 +631,7 @@ scheduled by the operating system and are executed at random. It
 cannot be assumed that threads are executed in the order they are
 created.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.13.6"></a><h4>Parameters</h4>
+<a name="g-thread-pool-set-sort-function.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -680,7 +680,7 @@ except this is done on a per thread basis.</p>
  to 0, idle threads will not be stopped.</p>
 <p>The default value is 15000 (15 seconds).</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.14.7"></a><h4>Parameters</h4>
+<a name="g-thread-pool-set-max-idle-time.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -710,7 +710,7 @@ being stopped.</p>
 <p>If this function returns 0, threads waiting in the thread
 pool for new work are not stopped.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.15.6"></a><h4>Returns</h4>
+<a name="g-thread-pool-get-max-idle-time.returns"></a><h4>Returns</h4>
 <p> the maximum <em class="parameter"><code>interval</code></em>
 (milliseconds) to wait
 for new tasks in the thread pool before stopping the
@@ -727,7 +727,7 @@ g_thread_pool_move_to_front (<em class="parameter"><code><a class="link" href="g
 <p>Moves the item to the front of the queue of unprocessed
 items, so that it will be processed next.</p>
 <div class="refsect3">
-<a name="id-1.4.4.7.16.5"></a><h4>Parameters</h4>
+<a name="g-thread-pool-move-to-front.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -749,7 +749,7 @@ items, so that it will be processed next.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.7.16.6"></a><h4>Returns</h4>
+<a name="g-thread-pool-move-to-front.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the item was found and moved</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-46.html#api-index-2.46">2.46</a></p>
@@ -769,7 +769,7 @@ items, so that it will be processed next.</p>
 public read-only members, but the underlying struct is bigger,
 so you must not copy this struct.</p>
 <div class="refsect3">
-<a name="id-1.4.4.8.2.5"></a><h4>Members</h4>
+<a name="GThreadPool.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
@@ -803,6 +803,6 @@ so you must not copy this struct.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

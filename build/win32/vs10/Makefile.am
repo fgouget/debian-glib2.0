@@ -9,6 +9,8 @@ GENERATED_ITEMS = \
 	glib-compile-schemas.vcxproj.filters	\
 	glib-compile-resources.vcxproj	\
 	glib-compile-resources.vcxproj.filters	\
+	gio-tool.vcxproj	\
+	gio-tool.vcxproj.filters	\
 	glib-version-paths.props	\
 	glib-install.props
 
@@ -39,6 +41,8 @@ EXTRA_DIST = \
 	gsettings.vcxproj.filters		\
 	glib-compile-resources.vcxprojin		\
 	glib-compile-resources.vcxproj.filtersin	\
+	gio-tool.vcxprojin	\
+	gio-tool.vcxproj.filtersin	\
 	gresource.vcxproj		\
 	gresource.vcxproj.filters		\
 	gio-querymodules.vcxproj		\
@@ -54,6 +58,9 @@ EXTRA_DIST = \
 	$(GENERATED_ITEMS)
 
 glib-install.props: $(top_srcdir)/build/win32/vs10/glib-install.propsin $(MSVC10_HEADERS_LIST)
+	-$(RM) $(top_builddir)/build/win32/vs11/glib-install.props
+	-$(RM) $(top_builddir)/build/win32/vs12/glib-install.props
+	-$(RM) $(top_builddir)/build/win32/vs14/glib-install.props
 	$(CPP) -P - <$(top_srcdir)/build/win32/vs10/glib-install.propsin >$@
 	rm $(MSVC10_HEADERS_LIST)
 

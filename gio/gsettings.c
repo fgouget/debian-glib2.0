@@ -730,6 +730,9 @@ g_settings_class_init (GSettingsClass *class)
    * This signal supports detailed connections.  You can connect to the
    * detailed signal "changed::x" in order to only receive callbacks
    * when key "x" changes.
+   *
+   * Note that @settings only emits this signal if you have read @key at
+   * least once while a signal handler was already connected for @key.
    */
   g_settings_signals[SIGNAL_CHANGED] =
     g_signal_new (I_("changed"), G_TYPE_SETTINGS,
@@ -1874,6 +1877,62 @@ g_settings_set_int (GSettings   *settings,
 }
 
 /**
+ * g_settings_get_int64:
+ * @settings: a #GSettings object
+ * @key: the key to get the value for
+ *
+ * Gets the value that is stored at @key in @settings.
+ *
+ * A convenience variant of g_settings_get() for 64-bit integers.
+ *
+ * It is a programmer error to give a @key that isn't specified as
+ * having a int64 type in the schema for @settings.
+ *
+ * Returns: a 64-bit integer
+ *
+ * Since: 2.50
+ */
+gint64
+g_settings_get_int64 (GSettings   *settings,
+                      const gchar *key)
+{
+  GVariant *value;
+  gint64 result;
+
+  value = g_settings_get_value (settings, key);
+  result = g_variant_get_int64 (value);
+  g_variant_unref (value);
+
+  return result;
+}
+
+/**
+ * g_settings_set_int64:
+ * @settings: a #GSettings object
+ * @key: the name of the key to set
+ * @value: the value to set it to
+ *
+ * Sets @key in @settings to @value.
+ *
+ * A convenience variant of g_settings_set() for 64-bit integers.
+ *
+ * It is a programmer error to give a @key that isn't specified as
+ * having a int64 type in the schema for @settings.
+ *
+ * Returns: %TRUE if setting the key succeeded,
+ *     %FALSE if the key was not writable
+ *
+ * Since: 2.50
+ */
+gboolean
+g_settings_set_int64 (GSettings   *settings,
+                      const gchar *key,
+                      gint64       value)
+{
+  return g_settings_set_value (settings, key, g_variant_new_int64 (value));
+}
+
+/**
  * g_settings_get_uint:
  * @settings: a #GSettings object
  * @key: the key to get the value for
@@ -1929,6 +1988,64 @@ g_settings_set_uint (GSettings   *settings,
                      guint        value)
 {
   return g_settings_set_value (settings, key, g_variant_new_uint32 (value));
+}
+
+/**
+ * g_settings_get_uint64:
+ * @settings: a #GSettings object
+ * @key: the key to get the value for
+ *
+ * Gets the value that is stored at @key in @settings.
+ *
+ * A convenience variant of g_settings_get() for 64-bit unsigned
+ * integers.
+ *
+ * It is a programmer error to give a @key that isn't specified as
+ * having a uint64 type in the schema for @settings.
+ *
+ * Returns: a 64-bit unsigned integer
+ *
+ * Since: 2.50
+ */
+guint64
+g_settings_get_uint64 (GSettings   *settings,
+                       const gchar *key)
+{
+  GVariant *value;
+  guint64 result;
+
+  value = g_settings_get_value (settings, key);
+  result = g_variant_get_uint64 (value);
+  g_variant_unref (value);
+
+  return result;
+}
+
+/**
+ * g_settings_set_uint64:
+ * @settings: a #GSettings object
+ * @key: the name of the key to set
+ * @value: the value to set it to
+ *
+ * Sets @key in @settings to @value.
+ *
+ * A convenience variant of g_settings_set() for 64-bit unsigned
+ * integers.
+ *
+ * It is a programmer error to give a @key that isn't specified as
+ * having a uint64 type in the schema for @settings.
+ *
+ * Returns: %TRUE if setting the key succeeded,
+ *     %FALSE if the key was not writable
+ *
+ * Since: 2.50
+ */
+gboolean
+g_settings_set_uint64 (GSettings   *settings,
+                       const gchar *key,
+                       guint64      value)
+{
+  return g_settings_set_value (settings, key, g_variant_new_uint64 (value));
 }
 
 /**
@@ -2223,6 +2340,9 @@ g_settings_reset (GSettings *settings,
                   const gchar *key)
 {
   gchar *path;
+
+  g_return_if_fail (G_IS_SETTINGS (settings));
+  g_return_if_fail (key != NULL);
 
   path = g_strconcat (settings->priv->path, key, NULL);
   g_settings_backend_reset (settings->priv->backend, path, NULL);

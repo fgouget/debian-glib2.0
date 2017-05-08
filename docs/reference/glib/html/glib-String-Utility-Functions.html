@@ -8,7 +8,7 @@
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-utilities.html" title="GLib Utilities">
 <link rel="next" href="glib-Character-Set-Conversion.html" title="Character Set Conversion">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -496,10 +496,6 @@
 </td>
 </tr>
 <tr>
-<td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="glib-String-Utility-Functions.html#G-ASCII-DTOSTR-BUF-SIZE:CAPS" title="G_ASCII_DTOSTR_BUF_SIZE">G_ASCII_DTOSTR_BUF_SIZE</a></td>
-</tr>
-<tr>
 <td class="function_type">
 <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="returnvalue">gdouble</span></a>
 </td>
@@ -676,6 +672,10 @@
 <tbody>
 <tr>
 <td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="glib-String-Utility-Functions.html#G-ASCII-DTOSTR-BUF-SIZE:CAPS" title="G_ASCII_DTOSTR_BUF_SIZE">G_ASCII_DTOSTR_BUF_SIZE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="glib-String-Utility-Functions.html#G-STR-DELIMITERS:CAPS" title="G_STR_DELIMITERS">G_STR_DELIMITERS</a></td>
 </tr>
 <tr>
@@ -734,7 +734,7 @@ g_strdup (<em class="parameter"><code>const <a class="link" href="glib-Basic-Typ
 The returned string should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>
 when no longer needed.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.2.5"></a><h4>Parameters</h4>
+<a name="g-strdup.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -749,7 +749,7 @@ when no longer needed.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.2.6"></a><h4>Returns</h4>
+<a name="g-strdup.returns"></a><h4>Returns</h4>
 <p> a newly-allocated copy of <em class="parameter"><code>str</code></em>
 </p>
 </div>
@@ -773,7 +773,7 @@ needed.</p>
 <p>To copy a number of characters from a UTF-8 encoded string,
 use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strncpy" title="g_utf8_strncpy ()"><code class="function">g_utf8_strncpy()</code></a> instead.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.3.6"></a><h4>Parameters</h4>
+<a name="g-strndup.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -796,7 +796,7 @@ use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strncpy" title="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.3.7"></a><h4>Returns</h4>
+<a name="g-strndup.returns"></a><h4>Returns</h4>
 <p> a newly-allocated buffer containing the first <em class="parameter"><code>n</code></em>
 bytes
 of <em class="parameter"><code>str</code></em>
@@ -813,7 +813,7 @@ the new array should be freed by first freeing each string, then
 the array itself. <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a> does this for you. If called
 on a <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> value, <a class="link" href="glib-String-Utility-Functions.html#g-strdupv" title="g_strdupv ()"><code class="function">g_strdupv()</code></a> simply returns <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.4.5"></a><h4>Parameters</h4>
+<a name="g-strdupv.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -828,7 +828,7 @@ on a <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><co
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.4.6"></a><h4>Returns</h4>
+<a name="g-strdupv.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>-terminated array of strings. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -844,7 +844,7 @@ g_strnfill (<em class="parameter"><code><a class="link" href="glib-Basic-Types.h
 .
 The returned string should be freed when no longer needed.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.5.5"></a><h4>Parameters</h4>
+<a name="g-strnfill.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -866,7 +866,7 @@ The returned string should be freed when no longer needed.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.5.6"></a><h4>Returns</h4>
+<a name="g-strnfill.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string filled the <em class="parameter"><code>fill_char</code></em>
 </p>
 </div>
@@ -882,7 +882,7 @@ trailing nul, and return a pointer to the trailing nul byte.
 This is useful for concatenating multiple strings together
 without having to repeatedly scan for the end.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.6.5"></a><h4>Parameters</h4>
+<a name="g-stpcpy.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -904,7 +904,7 @@ without having to repeatedly scan for the end.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.6.6"></a><h4>Returns</h4>
+<a name="g-stpcpy.returns"></a><h4>Returns</h4>
 <p> a pointer to trailing nul byte.</p>
 </div>
 </div>
@@ -922,7 +922,7 @@ of the string <em class="parameter"><code>needle</code></em>
 to <em class="parameter"><code>haystack_len</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.7.5"></a><h4>Parameters</h4>
+<a name="g-strstr-len.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -953,7 +953,7 @@ search through the whole string.</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.7.6"></a><h4>Returns</h4>
+<a name="g-strstr-len.returns"></a><h4>Returns</h4>
 <p> a pointer to the found occurrence, or
 <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if not found.</p>
 </div>
@@ -969,7 +969,7 @@ g_strrstr (<em class="parameter"><code>const <a class="link" href="glib-Basic-Ty
 of the string <em class="parameter"><code>needle</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.8.5"></a><h4>Parameters</h4>
+<a name="g-strrstr.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -991,7 +991,7 @@ of the string <em class="parameter"><code>needle</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.8.6"></a><h4>Returns</h4>
+<a name="g-strrstr.returns"></a><h4>Returns</h4>
 <p> a pointer to the found occurrence, or
 <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if not found.</p>
 </div>
@@ -1010,7 +1010,7 @@ of the string <em class="parameter"><code>needle</code></em>
 to <em class="parameter"><code>haystack_len</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.9.5"></a><h4>Parameters</h4>
+<a name="g-strrstr-len.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1038,7 +1038,7 @@ to <em class="parameter"><code>haystack_len</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.9.6"></a><h4>Returns</h4>
+<a name="g-strrstr-len.returns"></a><h4>Returns</h4>
 <p> a pointer to the found occurrence, or
 <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if not found.</p>
 </div>
@@ -1053,7 +1053,7 @@ g_str_has_prefix (<em class="parameter"><code>const <a class="link" href="glib-B
  begins with <em class="parameter"><code>prefix</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.10.5"></a><h4>Parameters</h4>
+<a name="g-str-has-prefix.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1075,7 +1075,7 @@ g_str_has_prefix (<em class="parameter"><code>const <a class="link" href="glib-B
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.10.6"></a><h4>Returns</h4>
+<a name="g-str-has-prefix.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>str</code></em>
 begins with <em class="parameter"><code>prefix</code></em>
 , <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> otherwise.</p>
@@ -1092,7 +1092,7 @@ g_str_has_suffix (<em class="parameter"><code>const <a class="link" href="glib-B
  ends with <em class="parameter"><code>suffix</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.11.5"></a><h4>Parameters</h4>
+<a name="g-str-has-suffix.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1114,7 +1114,7 @@ g_str_has_suffix (<em class="parameter"><code>const <a class="link" href="glib-B
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.11.6"></a><h4>Returns</h4>
+<a name="g-str-has-suffix.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>str</code></em>
 end with <em class="parameter"><code>suffix</code></em>
 , <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> otherwise.</p>
@@ -1133,7 +1133,7 @@ g_strcmp0 (<em class="parameter"><code>const <span class="type">char</span> *str
 gracefully by sorting it before non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> strings.
 Comparing two <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> pointers returns 0.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.12.5"></a><h4>Parameters</h4>
+<a name="g-strcmp0.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1155,7 +1155,7 @@ Comparing two <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.12.6"></a><h4>Returns</h4>
+<a name="g-strcmp0.returns"></a><h4>Returns</h4>
 <p> an integer less than, equal to, or greater than zero, if <em class="parameter"><code>str1</code></em>
 is &lt;, == or &gt; than <em class="parameter"><code>str2</code></em>
 .</p>
@@ -1189,7 +1189,7 @@ to be done independently of the currently locale, specify "C" for
 <em class="parameter"><code>from_locale</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.13.10"></a><h4>Parameters</h4>
+<a name="g-str-to-ascii.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1211,7 +1211,7 @@ to be done independently of the currently locale, specify "C" for
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.13.11"></a><h4>Returns</h4>
+<a name="g-str-to-ascii.returns"></a><h4>Returns</h4>
 <p> a string in plain ASCII</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
@@ -1239,7 +1239,7 @@ for doing so is unspecified, but <em class="parameter"><code>translit_locale</co
 improve the transliteration if the language of the source string is
 known.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.14.8"></a><h4>Parameters</h4>
+<a name="g-str-tokenize-and-fold.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1269,7 +1269,7 @@ return location for ASCII alternates. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.14.9"></a><h4>Returns</h4>
+<a name="g-str-tokenize-and-fold.returns"></a><h4>Returns</h4>
 <p> the folded tokens. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></p>
 </div>
@@ -1310,7 +1310,7 @@ perform lookups into that index.</p>
 accent matching).  Searching "fo" would match "Foo" and "Bar Foo
 Baz", but not "SFO" (because no word as "fo" as a prefix).</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.15.9"></a><h4>Parameters</h4>
+<a name="g-str-match-string.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1337,7 +1337,7 @@ Baz", but not "SFO" (because no word as "fo" as a prefix).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.15.10"></a><h4>Returns</h4>
+<a name="g-str-match-string.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>potential_hit</code></em>
 is a hit</p>
 </div>
@@ -1373,7 +1373,7 @@ returns the size of the attempted result, strlen (src), so if
 but if you really want to avoid screwups, <a class="link" href="glib-String-Utility-Functions.html#g-strdup" title="g_strdup ()"><code class="function">g_strdup()</code></a> is an even better
 idea.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.16.7"></a><h4>Parameters</h4>
+<a name="g-strlcpy.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1401,7 +1401,7 @@ in bytes</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.16.8"></a><h4>Returns</h4>
+<a name="g-strlcpy.returns"></a><h4>Returns</h4>
 <p> length of <em class="parameter"><code>src</code></em>
 </p>
 </div>
@@ -1434,7 +1434,7 @@ characters of dest to start with).</p>
 <p>Caveat: this is supposedly a more secure alternative to <code class="function">strcat()</code> or
 <code class="function">strncat()</code>, but for real security <a class="link" href="glib-String-Utility-Functions.html#g-strconcat" title="g_strconcat ()"><code class="function">g_strconcat()</code></a> is harder to mess up.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.17.7"></a><h4>Parameters</h4>
+<a name="g-strlcat.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1464,7 +1464,7 @@ inside <em class="parameter"><code>dest</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.17.8"></a><h4>Returns</h4>
+<a name="g-strlcat.returns"></a><h4>Returns</h4>
 <p> size of attempted result, which is MIN (dest_size, strlen
 (original dest)) + strlen (src), so if retval &gt;= dest_size,
 truncation occurred.</p>
@@ -1481,7 +1481,7 @@ calculates the maximum space required and allocates memory to hold
 the result. The returned string should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a> when no
 longer needed.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.18.5"></a><h4>Parameters</h4>
+<a name="g-strdup-printf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1504,7 +1504,7 @@ longer needed.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.18.6"></a><h4>Returns</h4>
+<a name="g-strdup-printf.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string holding the result</p>
 </div>
 </div>
@@ -1521,7 +1521,7 @@ no longer needed.</p>
 <p>See also <a class="link" href="glib-String-Utility-Functions.html#g-vasprintf" title="g_vasprintf ()"><code class="function">g_vasprintf()</code></a>, which offers the same functionality, but
 additionally returns the length of the allocated string.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.19.6"></a><h4>Parameters</h4>
+<a name="g-strdup-vprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1544,7 +1544,7 @@ additionally returns the length of the allocated string.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.19.7"></a><h4>Returns</h4>
+<a name="g-strdup-vprintf.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string holding the result</p>
 </div>
 </div>
@@ -1561,7 +1561,7 @@ new-line character to the message, so typically <em class="parameter"><code>form
  should end with its
 own new-line character.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.20.6"></a><h4>Parameters</h4>
+<a name="g-printf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1584,7 +1584,7 @@ own new-line character.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.20.7"></a><h4>Returns</h4>
+<a name="g-printf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
@@ -1598,7 +1598,7 @@ g_vprintf (<em class="parameter"><code><a class="link" href="glib-Basic-Types.ht
 <p>An implementation of the standard <code class="function">vprintf()</code> function which supports 
 positional parameters, as specified in the Single Unix Specification.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.21.5"></a><h4>Parameters</h4>
+<a name="g-vprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1621,7 +1621,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.21.6"></a><h4>Returns</h4>
+<a name="g-vprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
@@ -1636,7 +1636,7 @@ g_fprintf (<em class="parameter"><code><span class="type">FILE</span> *file</cod
 <p>An implementation of the standard <code class="function">fprintf()</code> function which supports 
 positional parameters, as specified in the Single Unix Specification.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.22.5"></a><h4>Parameters</h4>
+<a name="g-fprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1647,7 +1647,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 <tr>
 <td class="parameter_name"><p>file</p></td>
 <td class="parameter_description"><p> the stream to write to. </p></td>
-<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL must not be passed as the value in, out, in-out; or as a return value."><span class="acronym">not nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>format</p></td>
@@ -1664,7 +1664,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.22.6"></a><h4>Returns</h4>
+<a name="g-fprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
@@ -1679,7 +1679,7 @@ g_vfprintf (<em class="parameter"><code><span class="type">FILE</span> *file</co
 <p>An implementation of the standard <code class="function">fprintf()</code> function which supports 
 positional parameters, as specified in the Single Unix Specification.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.23.5"></a><h4>Parameters</h4>
+<a name="g-vfprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1690,7 +1690,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 <tr>
 <td class="parameter_name"><p>file</p></td>
 <td class="parameter_description"><p> the stream to write to. </p></td>
-<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL must not be passed as the value in, out, in-out; or as a return value."><span class="acronym">not nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>format</p></td>
@@ -1707,7 +1707,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.23.6"></a><h4>Returns</h4>
+<a name="g-vfprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
@@ -1725,7 +1725,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 risk of buffer overflow.</p>
 <p>See also <a class="link" href="glib-String-Utility-Functions.html#g-strdup-printf" title="g_strdup_printf ()"><code class="function">g_strdup_printf()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.24.7"></a><h4>Parameters</h4>
+<a name="g-sprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1755,7 +1755,7 @@ enough to hold the formatted result</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.24.8"></a><h4>Returns</h4>
+<a name="g-sprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
@@ -1770,7 +1770,7 @@ g_vsprintf (<em class="parameter"><code><a class="link" href="glib-Basic-Types.h
 <p>An implementation of the standard <code class="function">vsprintf()</code> function which supports 
 positional parameters, as specified in the Single Unix Specification.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.25.5"></a><h4>Parameters</h4>
+<a name="g-vsprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1798,7 +1798,7 @@ positional parameters, as specified in the Single Unix Specification.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.25.6"></a><h4>Returns</h4>
+<a name="g-vsprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
@@ -1826,7 +1826,7 @@ traditional <code class="function">snprintf()</code>, which returns the length o
 <p>The format string may contain positional parameters, as specified in
 the Single Unix Specification.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.26.9"></a><h4>Parameters</h4>
+<a name="g-snprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1860,7 +1860,7 @@ terminating nul character).</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.26.10"></a><h4>Returns</h4>
+<a name="g-snprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes which would be produced if the buffer
 was large enough.</p>
 </div>
@@ -1888,7 +1888,7 @@ as standardized in ISO C99. Note that this is different from traditional
 <p>The format string may contain positional parameters, as specified in 
 the Single Unix Specification.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.27.9"></a><h4>Parameters</h4>
+<a name="g-vsnprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1922,7 +1922,7 @@ string precision pitfalls][string-precision]</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.27.10"></a><h4>Returns</h4>
+<a name="g-vsnprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes which would be produced if the buffer
 was large enough.</p>
 </div>
@@ -1940,7 +1940,7 @@ This function is similar to <a class="link" href="glib-String-Utility-Functions.
 string to hold the output, instead of putting the output in a buffer 
 you allocate in advance.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.28.5"></a><h4>Parameters</h4>
+<a name="g-vasprintf.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1968,7 +1968,7 @@ you allocate in advance.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.28.6"></a><h4>Returns</h4>
+<a name="g-vasprintf.returns"></a><h4>Returns</h4>
 <p> the number of bytes printed.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
@@ -1982,7 +1982,7 @@ g_printf_string_upper_bound (<em class="parameter"><code>const <a class="link" h
 <p>Calculates the maximum space needed to store the output
 of the <code class="function">sprintf()</code> function.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.29.5"></a><h4>Parameters</h4>
+<a name="g-printf-string-upper-bound.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2004,7 +2004,7 @@ of the <code class="function">sprintf()</code> function.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.29.6"></a><h4>Returns</h4>
+<a name="g-printf-string-upper-bound.returns"></a><h4>Returns</h4>
 <p> the maximum space needed to store the formatted string</p>
 </div>
 </div>
@@ -2016,7 +2016,7 @@ g_str_is_ascii (<em class="parameter"><code>const <a class="link" href="glib-Bas
 <p>Determines if a string is pure ASCII. A string is pure ASCII if it
 contains no bytes with the high bit set.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.30.5"></a><h4>Parameters</h4>
+<a name="g-str-is-ascii.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2031,7 +2031,7 @@ contains no bytes with the high bit set.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.30.6"></a><h4>Returns</h4>
+<a name="g-str-is-ascii.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>str</code></em>
 is ASCII</p>
 </div>
@@ -2050,7 +2050,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before
 passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.31.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isalnum.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2065,7 +2065,7 @@ passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.31.7"></a><h4>Returns</h4>
+<a name="g-ascii-isalnum.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII alphanumeric character</p>
 </div>
@@ -2083,7 +2083,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before
 passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.32.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isalpha.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2098,7 +2098,7 @@ passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.32.7"></a><h4>Returns</h4>
+<a name="g-ascii-isalpha.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII alphabetic character</p>
 </div>
@@ -2116,7 +2116,7 @@ unlike the standard library function, this takes a char, not
 an int, so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a>
 before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.33.6"></a><h4>Parameters</h4>
+<a name="g-ascii-iscntrl.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2131,7 +2131,7 @@ before passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.33.7"></a><h4>Returns</h4>
+<a name="g-ascii-iscntrl.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII control character.</p>
 </div>
@@ -2146,7 +2146,7 @@ g_ascii_isdigit (<em class="parameter"><code><a class="link" href="glib-Basic-Ty
 a char, not an int, so don't call it  on <code class="literal">EOF</code>, but no need to
 cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.34.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isdigit.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2161,7 +2161,7 @@ cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.34.7"></a><h4>Returns</h4>
+<a name="g-ascii-isdigit.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII digit.</p>
 </div>
@@ -2179,7 +2179,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before
 passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.35.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isgraph.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2194,7 +2194,7 @@ passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.35.7"></a><h4>Returns</h4>
+<a name="g-ascii-isgraph.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII printing character other than space.</p>
 </div>
@@ -2212,7 +2212,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to worry about casting
 to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.36.6"></a><h4>Parameters</h4>
+<a name="g-ascii-islower.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2227,7 +2227,7 @@ to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span clas
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.36.7"></a><h4>Returns</h4>
+<a name="g-ascii-islower.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII lower case letter</p>
 </div>
@@ -2245,7 +2245,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before
 passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.37.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isprint.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2260,7 +2260,7 @@ passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.37.7"></a><h4>Returns</h4>
+<a name="g-ascii-isprint.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII printing character.</p>
 </div>
@@ -2278,7 +2278,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before
 passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.38.6"></a><h4>Parameters</h4>
+<a name="g-ascii-ispunct.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2293,7 +2293,7 @@ passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.38.7"></a><h4>Returns</h4>
+<a name="g-ascii-ispunct.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII punctuation character.</p>
 </div>
@@ -2311,7 +2311,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before
 passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.39.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isspace.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2326,7 +2326,7 @@ passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.39.7"></a><h4>Returns</h4>
+<a name="g-ascii-isspace.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII white-space character</p>
 </div>
@@ -2344,7 +2344,7 @@ the standard library function, this takes a char, not an int,
 so don't call it on <code class="literal">EOF</code>, but no need to worry about casting
 to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.40.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isupper.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2359,7 +2359,7 @@ to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span clas
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.40.7"></a><h4>Returns</h4>
+<a name="g-ascii-isupper.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII upper case letter</p>
 </div>
@@ -2374,7 +2374,7 @@ g_ascii_isxdigit (<em class="parameter"><code><a class="link" href="glib-Basic-T
 a char, not an int, so don't call it on <code class="literal">EOF</code>, but no need to
 cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.41.6"></a><h4>Parameters</h4>
+<a name="g-ascii-isxdigit.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2389,7 +2389,7 @@ cast to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.41.7"></a><h4>Returns</h4>
+<a name="g-ascii-isxdigit.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>c</code></em>
 is an ASCII hexadecimal-digit character.</p>
 </div>
@@ -2403,7 +2403,7 @@ g_ascii_digit_value (<em class="parameter"><code><a class="link" href="glib-Basi
 Differs from <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-digit-value" title="g_unichar_digit_value ()"><code class="function">g_unichar_digit_value()</code></a> because it takes a char, so
 there's no worry about sign extension if characters are signed.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.42.5"></a><h4>Parameters</h4>
+<a name="g-ascii-digit-value.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2418,7 +2418,7 @@ there's no worry about sign extension if characters are signed.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.42.6"></a><h4>Returns</h4>
+<a name="g-ascii-digit-value.returns"></a><h4>Returns</h4>
 <p> If <em class="parameter"><code>c</code></em>
 is a decimal digit (according to <a class="link" href="glib-String-Utility-Functions.html#g-ascii-isdigit" title="g_ascii_isdigit ()"><code class="function">g_ascii_isdigit()</code></a>),
 its numeric value. Otherwise, -1.</p>
@@ -2434,7 +2434,7 @@ digit. Differs from <a class="link" href="glib-Unicode-Manipulation.html#g-unich
 a char, so there's no worry about sign extension if characters
 are signed.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.43.5"></a><h4>Parameters</h4>
+<a name="g-ascii-xdigit-value.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2449,7 +2449,7 @@ are signed.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.43.6"></a><h4>Returns</h4>
+<a name="g-ascii-xdigit-value.returns"></a><h4>Returns</h4>
 <p> If <em class="parameter"><code>c</code></em>
 is a hex digit (according to <a class="link" href="glib-String-Utility-Functions.html#g-ascii-isxdigit" title="g_ascii_isxdigit ()"><code class="function">g_ascii_isxdigit()</code></a>),
 its numeric value. Otherwise, -1.</p>
@@ -2476,7 +2476,7 @@ strings using this function, you will get false matches.</p>
  and <em class="parameter"><code>s2</code></em>
  must be non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.44.8"></a><h4>Parameters</h4>
+<a name="g-ascii-strcasecmp.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2500,7 +2500,7 @@ strings using this function, you will get false matches.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.44.9"></a><h4>Returns</h4>
+<a name="g-ascii-strcasecmp.returns"></a><h4>Returns</h4>
 <p> 0 if the strings match, a negative value if <em class="parameter"><code>s1</code></em>
 &lt; <em class="parameter"><code>s2</code></em>
 ,
@@ -2528,7 +2528,7 @@ characters as if they are not letters.</p>
 function only on strings known to be in encodings where bytes
 corresponding to ASCII letters always represent themselves.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.45.7"></a><h4>Parameters</h4>
+<a name="g-ascii-strncasecmp.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2557,7 +2557,7 @@ corresponding to ASCII letters always represent themselves.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.45.8"></a><h4>Returns</h4>
+<a name="g-ascii-strncasecmp.returns"></a><h4>Returns</h4>
 <p> 0 if the strings match, a negative value if <em class="parameter"><code>s1</code></em>
 &lt; <em class="parameter"><code>s2</code></em>
 ,
@@ -2574,7 +2574,7 @@ g_ascii_strup (<em class="parameter"><code>const <a class="link" href="glib-Basi
                <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> len</code></em>);</pre>
 <p>Converts all lower case ASCII letters to upper case ASCII letters.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.46.5"></a><h4>Parameters</h4>
+<a name="g-ascii-strup.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2598,7 +2598,7 @@ is nul-terminated</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.46.6"></a><h4>Returns</h4>
+<a name="g-ascii-strup.returns"></a><h4>Returns</h4>
 <p> a newly allocated string, with all the lower case
 characters in <em class="parameter"><code>str</code></em>
 converted to upper case, with semantics that
@@ -2614,7 +2614,7 @@ g_ascii_strdown (<em class="parameter"><code>const <a class="link" href="glib-Ba
                  <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> len</code></em>);</pre>
 <p>Converts all upper case ASCII letters to lower case ASCII letters.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.47.5"></a><h4>Parameters</h4>
+<a name="g-ascii-strdown.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2638,7 +2638,7 @@ is nul-terminated</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.47.6"></a><h4>Returns</h4>
+<a name="g-ascii-strdown.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string, with all the upper case
 characters in <em class="parameter"><code>str</code></em>
 converted to lower case, with semantics that
@@ -2660,7 +2660,7 @@ library function, this takes and returns a char, not an int, so
 don't call it on <code class="literal">EOF</code> but no need to worry about casting to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a>
 before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.48.6"></a><h4>Parameters</h4>
+<a name="g-ascii-tolower.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2675,7 +2675,7 @@ before passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.48.7"></a><h4>Returns</h4>
+<a name="g-ascii-tolower.returns"></a><h4>Returns</h4>
 <p> the result of converting <em class="parameter"><code>c</code></em>
 to lower case. If <em class="parameter"><code>c</code></em>
 is
@@ -2697,7 +2697,7 @@ library function, this takes and returns a char, not an int, so
 don't call it on <code class="literal">EOF</code> but no need to worry about casting to <a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a>
 before passing a possibly non-ASCII character in.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.49.6"></a><h4>Parameters</h4>
+<a name="g-ascii-toupper.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2712,7 +2712,7 @@ before passing a possibly non-ASCII character in.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.49.7"></a><h4>Returns</h4>
+<a name="g-ascii-toupper.returns"></a><h4>Returns</h4>
 <p> the result of converting <em class="parameter"><code>c</code></em>
 to upper case. If <em class="parameter"><code>c</code></em>
 is not
@@ -2727,7 +2727,7 @@ is returned unchanged.</p>
 g_string_ascii_up (<em class="parameter"><code><a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> *string</code></em>);</pre>
 <p>Converts all lowercase ASCII letters to uppercase ASCII letters.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.50.5"></a><h4>Parameters</h4>
+<a name="g-string-ascii-up.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2742,7 +2742,7 @@ g_string_ascii_up (<em class="parameter"><code><a class="link" href="glib-String
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.50.6"></a><h4>Returns</h4>
+<a name="g-string-ascii-up.returns"></a><h4>Returns</h4>
 <p> passed-in <em class="parameter"><code>string</code></em>
 pointer, with all the
 lowercase characters converted to uppercase in place,
@@ -2757,7 +2757,7 @@ with semantics that exactly match <a class="link" href="glib-String-Utility-Func
 g_string_ascii_down (<em class="parameter"><code><a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> *string</code></em>);</pre>
 <p>Converts all uppercase ASCII letters to lowercase ASCII letters.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.51.5"></a><h4>Parameters</h4>
+<a name="g-string-ascii-down.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2772,7 +2772,7 @@ g_string_ascii_down (<em class="parameter"><code><a class="link" href="glib-Stri
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.51.6"></a><h4>Returns</h4>
+<a name="g-string-ascii-down.returns"></a><h4>Returns</h4>
 <p> passed-in <em class="parameter"><code>string</code></em>
 pointer, with all the
 uppercase characters converted to lowercase in place,
@@ -2793,7 +2793,7 @@ g_strup (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html
 </div>
 <p>Converts a string to upper case.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.52.6"></a><h4>Parameters</h4>
+<a name="g-strup.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2808,7 +2808,7 @@ g_strup (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.52.7"></a><h4>Returns</h4>
+<a name="g-strup.returns"></a><h4>Returns</h4>
 <p> the string</p>
 </div>
 </div>
@@ -2825,7 +2825,7 @@ instead.</p>
 </div>
 <p>Converts a string to lower case.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.53.6"></a><h4>Parameters</h4>
+<a name="g-strdown.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2840,7 +2840,7 @@ instead.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.53.7"></a><h4>Returns</h4>
+<a name="g-strdown.returns"></a><h4>Returns</h4>
 <p> the string</p>
 </div>
 </div>
@@ -2858,7 +2858,7 @@ g_strcasecmp (<em class="parameter"><code>const <a class="link" href="glib-Basic
 <p>A case-insensitive string comparison, corresponding to the standard
 <code class="function">strcasecmp()</code> function on platforms which support it.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.54.6"></a><h4>Parameters</h4>
+<a name="g-strcasecmp.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2881,7 +2881,7 @@ g_strcasecmp (<em class="parameter"><code>const <a class="link" href="glib-Basic
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.54.7"></a><h4>Returns</h4>
+<a name="g-strcasecmp.returns"></a><h4>Returns</h4>
 <p> 0 if the strings match, a negative value if <em class="parameter"><code>s1</code></em>
 &lt; <em class="parameter"><code>s2</code></em>
 ,
@@ -2919,7 +2919,7 @@ to <a class="link" href="glib-String-Utility-Functions.html#g-strcasecmp" title=
  characters of
 the strings.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.55.6"></a><h4>Parameters</h4>
+<a name="g-strncasecmp.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2947,7 +2947,7 @@ the strings.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.55.7"></a><h4>Returns</h4>
+<a name="g-strncasecmp.returns"></a><h4>Returns</h4>
 <p> 0 if the strings match, a negative value if <em class="parameter"><code>s1</code></em>
 &lt; <em class="parameter"><code>s2</code></em>
 ,
@@ -2967,7 +2967,7 @@ g_strreverse (<em class="parameter"><code><a class="link" href="glib-Basic-Types
 containing multibyte characters. For that purpose, use
 <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strreverse" title="g_utf8_strreverse ()"><code class="function">g_utf8_strreverse()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.56.6"></a><h4>Parameters</h4>
+<a name="g-strreverse.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2982,7 +2982,7 @@ containing multibyte characters. For that purpose, use
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.56.7"></a><h4>Returns</h4>
+<a name="g-strreverse.returns"></a><h4>Returns</h4>
 <p> the same pointer passed in as <em class="parameter"><code>string</code></em>
 </p>
 </div>
@@ -3013,7 +3013,7 @@ string conversion fails, zero is returned, and <em class="parameter"><code>endpt
 (if <em class="parameter"><code>endptr</code></em>
  is non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>).</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.57.7"></a><h4>Parameters</h4>
+<a name="g-ascii-strtoll.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3041,7 +3041,7 @@ character after the last character used in the conversion. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.57.8"></a><h4>Returns</h4>
+<a name="g-ascii-strtoll.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value or zero on error.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
@@ -3072,7 +3072,7 @@ If the string conversion fails, zero is returned, and <em class="parameter"><cod
  (if <em class="parameter"><code>endptr</code></em>
  is non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>).</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.58.7"></a><h4>Parameters</h4>
+<a name="g-ascii-strtoull.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3100,36 +3100,10 @@ character after the last character used in the conversion. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.58.8"></a><h4>Returns</h4>
+<a name="g-ascii-strtoull.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value or zero on error.</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-2.html#api-index-2.2">2.2</a></p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="G-ASCII-DTOSTR-BUF-SIZE:CAPS"></a><h3>G_ASCII_DTOSTR_BUF_SIZE</h3>
-<pre class="programlisting">#define G_ASCII_DTOSTR_BUF_SIZE (29 + 10)
-</pre>
-<p>A good size for a buffer to be passed into <a class="link" href="glib-String-Utility-Functions.html#g-ascii-dtostr" title="g_ascii_dtostr ()"><code class="function">g_ascii_dtostr()</code></a>.
-It is guaranteed to be enough for all output of that function
-on systems with 64bit IEEE-compatible doubles.</p>
-<p>The typical usage would be something like:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">char</span> buf<span class="gtkdoc opt">[</span>G_ASCII_DTOSTR_BUF_SIZE<span class="gtkdoc opt">];</span>
-
-<span class="function">fprintf</span> <span class="gtkdoc opt">(</span>out<span class="gtkdoc opt">,</span> <span class="string">&quot;value=%s</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="glib-String-Utility-Functions.html#g-ascii-dtostr">g_ascii_dtostr</a></span> <span class="gtkdoc opt">(</span>buf<span class="gtkdoc opt">,</span> <span class="keyword">sizeof</span> <span class="gtkdoc opt">(</span>buf<span class="gtkdoc opt">),</span> value<span class="gtkdoc opt">));</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3156,7 +3130,7 @@ zero is returned and <code class="literal">ERANGE</code> is stored in <code clas
 <p>This function resets <code class="literal">errno</code> before calling <code class="function">strtod()</code> so that
 you can reliably detect overflow and underflow.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.60.10"></a><h4>Parameters</h4>
+<a name="g-ascii-strtod.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3179,7 +3153,7 @@ character after the last character used in the conversion. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.60.11"></a><h4>Returns</h4>
+<a name="g-ascii-strtod.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a> value.</p>
 </div>
 </div>
@@ -3200,7 +3174,7 @@ be larger than <em class="parameter"><code>G_ASCII_DTOSTR_BUF_SIZE</code></em>
  bytes, including the terminating
 nul character, which is always added.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.61.6"></a><h4>Parameters</h4>
+<a name="g-ascii-dtostr.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3227,7 +3201,7 @@ nul character, which is always added.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.61.7"></a><h4>Returns</h4>
+<a name="g-ascii-dtostr.returns"></a><h4>Returns</h4>
 <p> The pointer to the buffer with the converted string.</p>
 </div>
 </div>
@@ -3247,7 +3221,7 @@ specifiers are 'e', 'E', 'f', 'F', 'g' and 'G'.</p>
 <p>If you just want to want to serialize the value into a
 string, use <a class="link" href="glib-String-Utility-Functions.html#g-ascii-dtostr" title="g_ascii_dtostr ()"><code class="function">g_ascii_dtostr()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.62.7"></a><h4>Parameters</h4>
+<a name="g-ascii-formatd.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3280,7 +3254,7 @@ code to use for converting.</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.62.8"></a><h4>Returns</h4>
+<a name="g-ascii-formatd.returns"></a><h4>Returns</h4>
 <p> The pointer to the buffer with the converted string.</p>
 </div>
 </div>
@@ -3301,7 +3275,7 @@ should you use this. Make sure that you don't pass strings such as comma
 separated lists of values, since the commas may be interpreted as a decimal
 point in some locales, causing unexpected results.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.63.6"></a><h4>Parameters</h4>
+<a name="g-strtod.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3324,7 +3298,7 @@ character after the last character used in the conversion. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.63.7"></a><h4>Returns</h4>
+<a name="g-strtod.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a> value.</p>
 </div>
 </div>
@@ -3343,7 +3317,7 @@ statically allocated strings.</p>
  is returned to allow the nesting of functions.</p>
 <p>Also see <a class="link" href="glib-String-Utility-Functions.html#g-strchomp" title="g_strchomp ()"><code class="function">g_strchomp()</code></a> and <a class="link" href="glib-String-Utility-Functions.html#g-strstrip" title="g_strstrip()"><code class="function">g_strstrip()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.64.8"></a><h4>Parameters</h4>
+<a name="g-strchug.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3358,7 +3332,7 @@ statically allocated strings.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.64.9"></a><h4>Returns</h4>
+<a name="g-strchug.returns"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
 </p>
 </div>
@@ -3377,7 +3351,7 @@ on statically allocated strings.</p>
  is returned to allow the nesting of functions.</p>
 <p>Also see <a class="link" href="glib-String-Utility-Functions.html#g-strchug" title="g_strchug ()"><code class="function">g_strchug()</code></a> and <a class="link" href="glib-String-Utility-Functions.html#g-strstrip" title="g_strstrip()"><code class="function">g_strstrip()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.65.8"></a><h4>Parameters</h4>
+<a name="g-strchomp.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3392,7 +3366,7 @@ on statically allocated strings.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.65.9"></a><h4>Returns</h4>
+<a name="g-strchomp.returns"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
 </p>
 </div>
@@ -3404,7 +3378,7 @@ on statically allocated strings.</p>
 <p>Removes leading and trailing whitespace from a string.
 See <a class="link" href="glib-String-Utility-Functions.html#g-strchomp" title="g_strchomp ()"><code class="function">g_strchomp()</code></a> and <a class="link" href="glib-String-Utility-Functions.html#g-strchug" title="g_strchug ()"><code class="function">g_strchug()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.66.5"></a><h4>Parameters</h4>
+<a name="g-strstrip.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3419,7 +3393,7 @@ See <a class="link" href="glib-String-Utility-Functions.html#g-strchomp" title="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.66.6"></a><h4>Returns</h4>
+<a name="g-strstrip.returns"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
 </p>
 </div>
@@ -3448,7 +3422,7 @@ allow nesting such as</p>
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-String-Utility-Functions.html#g-ascii-strup">g_ascii_strup</a></span> <span class="gtkdoc opt">(</span><span class="function"><a href="glib-String-Utility-Functions.html#g-strdelimit">g_strdelimit</a></span> <span class="gtkdoc opt">(</span>str<span class="gtkdoc opt">,</span> <span class="string">&quot;abc&quot;</span><span class="gtkdoc opt">,</span> <span class="string">'?'</span><span class="gtkdoc opt">))</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-String-Utility-Functions.html#g-ascii-strup">g_ascii_strup</a></span> <span class="gtkdoc opt">(</span><span class="function"><a href="glib-String-Utility-Functions.html#g-strdelimit">g_strdelimit</a></span> <span class="gtkdoc opt">(</span>str<span class="gtkdoc opt">,</span> <span class="string">&quot;abc&quot;</span><span class="gtkdoc opt">,</span> <span class="string">&apos;?&apos;</span><span class="gtkdoc opt">))</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3456,7 +3430,7 @@ allow nesting such as</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.5.2.7.67.7"></a><h4>Parameters</h4>
+<a name="g-strdelimit.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3484,7 +3458,7 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.67.8"></a><h4>Returns</h4>
+<a name="g-strdelimit.returns"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
 </p>
 </div>
@@ -3505,7 +3479,7 @@ Characters supplied in <em class="parameter"><code>exceptions</code></em>
  are not escaped.</p>
 <p>g_strcompress() does the reverse conversion.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.68.6"></a><h4>Parameters</h4>
+<a name="g-strescape.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3528,7 +3502,7 @@ Characters supplied in <em class="parameter"><code>exceptions</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.68.7"></a><h4>Returns</h4>
+<a name="g-strescape.returns"></a><h4>Returns</h4>
 <p> a newly-allocated copy of <em class="parameter"><code>source</code></em>
 with certain
 characters escaped. See above.</p>
@@ -3542,7 +3516,7 @@ g_strcompress (<em class="parameter"><code>const <a class="link" href="glib-Basi
 <p>Replaces all escaped characters with their one byte equivalent.</p>
 <p>This function does the reverse conversion of <a class="link" href="glib-String-Utility-Functions.html#g-strescape" title="g_strescape ()"><code class="function">g_strescape()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.69.6"></a><h4>Parameters</h4>
+<a name="g-strcompress.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3557,7 +3531,7 @@ g_strcompress (<em class="parameter"><code>const <a class="link" href="glib-Basi
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.69.7"></a><h4>Returns</h4>
+<a name="g-strcompress.returns"></a><h4>Returns</h4>
 <p> a newly-allocated copy of <em class="parameter"><code>source</code></em>
 with all escaped
 character compressed</p>
@@ -3584,7 +3558,7 @@ nesting such as</p>
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-String-Utility-Functions.html#g-ascii-strup">g_ascii_strup</a></span> <span class="gtkdoc opt">(</span><span class="function"><a href="glib-String-Utility-Functions.html#g-strcanon">g_strcanon</a></span> <span class="gtkdoc opt">(</span>str<span class="gtkdoc opt">,</span> <span class="string">&quot;abc&quot;</span><span class="gtkdoc opt">,</span> <span class="string">'?'</span><span class="gtkdoc opt">))</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-String-Utility-Functions.html#g-ascii-strup">g_ascii_strup</a></span> <span class="gtkdoc opt">(</span><span class="function"><a href="glib-String-Utility-Functions.html#g-strcanon">g_strcanon</a></span> <span class="gtkdoc opt">(</span>str<span class="gtkdoc opt">,</span> <span class="string">&quot;abc&quot;</span><span class="gtkdoc opt">,</span> <span class="string">&apos;?&apos;</span><span class="gtkdoc opt">))</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3592,7 +3566,7 @@ nesting such as</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.5.2.7.70.7"></a><h4>Parameters</h4>
+<a name="g-strcanon.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3620,7 +3594,7 @@ nesting such as</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.70.8"></a><h4>Returns</h4>
+<a name="g-strcanon.returns"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
 </p>
 </div>
@@ -3649,7 +3623,7 @@ more useful than consistent handling of empty elements. If you do need
 to represent empty elements, you'll need to check for the empty string
 before calling <a class="link" href="glib-String-Utility-Functions.html#g-strsplit" title="g_strsplit ()"><code class="function">g_strsplit()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.71.7"></a><h4>Parameters</h4>
+<a name="g-strsplit.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3681,7 +3655,7 @@ If this is less than 1, the string is split completely.</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.71.8"></a><h4>Returns</h4>
+<a name="g-strsplit.returns"></a><h4>Returns</h4>
 <p> a newly-allocated <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>-terminated array of strings. Use
 <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a> to free it.</p>
 </div>
@@ -3715,7 +3689,7 @@ before calling <a class="link" href="glib-String-Utility-Functions.html#g-strspl
 <p>Note that this function works on bytes not characters, so it can't be used
 to delimit UTF-8 strings for anything but ASCII characters.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.72.9"></a><h4>Parameters</h4>
+<a name="g-strsplit-set.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3745,7 +3719,7 @@ If this is less than 1, the string is split completely</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.72.10"></a><h4>Returns</h4>
+<a name="g-strsplit-set.returns"></a><h4>Returns</h4>
 <p> a newly-allocated <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>-terminated array of strings. Use
 <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a> to free it.</p>
 </div>
@@ -3761,7 +3735,7 @@ string it contains.</p>
 <p>If <em class="parameter"><code>str_array</code></em>
  is <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, this function simply returns.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.73.6"></a><h4>Parameters</h4>
+<a name="g-strfreev.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3790,7 +3764,7 @@ returned string should be freed with <a class="link" href="glib-Memory-Allocatio
 assemble a translated message from pieces, since proper translation
 often requires the pieces to be reordered.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.74.7"></a><h4>Parameters</h4>
+<a name="g-strconcat.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3812,7 +3786,7 @@ often requires the pieces to be reordered.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.74.8"></a><h4>Returns</h4>
+<a name="g-strconcat.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string containing all the string arguments</p>
 </div>
 </div>
@@ -3827,7 +3801,7 @@ optional <em class="parameter"><code>separator</code></em>
  inserted between each of them. The returned string
 should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.75.5"></a><h4>Parameters</h4>
+<a name="g-strjoin.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3850,7 +3824,7 @@ strings, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NU
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.75.6"></a><h4>Returns</h4>
+<a name="g-strjoin.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string containing all of the strings joined
 together, with <em class="parameter"><code>separator</code></em>
 between them</p>
@@ -3866,8 +3840,14 @@ g_strjoinv (<em class="parameter"><code>const <a class="link" href="glib-Basic-T
 optional <em class="parameter"><code>separator</code></em>
  inserted between each of them. The returned string
 should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>.</p>
+<p>If <em class="parameter"><code>str_array</code></em>
+ has no items, the return value will be an
+empty string. If <em class="parameter"><code>str_array</code></em>
+ contains a single item, <em class="parameter"><code>separator</code></em>
+ will not
+appear in the resulting string.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.76.5"></a><h4>Parameters</h4>
+<a name="g-strjoinv.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3890,7 +3870,7 @@ strings, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NU
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.76.6"></a><h4>Returns</h4>
+<a name="g-strjoinv.returns"></a><h4>Returns</h4>
 <p> a newly-allocated string containing all of the strings joined
 together, with <em class="parameter"><code>separator</code></em>
 between them</p>
@@ -3905,7 +3885,7 @@ g_strv_length (<em class="parameter"><code><a class="link" href="glib-Basic-Type
 string array <em class="parameter"><code>str_array</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.77.5"></a><h4>Parameters</h4>
+<a name="g-strv-length.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3920,7 +3900,7 @@ string array <em class="parameter"><code>str_array</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.77.6"></a><h4>Returns</h4>
+<a name="g-strv-length.returns"></a><h4>Returns</h4>
 <p> length of <em class="parameter"><code>str_array</code></em>
 .</p>
 </div>
@@ -3937,7 +3917,7 @@ g_strv_contains (<em class="parameter"><code>const <a class="link" href="glib-Ba
 . <em class="parameter"><code>strv</code></em>
  must not be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.78.5"></a><h4>Parameters</h4>
+<a name="g-strv-contains.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3959,7 +3939,7 @@ g_strv_contains (<em class="parameter"><code>const <a class="link" href="glib-Ba
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.78.6"></a><h4>Returns</h4>
+<a name="g-strv-contains.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if <em class="parameter"><code>str</code></em>
 is an element of <em class="parameter"><code>strv</code></em>
 , according to <a class="link" href="glib-Hash-Tables.html#g-str-equal" title="g_str_equal ()"><code class="function">g_str_equal()</code></a>.</p>
@@ -3978,7 +3958,7 @@ the lifetime of the process.</p>
 <p>Note that the string may be translated according to the current locale.</p>
 <p>The value of <code class="literal">errno</code> will not be changed by this function.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.79.7"></a><h4>Parameters</h4>
+<a name="g-strerror.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -3994,7 +3974,7 @@ documentation</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.79.8"></a><h4>Returns</h4>
+<a name="g-strerror.returns"></a><h4>Returns</h4>
 <p> a UTF-8 string describing the error code. If the error code
 is unknown, it returns a string like "unknown error (&lt;code&gt;)".</p>
 </div>
@@ -4009,7 +3989,7 @@ You should use this function in preference to <code class="function">strsignal()
 returns a string in UTF-8 encoding, and since not all platforms support
 the <code class="function">strsignal()</code> function.</p>
 <div class="refsect3">
-<a name="id-1.5.2.7.80.5"></a><h4>Parameters</h4>
+<a name="g-strsignal.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -4024,7 +4004,7 @@ the <code class="function">strsignal()</code> function.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.7.80.6"></a><h4>Returns</h4>
+<a name="g-strsignal.returns"></a><h4>Returns</h4>
 <p> a UTF-8 string describing the signal. If the signal is unknown,
 it returns "unknown signal (&lt;signum&gt;)".</p>
 </div>
@@ -4032,6 +4012,32 @@ it returns "unknown signal (&lt;signum&gt;)".</p>
 </div>
 <div class="refsect1">
 <a name="glib-String-Utility-Functions.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="G-ASCII-DTOSTR-BUF-SIZE:CAPS"></a><h3>G_ASCII_DTOSTR_BUF_SIZE</h3>
+<pre class="programlisting">#define G_ASCII_DTOSTR_BUF_SIZE (29 + 10)
+</pre>
+<p>A good size for a buffer to be passed into <a class="link" href="glib-String-Utility-Functions.html#g-ascii-dtostr" title="g_ascii_dtostr ()"><code class="function">g_ascii_dtostr()</code></a>.
+It is guaranteed to be enough for all output of that function
+on systems with 64bit IEEE-compatible doubles.</p>
+<p>The typical usage would be something like:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">char</span> buf<span class="gtkdoc opt">[</span>G_ASCII_DTOSTR_BUF_SIZE<span class="gtkdoc opt">];</span>
+
+<span class="function">fprintf</span> <span class="gtkdoc opt">(</span>out<span class="gtkdoc opt">,</span> <span class="string">&quot;value=%s</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">,</span> <span class="function"><a href="glib-String-Utility-Functions.html#g-ascii-dtostr">g_ascii_dtostr</a></span> <span class="gtkdoc opt">(</span>buf<span class="gtkdoc opt">,</span> <span class="keyword">sizeof</span> <span class="gtkdoc opt">(</span>buf<span class="gtkdoc opt">),</span> value<span class="gtkdoc opt">));</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+</div>
+<hr>
 <div class="refsect2">
 <a name="G-STR-DELIMITERS:CAPS"></a><h3>G_STR_DELIMITERS</h3>
 <pre class="programlisting">#define	 G_STR_DELIMITERS "_-|&gt; &lt;."
@@ -4049,6 +4055,6 @@ it returns "unknown signal (&lt;signum&gt;)".</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

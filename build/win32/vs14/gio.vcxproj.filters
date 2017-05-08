@@ -131,9 +131,6 @@
    <ClCompile Include="..\..\..\gio\gioenumtypes.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\glistmodel.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gliststore.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gfiledescriptorbased.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gfdonotificationbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\ggtknotificationbackend.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gapplication.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gapplicationcommandline.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gapplicationimpl-dbus.c"><Filter>Source Files</Filter></ClCompile>
@@ -152,15 +149,6 @@
    <ClCompile Include="..\..\..\gio\gdbusmenumodel.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gnotification.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gnotificationbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gvdb\gvdb-reader.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gdelayedsettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gkeyfilesettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gmemorysettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gnullsettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gsettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gsettingsschema.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gsettings-mapping.c"><Filter>Source Files</Filter></ClCompile>
-   <ClCompile Include="..\..\..\gio\gsettings.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gdbusutils.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gdbusaddress.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\gdbusauthobserver.c"><Filter>Source Files</Filter></ClCompile>
@@ -217,6 +205,15 @@
    <ClCompile Include="..\..\..\gio\win32\gwinhttpvfs.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\win32\gwin32fsmonitorutils.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gio\win32\gwin32filemonitor.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gvdb\gvdb-reader.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gdelayedsettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gkeyfilesettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gmemorysettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gnullsettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gsettingsbackend.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gsettingsschema.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gsettings-mapping.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gio\gsettings.c"><Filter>Source Files</Filter></ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\..\gio\gnetworking.h.win32"><Filter>Resource Files</Filter></CustomBuild>
