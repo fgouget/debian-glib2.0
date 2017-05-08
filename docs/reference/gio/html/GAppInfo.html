@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GAppInfo</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GAppInfo: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="types.html" title="File types and applications">
 <link rel="prev" href="gio-GContentType.html" title="GContentType">
 <link rel="next" href="GAppInfoMonitor.html" title="GAppInfoMonitor">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GAppInfo.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -353,7 +353,7 @@
 </div>
 <div class="refsect1">
 <a name="GAppInfo.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -363,19 +363,19 @@
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GAppInfo.html#GAppLaunchContext-launch-failed" title="The “launch-failed” signal">launch-failed</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GAppInfo.html#GAppLaunchContext-launched" title="The “launched” signal">launched</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <a name="GAppLaunchContext"></a><div class="refsect1">
 <a name="GAppInfo.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -402,7 +402,7 @@
 </div>
 <div class="refsect1">
 <a name="GAppInfo.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GAppInfo
     <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> GAppLaunchContext
@@ -467,20 +467,20 @@ illustrates this:</p>
 12
 13
 14</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">GFile</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">f</span><span class="symbol">;</span>
-<span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">uri</span><span class="symbol">;</span>
+        <td class="listing_code"><pre class="programlisting">GFile <span class="gtkdoc opt">*</span>f<span class="gtkdoc opt">;</span>
+<span class="gtkdoc kwb">char</span> <span class="gtkdoc opt">*</span>uri<span class="gtkdoc opt">;</span>
 
-<span class="normal">file </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GFile.html#g-file-new-for-commandline-arg">g_file_new_for_commandline_arg</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">uri_from_commandline</span><span class="symbol">);</span>
+file <span class="gtkdoc opt">=</span> <span class="function"><a href="GFile.html#g-file-new-for-commandline-arg">g_file_new_for_commandline_arg</a></span> <span class="gtkdoc opt">(</span>uri_from_commandline<span class="gtkdoc opt">);</span>
 
-<span class="normal">uri </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GFile.html#g-file-get-uri">g_file_get_uri</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">);</span>
-<span class="function">strcmp</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">uri</span><span class="symbol">,</span><span class="normal"> uri_from_commandline</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">;</span>
-<span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free">g_free</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">uri</span><span class="symbol">);</span>
+uri <span class="gtkdoc opt">=</span> <span class="function"><a href="GFile.html#g-file-get-uri">g_file_get_uri</a></span> <span class="gtkdoc opt">(</span>file<span class="gtkdoc opt">);</span>
+<span class="function">strcmp</span> <span class="gtkdoc opt">(</span>uri<span class="gtkdoc opt">,</span> uri_from_commandline<span class="gtkdoc opt">) ==</span> <span class="number">0</span><span class="gtkdoc opt">;</span>
+<span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free">g_free</a></span> <span class="gtkdoc opt">(</span>uri<span class="gtkdoc opt">);</span>
 
-<span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GFile.html#g-file-has-uri-scheme">g_file_has_uri_scheme</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"cdda"</span><span class="symbol">))</span>
-<span class="normal">  </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="comment">// do something special with uri</span>
-<span class="normal">  </span><span class="cbracket">}</span>
-<span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">);</span></pre></td>
+<span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="GFile.html#g-file-has-uri-scheme">g_file_has_uri_scheme</a></span> <span class="gtkdoc opt">(</span>file<span class="gtkdoc opt">,</span> <span class="string">&quot;cdda&quot;</span><span class="gtkdoc opt">))</span>
+  <span class="gtkdoc opt">{</span>
+    <span class="gtkdoc slc">// do something special with uri</span>
+  <span class="gtkdoc opt">}</span>
+<span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span> <span class="gtkdoc opt">(</span>file<span class="gtkdoc opt">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -513,7 +513,7 @@ percent-encoded URIs, the percent-character must be doubled in order to prevent 
 being swallowed by Exec key unquoting. See the specification for exact quoting rules.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -558,7 +558,7 @@ g_app_info_dup (<em class="parameter"><code><a class="link" href="GAppInfo.html"
 <p>Creates a duplicate of a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -587,7 +587,7 @@ g_app_info_equal (<em class="parameter"><code><a class="link" href="GAppInfo.htm
 <p>Checks if two <a href="GAppInfo.html"><span class="type">GAppInfos</span></a> are equal.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -612,7 +612,6 @@ g_app_info_equal (<em class="parameter"><code><a class="link" href="GAppInfo.htm
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>appinfo1</code></em>
 is equal to <em class="parameter"><code>appinfo2</code></em>
 . <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -629,7 +628,7 @@ the <em class="parameter"><code>appinfo</code></em>
  has been constructed.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -645,7 +644,6 @@ the <em class="parameter"><code>appinfo</code></em>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.5.7"></a><h4>Returns</h4>
 <p> a string containing the application's ID.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -656,7 +654,7 @@ g_app_info_get_name (<em class="parameter"><code><a class="link" href="GAppInfo.
 <p>Gets the installed name of the application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -673,7 +671,6 @@ g_app_info_get_name (<em class="parameter"><code><a class="link" href="GAppInfo.
 <a name="id-1.4.8.3.12.6.6"></a><h4>Returns</h4>
 <p> the name of the application for <em class="parameter"><code>appinfo</code></em>
 .</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -685,7 +682,7 @@ g_app_info_get_display_name (<em class="parameter"><code><a class="link" href="G
 descriptive to the user than the name itself.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -703,9 +700,8 @@ descriptive to the user than the name itself.</p>
 <p> the display name of the application for <em class="parameter"><code>appinfo</code></em>
 , or the name if
 no display name is available.</p>
-<p></p>
 </div>
-<p class="since">Since 2.24</p>
+<p class="since">Since: <a class="link" href="api-index-2-24.html#api-index-2.24">2.24</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -715,7 +711,7 @@ g_app_info_get_description (<em class="parameter"><code><a class="link" href="GA
 <p>Gets a human-readable description of an installed application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -733,7 +729,6 @@ g_app_info_get_description (<em class="parameter"><code><a class="link" href="GA
 <p> a string containing a description of the
 application <em class="parameter"><code>appinfo</code></em>
 , or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if none. </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -744,7 +739,7 @@ g_app_info_get_executable (<em class="parameter"><code><a class="link" href="GAp
 <p>Gets the executable's name for the installed application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -762,7 +757,6 @@ g_app_info_get_executable (<em class="parameter"><code><a class="link" href="GAp
 <p> a string containing the <em class="parameter"><code>appinfo</code></em>
 's application
 binaries name</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -774,7 +768,7 @@ g_app_info_get_commandline (<em class="parameter"><code><a class="link" href="GA
 started.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -792,9 +786,8 @@ started.</p>
 <p> a string containing the <em class="parameter"><code>appinfo</code></em>
 's commandline,
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if this information is not available</p>
-<p></p>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -804,7 +797,7 @@ g_app_info_get_icon (<em class="parameter"><code><a class="link" href="GAppInfo.
 <p>Gets the icon for the application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -862,7 +855,7 @@ on information provided in <em class="parameter"><code>launch_context</code></em
 .</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.12.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -895,7 +888,6 @@ on information provided in <em class="parameter"><code>launch_context</code></em
 <div class="refsect3">
 <a name="id-1.4.8.3.12.12.11"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on successful launch, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -906,7 +898,7 @@ g_app_info_supports_files (<em class="parameter"><code><a class="link" href="GAp
 <p>Checks if the application accepts files as arguments.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -923,7 +915,6 @@ g_app_info_supports_files (<em class="parameter"><code><a class="link" href="GAp
 <a name="id-1.4.8.3.12.13.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the <em class="parameter"><code>appinfo</code></em>
 supports files.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -934,7 +925,7 @@ g_app_info_supports_uris (<em class="parameter"><code><a class="link" href="GApp
 <p>Checks if the application supports reading files and directories from URIs.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -951,7 +942,6 @@ g_app_info_supports_uris (<em class="parameter"><code><a class="link" href="GApp
 <a name="id-1.4.8.3.12.14.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the <em class="parameter"><code>appinfo</code></em>
 supports URIs.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -976,7 +966,7 @@ can fail to start if it runs into problems during startup. There is
 no way to detect this.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1009,7 +999,6 @@ no way to detect this.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.15.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on successful launch, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1021,7 +1010,7 @@ g_app_info_should_show (<em class="parameter"><code><a class="link" href="GAppIn
 list available applications.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1038,7 +1027,6 @@ list available applications.</p>
 <a name="id-1.4.8.3.12.16.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the <em class="parameter"><code>appinfo</code></em>
 should be shown, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1050,7 +1038,7 @@ g_app_info_can_delete (<em class="parameter"><code><a class="link" href="GAppInf
 See <a class="link" href="GAppInfo.html#g-app-info-delete" title="g_app_info_delete ()"><code class="function">g_app_info_delete()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1067,9 +1055,8 @@ See <a class="link" href="GAppInfo.html#g-app-info-delete" title="g_app_info_del
 <a name="id-1.4.8.3.12.17.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>appinfo</code></em>
 can be deleted</p>
-<p></p>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1083,7 +1070,7 @@ See <a class="link" href="GAppInfo.html#g-app-info-can-delete" title="g_app_info
 <p>Virtual: do_delete</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1100,9 +1087,8 @@ See <a class="link" href="GAppInfo.html#g-app-info-can-delete" title="g_app_info
 <a name="id-1.4.8.3.12.18.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>appinfo</code></em>
 has been deleted</p>
-<p></p>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1116,7 +1102,7 @@ g_app_info_reset_type_associations (<em class="parameter"><code>const <span clas
 <a class="link" href="GAppInfo.html#g-app-info-remove-supports-type" title="g_app_info_remove_supports_type ()"><code class="function">g_app_info_remove_supports_type()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1129,7 +1115,7 @@ g_app_info_reset_type_associations (<em class="parameter"><code>const <span clas
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1141,7 +1127,7 @@ g_app_info_set_as_default_for_type (<em class="parameter"><code><a class="link" 
 <p>Sets the application as the default handler for a given type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1169,7 +1155,6 @@ g_app_info_set_as_default_for_type (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="id-1.4.8.3.12.20.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1183,7 +1168,7 @@ g_app_info_set_as_default_for_extension
 <p>Sets the application as the default handler for the given file extension.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1211,7 +1196,6 @@ g_app_info_set_as_default_for_extension
 <div class="refsect3">
 <a name="id-1.4.8.3.12.21.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1227,7 +1211,7 @@ by <a class="link" href="GAppInfo.html#g-app-info-get-recommended-for-type" titl
 application for that content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1255,7 +1239,6 @@ application for that content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.22.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1269,7 +1252,7 @@ g_app_info_add_supports_type (<em class="parameter"><code><a class="link" href="
 application is capable of opening files with the given content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1297,7 +1280,6 @@ application is capable of opening files with the given content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.23.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1308,7 +1290,7 @@ g_app_info_can_remove_supports_type (<em class="parameter"><code><a class="link"
 <p>Checks if a supported content type can be removed from an application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1326,7 +1308,6 @@ g_app_info_can_remove_supports_type (<em class="parameter"><code><a class="link"
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it is possible to remove supported
 content types from a given <em class="parameter"><code>appinfo</code></em>
 , <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if not.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1339,7 +1320,7 @@ g_app_info_remove_supports_type (<em class="parameter"><code><a class="link" hre
 <p>Removes a supported type from an application, if possible.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1367,7 +1348,6 @@ g_app_info_remove_supports_type (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="id-1.4.8.3.12.25.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1384,7 +1364,7 @@ This function does not take in consideration associations added with
 the application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1402,7 +1382,7 @@ the application.</p>
 <p>   a list of content types. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1433,7 +1413,7 @@ including the recommended and fallback <a href="GAppInfo.html"><span class="type
 <a class="link" href="GAppInfo.html#g-app-info-get-fallback-for-type" title="g_app_info_get_fallback_for_type ()"><code class="function">g_app_info_get_fallback_for_type()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1463,7 +1443,7 @@ g_app_info_get_default_for_type (<em class="parameter"><code>const <span class="
 <p>Gets the default <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> for a given content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1503,7 +1483,7 @@ of the URI, up to but not including the ':', e.g. "http",
 "ftp" or "sip".</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1533,7 +1513,7 @@ those applications which claim to support the given content type
 by MIME type subclassing and not directly.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.31.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1553,7 +1533,7 @@ for given <em class="parameter"><code>content_type</code></em>
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GAppInfo][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1568,7 +1548,7 @@ the last one for which <a class="link" href="GAppInfo.html#g-app-info-set-as-las
 called.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1588,7 +1568,7 @@ for given <em class="parameter"><code>content_type</code></em>
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GAppInfo][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1603,7 +1583,7 @@ is done on the uri to detect the type of the file if
 required.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1631,7 +1611,6 @@ required.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.33.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1648,7 +1627,7 @@ environment when <em class="parameter"><code>context</code></em>
  is used to launch an application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.34.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1673,7 +1652,7 @@ environment when <em class="parameter"><code>context</code></em>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1687,7 +1666,7 @@ when <em class="parameter"><code>context</code></em>
  is used to launch an application.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.35.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1707,7 +1686,7 @@ when <em class="parameter"><code>context</code></em>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1721,7 +1700,7 @@ This is a <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macro
 the form <code class="literal">KEY=VALUE</code>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.36.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1740,7 +1719,7 @@ the form <code class="literal">KEY=VALUE</code>.</p>
 child's environment. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1755,7 +1734,7 @@ applications are started on the same display as the launching
 application, by setting the <code class="literal">DISPLAY</code> environment variable.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.37.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1783,7 +1762,6 @@ application, by setting the <code class="literal">DISPLAY</code> environment var
 <div class="refsect3">
 <a name="id-1.4.8.3.12.37.6"></a><h4>Returns</h4>
 <p> a display string for the display.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1800,7 +1778,7 @@ g_app_launch_context_get_startup_notify_id
 [FreeDesktop.Org Startup Notifications standard](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt").</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.38.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1829,7 +1807,6 @@ g_app_launch_context_get_startup_notify_id
 <a name="id-1.4.8.3.12.38.7"></a><h4>Returns</h4>
 <p> a startup notification ID for the application, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 not supported.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1842,7 +1819,7 @@ g_app_launch_context_launch_failed (<em class="parameter"><code><a class="link" 
 the application startup notification started in <a class="link" href="GAppInfo.html#g-app-launch-context-get-startup-notify-id" title="g_app_launch_context_get_startup_notify_id ()"><code class="function">g_app_launch_context_get_startup_notify_id()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.12.39.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1873,7 +1850,6 @@ instead you instantiate a subclass of this, such as <a href="http://developer.gn
 <div class="refsect3">
 <a name="id-1.4.8.3.12.40.5"></a><h4>Returns</h4>
 <p> a <a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a>.</p>
-<p></p>
 </div>
 </div>
 </div>
@@ -1884,7 +1860,7 @@ instead you instantiate a subclass of this, such as <a href="http://developer.gn
 <p>Flags used when creating a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.13.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1985,7 +1961,7 @@ it (with file arguments).</p>
 <p>Application Information interface, for operating system portability.</p>
 <div class="refsect3">
 <a name="id-1.4.8.3.13.4.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2111,8 +2087,9 @@ it (with file arguments).</p>
 </tr>
 <tr>
 <td class="struct_member_name"><p><em class="structfield"><code><a name="GAppInfoIface.get-supported-types"></a>get_supported_types</code></em> ()</p></td>
-<td> </td>
-<td> </td>
+<td class="struct_member_description"><p>Retrieves the list of content types that <em class="parameter"><code>app_info</code></em>
+claims to support.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
@@ -2132,20 +2109,90 @@ on the same screen as the launching window.</p>
 <div class="refsect2">
 <a name="GAppLaunchContext-launch-failed"></a><h3>The <code class="literal">“launch-failed”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-user_function (<a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a> *gapplaunchcontext,
-               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>             *arg1,
+user_function (<a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a> *context,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>             *startup_notify_id,
                <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
-<p>Flags: Run Last</p>
+<p>The ::launch-failed signal is emitted when a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> launch
+fails. The startup notification id is provided, so that the launcher
+can cancel the startup notification.</p>
+<div class="refsect3">
+<a name="id-1.4.8.3.14.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>the object emitting the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>startup_notify_id</p></td>
+<td class="parameter_description"><p>the startup notification id for the failed launch</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="GAppLaunchContext-launched"></a><h3>The <code class="literal">“launched”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-user_function (<a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a> *gapplaunchcontext,
-               <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>          *arg1,
-               <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>          *arg2,
+user_function (<a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a> *context,
+               <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>          *info,
+               <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>          *platform_data,
                <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
-<p>Flags: Run Last</p>
+<p>The ::launched signal is emitted when a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> is successfully
+launched. The <em class="parameter"><code>platform_data</code></em>
+ is an GVariant dictionary mapping
+strings to variants (ie a{sv}), which contains additional,
+platform-specific data about this launch. On UNIX, at least the
+"pid" and "startup-notification-id" keys will be present.</p>
+<div class="refsect3">
+<a name="id-1.4.8.3.14.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>the object emitting the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> that was just launched</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>platform_data</p></td>
+<td class="parameter_description"><p>additional platform-specific data for this launch</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -2154,7 +2201,6 @@ user_function (<a class="link" href="GAppInfo.html#GAppLaunchContext"><span clas
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

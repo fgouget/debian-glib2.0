@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: D-Bus Utilities</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>D-Bus Utilities: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Low-level D-Bus Support">
 <link rel="prev" href="gdbus-lowlevel.html" title="Low-level D-Bus Support">
 <link rel="next" href="gio-D-Bus-Addresses.html" title="D-Bus Addresses">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gio-D-Bus-Utilities.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -128,9 +128,8 @@ GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.2.6"></a><h4>Returns</h4>
 <p> A valid D-Bus GUID. Free with <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -143,7 +142,7 @@ g_dbus_is_guid (<em class="parameter"><code>const <a href="https://developer.gno
 GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -160,9 +159,8 @@ GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
 <a name="id-1.4.17.2.6.3.7"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>string</code></em>
 is a guid, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -173,7 +171,7 @@ g_dbus_is_name (<em class="parameter"><code>const <a href="https://developer.gno
  is a valid D-Bus bus name (either unique or well-known).</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -189,9 +187,8 @@ g_dbus_is_name (<em class="parameter"><code>const <a href="https://developer.gno
 <div class="refsect3">
 <a name="id-1.4.17.2.6.4.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if valid, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -202,7 +199,7 @@ g_dbus_is_unique_name (<em class="parameter"><code>const <a href="https://develo
  is a valid D-Bus unique bus name.</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -218,9 +215,8 @@ g_dbus_is_unique_name (<em class="parameter"><code>const <a href="https://develo
 <div class="refsect3">
 <a name="id-1.4.17.2.6.5.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if valid, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -231,7 +227,7 @@ g_dbus_is_member_name (<em class="parameter"><code>const <a href="https://develo
  is a valid D-Bus member (e.g. signal or method) name.</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -247,9 +243,8 @@ g_dbus_is_member_name (<em class="parameter"><code>const <a href="https://develo
 <div class="refsect3">
 <a name="id-1.4.17.2.6.6.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if valid, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -260,7 +255,7 @@ g_dbus_is_interface_name (<em class="parameter"><code>const <a href="https://dev
  is a valid D-Bus interface name.</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -276,9 +271,8 @@ g_dbus_is_interface_name (<em class="parameter"><code>const <a href="https://dev
 <div class="refsect3">
 <a name="id-1.4.17.2.6.7.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if valid, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -318,7 +312,7 @@ returned (e.g. 0 for scalar types, the empty string for string types,
 <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to a <a href="https://developer.gnome.org/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.8.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -345,9 +339,8 @@ holding
 the data from <em class="parameter"><code>gvalue</code></em>
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> in case of failure. Free with
 <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-unref"><code class="function">g_variant_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -364,7 +357,7 @@ used - this function is essentially its reverse form.</p>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.2.6.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -384,7 +377,7 @@ used - this function is essentially its reverse form.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -392,7 +385,6 @@ used - this function is essentially its reverse form.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

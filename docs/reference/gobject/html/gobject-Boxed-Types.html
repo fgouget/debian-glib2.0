@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GObject Reference Manual: Boxed Types</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Boxed Types: GObject Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="gobject-Enumeration-and-Flag-Types.html" title="Enumeration and Flag Types">
 <link rel="next" href="gobject-Generic-values.html" title="Generic values">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gobject-Boxed-Types.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -174,6 +174,10 @@
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gobject-Boxed-Types.html#G-TYPE-MAPPED-FILE:CAPS" title="G_TYPE_MAPPED_FILE">G_TYPE_MAPPED_FILE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="gobject-Boxed-Types.html#G-TYPE-MARKUP-PARSE-CONTEXT:CAPS" title="G_TYPE_MARKUP_PARSE_CONTEXT">G_TYPE_MARKUP_PARSE_CONTEXT</a></td>
 </tr>
 <tr>
@@ -188,20 +192,11 @@
 <td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="gobject-Boxed-Types.html#G-TYPE-THREAD:CAPS" title="G_TYPE_THREAD">G_TYPE_THREAD</a></td>
 </tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gobject-Boxed-Types.html#G-TYPE-OPTION-GROUP:CAPS" title="G_TYPE_OPTION_GROUP">G_TYPE_OPTION_GROUP</a></td>
+</tr>
 </tbody>
-</table></div>
-</div>
-<div class="refsect1">
-<a name="gobject-Boxed-Types.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="name">
-<col class="description">
-</colgroup>
-<tbody><tr>
-<td class="typedef_keyword">typedef</td>
-<td class="function_name"><a class="link" href="gobject-Boxed-Types.html#GStrv" title="GStrv">GStrv</a></td>
-</tr></tbody>
 </table></div>
 </div>
 <div class="refsect1">
@@ -227,8 +222,8 @@ based libraries.</p>
 <p>This function is provided by the user and should produce a copy
 of the passed in boxed structure.</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.7.6.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -236,15 +231,15 @@ of the passed in boxed structure.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>boxed</p></td>
-<td class="parameter_description"><p>The boxed structure to be copied.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> The boxed structure to be copied. </p></td>
+<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.7.7.2.6"></a><h4>Returns</h4>
-<p> The newly created copy of the boxed structure.</p>
-<p></p>
+<a name="id-1.4.7.6.2.6"></a><h4>Returns</h4>
+<p> The newly created copy of the boxed structure. </p>
+<p><span class="annotation">[not nullable]</span></p>
 </div>
 </div>
 <hr>
@@ -255,8 +250,8 @@ of the passed in boxed structure.</p>
 <p>This function is provided by the user and should free the boxed
 structure passed.</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.7.6.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -264,8 +259,8 @@ structure passed.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>boxed</p></td>
-<td class="parameter_description"><p>The boxed structure to be freed.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> The boxed structure to be freed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -280,8 +275,8 @@ g_boxed_copy (<em class="parameter"><code><a class="link" href="gobject-Type-Inf
  which is of type <em class="parameter"><code>boxed_type</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.7.6.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -296,16 +291,17 @@ g_boxed_copy (<em class="parameter"><code><a class="link" href="gobject-Type-Inf
 </tr>
 <tr>
 <td class="parameter_name"><p>src_boxed</p></td>
-<td class="parameter_description"><p>The boxed structure to be copied.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> The boxed structure to be copied. </p></td>
+<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.7.7.4.6"></a><h4>Returns</h4>
-<p> The newly created copy of the boxed structure. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<a name="id-1.4.7.6.4.6"></a><h4>Returns</h4>
+<p> The newly created copy of the boxed
+structure. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][not nullable]</span></p>
 </div>
 </div>
 <hr>
@@ -318,8 +314,8 @@ g_boxed_free (<em class="parameter"><code><a class="link" href="gobject-Type-Inf
  which is of type <em class="parameter"><code>boxed_type</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.7.6.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -334,8 +330,8 @@ g_boxed_free (<em class="parameter"><code><a class="link" href="gobject-Type-Inf
 </tr>
 <tr>
 <td class="parameter_name"><p>boxed</p></td>
-<td class="parameter_description"><p>The boxed structure to be freed.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> The boxed structure to be freed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[not nullable]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -353,8 +349,8 @@ boxed type with name <em class="parameter"><code>name</code></em>
 . Boxed type handling functions have to be
 provided to copy and free opaque boxed structures of this type.</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.7.6.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -380,10 +376,9 @@ provided to copy and free opaque boxed structures of this type.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.7.7.6.6"></a><h4>Returns</h4>
+<a name="id-1.4.7.6.6.6"></a><h4>Returns</h4>
 <p> New <a class="link" href="gobject-Type-Information.html#G-TYPE-BOXED:CAPS" title="G_TYPE_BOXED"><code class="literal">G_TYPE_BOXED</code></a> derived type id for <em class="parameter"><code>name</code></em>
 .</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -395,8 +390,8 @@ g_pointer_type_register_static (<em class="parameter"><code>const <a href="https
 pointer type with name <em class="parameter"><code>name</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.7.7.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.7.6.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -410,10 +405,9 @@ pointer type with name <em class="parameter"><code>name</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.7.7.7.6"></a><h4>Returns</h4>
+<a name="id-1.4.7.6.7.6"></a><h4>Returns</h4>
 <p> a new <a class="link" href="gobject-Type-Information.html#G-TYPE-POINTER:CAPS" title="G_TYPE_POINTER"><code class="literal">G_TYPE_POINTER</code></a> derived type id for <em class="parameter"><code>name</code></em>
 .</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -422,7 +416,7 @@ pointer type with name <em class="parameter"><code>name</code></em>
 <pre class="programlisting">#define G_TYPE_HASH_TABLE (g_hash_table_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> reference.</p>
-<p class="since">Since 2.10</p>
+<p class="since">Since: <a class="link" href="api-index-2-10.html#api-index-2.10">2.10</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -466,28 +460,28 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 13
 14
 15</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="gobject-The-Base-Object-Type.html#g-object-class-install-property">g_object_class_install_property</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">object_class</span><span class="symbol">,</span>
-<span class="normal">                                 PROP_AUTHORS</span><span class="symbol">,</span>
-<span class="normal">                                 </span><span class="function"><a href="gobject-Standard-Parameter-and-Value-Types.html#g-param-spec-boxed">g_param_spec_boxed</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"authors"</span><span class="symbol">,</span>
-<span class="normal">                                                     </span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-I18N.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"Authors"</span><span class="symbol">),</span>
-<span class="normal">                                                     </span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-I18N.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"List of authors"</span><span class="symbol">),</span>
-<span class="normal">                                                     <a href="gobject-Boxed-Types.html#G-TYPE-STRV:CAPS">G_TYPE_STRV</a></span><span class="symbol">,</span>
-<span class="normal">                                                     G_PARAM_READWRITE</span><span class="symbol">));</span>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="gobject-The-Base-Object-Type.html#g-object-class-install-property">g_object_class_install_property</a></span> <span class="gtkdoc opt">(</span>object_class<span class="gtkdoc opt">,</span>
+                                 PROP_AUTHORS<span class="gtkdoc opt">,</span>
+                                 <span class="function"><a href="gobject-Standard-Parameter-and-Value-Types.html#g-param-spec-boxed">g_param_spec_boxed</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;authors&quot;</span><span class="gtkdoc opt">,</span>
+                                                     <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-I18N.html#gettext-macro">_</a></span><span class="gtkdoc opt">(</span><span class="string">&quot;Authors&quot;</span><span class="gtkdoc opt">),</span>
+                                                     <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-I18N.html#gettext-macro">_</a></span><span class="gtkdoc opt">(</span><span class="string">&quot;List of authors&quot;</span><span class="gtkdoc opt">),</span>
+                                                     G_TYPE_STRV<span class="gtkdoc opt">,</span>
+                                                     G_PARAM_READWRITE<span class="gtkdoc opt">));</span>
 
-<span class="usertype">gchar</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">authors</span><span class="symbol">[]</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal"> </span><span class="string">"Owen"</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Tim"</span><span class="symbol">,</span><span class="normal"> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a> </span><span class="cbracket">}</span><span class="symbol">;</span>
-<span class="function"><a href="gobject-The-Base-Object-Type.html#g-object-set">g_object_set</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"authors"</span><span class="symbol">,</span><span class="normal"> authors</span><span class="symbol">,</span><span class="normal"> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span>
+gchar <span class="gtkdoc opt">*</span>authors<span class="gtkdoc opt">[] = {</span> <span class="string">&quot;Owen&quot;</span><span class="gtkdoc opt">,</span> <span class="string">&quot;Tim&quot;</span><span class="gtkdoc opt">,</span> NULL <span class="gtkdoc opt">};</span>
+<span class="function"><a href="gobject-The-Base-Object-Type.html#g-object-set">g_object_set</a></span> <span class="gtkdoc opt">(</span>obj<span class="gtkdoc opt">,</span> <span class="string">&quot;authors&quot;</span><span class="gtkdoc opt">,</span> authors<span class="gtkdoc opt">,</span> NULL<span class="gtkdoc opt">);</span>
 
-<span class="usertype">gchar</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">writers</span><span class="symbol">[];</span>
-<span class="function"><a href="gobject-The-Base-Object-Type.html#g-object-get">g_object_get</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"authors"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">writers</span><span class="symbol">,</span><span class="normal"> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span>
+gchar <span class="gtkdoc opt">*</span>writers<span class="gtkdoc opt">[];</span>
+<span class="function"><a href="gobject-The-Base-Object-Type.html#g-object-get">g_object_get</a></span> <span class="gtkdoc opt">(</span>obj<span class="gtkdoc opt">,</span> <span class="string">&quot;authors&quot;</span><span class="gtkdoc opt">, &amp;</span>writers<span class="gtkdoc opt">,</span> NULL<span class="gtkdoc opt">);</span>
 <span class="comment">/* do something with writers */</span>
-<span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#g-strfreev">g_strfreev</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">writers</span><span class="symbol">);</span></pre></td>
+<span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#g-strfreev">g_strfreev</a></span> <span class="gtkdoc opt">(</span>writers<span class="gtkdoc opt">);</span></pre></td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <p></p>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -495,7 +489,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_REGEX (g_regex_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Perl-compatible-regular-expressions.html#GRegex"><span class="type">GRegex</span></a> reference.</p>
-<p class="since">Since 2.14</p>
+<p class="since">Since: <a class="link" href="api-index-2-14.html#api-index-2.14">2.14</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -503,7 +497,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_MATCH_INFO (g_match_info_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Perl-compatible-regular-expressions.html#GMatchInfo"><span class="type">GMatchInfo</span></a> reference.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -511,7 +505,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_ARRAY (g_array_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> reference.</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -519,7 +513,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_BYTE_ARRAY (g_byte_array_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> reference.</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -527,7 +521,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_PTR_ARRAY (g_ptr_array_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> reference.</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -535,7 +529,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_BYTES (g_bytes_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="https://developer.gnome.org/glib/unstable/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>.</p>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -543,7 +537,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_VARIANT_TYPE (g_variant_type_get_gtype ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a>.</p>
-<p class="since">Since 2.24</p>
+<p class="since">Since: <a class="link" href="api-index-2-24.html#api-index-2.24">2.24</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -551,7 +545,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_ERROR (g_error_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>.</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -559,7 +553,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_DATE_TIME (g_date_time_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-GDateTime.html#GDateTime"><span class="type">GDateTime</span></a>.</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -567,7 +561,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_TIME_ZONE (g_time_zone_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-GTimeZone.html#GTimeZone"><span class="type">GTimeZone</span></a>.</p>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -589,7 +583,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_VARIANT_BUILDER (g_variant_builder_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariantBuilder"><span class="type">GVariantBuilder</span></a>.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -597,7 +591,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_VARIANT_DICT (g_variant_dict_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariantDict"><span class="type">GVariantDict</span></a>.</p>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -605,7 +599,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_KEY_FILE (g_key_file_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a>.</p>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -613,7 +607,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_MAIN_CONTEXT (g_main_context_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -621,7 +615,15 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_MAIN_LOOP (g_main_loop_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainLoop"><span class="type">GMainLoop</span></a>.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="G-TYPE-MAPPED-FILE:CAPS"></a><h3>G_TYPE_MAPPED_FILE</h3>
+<pre class="programlisting">#define G_TYPE_MAPPED_FILE (g_mapped_file_get_type ())
+</pre>
+<p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-File-Utilities.html#GMappedFile"><span class="type">GMappedFile</span></a>.</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -629,7 +631,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_MARKUP_PARSE_CONTEXT (g_markup_parse_context_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Simple-XML-Subset-Parser.html#GMarkupParseContext"><span class="type">GMarkupParseContext</span></a>.</p>
-<p class="since">Since 2.36</p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -637,7 +639,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_SOURCE (g_source_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>.</p>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -645,7 +647,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_POLLFD (g_pollfd_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GPollFD"><span class="type">GPollFD</span></a>.</p>
-<p class="since">Since 2.36</p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -653,17 +655,19 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_THREAD (g_thread_get_type ())
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Threads.html#GThread"><span class="type">GThread</span></a>.</p>
-<p class="since">Since 2.36</p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="G-TYPE-OPTION-GROUP:CAPS"></a><h3>G_TYPE_OPTION_GROUP</h3>
+<pre class="programlisting">#define G_TYPE_OPTION_GROUP (g_option_group_get_type ())
+</pre>
+<p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#GOptionGroup"><span class="type">GOptionGroup</span></a>.</p>
+<p class="since">Since: <a class="link" href="api-index-2-44.html#api-index-2.44">2.44</a></p>
 </div>
 </div>
 <div class="refsect1">
 <a name="gobject-Boxed-Types.other_details"></a><h2>Types and Values</h2>
-<div class="refsect2">
-<a name="GStrv"></a><h3>GStrv</h3>
-<pre class="programlisting">typedef gchar** GStrv;
-</pre>
-<p>A C representable type name for <a class="link" href="gobject-Boxed-Types.html#G-TYPE-STRV:CAPS" title="G_TYPE_STRV"><span class="type">G_TYPE_STRV</span></a>.</p>
-</div>
 </div>
 <div class="refsect1">
 <a name="gobject-Boxed-Types.see-also"></a><h2>See Also</h2>
@@ -671,7 +675,6 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

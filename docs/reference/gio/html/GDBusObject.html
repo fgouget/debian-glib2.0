@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GDBusObject</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GDBusObject: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-convenience.html" title="High-level D-Bus Support">
 <link rel="prev" href="GDBusProxy.html" title="GDBusProxy">
 <link rel="next" href="GDBusObjectSkeleton.html" title="GDBusObjectSkeleton">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GDBusObject.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -71,7 +71,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusObject.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -81,19 +81,19 @@
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GDBusObject.html#GDBusObject-interface-added" title="The “interface-added” signal">interface-added</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GDBusObject.html#GDBusObject-interface-removed" title="The “interface-removed” signal">interface-removed</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GDBusObject.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -112,7 +112,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GDBusObject
 </pre>
 </div>
@@ -150,7 +150,7 @@ g_dbus_object_get_object_path (<em class="parameter"><code><a class="link" href=
 .</p>
 <div class="refsect3">
 <a name="id-1.4.18.7.11.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -167,9 +167,8 @@ g_dbus_object_get_object_path (<em class="parameter"><code><a class="link" href=
 <a name="id-1.4.18.7.11.2.6"></a><h4>Returns</h4>
 <p> A string owned by <em class="parameter"><code>object</code></em>
 . Do not free.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -180,7 +179,7 @@ g_dbus_object_get_interfaces (<em class="parameter"><code><a class="link" href="
 .</p>
 <div class="refsect3">
 <a name="id-1.4.18.7.11.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -198,9 +197,8 @@ g_dbus_object_get_interfaces (<em class="parameter"><code><a class="link" href="
 <p> (element-type GDBusInterface) (transfer full) : A list of <a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> instances.
 The returned list must be freed by <a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a> after each element has been freed
 with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -214,7 +212,7 @@ g_dbus_object_get_interface (<em class="parameter"><code><a class="link" href="G
 , if any.</p>
 <div class="refsect3">
 <a name="id-1.4.18.7.11.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -240,7 +238,7 @@ g_dbus_object_get_interface (<em class="parameter"><code><a class="link" href="G
 <a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> that must be freed with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -248,6 +246,8 @@ g_dbus_object_get_interface (<em class="parameter"><code><a class="link" href="G
 <div class="refsect2">
 <a name="GDBusObject-struct"></a><h3>GDBusObject</h3>
 <pre class="programlisting">typedef struct _GDBusObject GDBusObject;</pre>
+<p><a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> is an opaque data structure and can only be accessed
+using the following functions.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -271,7 +271,7 @@ g_dbus_object_get_interface (<em class="parameter"><code><a class="link" href="G
 <p>Base object type for D-Bus objects.</p>
 <div class="refsect3">
 <a name="id-1.4.18.7.12.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -311,7 +311,7 @@ g_dbus_object_get_interface (<em class="parameter"><code><a class="link" href="G
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -327,7 +327,7 @@ user_function (<a class="link" href="GDBusObject.html" title="GDBusObject"><span
 .</p>
 <div class="refsect3">
 <a name="id-1.4.18.7.13.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -352,8 +352,8 @@ user_function (<a class="link" href="GDBusObject.html" title="GDBusObject"><span
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
-<p class="since">Since 2.30</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -367,7 +367,7 @@ user_function (<a class="link" href="GDBusObject.html" title="GDBusObject"><span
 .</p>
 <div class="refsect3">
 <a name="id-1.4.18.7.13.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -392,13 +392,12 @@ user_function (<a class="link" href="GDBusObject.html" title="GDBusObject"><span
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
-<p class="since">Since 2.30</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

@@ -89,6 +89,10 @@
 <ANCHOR id="g-type-value-table-peek" href="gobject/gobject-Type-Information.html#g-type-value-table-peek">
 <ANCHOR id="g-type-ensure" href="gobject/gobject-Type-Information.html#g-type-ensure">
 <ANCHOR id="g-type-get-type-registration-serial" href="gobject/gobject-Type-Information.html#g-type-get-type-registration-serial">
+<ANCHOR id="g-type-get-instance-count" href="gobject/gobject-Type-Information.html#g-type-get-instance-count">
+<ANCHOR id="G-DECLARE-FINAL-TYPE:CAPS" href="gobject/gobject-Type-Information.html#G-DECLARE-FINAL-TYPE:CAPS">
+<ANCHOR id="G-DECLARE-DERIVABLE-TYPE:CAPS" href="gobject/gobject-Type-Information.html#G-DECLARE-DERIVABLE-TYPE:CAPS">
+<ANCHOR id="G-DECLARE-INTERFACE:CAPS" href="gobject/gobject-Type-Information.html#G-DECLARE-INTERFACE:CAPS">
 <ANCHOR id="G-DEFINE-TYPE:CAPS" href="gobject/gobject-Type-Information.html#G-DEFINE-TYPE:CAPS">
 <ANCHOR id="G-DEFINE-TYPE-WITH-PRIVATE:CAPS" href="gobject/gobject-Type-Information.html#G-DEFINE-TYPE-WITH-PRIVATE:CAPS">
 <ANCHOR id="G-DEFINE-TYPE-WITH-CODE:CAPS" href="gobject/gobject-Type-Information.html#G-DEFINE-TYPE-WITH-CODE:CAPS">
@@ -120,9 +124,20 @@
 <ANCHOR id="GTypeValueTable" href="gobject/gobject-Type-Information.html#GTypeValueTable">
 <ANCHOR id="G-TYPE-FLAG-RESERVED-ID-BIT:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-RESERVED-ID-BIT:CAPS">
 <ANCHOR id="GTypeDebugFlags" href="gobject/gobject-Type-Information.html#GTypeDebugFlags">
+<ANCHOR id="G-TYPE-DEBUG-NONE:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-DEBUG-NONE:CAPS">
+<ANCHOR id="G-TYPE-DEBUG-OBJECTS:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-DEBUG-OBJECTS:CAPS">
+<ANCHOR id="G-TYPE-DEBUG-SIGNALS:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-DEBUG-SIGNALS:CAPS">
+<ANCHOR id="G-TYPE-DEBUG-INSTANCE-COUNT:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-DEBUG-INSTANCE-COUNT:CAPS">
+<ANCHOR id="G-TYPE-DEBUG-MASK:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-DEBUG-MASK:CAPS">
 <ANCHOR id="GTypeQuery" href="gobject/gobject-Type-Information.html#GTypeQuery">
 <ANCHOR id="GTypeFlags" href="gobject/gobject-Type-Information.html#GTypeFlags">
+<ANCHOR id="G-TYPE-FLAG-ABSTRACT:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-ABSTRACT:CAPS">
+<ANCHOR id="G-TYPE-FLAG-VALUE-ABSTRACT:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-VALUE-ABSTRACT:CAPS">
 <ANCHOR id="GTypeFundamentalFlags" href="gobject/gobject-Type-Information.html#GTypeFundamentalFlags">
+<ANCHOR id="G-TYPE-FLAG-CLASSED:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-CLASSED:CAPS">
+<ANCHOR id="G-TYPE-FLAG-INSTANTIATABLE:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-INSTANTIATABLE:CAPS">
+<ANCHOR id="G-TYPE-FLAG-DERIVABLE:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-DERIVABLE:CAPS">
+<ANCHOR id="G-TYPE-FLAG-DEEP-DERIVABLE:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-FLAG-DEEP-DERIVABLE:CAPS">
 <ANCHOR id="G-TYPE-INVALID:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-INVALID:CAPS">
 <ANCHOR id="G-TYPE-NONE:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-NONE:CAPS">
 <ANCHOR id="G-TYPE-INTERFACE:CAPS" href="gobject/gobject-Type-Information.html#G-TYPE-INTERFACE:CAPS">
@@ -189,6 +204,7 @@
 <ANCHOR id="G-DEFINE-DYNAMIC-TYPE:CAPS" href="gobject/GTypeModule.html#G-DEFINE-DYNAMIC-TYPE:CAPS">
 <ANCHOR id="G-DEFINE-DYNAMIC-TYPE-EXTENDED:CAPS" href="gobject/GTypeModule.html#G-DEFINE-DYNAMIC-TYPE-EXTENDED:CAPS">
 <ANCHOR id="G-IMPLEMENT-INTERFACE-DYNAMIC:CAPS" href="gobject/GTypeModule.html#G-IMPLEMENT-INTERFACE-DYNAMIC:CAPS">
+<ANCHOR id="G-ADD-PRIVATE-DYNAMIC:CAPS" href="gobject/GTypeModule.html#G-ADD-PRIVATE-DYNAMIC:CAPS">
 <ANCHOR id="GTypeModule.other_details" href="gobject/GTypeModule.html#GTypeModule.other_details">
 <ANCHOR id="GTypeModule-struct" href="gobject/GTypeModule.html#GTypeModule-struct">
 <ANCHOR id="GTypeModuleClass" href="gobject/GTypeModule.html#GTypeModuleClass">
@@ -228,6 +244,7 @@
 <ANCHOR id="g-object-ref" href="gobject/gobject-The-Base-Object-Type.html#g-object-ref">
 <ANCHOR id="g-object-unref" href="gobject/gobject-The-Base-Object-Type.html#g-object-unref">
 <ANCHOR id="g-object-ref-sink" href="gobject/gobject-The-Base-Object-Type.html#g-object-ref-sink">
+<ANCHOR id="g-set-object" href="gobject/gobject-The-Base-Object-Type.html#g-set-object">
 <ANCHOR id="g-clear-object" href="gobject/gobject-The-Base-Object-Type.html#g-clear-object">
 <ANCHOR id="g-object-is-floating" href="gobject/gobject-The-Base-Object-Type.html#g-object-is-floating">
 <ANCHOR id="g-object-force-floating" href="gobject/gobject-The-Base-Object-Type.html#g-object-force-floating">
@@ -317,7 +334,6 @@
 <ANCHOR id="gobject-Enumeration-and-Flag-Types.see-also" href="gobject/gobject-Enumeration-and-Flag-Types.html#gobject-Enumeration-and-Flag-Types.see-also">
 <ANCHOR id="gobject-Boxed-Types" href="gobject/gobject-Boxed-Types.html">
 <ANCHOR id="gobject-Boxed-Types.functions" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.functions">
-<ANCHOR id="gobject-Boxed-Types.other" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.other">
 <ANCHOR id="gobject-Boxed-Types.includes" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.includes">
 <ANCHOR id="gobject-Boxed-Types.description" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.description">
 <ANCHOR id="gobject-Boxed-Types.functions_details" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.functions_details">
@@ -348,12 +364,13 @@
 <ANCHOR id="G-TYPE-KEY-FILE:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-KEY-FILE:CAPS">
 <ANCHOR id="G-TYPE-MAIN-CONTEXT:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-MAIN-CONTEXT:CAPS">
 <ANCHOR id="G-TYPE-MAIN-LOOP:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-MAIN-LOOP:CAPS">
+<ANCHOR id="G-TYPE-MAPPED-FILE:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-MAPPED-FILE:CAPS">
 <ANCHOR id="G-TYPE-MARKUP-PARSE-CONTEXT:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-MARKUP-PARSE-CONTEXT:CAPS">
 <ANCHOR id="G-TYPE-SOURCE:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-SOURCE:CAPS">
 <ANCHOR id="G-TYPE-POLLFD:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-POLLFD:CAPS">
 <ANCHOR id="G-TYPE-THREAD:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-THREAD:CAPS">
+<ANCHOR id="G-TYPE-OPTION-GROUP:CAPS" href="gobject/gobject-Boxed-Types.html#G-TYPE-OPTION-GROUP:CAPS">
 <ANCHOR id="gobject-Boxed-Types.other_details" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.other_details">
-<ANCHOR id="GStrv" href="gobject/gobject-Boxed-Types.html#GStrv">
 <ANCHOR id="gobject-Boxed-Types.see-also" href="gobject/gobject-Boxed-Types.html#gobject-Boxed-Types.see-also">
 <ANCHOR id="gobject-Generic-values" href="gobject/gobject-Generic-values.html">
 <ANCHOR id="gobject-Generic-values.functions" href="gobject/gobject-Generic-values.html#gobject-Generic-values.functions">
@@ -616,6 +633,7 @@
 <ANCHOR id="g-param-value-convert" href="gobject/gobject-GParamSpec.html#g-param-value-convert">
 <ANCHOR id="g-param-values-cmp" href="gobject/gobject-GParamSpec.html#g-param-values-cmp">
 <ANCHOR id="g-param-spec-get-name" href="gobject/gobject-GParamSpec.html#g-param-spec-get-name">
+<ANCHOR id="g-param-spec-get-name-quark" href="gobject/gobject-GParamSpec.html#g-param-spec-get-name-quark">
 <ANCHOR id="g-param-spec-get-nick" href="gobject/gobject-GParamSpec.html#g-param-spec-get-nick">
 <ANCHOR id="g-param-spec-get-blurb" href="gobject/gobject-GParamSpec.html#g-param-spec-get-blurb">
 <ANCHOR id="g-param-spec-get-qdata" href="gobject/gobject-GParamSpec.html#g-param-spec-get-qdata">
@@ -635,6 +653,18 @@
 <ANCHOR id="GParamSpec" href="gobject/gobject-GParamSpec.html#GParamSpec">
 <ANCHOR id="GParamSpecClass" href="gobject/gobject-GParamSpec.html#GParamSpecClass">
 <ANCHOR id="GParamFlags" href="gobject/gobject-GParamSpec.html#GParamFlags">
+<ANCHOR id="G-PARAM-READABLE:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-READABLE:CAPS">
+<ANCHOR id="G-PARAM-WRITABLE:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-WRITABLE:CAPS">
+<ANCHOR id="G-PARAM-READWRITE:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-READWRITE:CAPS">
+<ANCHOR id="G-PARAM-CONSTRUCT:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-CONSTRUCT:CAPS">
+<ANCHOR id="G-PARAM-CONSTRUCT-ONLY:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-CONSTRUCT-ONLY:CAPS">
+<ANCHOR id="G-PARAM-LAX-VALIDATION:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-LAX-VALIDATION:CAPS">
+<ANCHOR id="G-PARAM-STATIC-NAME:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-STATIC-NAME:CAPS">
+<ANCHOR id="G-PARAM-PRIVATE:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-PRIVATE:CAPS">
+<ANCHOR id="G-PARAM-STATIC-NICK:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-STATIC-NICK:CAPS">
+<ANCHOR id="G-PARAM-STATIC-BLURB:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-STATIC-BLURB:CAPS">
+<ANCHOR id="G-PARAM-EXPLICIT-NOTIFY:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-EXPLICIT-NOTIFY:CAPS">
+<ANCHOR id="G-PARAM-DEPRECATED:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-DEPRECATED:CAPS">
 <ANCHOR id="G-PARAM-MASK:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-MASK:CAPS">
 <ANCHOR id="G-PARAM-USER-SHIFT:CAPS" href="gobject/gobject-GParamSpec.html#G-PARAM-USER-SHIFT:CAPS">
 <ANCHOR id="GParamSpecTypeInfo" href="gobject/gobject-GParamSpec.html#GParamSpecTypeInfo">
@@ -713,11 +743,28 @@
 <ANCHOR id="GSignalCMarshaller" href="gobject/gobject-Signals.html#GSignalCMarshaller">
 <ANCHOR id="GSignalCVaMarshaller" href="gobject/gobject-Signals.html#GSignalCVaMarshaller">
 <ANCHOR id="GSignalFlags" href="gobject/gobject-Signals.html#GSignalFlags">
+<ANCHOR id="G-SIGNAL-RUN-FIRST:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">
+<ANCHOR id="G-SIGNAL-RUN-LAST:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">
+<ANCHOR id="G-SIGNAL-RUN-CLEANUP:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-RUN-CLEANUP:CAPS">
+<ANCHOR id="G-SIGNAL-NO-RECURSE:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-NO-RECURSE:CAPS">
+<ANCHOR id="G-SIGNAL-DETAILED:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-DETAILED:CAPS">
+<ANCHOR id="G-SIGNAL-ACTION:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS">
+<ANCHOR id="G-SIGNAL-NO-HOOKS:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS">
+<ANCHOR id="G-SIGNAL-MUST-COLLECT:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MUST-COLLECT:CAPS">
+<ANCHOR id="G-SIGNAL-DEPRECATED:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-DEPRECATED:CAPS">
 <ANCHOR id="GSignalMatchType" href="gobject/gobject-Signals.html#GSignalMatchType">
+<ANCHOR id="G-SIGNAL-MATCH-ID:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-ID:CAPS">
+<ANCHOR id="G-SIGNAL-MATCH-DETAIL:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-DETAIL:CAPS">
+<ANCHOR id="G-SIGNAL-MATCH-CLOSURE:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-CLOSURE:CAPS">
+<ANCHOR id="G-SIGNAL-MATCH-FUNC:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-FUNC:CAPS">
+<ANCHOR id="G-SIGNAL-MATCH-DATA:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-DATA:CAPS">
+<ANCHOR id="G-SIGNAL-MATCH-UNBLOCKED:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-UNBLOCKED:CAPS">
 <ANCHOR id="GSignalQuery" href="gobject/gobject-Signals.html#GSignalQuery">
 <ANCHOR id="G-SIGNAL-MATCH-MASK:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-MATCH-MASK:CAPS">
 <ANCHOR id="G-SIGNAL-FLAGS-MASK:CAPS" href="gobject/gobject-Signals.html#G-SIGNAL-FLAGS-MASK:CAPS">
 <ANCHOR id="GConnectFlags" href="gobject/gobject-Signals.html#GConnectFlags">
+<ANCHOR id="G-CONNECT-AFTER:CAPS" href="gobject/gobject-Signals.html#G-CONNECT-AFTER:CAPS">
+<ANCHOR id="G-CONNECT-SWAPPED:CAPS" href="gobject/gobject-Signals.html#G-CONNECT-SWAPPED:CAPS">
 <ANCHOR id="gobject-Closures" href="gobject/gobject-Closures.html">
 <ANCHOR id="gobject-Closures.functions" href="gobject/gobject-Closures.html#gobject-Closures.functions">
 <ANCHOR id="gobject-Closures.other" href="gobject/gobject-Closures.html#gobject-Closures.other">
@@ -844,6 +891,10 @@
 <ANCHOR id="GBinding.other_details" href="gobject/GBinding.html#GBinding.other_details">
 <ANCHOR id="GBinding-struct" href="gobject/GBinding.html#GBinding-struct">
 <ANCHOR id="GBindingFlags" href="gobject/GBinding.html#GBindingFlags">
+<ANCHOR id="G-BINDING-DEFAULT:CAPS" href="gobject/GBinding.html#G-BINDING-DEFAULT:CAPS">
+<ANCHOR id="G-BINDING-BIDIRECTIONAL:CAPS" href="gobject/GBinding.html#G-BINDING-BIDIRECTIONAL:CAPS">
+<ANCHOR id="G-BINDING-SYNC-CREATE:CAPS" href="gobject/GBinding.html#G-BINDING-SYNC-CREATE:CAPS">
+<ANCHOR id="G-BINDING-INVERT-BOOLEAN:CAPS" href="gobject/GBinding.html#G-BINDING-INVERT-BOOLEAN:CAPS">
 <ANCHOR id="GBinding.property-details" href="gobject/GBinding.html#GBinding.property-details">
 <ANCHOR id="GBinding--flags" href="gobject/GBinding.html#GBinding--flags">
 <ANCHOR id="GBinding--source" href="gobject/GBinding.html#GBinding--source">
@@ -858,11 +909,15 @@
 <ANCHOR id="annotation-glossterm-closure" href="gobject/annotation-glossary.html#annotation-glossterm-closure">
 <ANCHOR id="annotation-glossterm-element-type" href="gobject/annotation-glossary.html#annotation-glossterm-element-type">
 <ANCHOR id="annotation-glossterm-inout" href="gobject/annotation-glossary.html#annotation-glossterm-inout">
+<ANCHOR id="annotation-glossterm-nullable" href="gobject/annotation-glossary.html#annotation-glossterm-nullable">
+<ANCHOR id="annotation-glossterm-optional" href="gobject/annotation-glossary.html#annotation-glossterm-optional">
 <ANCHOR id="annotation-glossterm-out" href="gobject/annotation-glossary.html#annotation-glossterm-out">
 <ANCHOR id="annotation-glossterm-out callee-allocates" href="gobject/annotation-glossary.html#annotation-glossterm-out callee-allocates">
 <ANCHOR id="annotation-glossterm-out caller-allocates" href="gobject/annotation-glossary.html#annotation-glossterm-out caller-allocates">
+<ANCHOR id="annotation-glossterm-rename-to" href="gobject/annotation-glossary.html#annotation-glossterm-rename-to">
 <ANCHOR id="annotation-glossterm-scope call" href="gobject/annotation-glossary.html#annotation-glossterm-scope call">
 <ANCHOR id="annotation-glossterm-scope notified" href="gobject/annotation-glossary.html#annotation-glossterm-scope notified">
+<ANCHOR id="annotation-glossterm-skip" href="gobject/annotation-glossary.html#annotation-glossterm-skip">
 <ANCHOR id="annotation-glossterm-transfer container" href="gobject/annotation-glossary.html#annotation-glossterm-transfer container">
 <ANCHOR id="annotation-glossterm-transfer full" href="gobject/annotation-glossary.html#annotation-glossterm-transfer full">
 <ANCHOR id="annotation-glossterm-transfer none" href="gobject/annotation-glossary.html#annotation-glossterm-transfer none">

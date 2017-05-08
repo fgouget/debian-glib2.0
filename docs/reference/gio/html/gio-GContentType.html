@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GContentType</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GContentType: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="types.html" title="File types and applications">
 <link rel="prev" href="types.html" title="File types and applications">
 <link rel="next" href="GAppInfo.html" title="GAppInfo">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gio-GContentType.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -171,7 +171,7 @@ g_content_type_equals (<em class="parameter"><code>const <a href="https://develo
 <p>Compares two content types for equality.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -195,7 +195,6 @@ g_content_type_equals (<em class="parameter"><code>const <a href="https://develo
 <a name="id-1.4.8.2.6.2.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the two strings are identical or equivalent,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -209,7 +208,7 @@ g_content_type_is_a (<em class="parameter"><code>const <a href="https://develope
 .</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -235,7 +234,6 @@ g_content_type_is_a (<em class="parameter"><code>const <a href="https://develope
 is a kind of <em class="parameter"><code>supertype</code></em>
 ,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -248,7 +246,7 @@ On UNIX this is the "application/octet-stream" mimetype,
 while on win32 it is "*".</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -264,7 +262,6 @@ while on win32 it is "*".</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.4.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the type is the unknown type.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -275,7 +272,7 @@ g_content_type_get_description (<em class="parameter"><code>const <a href="https
 <p>Gets the human readable description of the content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -293,7 +290,6 @@ g_content_type_get_description (<em class="parameter"><code>const <a href="https
 <p> a short description of the content type <em class="parameter"><code>type</code></em>
 . Free the
 returned string with <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -304,7 +300,7 @@ g_content_type_get_mime_type (<em class="parameter"><code>const <a href="https:/
 <p>Gets the mime type for the content type, if one is registered.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -333,7 +329,7 @@ g_content_type_get_icon (<em class="parameter"><code>const <a href="https://deve
 <p>Gets the icon for a content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -361,7 +357,7 @@ g_content_type_get_symbolic_icon (<em class="parameter"><code>const <a href="htt
 <p>Gets the symbolic icon for a content type.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -380,7 +376,7 @@ g_content_type_get_symbolic_icon (<em class="parameter"><code>const <a href="htt
 Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -393,7 +389,7 @@ g_content_type_get_generic_icon_name (<em class="parameter"><code>const <a href=
 specification for more on the generic icon name.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -413,7 +409,7 @@ specification for more on the generic icon name.</p>
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unknown. Free with <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -424,7 +420,7 @@ g_content_type_can_be_executable (<em class="parameter"><code>const <a href="htt
 things like text files can be executables (i.e. scripts and batch files).</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -441,7 +437,6 @@ things like text files can be executables (i.e. scripts and batch files).</p>
 <a name="id-1.4.8.2.6.10.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the file type corresponds to a type that
 can be executable, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -452,7 +447,7 @@ g_content_type_from_mime_type (<em class="parameter"><code>const <a href="https:
 <p>Tries to find a content type based on the mime type name.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -471,7 +466,7 @@ g_content_type_from_mime_type (<em class="parameter"><code>const <a href="https:
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. Free with <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.18</p>
+<p class="since">Since: <a class="link" href="api-index-2-18.html#api-index-2.18">2.18</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -490,7 +485,7 @@ or <em class="parameter"><code>data</code></em>
 on the other argument.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -526,7 +521,6 @@ of the result, or <a href="https://developer.gnome.org/glib/unstable/glib-Standa
 <a name="id-1.4.8.2.6.12.6"></a><h4>Returns</h4>
 <p> a string indicating a guessed content type for the
 given data. Free with <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -547,7 +541,7 @@ specification for more on x-content types.</p>
 <a class="link" href="GMount.html#g-mount-guess-content-type" title="g_mount_guess_content_type ()"><code class="function">g_mount_guess_content_type()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.8.2.6.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -566,7 +560,7 @@ specification for more on x-content types.</p>
 array of zero or more content types. Free with <a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></p>
 </div>
-<p class="since">Since 2.18</p>
+<p class="since">Since: <a class="link" href="api-index-2-18.html#api-index-2.18">2.18</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -589,7 +583,6 @@ content types. </p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

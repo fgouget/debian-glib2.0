@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GSeekable</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GSeekable: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="streaming.html" title="Streaming I/O">
 <link rel="prev" href="streaming.html" title="Streaming I/O">
 <link rel="next" href="GInputStream.html" title="GInputStream">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GSeekable.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -87,7 +87,7 @@
 </div>
 <div class="refsect1">
 <a name="GSeekable.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -106,7 +106,7 @@
 </div>
 <div class="refsect1">
 <a name="GSeekable.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GSeekable
 </pre>
 </div>
@@ -150,7 +150,7 @@ g_seekable_tell (<em class="parameter"><code><a class="link" href="GSeekable.htm
 <p>Tells the current position within the stream.</p>
 <div class="refsect3">
 <a name="id-1.4.7.2.10.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -166,7 +166,6 @@ g_seekable_tell (<em class="parameter"><code><a class="link" href="GSeekable.htm
 <div class="refsect3">
 <a name="id-1.4.7.2.10.2.6"></a><h4>Returns</h4>
 <p> the offset from the beginning of the buffer.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -177,7 +176,7 @@ g_seekable_can_seek (<em class="parameter"><code><a class="link" href="GSeekable
 <p>Tests if the stream supports the <a class="link" href="GSeekable.html#GSeekableIface" title="struct GSeekableIface"><span class="type">GSeekableIface</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.7.2.10.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -194,7 +193,6 @@ g_seekable_can_seek (<em class="parameter"><code><a class="link" href="GSeekable
 <a name="id-1.4.7.2.10.3.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>seekable</code></em>
 can be seeked. <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -222,7 +220,7 @@ triggering the cancellable object from another thread. If the operation
 was cancelled, the error <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> will be returned.</p>
 <div class="refsect3">
 <a name="id-1.4.7.2.10.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -263,7 +261,6 @@ ignore.</p></td>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful. If an error
 has occurred, this function will return <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and set <em class="parameter"><code>error</code></em>
 appropriately if present.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -274,7 +271,7 @@ g_seekable_can_truncate (<em class="parameter"><code><a class="link" href="GSeek
 <p>Tests if the stream can be truncated.</p>
 <div class="refsect3">
 <a name="id-1.4.7.2.10.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -290,7 +287,6 @@ g_seekable_can_truncate (<em class="parameter"><code><a class="link" href="GSeek
 <div class="refsect3">
 <a name="id-1.4.7.2.10.5.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the stream can be truncated, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -311,7 +307,7 @@ partial result will be returned, without an error.</p>
 <p>Virtual: truncate_fn</p>
 <div class="refsect3">
 <a name="id-1.4.7.2.10.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -347,7 +343,6 @@ ignore.</p></td>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful. If an error
 has occurred, this function will return <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and set <em class="parameter"><code>error</code></em>
 appropriately if present. </p>
-<p></p>
 </div>
 </div>
 </div>
@@ -387,7 +382,7 @@ appropriately if present. </p>
 <p>Provides an interface for implementing seekable functionality on I/O Streams.</p>
 <div class="refsect3">
 <a name="id-1.4.7.2.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -435,7 +430,6 @@ appropriately if present. </p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

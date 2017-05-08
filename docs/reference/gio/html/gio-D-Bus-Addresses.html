@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: D-Bus Addresses</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>D-Bus Addresses: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Low-level D-Bus Support">
 <link rel="prev" href="gio-D-Bus-Utilities.html" title="D-Bus Utilities">
 <link rel="next" href="gio-D-Bus-Introspection-Data.html" title="D-Bus Introspection Data">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gio-D-Bus-Addresses.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -87,6 +87,14 @@
 <a class="link" href="gio-D-Bus-Addresses.html#g-dbus-address-get-for-bus-sync" title="g_dbus_address_get_for_bus_sync ()">g_dbus_address_get_for_bus_sync</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gio-D-Bus-Addresses.html#g-dbus-address-escape-value" title="g_dbus_address_escape_value ()">g_dbus_address_escape_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -115,7 +123,7 @@ or <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span cla
 checks.</p>
 <div class="refsect3">
 <a name="id-1.4.17.3.6.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -132,9 +140,8 @@ checks.</p>
 <a name="id-1.4.17.3.6.2.7"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>string</code></em>
 is a valid D-Bus address, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -148,7 +155,7 @@ transports in <em class="parameter"><code>string</code></em>
 are valid.</p>
 <div class="refsect3">
 <a name="id-1.4.17.3.6.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -174,9 +181,8 @@ are valid.</p>
 is a valid D-Bus address that is
 supported by this library, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -198,7 +204,7 @@ the operation.</p>
 <a class="link" href="gio-D-Bus-Addresses.html#g-dbus-address-get-stream-sync" title="g_dbus_address_get_stream_sync ()"><code class="function">g_dbus_address_get_stream_sync()</code></a> for the synchronous version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.3.6.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -229,7 +235,7 @@ the operation.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -241,7 +247,7 @@ g_dbus_address_get_stream_finish (<em class="parameter"><code><a class="link" hr
 <p>Finishes an operation started with <a class="link" href="gio-D-Bus-Addresses.html#g-dbus-address-get-stream" title="g_dbus_address_get_stream ()"><code class="function">g_dbus_address_get_stream()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.3.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -255,9 +261,9 @@ g_dbus_address_get_stream_finish (<em class="parameter"><code><a class="link" hr
 </tr>
 <tr>
 <td class="parameter_name"><p>out_guid</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or return location to store the GUID extracted from <em class="parameter"><code>address</code></em>
-, if any.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or return location to store the GUID extracted from <em class="parameter"><code>address</code></em>
+, if any. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
@@ -273,7 +279,7 @@ g_dbus_address_get_stream_finish (<em class="parameter"><code><a class="link" hr
 is set. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -291,7 +297,7 @@ of the D-Bus authentication conversation.</p>
 <a class="link" href="gio-D-Bus-Addresses.html#g-dbus-address-get-stream" title="g_dbus_address_get_stream ()"><code class="function">g_dbus_address_get_stream()</code></a> for the asynchronous version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.3.6.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -305,9 +311,9 @@ of the D-Bus authentication conversation.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>out_guid</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or return location to store the GUID extracted from <em class="parameter"><code>address</code></em>
-, if any.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or return location to store the GUID extracted from <em class="parameter"><code>address</code></em>
+, if any. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
@@ -328,7 +334,7 @@ of the D-Bus authentication conversation.</p>
 is set. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -343,7 +349,7 @@ bus instance specified by <em class="parameter"><code>bus_type</code></em>
 platform specific mechanisms.</p>
 <div class="refsect3">
 <a name="id-1.4.17.3.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -374,9 +380,46 @@ platform specific mechanisms.</p>
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-dbus-address-escape-value"></a><h3>g_dbus_address_escape_value ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+g_dbus_address_escape_value (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>Escape <em class="parameter"><code>string</code></em>
+ so it can appear in a D-Bus address as the value
+part of a key-value pair.</p>
+<p>For instance, if <em class="parameter"><code>string</code></em>
+ is "/run/bus-for-:0",
+this function would return "/run/bus-for-<code class="literal">3A0</code>",
+which could be used in a D-Bus address like
+"unix:nonce-tcp:host=127.0.0.1,port=42,noncefile=/run/bus-for-<code class="literal">3A0</code>".</p>
+<div class="refsect3">
+<a name="id-1.4.17.3.6.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>an unescaped string to be included in a D-Bus address
+as the value in a key-value pair</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.17.3.6.8.7"></a><h4>Returns</h4>
+<p> a copy of <em class="parameter"><code>string</code></em>
+with all
+non-optionally-escaped bytes escaped. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -384,7 +427,6 @@ is set</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

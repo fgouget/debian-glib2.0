@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GLib Reference Manual: Base64 Encoding</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Base64 Encoding: GLib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Unicode-Manipulation.html" title="Unicode Manipulation">
 <link rel="next" href="glib-Data-Checksums.html" title="Data Checksums">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="glib-Base64-Encoding.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -121,8 +121,8 @@ g_base64_encode_step (<em class="parameter"><code>const <a class="link" href="gl
                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> len</code></em>,
                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> break_lines</code></em>,
                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *out</code></em>,
-                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *state</code></em>,
-                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *save</code></em>);</pre>
+                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> *state</code></em>,
+                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> *save</code></em>);</pre>
 <p>Incrementally encode a sequence of binary data into its Base-64 stringified
 representation. By calling this function multiple times you can convert
 data in chunks to avoid having to have the full encoded data in memory.</p>
@@ -144,7 +144,7 @@ Note however that it breaks the lines with <code class="literal">LF</code> chara
 or certain other protocols.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -188,9 +188,8 @@ or certain other protocols.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.2.9"></a><h4>Returns</h4>
 <p> The number of bytes of output that was written</p>
-<p></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -198,15 +197,15 @@ or certain other protocols.</p>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="returnvalue">gsize</span></a>
 g_base64_encode_close (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> break_lines</code></em>,
                        <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *out</code></em>,
-                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *state</code></em>,
-                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *save</code></em>);</pre>
+                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> *state</code></em>,
+                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> *save</code></em>);</pre>
 <p>Flush the status from a sequence of calls to <a class="link" href="glib-Base64-Encoding.html#g-base64-encode-step" title="g_base64_encode_step ()"><code class="function">g_base64_encode_step()</code></a>.</p>
 <p>The output buffer must be large enough to fit all the data that will
 be written to it. It will need up to 4 bytes, or up to 5 bytes if
 line-breaking is enabled.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -239,9 +238,8 @@ line-breaking is enabled.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.3.7"></a><h4>Returns</h4>
 <p> The number of bytes of output that was written</p>
-<p></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -253,7 +251,7 @@ g_base64_encode (<em class="parameter"><code>const <a class="link" href="glib-Ba
 representation.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -282,7 +280,7 @@ encoded string representing <em class="parameter"><code>data</code></em>
 be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -291,8 +289,8 @@ be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g
 g_base64_decode_step (<em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *in</code></em>,
                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> len</code></em>,
                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guchar" title="guchar"><span class="type">guchar</span></a> *out</code></em>,
-                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *state</code></em>,
-                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> *save</code></em>);</pre>
+                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> *state</code></em>,
+                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="type">guint</span></a> *save</code></em>);</pre>
 <p>Incrementally decode a sequence of binary data from its Base-64 stringified
 representation. By calling this function multiple times you can convert
 data in chunks to avoid having to have the full encoded data in memory.</p>
@@ -303,7 +301,7 @@ at least: (<em class="parameter"><code>len</code></em>
 state).</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -342,9 +340,8 @@ data to decode</p></td>
 <div class="refsect3">
 <a name="id-1.5.5.6.5.7"></a><h4>Returns</h4>
 <p> The number of bytes of output that was written</p>
-<p></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -357,7 +354,7 @@ that the returned binary data is not necessarily zero-terminated,
 so it should not be used as a character string.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -385,7 +382,7 @@ represents. The returned buffer must
 be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=out_len][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8]</span></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -397,7 +394,7 @@ g_base64_decode_inplace (<em class="parameter"><code><a class="link" href="glib-
 by overwriting the input data.</p>
 <div class="refsect3">
 <a name="id-1.5.5.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -426,7 +423,7 @@ is the same as the input <em class="parameter"><code>text</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.20</p>
+<p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -434,7 +431,6 @@ is the same as the input <em class="parameter"><code>text</code></em>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

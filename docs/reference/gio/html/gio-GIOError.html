@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GIOError</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GIOError: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="file_ops.html" title="File Operations">
 <link rel="prev" href="GFileEnumerator.html" title="GFileEnumerator">
 <link rel="next" href="GMountOperation.html" title="GMountOperation">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gio-GIOError.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -60,7 +60,7 @@
 </div>
 <div class="refsect1">
 <a name="gio-GIOError.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -98,7 +98,7 @@ handled (but note that future GLib releases may return a more
 specific value instead).</p>
 <div class="refsect3">
 <a name="id-1.4.2.6.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -114,7 +114,6 @@ specific value instead).</p>
 <div class="refsect3">
 <a name="id-1.4.2.6.7.2.6"></a><h4>Returns</h4>
 <p> <a class="link" href="gio-GIOError.html#GIOErrorEnum" title="enum GIOErrorEnum"><span class="type">GIOErrorEnum</span></a> value for the given errno.h error number.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -133,7 +132,7 @@ corresponding to <em class="parameter"><code>error_code</code></em>
 <a href="https://developer.gnome.org/glib/unstable/glib-Windows-Compatibility-Functions.html#g-win32-error-message"><code class="function">g_win32_error_message()</code></a> returns a string that must be freed.)</p>
 <div class="refsect3">
 <a name="id-1.4.2.6.7.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -149,9 +148,8 @@ corresponding to <em class="parameter"><code>error_code</code></em>
 <div class="refsect3">
 <a name="id-1.4.2.6.7.3.7"></a><h4>Returns</h4>
 <p> <a class="link" href="gio-GIOError.html#GIOErrorEnum" title="enum GIOErrorEnum"><span class="type">GIOErrorEnum</span></a> value for the given error number.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -169,7 +167,7 @@ See <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html
 <p>Error codes returned by GIO functions.</p>
 <p>Note that this domain may be extended in future GLib releases. In
 general, new error codes either only apply to new APIs, or else
-replace <a class="link" href="gio-GIOError.html#G-IO-ERROR-FAILED:CAPS"><span class="type">G_IO_ERROR_FAILED</span></a> in cases that were not explicitly
+replace <a class="link" href="gio-GIOError.html#G-IO-ERROR-FAILED:CAPS"><code class="literal">G_IO_ERROR_FAILED</code></a> in cases that were not explicitly
 distinguished before. You should therefore avoid writing code like</p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
@@ -180,11 +178,11 @@ distinguished before. You should therefore avoid writing code like</p>
 3
 4
 5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#g-error-matches">g_error_matches</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">error</span><span class="symbol">,</span><span class="normal"> <a href="gio-GIOError.html#G-IO-ERROR:CAPS">G_IO_ERROR</a></span><span class="symbol">,</span><span class="normal"> G_IO_ERROR_FAILED</span><span class="symbol">))</span>
-<span class="normal">  </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="comment">// Assume that this is EPRINTERONFIRE</span>
-<span class="normal">    </span><span class="symbol">...</span>
-<span class="normal">  </span><span class="cbracket">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#g-error-matches">g_error_matches</a></span> <span class="gtkdoc opt">(</span>error<span class="gtkdoc opt">,</span> G_IO_ERROR<span class="gtkdoc opt">,</span> G_IO_ERROR_FAILED<span class="gtkdoc opt">))</span>
+  <span class="gtkdoc opt">{</span>
+    <span class="gtkdoc slc">// Assume that this is EPRINTERONFIRE</span>
+    <span class="gtkdoc opt">...</span>
+  <span class="gtkdoc opt">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -195,7 +193,7 @@ but should instead treat all unrecognized error codes the same as
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-FAILED:CAPS"><span class="type">G_IO_ERROR_FAILED</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.2.6.8.3.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -526,6 +524,31 @@ but should instead treat all unrecognized error codes the same as
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
+<tr>
+<td class="enum_member_name"><p><a name="G-IO-ERROR-CONNECTION-CLOSED:CAPS"></a>G_IO_ERROR_CONNECTION_CLOSED</p></td>
+<td class="enum_member_description">
+<p>Connection closed by peer. Note that this
+    is the same code as <a class="link" href="gio-GIOError.html#G-IO-ERROR-BROKEN-PIPE:CAPS"><code class="literal">G_IO_ERROR_BROKEN_PIPE</code></a>; before 2.44 some
+    "connection closed" errors returned <a class="link" href="gio-GIOError.html#G-IO-ERROR-BROKEN-PIPE:CAPS"><code class="literal">G_IO_ERROR_BROKEN_PIPE</code></a>, but others
+    returned <a class="link" href="gio-GIOError.html#G-IO-ERROR-FAILED:CAPS"><code class="literal">G_IO_ERROR_FAILED</code></a>. Now they should all return the same
+    value, which has this more logical name. Since 2.44.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="G-IO-ERROR-NOT-CONNECTED:CAPS"></a>G_IO_ERROR_NOT_CONNECTED</p></td>
+<td class="enum_member_description">
+<p>Transport endpoint is not connected. Since 2.44</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="G-IO-ERROR-MESSAGE-TOO-LARGE:CAPS"></a>G_IO_ERROR_MESSAGE_TOO_LARGE</p></td>
+<td class="enum_member_description">
+<p>Message too large. Since 2.48.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -533,7 +556,6 @@ but should instead treat all unrecognized error codes the same as
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

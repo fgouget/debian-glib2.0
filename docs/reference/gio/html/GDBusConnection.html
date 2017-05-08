@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GDBusConnection</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GDBusConnection: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Low-level D-Bus Support">
 <link rel="prev" href="GDBusMessage.html" title="GDBusMessage">
 <link rel="next" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GDBusConnection.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -419,6 +419,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GDBusConnection.html#g-dbus-connection-register-object-with-closures" title="g_dbus_connection_register_object_with_closures ()">g_dbus_connection_register_object_with_closures</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
 </td>
 <td class="function_name">
@@ -461,7 +469,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusConnection.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -523,7 +531,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusConnection.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -532,13 +540,13 @@
 <tbody><tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GDBusConnection.html#GDBusConnection-closed" title="The “closed” signal">closed</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GDBusConnection.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -589,10 +597,7 @@
 </div>
 <div class="refsect1">
 <a name="GDBusConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GFlags
-    <span class="lineart">├──</span> GDBusCapabilityFlags
-    <span class="lineart">╰──</span> GDBusConnectionFlags
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> GDBusConnection
 </pre>
 </div>
@@ -673,7 +678,7 @@ then call <a class="link" href="GDBusConnection.html#g-bus-get-finish" title="g_
 the synchronous version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -704,7 +709,7 @@ the synchronous version.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -723,7 +728,7 @@ event that you need a private message bus connection, use
 the <a class="link" href="GDBusConnection.html#GDBusConnection--exit-on-close" title="The “exit-on-close” property"><span class="type">“exit-on-close”</span></a> property set to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -751,7 +756,7 @@ is set.
 Free with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -778,7 +783,7 @@ event that you need a private message bus connection, use
 the <a class="link" href="GDBusConnection.html#GDBusConnection--exit-on-close" title="The “exit-on-close” property"><span class="type">“exit-on-close”</span></a> property set to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -810,7 +815,7 @@ is set.
 Free with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -846,7 +851,7 @@ operation.</p>
 version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.5.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -892,7 +897,7 @@ version.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -903,7 +908,7 @@ g_dbus_connection_new_finish (<em class="parameter"><code><a class="link" href="
 <p>Finishes an operation started with <a class="link" href="GDBusConnection.html#g-dbus-connection-new" title="g_dbus_connection_new ()"><code class="function">g_dbus_connection_new()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -929,9 +934,8 @@ passed to <a class="link" href="GDBusConnection.html#g-dbus-connection-new" titl
 <p> a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Free
 with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -961,7 +965,7 @@ authentication process.</p>
 <a class="link" href="GDBusConnection.html#g-dbus-connection-new" title="g_dbus_connection_new ()"><code class="function">g_dbus_connection_new()</code></a> for the asynchronous version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.7.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1005,9 +1009,8 @@ authentication process.</p>
 <a name="id-1.4.17.7.11.7.10"></a><h4>Returns</h4>
 <p> a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Free with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1041,7 +1044,7 @@ authentication process.</p>
 version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.8.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1082,7 +1085,7 @@ version.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1094,7 +1097,7 @@ g_dbus_connection_new_for_address_finish
 <p>Finishes an operation started with <a class="link" href="GDBusConnection.html#g-dbus-connection-new-for-address" title="g_dbus_connection_new_for_address ()"><code class="function">g_dbus_connection_new_for_address()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1120,9 +1123,8 @@ to <a class="link" href="GDBusConnection.html#g-dbus-connection-new" title="g_db
 <p> a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Free with
 <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1151,7 +1153,7 @@ as the server. In particular, <em class="parameter"><code>flags</code></em>
 authentication process.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.10.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1191,9 +1193,8 @@ authentication process.</p>
 <p> a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Free with
 <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1209,7 +1210,7 @@ starts processing messages. Does nothing on if <em class="parameter"><code>conne
 created with this flag or if the method has already been called.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1222,7 +1223,7 @@ created with this flag or if the method has already been called.</p>
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1259,7 +1260,7 @@ operation. See <a class="link" href="GDBusConnection.html#g-dbus-connection-clos
 version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.12.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1291,7 +1292,7 @@ satisfied or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Ma
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1303,7 +1304,7 @@ g_dbus_connection_close_finish (<em class="parameter"><code><a class="link" href
 <p>Finishes an operation started with <a class="link" href="GDBusConnection.html#g-dbus-connection-close" title="g_dbus_connection_close ()"><code class="function">g_dbus_connection_close()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1333,9 +1334,8 @@ to <a class="link" href="GDBusConnection.html#g-dbus-connection-close" title="g_
 <a name="id-1.4.17.7.11.13.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1351,7 +1351,7 @@ asynchronous version of this method and more details about what it
 does.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1380,9 +1380,8 @@ does.</p>
 <a name="id-1.4.17.7.11.14.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1393,7 +1392,7 @@ g_dbus_connection_is_closed (<em class="parameter"><code><a class="link" href="G
  is closed.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1409,9 +1408,8 @@ g_dbus_connection_is_closed (<em class="parameter"><code><a class="link" href="G
 <div class="refsect3">
 <a name="id-1.4.17.7.11.15.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the connection is closed, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1438,7 +1436,7 @@ operation. See <a class="link" href="GDBusConnection.html#g-dbus-connection-flus
 version.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1470,7 +1468,7 @@ request is satisfied or <a href="https://developer.gnome.org/glib/unstable/glib-
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1482,7 +1480,7 @@ g_dbus_connection_flush_finish (<em class="parameter"><code><a class="link" href
 <p>Finishes an operation started with <a class="link" href="GDBusConnection.html#g-dbus-connection-flush" title="g_dbus_connection_flush ()"><code class="function">g_dbus_connection_flush()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1512,9 +1510,8 @@ to <a class="link" href="GDBusConnection.html#g-dbus-connection-flush" title="g_
 <a name="id-1.4.17.7.11.17.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1530,7 +1527,7 @@ asynchronous version of this method and more details about what it
 does.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1559,9 +1556,8 @@ does.</p>
 <a name="id-1.4.17.7.11.18.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1574,7 +1570,7 @@ closed by the remote peer. See
 <a class="link" href="GDBusConnection.html#GDBusConnection--exit-on-close" title="The “exit-on-close” property"><span class="type">“exit-on-close”</span></a> for more details.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1592,9 +1588,8 @@ closed by the remote peer. See
 <p> whether the process is terminated when <em class="parameter"><code>connection</code></em>
 is
 closed by the remote peer</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1615,7 +1610,7 @@ bus connection, you should make sure that your application exits
 when the user session ends.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.20.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1637,7 +1632,7 @@ is closed by the remote peer</p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1650,7 +1645,7 @@ stream from a worker thread, so it is not safe to interact with
 the stream directly.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.21.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1668,7 +1663,7 @@ the stream directly.</p>
 <p> the stream used for IO. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1679,7 +1674,7 @@ g_dbus_connection_get_guid (<em class="parameter"><code><a class="link" href="GD
 authenticating. See <a class="link" href="GDBusConnection.html#GDBusConnection--guid" title="The “guid” property"><span class="type">“guid”</span></a> for more details.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1697,9 +1692,8 @@ authenticating. See <a class="link" href="GDBusConnection.html#GDBusConnection--
 <p> The GUID. Do not free this string, it is owned by
 <em class="parameter"><code>connection</code></em>
 .</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1713,7 +1707,7 @@ bus. This can also be used to figure out if <em class="parameter"><code>connecti
 message bus connection.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1733,9 +1727,8 @@ is not a message
 bus connection. Do not free this string, it is owned by
 <em class="parameter"><code>connection</code></em>
 .</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1745,7 +1738,7 @@ g_dbus_connection_get_capabilities (<em class="parameter"><code><a class="link" 
 <p>Gets the capabilities negotiated with the remote peer</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1761,9 +1754,8 @@ g_dbus_connection_get_capabilities (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="id-1.4.17.7.11.24.6"></a><h4>Returns</h4>
 <p> zero or more flags from the <a class="link" href="GDBusConnection.html#GDBusCapabilityFlags" title="enum GDBusCapabilityFlags"><span class="type">GDBusCapabilityFlags</span></a> enumeration</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1782,7 +1774,7 @@ each application is a client. So this method will always return
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for message bus clients.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.25.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1797,12 +1789,12 @@ each application is a client. So this method will always return
 </div>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.25.7"></a><h4>Returns</h4>
-<p> a <a class="link" href="GCredentials.html" title="GCredentials"><span class="type">GCredentials</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not available.
-Do not free this object, it is owned by <em class="parameter"><code>connection</code></em>
+<p> a <a class="link" href="GCredentials.html" title="GCredentials"><span class="type">GCredentials</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not
+available. Do not free this object, it is owned by <em class="parameter"><code>connection</code></em>
 . </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1816,7 +1808,7 @@ high-level API such as <a class="link" href="GDBusConnection.html#g-dbus-connect
 <a class="link" href="GDBusConnection.html#g-dbus-connection-call" title="g_dbus_connection_call ()"><code class="function">g_dbus_connection_call()</code></a> or <a class="link" href="GDBusProxy.html#g-dbus-proxy-call" title="g_dbus_proxy_call ()"><code class="function">g_dbus_proxy_call()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1833,9 +1825,8 @@ high-level API such as <a class="link" href="GDBusConnection.html#g-dbus-connect
 <a name="id-1.4.17.7.11.26.6"></a><h4>Returns</h4>
 <p> the last used serial or zero when no message has been sent
 within the current thread</p>
-<p></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1894,20 +1885,20 @@ convenient 'inline' use of <a href="https://developer.gnome.org/glib/unstable/gl
 12
 13
 14</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="GDBusConnection.html#g-dbus-connection-call">g_dbus_connection_call</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">connection</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="string">"org.freedesktop.StringThings"</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="string">"/org/freedesktop/StringThings"</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="string">"org.freedesktop.StringThings"</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="string">"TwoStrings"</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-new">g_variant_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"(ss)"</span><span class="symbol">,</span>
-<span class="normal">                                       </span><span class="string">"Thing One"</span><span class="symbol">,</span>
-<span class="normal">                                       </span><span class="string">"Thing Two"</span><span class="symbol">),</span>
-<span class="normal">                        <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">,</span>
-<span class="normal">                        G_DBUS_CALL_FLAGS_NONE</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">,</span>
-<span class="normal">                        <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="symbol">(</span><span class="normal"><a href="GAsyncResult.html#GAsyncReadyCallback">GAsyncReadyCallback</a></span><span class="symbol">)</span><span class="normal"> two_strings_done</span><span class="symbol">,</span>
-<span class="normal">                        <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="GDBusConnection.html#g-dbus-connection-call">g_dbus_connection_call</a></span> <span class="gtkdoc opt">(</span>connection<span class="gtkdoc opt">,</span>
+                        <span class="string">&quot;org.freedesktop.StringThings&quot;</span><span class="gtkdoc opt">,</span>
+                        <span class="string">&quot;/org/freedesktop/StringThings&quot;</span><span class="gtkdoc opt">,</span>
+                        <span class="string">&quot;org.freedesktop.StringThings&quot;</span><span class="gtkdoc opt">,</span>
+                        <span class="string">&quot;TwoStrings&quot;</span><span class="gtkdoc opt">,</span>
+                        <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-new">g_variant_new</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;(ss)&quot;</span><span class="gtkdoc opt">,</span>
+                                       <span class="string">&quot;Thing One&quot;</span><span class="gtkdoc opt">,</span>
+                                       <span class="string">&quot;Thing Two&quot;</span><span class="gtkdoc opt">),</span>
+                        NULL<span class="gtkdoc opt">,</span>
+                        G_DBUS_CALL_FLAGS_NONE<span class="gtkdoc opt">,</span>
+                        <span class="gtkdoc opt">-</span><span class="number">1</span><span class="gtkdoc opt">,</span>
+                        NULL<span class="gtkdoc opt">,</span>
+                        <span class="gtkdoc opt">(</span>GAsyncReadyCallback<span class="gtkdoc opt">)</span> two_strings_done<span class="gtkdoc opt">,</span>
+                        NULL<span class="gtkdoc opt">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -1927,7 +1918,7 @@ function.</p>
 the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-FLAGS-NO-REPLY-EXPECTED:CAPS"><code class="literal">G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED</code></a> flag set.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.27.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2004,7 +1995,7 @@ method invocation. </p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2016,7 +2007,7 @@ g_dbus_connection_call_finish (<em class="parameter"><code><a class="link" href=
 <p>Finishes an operation started with <a class="link" href="GDBusConnection.html#g-dbus-connection-call" title="g_dbus_connection_call ()"><code class="function">g_dbus_connection_call()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2046,9 +2037,8 @@ g_dbus_connection_call_finish (<em class="parameter"><code><a class="link" href=
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Otherwise a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple with
 return values. Free with <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-unref"><code class="function">g_variant_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2106,19 +2096,19 @@ This allows convenient 'inline' use of <a href="https://developer.gnome.org/glib
 11
 12
 13</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="GDBusConnection.html#g-dbus-connection-call-sync">g_dbus_connection_call_sync</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">connection</span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="string">"org.freedesktop.StringThings"</span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="string">"/org/freedesktop/StringThings"</span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="string">"org.freedesktop.StringThings"</span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="string">"TwoStrings"</span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-new">g_variant_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"(ss)"</span><span class="symbol">,</span>
-<span class="normal">                                            </span><span class="string">"Thing One"</span><span class="symbol">,</span>
-<span class="normal">                                            </span><span class="string">"Thing Two"</span><span class="symbol">),</span>
-<span class="normal">                             <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">,</span>
-<span class="normal">                             G_DBUS_CALL_FLAGS_NONE</span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">,</span>
-<span class="normal">                             <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">,</span>
-<span class="normal">                             </span><span class="symbol">&amp;</span><span class="normal">error</span><span class="symbol">);</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="GDBusConnection.html#g-dbus-connection-call-sync">g_dbus_connection_call_sync</a></span> <span class="gtkdoc opt">(</span>connection<span class="gtkdoc opt">,</span>
+                             <span class="string">&quot;org.freedesktop.StringThings&quot;</span><span class="gtkdoc opt">,</span>
+                             <span class="string">&quot;/org/freedesktop/StringThings&quot;</span><span class="gtkdoc opt">,</span>
+                             <span class="string">&quot;org.freedesktop.StringThings&quot;</span><span class="gtkdoc opt">,</span>
+                             <span class="string">&quot;TwoStrings&quot;</span><span class="gtkdoc opt">,</span>
+                             <span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-new">g_variant_new</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;(ss)&quot;</span><span class="gtkdoc opt">,</span>
+                                            <span class="string">&quot;Thing One&quot;</span><span class="gtkdoc opt">,</span>
+                                            <span class="string">&quot;Thing Two&quot;</span><span class="gtkdoc opt">),</span>
+                             NULL<span class="gtkdoc opt">,</span>
+                             G_DBUS_CALL_FLAGS_NONE<span class="gtkdoc opt">,</span>
+                             <span class="gtkdoc opt">-</span><span class="number">1</span><span class="gtkdoc opt">,</span>
+                             NULL<span class="gtkdoc opt">,</span>
+                             <span class="gtkdoc opt">&amp;</span>error<span class="gtkdoc opt">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -2130,7 +2120,7 @@ This allows convenient 'inline' use of <a href="https://developer.gnome.org/glib
 this method.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.29.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2204,9 +2194,8 @@ timeout or <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.h
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Otherwise a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple with
 return values. Free with <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-unref"><code class="function">g_variant_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2230,7 +2219,7 @@ g_dbus_connection_call_with_unix_fd_list
 <p>This method is only available on UNIX.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.30.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2312,7 +2301,7 @@ method invocation. </p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2326,7 +2315,7 @@ g_dbus_connection_call_with_unix_fd_list_finish
 <p>Finishes an operation started with <a class="link" href="GDBusConnection.html#g-dbus-connection-call-with-unix-fd-list" title="g_dbus_connection_call_with_unix_fd_list ()"><code class="function">g_dbus_connection_call_with_unix_fd_list()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.31.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2362,9 +2351,8 @@ g_dbus_connection_call_with_unix_fd_list_finish
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Otherwise a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple with
 return values. Free with <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-unref"><code class="function">g_variant_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2388,7 +2376,7 @@ g_dbus_connection_call_with_unix_fd_list_sync
 <p>This method is only available on UNIX.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.32.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2472,9 +2460,8 @@ timeout or <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.h
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
 is set. Otherwise a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple with
 return values. Free with <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-unref"><code class="function">g_variant_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2493,7 +2480,7 @@ g_dbus_connection_emit_signal (<em class="parameter"><code><a class="link" href=
  is not compatible with the D-Bus protocol.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.33.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2544,9 +2531,8 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 <a name="id-1.4.17.7.11.33.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2562,7 +2548,7 @@ is set</p>
 <p>Signature for callback function used in <a class="link" href="GDBusConnection.html#g-dbus-connection-signal-subscribe" title="g_dbus_connection_signal_subscribe ()"><code class="function">g_dbus_connection_signal_subscribe()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.34.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2607,7 +2593,7 @@ is set</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2648,9 +2634,18 @@ processing the received signal.</p>
  is
 interpreted as part of a namespace or path.  The first argument
 of a signal is matched against that part as specified by D-Bus.</p>
+<p>If <em class="parameter"><code>user_data_free_func</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, it will be called (in the
+thread-default main context of the thread you are calling this
+method from) at some point after <em class="parameter"><code>user_data</code></em>
+ is no longer
+needed. (It is not guaranteed to be called synchronously when the
+signal is unsubscribed from, and may be called after <em class="parameter"><code>connection</code></em>
+
+has been destroyed.)</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.35.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.35.9"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2694,7 +2689,8 @@ to match on all kinds of arguments. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>flags</p></td>
-<td class="parameter_description"><p>flags describing how to subscribe to the signal (currently unused)</p></td>
+<td class="parameter_description"><p><a class="link" href="GDBusConnection.html#GDBusSignalFlags" title="enum GDBusSignalFlags"><span class="type">GDBusSignalFlags</span></a> describing how arg0 is used in subscribing to the
+signal</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -2719,11 +2715,10 @@ subscription is removed or <a href="https://developer.gnome.org/glib/unstable/gl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.35.9"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.35.10"></a><h4>Returns</h4>
 <p> a subscription identifier that can be used with <a class="link" href="GDBusConnection.html#g-dbus-connection-signal-unsubscribe" title="g_dbus_connection_signal_unsubscribe ()"><code class="function">g_dbus_connection_signal_unsubscribe()</code></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2734,7 +2729,7 @@ g_dbus_connection_signal_unsubscribe (<em class="parameter"><code><a class="link
 <p>Unsubscribes from signals.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.36.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2755,7 +2750,7 @@ g_dbus_connection_signal_unsubscribe (<em class="parameter"><code><a class="link
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2793,7 +2788,7 @@ UNIX file descriptors.</p>
 <a class="link" href="GDBusConnection.html#G-DBUS-SEND-MESSAGE-FLAGS-PRESERVE-SERIAL:CAPS"><code class="literal">G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code></a> flag.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.37.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2835,9 +2830,8 @@ when sending it or <a href="https://developer.gnome.org/glib/unstable/glib-Stand
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the message was well-formed and queued for
 transmission, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2888,7 +2882,7 @@ for an example of how to use this low-level API to send and receive
 UNIX file descriptors.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.38.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2943,7 +2937,7 @@ is satisfied or <a href="https://developer.gnome.org/glib/unstable/glib-Standard
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2964,7 +2958,7 @@ for an example of how to use this low-level API to send and receive
 UNIX file descriptors.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.39.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2996,7 +2990,7 @@ UNIX file descriptors.</p>
 is set. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3047,7 +3041,7 @@ UNIX file descriptors.</p>
 <a class="link" href="GDBusConnection.html#G-DBUS-SEND-MESSAGE-FLAGS-PRESERVE-SERIAL:CAPS"><code class="literal">G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code></a> flag.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.40.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3103,7 +3097,7 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 is set. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3131,15 +3125,15 @@ message can simply return the <em class="parameter"><code>message</code></em>
 7
 8
 9</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> <a href="GDBusMessage.html">GDBusMessage</a> </span><span class="symbol">*</span>
-<span class="function">passive_filter</span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="GDBusConnection.html">GDBusConnection</a> </span><span class="symbol">*</span><span class="normal">connection</span>
-<span class="normal">                </span><span class="usertype">GDBusMessage</span><span class="normal">    </span><span class="symbol">*</span><span class="normal">message</span><span class="symbol">,</span>
-<span class="normal">                </span><span class="usertype">gboolean</span><span class="normal">         incoming</span><span class="symbol">,</span>
-<span class="normal">                </span><span class="usertype">gpointer</span><span class="normal">         user_data</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="symbol">/&lt;!--</span><span class="normal"> </span><span class="symbol">--&gt;*</span><span class="normal"> inspect @message </span><span class="symbol">*&lt;!--</span><span class="normal"> </span><span class="symbol">--&gt;/</span>
-<span class="normal">  </span><span class="keyword">return</span><span class="normal"> message</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static</span> GDBusMessage <span class="gtkdoc opt">*</span>
+<span class="function">passive_filter</span> <span class="gtkdoc opt">(</span>GDBusConnection <span class="gtkdoc opt">*</span>connection
+                GDBusMessage    <span class="gtkdoc opt">*</span>message<span class="gtkdoc opt">,</span>
+                gboolean         incoming<span class="gtkdoc opt">,</span>
+                gpointer         user_data<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="gtkdoc opt">/&lt;!-- --&gt;*</span> inspect &#64;message <span class="gtkdoc opt">*&lt;!-- --&gt;/</span>
+  <span class="keyword">return</span> message<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3164,19 +3158,19 @@ Filter functions that wants to drop a message can simply return <a href="https:/
 11
 12
 13</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> <a href="GDBusMessage.html">GDBusMessage</a> </span><span class="symbol">*</span>
-<span class="function">drop_filter</span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="GDBusConnection.html">GDBusConnection</a> </span><span class="symbol">*</span><span class="normal">connection</span>
-<span class="normal">             </span><span class="usertype">GDBusMessage</span><span class="normal">    </span><span class="symbol">*</span><span class="normal">message</span><span class="symbol">,</span>
-<span class="normal">             </span><span class="usertype">gboolean</span><span class="normal">         incoming</span><span class="symbol">,</span>
-<span class="normal">             </span><span class="usertype">gpointer</span><span class="normal">         user_data</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">should_drop_message</span><span class="symbol">)</span>
-<span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">      </span><span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">message</span><span class="symbol">);</span>
-<span class="normal">      message </span><span class="symbol">=</span><span class="normal"> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">;</span>
-<span class="normal">    </span><span class="cbracket">}</span>
-<span class="normal">  </span><span class="keyword">return</span><span class="normal"> message</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static</span> GDBusMessage <span class="gtkdoc opt">*</span>
+<span class="function">drop_filter</span> <span class="gtkdoc opt">(</span>GDBusConnection <span class="gtkdoc opt">*</span>connection
+             GDBusMessage    <span class="gtkdoc opt">*</span>message<span class="gtkdoc opt">,</span>
+             gboolean         incoming<span class="gtkdoc opt">,</span>
+             gpointer         user_data<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(</span>should_drop_message<span class="gtkdoc opt">)</span>
+    <span class="gtkdoc opt">{</span>
+      <span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span> <span class="gtkdoc opt">(</span>message<span class="gtkdoc opt">);</span>
+      message <span class="gtkdoc opt">=</span> NULL<span class="gtkdoc opt">;</span>
+    <span class="gtkdoc opt">}</span>
+  <span class="keyword">return</span> message<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3206,24 +3200,24 @@ Finally, a filter function may modify a message by copying it:</p>
 16
 17
 18</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> <a href="GDBusMessage.html">GDBusMessage</a> </span><span class="symbol">*</span>
-<span class="function">modifying_filter</span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="GDBusConnection.html">GDBusConnection</a> </span><span class="symbol">*</span><span class="normal">connection</span>
-<span class="normal">                  </span><span class="usertype">GDBusMessage</span><span class="normal">    </span><span class="symbol">*</span><span class="normal">message</span><span class="symbol">,</span>
-<span class="normal">                  </span><span class="usertype">gboolean</span><span class="normal">         incoming</span><span class="symbol">,</span>
-<span class="normal">                  </span><span class="usertype">gpointer</span><span class="normal">         user_data</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="usertype">GDBusMessage</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">copy</span><span class="symbol">;</span>
-<span class="normal">  </span><span class="usertype">GError</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">error</span><span class="symbol">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static</span> GDBusMessage <span class="gtkdoc opt">*</span>
+<span class="function">modifying_filter</span> <span class="gtkdoc opt">(</span>GDBusConnection <span class="gtkdoc opt">*</span>connection
+                  GDBusMessage    <span class="gtkdoc opt">*</span>message<span class="gtkdoc opt">,</span>
+                  gboolean         incoming<span class="gtkdoc opt">,</span>
+                  gpointer         user_data<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  GDBusMessage <span class="gtkdoc opt">*</span>copy<span class="gtkdoc opt">;</span>
+  GError <span class="gtkdoc opt">*</span>error<span class="gtkdoc opt">;</span>
 
-<span class="normal">  error </span><span class="symbol">=</span><span class="normal"> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">;</span>
-<span class="normal">  copy </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GDBusMessage.html#g-dbus-message-copy">g_dbus_message_copy</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">message</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">error</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="symbol">/&lt;!--</span><span class="normal"> </span><span class="symbol">--&gt;*</span><span class="normal"> handle @error being </span><span class="usertype">is</span><span class="normal"> set </span><span class="symbol">*&lt;!--</span><span class="normal"> </span><span class="symbol">--&gt;/</span>
-<span class="normal">  </span><span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">message</span><span class="symbol">);</span>
+  error <span class="gtkdoc opt">=</span> NULL<span class="gtkdoc opt">;</span>
+  copy <span class="gtkdoc opt">=</span> <span class="function"><a href="GDBusMessage.html#g-dbus-message-copy">g_dbus_message_copy</a></span> <span class="gtkdoc opt">(</span>message<span class="gtkdoc opt">, &amp;</span>error<span class="gtkdoc opt">);</span>
+  <span class="gtkdoc opt">/&lt;!-- --&gt;*</span> handle &#64;error being is set <span class="gtkdoc opt">*&lt;!-- --&gt;/</span>
+  <span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span> <span class="gtkdoc opt">(</span>message<span class="gtkdoc opt">);</span>
 
-<span class="normal">  </span><span class="symbol">/&lt;!--</span><span class="normal"> </span><span class="symbol">--&gt;*</span><span class="normal"> modify @copy </span><span class="symbol">*&lt;!--</span><span class="normal"> </span><span class="symbol">--&gt;/</span>
+  <span class="gtkdoc opt">/&lt;!-- --&gt;*</span> modify &#64;copy <span class="gtkdoc opt">*&lt;!-- --&gt;/</span>
 
-<span class="normal">  </span><span class="keyword">return</span><span class="normal"> copy</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
+  <span class="keyword">return</span> copy<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3242,7 +3236,7 @@ check this ahead of time using <a class="link" href="GDBusMessage.html#g-dbus-me
 .</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.41.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3281,7 +3275,7 @@ functions can simply return the passed <em class="parameter"><code>message</code
 object. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3309,9 +3303,18 @@ dispatched anywhere else - not even the standard dispatch machinery
 <a class="link" href="GDBusConnection.html#g-dbus-connection-send-message-with-reply" title="g_dbus_connection_send_message_with_reply ()"><code class="function">g_dbus_connection_send_message_with_reply()</code></a> relies on) will see the
 message. Similary, if a filter consumes an outgoing message, the
 message will not be sent to the other peer.</p>
+<p>If <em class="parameter"><code>user_data_free_func</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, it will be called (in the
+thread-default main context of the thread you are calling this
+method from) at some point after <em class="parameter"><code>user_data</code></em>
+ is no longer
+needed. (It is not guaranteed to be called synchronously when the
+filter is removed, and may be called after <em class="parameter"><code>connection</code></em>
+ has been
+destroyed.)</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.42.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.42.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3345,12 +3348,11 @@ is removed or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-M
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.42.8"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.42.9"></a><h4>Returns</h4>
 <p> a filter identifier that can be used with
 <a class="link" href="GDBusConnection.html#g-dbus-connection-remove-filter" title="g_dbus_connection_remove_filter ()"><code class="function">g_dbus_connection_remove_filter()</code></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3359,9 +3361,15 @@ is removed or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-M
 g_dbus_connection_remove_filter (<em class="parameter"><code><a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> *connection</code></em>,
                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> filter_id</code></em>);</pre>
 <p>Removes a filter.</p>
+<p>Note that since filters run in a different thread, there is a race
+condition where it is possible that the filter will be running even
+after calling <a class="link" href="GDBusConnection.html#g-dbus-connection-remove-filter" title="g_dbus_connection_remove_filter ()"><code class="function">g_dbus_connection_remove_filter()</code></a>, so you cannot just
+free data that the filter might be using. Instead, you should pass
+a <a href="https://developer.gnome.org/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> to <a class="link" href="GDBusConnection.html#g-dbus-connection-add-filter" title="g_dbus_connection_add_filter ()"><code class="function">g_dbus_connection_add_filter()</code></a>, which will be
+called when it is guaranteed that the data is no longer needed.</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.43.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.43.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3381,7 +3389,7 @@ g_dbus_connection_remove_filter (<em class="parameter"><code><a class="link" hre
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3399,7 +3407,7 @@ g_dbus_connection_remove_filter (<em class="parameter"><code><a class="link" hre
  function in <a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.44.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3438,8 +3446,8 @@ g_dbus_connection_remove_filter (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>invocation</p></td>
-<td class="parameter_description"><p>A <a class="link" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation"><span class="type">GDBusMethodInvocation</span></a> object that can be used to return a value or error.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> A <a class="link" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation"><span class="type">GDBusMethodInvocation</span></a> object that must be used to return a value or error. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
@@ -3450,7 +3458,7 @@ g_dbus_connection_remove_filter (<em class="parameter"><code><a class="link" hre
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3467,7 +3475,7 @@ g_dbus_connection_remove_filter (<em class="parameter"><code><a class="link" hre
  function in <a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.45.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3520,9 +3528,8 @@ or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 <em class="parameter"><code>error</code></em>
 is set. If the returned <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> is floating, it is
 consumed - otherwise its reference count is decreased by one.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3540,7 +3547,7 @@ consumed - otherwise its reference count is decreased by one.</p>
  function in <a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.46.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3596,9 +3603,8 @@ consumed - otherwise its reference count is decreased by one.</p>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the property was set to <em class="parameter"><code>value</code></em>
 , <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
 is set.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3656,7 +3662,7 @@ as the object is exported. Also note that <em class="parameter"><code>vtable</co
 <p>See this <a class="link" href="GDBusConnection.html#gdbus-server" title="An example D-Bus server">server</a> for an example of how to use this method.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.47.13"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3707,9 +3713,8 @@ as the object is exported. Also note that <em class="parameter"><code>vtable</co
 <p> 0 if <em class="parameter"><code>error</code></em>
 is set, otherwise a registration id (never 0)
 that can be used with <a class="link" href="GDBusConnection.html#g-dbus-connection-unregister-object" title="g_dbus_connection_unregister_object ()"><code class="function">g_dbus_connection_unregister_object()</code></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3720,7 +3725,7 @@ g_dbus_connection_unregister_object (<em class="parameter"><code><a class="link"
 <p>Unregisters an object.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.11.48.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3744,9 +3749,78 @@ g_dbus_connection_unregister_object (<em class="parameter"><code><a class="link"
 <div class="refsect3">
 <a name="id-1.4.17.7.11.48.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the object was unregistered, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-dbus-connection-register-object-with-closures"></a><h3>g_dbus_connection_register_object_with_closures ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+g_dbus_connection_register_object_with_closures
+                               (<em class="parameter"><code><a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> *connection</code></em>,
+                                <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                                <em class="parameter"><code><a class="link" href="gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="type">GDBusInterfaceInfo</span></a> *interface_info</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *method_call_closure</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *get_property_closure</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *set_property_closure</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Version of <a class="link" href="GDBusConnection.html#g-dbus-connection-register-object" title="g_dbus_connection_register_object ()"><code class="function">g_dbus_connection_register_object()</code></a> using closures instead of a
+<a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a> for easier binding in other languages.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> g_dbus_connection_register_object]</span></p>
+<div class="refsect3">
+<a name="id-1.4.17.7.11.49.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_path</p></td>
+<td class="parameter_description"><p>The object path to register at.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>interface_info</p></td>
+<td class="parameter_description"><p>Introspection data for the interface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>method_call_closure</p></td>
+<td class="parameter_description"><p> <a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> for handling incoming method calls. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>get_property_closure</p></td>
+<td class="parameter_description"><p> <a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> for getting a property. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>set_property_closure</p></td>
+<td class="parameter_description"><p> <a href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> for setting a property. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.17.7.11.49.7"></a><h4>Returns</h4>
+<p> 0 if <em class="parameter"><code>error</code></em>
+is set, otherwise a registration id (never 0)
+that can be used with <a class="link" href="GDBusConnection.html#g-dbus-connection-unregister-object" title="g_dbus_connection_unregister_object ()"><code class="function">g_dbus_connection_unregister_object()</code></a> .</p>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-46.html#api-index-2.46">2.46</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3766,8 +3840,8 @@ specified (ie: to verify that the object path is valid).</p>
 contain the '/' character.</p>
 <p>The return value will be freed with <a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.49.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.50.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3799,12 +3873,11 @@ contain the '/' character.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.49.9"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.50.9"></a><h4>Returns</h4>
 <p> A newly allocated array of strings for node names that are children of <em class="parameter"><code>object_path</code></em>
 .</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3833,8 +3906,8 @@ items is that the standard DBus interfaces will returned to the
 remote introspector in the empty array case, but not in the <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
 case.</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.50.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.51.9"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3873,11 +3946,10 @@ case.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.50.10"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.51.10"></a><h4>Returns</h4>
 <p> A <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of pointers to <a class="link" href="gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="type">GDBusInterfaceInfo</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3896,8 +3968,8 @@ case.</p>
 , if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, is always exactly one
 segment of the object path (ie: it never contains a slash).</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.51.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.52.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3933,8 +4005,8 @@ segment of the object path (ie: it never contains a slash).</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>out_user_data</p></td>
-<td class="parameter_description"><p>Return location for user data to pass to functions in the returned <a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a> (never <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> Return location for user data to pass to functions in the returned <a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a> (never <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][not optional]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
@@ -3946,11 +4018,10 @@ segment of the object path (ie: it never contains a slash).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.51.7"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.52.7"></a><h4>Returns</h4>
 <p> A <a class="link" href="GDBusConnection.html#GDBusInterfaceVTable" title="GDBusInterfaceVTable"><span class="type">GDBusInterfaceVTable</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if you don't want to handle the methods.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4001,8 +4072,8 @@ registration.</p>
 <p>See this <a class="link" href="GDBusConnection.html#gdbus-subtree-server" title="An example for exporting a subtree">server</a> for an example of how to use
 this method.</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.52.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.53.12"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4050,13 +4121,12 @@ dispatch nodes in the subtree</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.52.13"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.53.13"></a><h4>Returns</h4>
 <p> 0 if <em class="parameter"><code>error</code></em>
 is set, otherwise a subtree registration id (never 0)
 that can be used with <a class="link" href="GDBusConnection.html#g-dbus-connection-unregister-subtree" title="g_dbus_connection_unregister_subtree ()"><code class="function">g_dbus_connection_unregister_subtree()</code></a> .</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4066,8 +4136,8 @@ g_dbus_connection_unregister_subtree (<em class="parameter"><code><a class="link
                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> registration_id</code></em>);</pre>
 <p>Unregisters a subtree.</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.53.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.11.54.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4089,11 +4159,10 @@ g_dbus_connection_unregister_subtree (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.17.7.11.53.6"></a><h4>Returns</h4>
+<a name="id-1.4.17.7.11.54.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the subtree was unregistered, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -4103,7 +4172,7 @@ g_dbus_connection_unregister_subtree (<em class="parameter"><code><a class="link
 <p>An enumeration for well-known message buses.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4141,7 +4210,7 @@ g_dbus_connection_unregister_subtree (<em class="parameter"><code><a class="link
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4149,7 +4218,7 @@ g_dbus_connection_unregister_subtree (<em class="parameter"><code><a class="link
 <pre class="programlisting">typedef struct _GDBusConnection GDBusConnection;</pre>
 <p>The <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> structure contains only private data and
 should only be accessed using the provided API.</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4157,7 +4226,7 @@ should only be accessed using the provided API.</p>
 <p>Flags used when creating a new <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4213,7 +4282,7 @@ delayed until <a class="link" href="GDBusConnection.html#g-dbus-connection-start
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4221,7 +4290,7 @@ delayed until <a class="link" href="GDBusConnection.html#g-dbus-connection-start
 <p>Capabilities negotiated with the remote peer.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.5.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4246,7 +4315,7 @@ supports exchanging UNIX file descriptors with the remote peer.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4254,7 +4323,7 @@ supports exchanging UNIX file descriptors with the remote peer.</p>
 <p>Flags used in <a class="link" href="GDBusConnection.html#g-dbus-connection-call" title="g_dbus_connection_call ()"><code class="function">g_dbus_connection_call()</code></a> and similar APIs.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.6.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4277,10 +4346,18 @@ invocation.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
+<tr>
+<td class="enum_member_name"><p><a name="G-DBUS-CALL-FLAGS-ALLOW-INTERACTIVE-AUTHORIZATION:CAPS"></a>G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION</p></td>
+<td class="enum_member_description">
+<p>the caller is prepared to
+wait for interactive authorization. Since 2.46.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4288,7 +4365,7 @@ invocation.</p>
 <p>Flags used when subscribing to signals via <a class="link" href="GDBusConnection.html#g-dbus-connection-signal-subscribe" title="g_dbus_connection_signal_subscribe ()"><code class="function">g_dbus_connection_signal_subscribe()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.7.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4331,7 +4408,7 @@ or one of the paths is a subpath of the other.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4339,7 +4416,7 @@ or one of the paths is a subpath of the other.</p>
 <p>Flags used when sending <a href="GDBusMessage.html"><span class="type">GDBusMessages</span></a> on a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.8.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4365,7 +4442,7 @@ sending a message.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4384,6 +4461,15 @@ function. The D-Bus call will be directed to your <em class="parameter"><code>me
  function,
 with the provided <em class="parameter"><code>interface_name</code></em>
  set to "org.freedesktop.DBus.Properties".</p>
+<p>Ownership of the <a class="link" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation"><span class="type">GDBusMethodInvocation</span></a> object passed to the
+<code class="function">method_call()</code> function is transferred to your handler; you must
+call one of the methods of <a class="link" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation"><span class="type">GDBusMethodInvocation</span></a> to return a reply
+(possibly empty), or an error. These functions also take ownership
+of the passed-in invocation object, so unless the invocation
+object has otherwise been referenced, it will be then be freed.
+Calling one of these functions may be done within your
+<code class="function">method_call()</code> implementation but it also can be done at a later
+point to handle the method asynchronously.</p>
 <p>The usual checks on the validity of the calls is performed. For
 <code class="literal">Get</code> calls, an error is automatically returned if the property does
 not exist or the permissions do not allow access. The same checks are
@@ -4409,8 +4495,8 @@ you must ensure that you either provide a non-<a href="https://developer.gnome.o
 function or provide an implementation of the <code class="literal">Set</code> call. If implementing
 the call, you must return the value of type <a href="https://developer.gnome.org/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-UNIT:CAPS"><code class="literal">G_VARIANT_TYPE_UNIT</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.17.7.12.9.10"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.17.7.12.9.11"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -4435,7 +4521,7 @@ the call, you must return the value of type <a href="https://developer.gnome.org
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4449,7 +4535,7 @@ the call, you must return the value of type <a href="https://developer.gnome.org
 <p>Virtual table for handling subtrees registered with <a class="link" href="GDBusConnection.html#g-dbus-connection-register-subtree" title="g_dbus_connection_register_subtree ()"><code class="function">g_dbus_connection_register_subtree()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.10.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -4474,7 +4560,7 @@ the call, you must return the value of type <a href="https://developer.gnome.org
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4482,7 +4568,7 @@ the call, you must return the value of type <a href="https://developer.gnome.org
 <p>Flags passed to <a class="link" href="GDBusConnection.html#g-dbus-connection-register-subtree" title="g_dbus_connection_register_subtree ()"><code class="function">g_dbus_connection_register_subtree()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.12.11.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -4508,7 +4594,7 @@ the call, you must return the value of type <a href="https://developer.gnome.org
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -4520,7 +4606,7 @@ the call, you must return the value of type <a href="https://developer.gnome.org
 when establishing the connection.</p>
 <p>Flags: Write / Construct Only</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4528,7 +4614,7 @@ when establishing the connection.</p>
 <pre class="programlisting">  “authentication-observer”  <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a> *</pre>
 <p>A <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a> object to assist in the authentication process or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>Flags: Write / Construct Only</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4537,7 +4623,7 @@ when establishing the connection.</p>
 <p>Flags from the <a class="link" href="GDBusConnection.html#GDBusCapabilityFlags" title="enum GDBusCapabilityFlags"><span class="type">GDBusCapabilityFlags</span></a> enumeration
 representing connection features negotiated with the other peer.</p>
 <p>Flags: Read</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4546,7 +4632,7 @@ representing connection features negotiated with the other peer.</p>
 <p>A boolean specifying whether the connection has been closed.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4559,7 +4645,7 @@ remote peer.</p>
 and <a class="link" href="GDBusConnection.html#g-bus-get-sync" title="g_bus_get_sync ()"><code class="function">g_bus_get_sync()</code></a> will (usually) have this property set to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4567,7 +4653,7 @@ and <a class="link" href="GDBusConnection.html#g-bus-get-sync" title="g_bus_get_
 <pre class="programlisting">  “flags”                    <a class="link" href="GDBusConnection.html#GDBusConnectionFlags" title="enum GDBusConnectionFlags"><span class="type">GDBusConnectionFlags</span></a></pre>
 <p>Flags from the <a class="link" href="GDBusConnection.html#GDBusConnectionFlags" title="enum GDBusConnectionFlags"><span class="type">GDBusConnectionFlags</span></a> enumeration.</p>
 <p>Flags: Write / Construct Only</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4586,7 +4672,7 @@ of the other peer here after the connection has been successfully
 initialized.</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4599,7 +4685,7 @@ then the corresponding <a class="link" href="GSocket.html" title="GSocket"><span
 stream from a worker thread, so it is not safe to interact with
 the stream directly.</p>
 <p>Flags: Read / Write / Construct Only</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4609,7 +4695,7 @@ the stream directly.</p>
 connection is not open or not a message bus connection.</p>
 <p>Flags: Read</p>
 <p>Default value: NULL</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -4643,7 +4729,7 @@ case <em class="parameter"><code>remote_peer_vanished</code></em>
 once.</p>
 <div class="refsect3">
 <a name="id-1.4.17.7.14.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4675,13 +4761,12 @@ remote peer closed its end of the connection</p></td>
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
-<p class="since">Since 2.26</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

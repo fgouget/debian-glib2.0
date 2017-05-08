@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GLib Reference Manual: Strings</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Strings: GLib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Hash-Tables.html" title="Hash Tables">
 <link rel="next" href="glib-String-Chunks.html" title="String Chunks">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="glib-Strings.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -282,7 +282,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="glib-Strings.html#g-string-hash" title="g_string_hash ()">g_string_hash</a> <span class="c_punctuation">()</span>
@@ -301,7 +301,7 @@
 </div>
 <div class="refsect1">
 <a name="glib-Strings.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -349,7 +349,7 @@ g_string_new (<em class="parameter"><code>const <a class="link" href="glib-Basic
 <p>Creates a new <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a>, initialized with the given string.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -359,14 +359,13 @@ g_string_new (<em class="parameter"><code>const <a class="link" href="glib-Basic
 <td class="parameter_name"><p>init</p></td>
 <td class="parameter_description"><p> the initial text to copy into the string, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to
 start with an empty string. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="id-1.6.8.7.2.6"></a><h4>Returns</h4>
 <p> the new <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -388,7 +387,7 @@ responsibility to ensure that <em class="parameter"><code>init</code></em>
 bytes.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -412,7 +411,6 @@ to use</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.3.7"></a><h4>Returns</h4>
 <p> a new <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -427,7 +425,7 @@ text to the string and don't want it to be reallocated
 too often.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -444,7 +442,6 @@ hold the string</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.4.6"></a><h4>Returns</h4>
 <p> the new <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -459,7 +456,7 @@ the standard <code class="function">strcpy()</code> function, except that you do
 have to worry about having enough space to copy the string.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -484,8 +481,8 @@ are destroyed.</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.5.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -500,7 +497,7 @@ This function is similar to <a class="link" href="glib-Strings.html#g-string-pri
 the arguments to the format string are passed as a va_list.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -525,7 +522,7 @@ the arguments to the format string are passed as a va_list.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.14</p>
+<p class="since">Since: <a class="link" href="api-index-2-14.html#api-index-2.14">2.14</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -540,7 +537,7 @@ except that the arguments to the format string are passed
 as a va_list.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -565,7 +562,7 @@ as a va_list.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.14</p>
+<p class="since">Since: <a class="link" href="api-index-2-14.html#api-index-2.14">2.14</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -581,7 +578,7 @@ to contain the results. The previous contents of the
 <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> are destroyed.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -619,7 +616,7 @@ This function is similar to <a class="link" href="glib-Strings.html#g-string-pri
 that the text is appended to the <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -655,7 +652,7 @@ g_string_append (<em class="parameter"><code><a class="link" href="glib-Strings.
 it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -679,8 +676,8 @@ it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.10.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -693,7 +690,7 @@ g_string_append_c (<em class="parameter"><code><a class="link" href="glib-String
 it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -717,8 +714,8 @@ it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.11.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -731,7 +728,7 @@ g_string_append_unichar (<em class="parameter"><code><a class="link" href="glib-
 to the string.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -754,8 +751,8 @@ to the string.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.12.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -780,7 +777,7 @@ least <em class="parameter"><code>len</code></em>
  addressable bytes.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.13.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -809,8 +806,8 @@ to use</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.13.7"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -827,7 +824,7 @@ g_string_append_uri_escaped (<em class="parameter"><code><a class="link" href="g
 are reserved in URIs using URI-style escape sequences.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -861,10 +858,10 @@ to be used, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title=
 <div class="refsect3">
 <a name="id-1.6.8.7.14.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.16</p>
+<p class="since">Since: <a class="link" href="api-index-2-16.html#api-index-2.16">2.16</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -876,7 +873,7 @@ g_string_prepend (<em class="parameter"><code><a class="link" href="glib-Strings
 expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -900,8 +897,8 @@ expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.15.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -914,7 +911,7 @@ g_string_prepend_c (<em class="parameter"><code><a class="link" href="glib-Strin
 expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -937,8 +934,8 @@ expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.16.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -951,7 +948,7 @@ g_string_prepend_unichar (<em class="parameter"><code><a class="link" href="glib
 to the string.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -974,8 +971,8 @@ to the string.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.17.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1000,7 +997,7 @@ it is the caller's responsibility to ensure that
  addressable bytes.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.18.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1029,8 +1026,8 @@ to prepend</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.18.7"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1044,7 +1041,7 @@ g_string_insert (<em class="parameter"><code><a class="link" href="glib-Strings.
 expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1072,8 +1069,8 @@ expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.19.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1086,7 +1083,7 @@ g_string_insert_c (<em class="parameter"><code><a class="link" href="glib-String
 <p>Inserts a byte into a <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a>, expanding it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1114,8 +1111,8 @@ g_string_insert_c (<em class="parameter"><code><a class="link" href="glib-String
 <div class="refsect3">
 <a name="id-1.6.8.7.20.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1129,7 +1126,7 @@ g_string_insert_unichar (<em class="parameter"><code><a class="link" href="glib-
 into the string at the given position.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1158,8 +1155,8 @@ to append at the end of the string</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.21.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1188,7 +1185,7 @@ least <em class="parameter"><code>len</code></em>
  addressable bytes.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.22.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1224,8 +1221,8 @@ to insert</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.22.7"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1238,7 +1235,7 @@ g_string_overwrite (<em class="parameter"><code><a class="link" href="glib-Strin
 <p>Overwrites part of a string, lengthening it if necessary.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1268,10 +1265,10 @@ starting at <em class="parameter"><code>pos</code></em>
 <div class="refsect3">
 <a name="id-1.6.8.7.23.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.14</p>
+<p class="since">Since: <a class="link" href="api-index-2-14.html#api-index-2.14">2.14</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1285,7 +1282,7 @@ g_string_overwrite_len (<em class="parameter"><code><a class="link" href="glib-S
 This function will work with embedded nuls.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1321,10 +1318,10 @@ starting at <em class="parameter"><code>pos</code></em>
 <div class="refsect3">
 <a name="id-1.6.8.7.24.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.14</p>
+<p class="since">Since: <a class="link" href="api-index-2-14.html#api-index-2.14">2.14</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1339,7 +1336,7 @@ g_string_erase (<em class="parameter"><code><a class="link" href="glib-Strings.h
 The rest of the <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> is shifted down to fill the gap.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1368,8 +1365,8 @@ following bytes</p></td>
 <div class="refsect3">
 <a name="id-1.6.8.7.25.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1382,7 +1379,7 @@ g_string_truncate (<em class="parameter"><code><a class="link" href="glib-String
  bytes.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1406,8 +1403,8 @@ g_string_truncate (<em class="parameter"><code><a class="link" href="glib-String
 <div class="refsect3">
 <a name="id-1.6.8.7.26.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1423,7 +1420,7 @@ of the newly added area are undefined. (However, as
 always, string-&gt;str[string-&gt;len] will be a nul byte.)</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1446,8 +1443,8 @@ always, string-&gt;str[string-&gt;len] will be a nul byte.)</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.27.6"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1463,7 +1460,7 @@ it's <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><
 free it after use with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1472,8 +1469,8 @@ free it after use with <a class="link" href="glib-Memory-Allocation.html#g-free"
 <tbody>
 <tr>
 <td class="parameter_name"><p>string</p></td>
-<td class="parameter_description"><p>a <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a></p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> a <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>free_segment</p></td>
@@ -1487,8 +1484,8 @@ free it after use with <a class="link" href="glib-Memory-Allocation.html#g-free"
 <a name="id-1.6.8.7.28.6"></a><h4>Returns</h4>
 <p> the character data of <em class="parameter"><code>string</code></em>
 (i.e. <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if <em class="parameter"><code>free_segment</code></em>
-is <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>)</p>
-<p></p>
+is <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>). </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1507,7 +1504,7 @@ trailing nul character (not reflected in its "len"), the returned
 equal to the "len" member.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.29.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1524,10 +1521,10 @@ equal to the "len" member.</p>
 <a name="id-1.6.8.7.29.7"></a><h4>Returns</h4>
 <p> A newly allocated <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> containing contents of <em class="parameter"><code>string</code></em>
 ; <em class="parameter"><code>string</code></em>
-itself is freed</p>
-<p></p>
+itself is freed. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1543,7 +1540,7 @@ g_string_up (<em class="parameter"><code><a class="link" href="glib-Strings.html
 <p>Converts a <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> to uppercase.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.30.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1559,8 +1556,8 @@ g_string_up (<em class="parameter"><code><a class="link" href="glib-Strings.html
 <div class="refsect3">
 <a name="id-1.6.8.7.30.7"></a><h4>Returns</h4>
 <p> <em class="parameter"><code>string</code></em>
-</p>
-<p></p>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1577,7 +1574,7 @@ g_string_down (<em class="parameter"><code><a class="link" href="glib-Strings.ht
 <p>Converts a <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> to lowercase.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.31.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1592,20 +1589,20 @@ g_string_down (<em class="parameter"><code><a class="link" href="glib-Strings.ht
 </div>
 <div class="refsect3">
 <a name="id-1.6.8.7.31.7"></a><h4>Returns</h4>
-<p> the <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a></p>
-<p></p>
+<p> the <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-string-hash"></a><h3>g_string_hash ()</h3>
-<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 g_string_hash (<em class="parameter"><code>const <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> *str</code></em>);</pre>
 <p>Creates a hash code for <em class="parameter"><code>str</code></em>
 ; for use with <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1622,7 +1619,6 @@ g_string_hash (<em class="parameter"><code>const <a class="link" href="glib-Stri
 <a name="id-1.6.8.7.32.6"></a><h4>Returns</h4>
 <p> hash code for <em class="parameter"><code>str</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1635,7 +1631,7 @@ g_string_equal (<em class="parameter"><code>const <a class="link" href="glib-Str
 For use with <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.8.7.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1659,7 +1655,6 @@ For use with <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHas
 <a name="id-1.6.8.7.33.6"></a><h4>Returns</h4>
 <p> <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the strings are the same length and contain the
 same bytes</p>
-<p></p>
 </div>
 </div>
 </div>
@@ -1676,7 +1671,7 @@ same bytes</p>
 <p>The GString struct contains the public fields of a GString.</p>
 <div class="refsect3">
 <a name="id-1.6.8.8.2.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1723,7 +1718,7 @@ to contain the results. The previous contents of the
 <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a> are destroyed.</p>
 <div class="refsect3">
 <a name="id-1.6.8.8.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1762,7 +1757,7 @@ This function is similar to <a class="link" href="glib-Strings.html#g-string-spr
 the text is appended to the <a class="link" href="glib-Strings.html#GString" title="struct GString"><span class="type">GString</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.8.8.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1791,7 +1786,6 @@ the text is appended to the <a class="link" href="glib-Strings.html#GString" tit
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

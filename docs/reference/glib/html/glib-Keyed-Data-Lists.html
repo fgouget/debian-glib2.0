@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GLib Reference Manual: Keyed Data Lists</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Keyed Data Lists: GLib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Quarks.html" title="Quarks">
 <link rel="next" href="glib-Datasets.html" title="Datasets">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="glib-Keyed-Data-Lists.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -174,7 +174,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="glib-Keyed-Data-Lists.html#g-datalist-get-flags" title="g_datalist_get_flags ()">g_datalist_get_flags</a> <span class="c_punctuation">()</span>
@@ -185,7 +185,7 @@
 </div>
 <div class="refsect1">
 <a name="glib-Keyed-Data-Lists.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -238,7 +238,7 @@ g_datalist_init (<em class="parameter"><code><a class="link" href="glib-Keyed-Da
 any destroy functions.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -261,7 +261,7 @@ data with the same key is removed, and its destroy function is
 called.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -303,7 +303,7 @@ Any previous data with the same key is removed, and its destroy
 function is called.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -352,7 +352,7 @@ g_datalist_id_get_data (<em class="parameter"><code><a class="link" href="glib-K
 .</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -375,7 +375,6 @@ g_datalist_id_get_data (<em class="parameter"><code><a class="link" href="glib-K
 <div class="refsect3">
 <a name="id-1.6.16.7.5.6"></a><h4>Returns</h4>
 <p> the data element, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if it is not found.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -385,7 +384,7 @@ g_datalist_id_get_data (<em class="parameter"><code><a class="link" href="glib-K
 <p>Removes an element, using its <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a> identifier.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -416,7 +415,7 @@ g_datalist_id_remove_no_notify (<em class="parameter"><code><a class="link" href
 function.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -440,7 +439,6 @@ function.</p>
 <a name="id-1.6.16.7.7.6"></a><h4>Returns</h4>
 <p> the data previously stored at <em class="parameter"><code>key_id</code></em>
 , or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if none.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -456,7 +454,7 @@ incrementing the reference count, if <em class="parameter"><code>data</code></em
 object.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -479,7 +477,6 @@ object.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.8.6"></a><h4>Returns</h4>
 <p> a duplicate of data</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -506,7 +503,7 @@ is not allowed to read or modify the datalist.</p>
 threads are using the same datalist and the same key.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.9.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -546,9 +543,8 @@ in <em class="parameter"><code>datalist</code></em>
 , or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if not set.
 If <em class="parameter"><code>dup_func</code></em>
 is <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the value is returned unmodified.</p>
-<p></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -582,7 +578,7 @@ or may not include using <em class="parameter"><code>old_destroy</code></em>
 should not destroy the object in the normal way.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -628,9 +624,8 @@ should not destroy the object in the normal way.</p>
 was replaced
 by <em class="parameter"><code>newval</code></em>
 , <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -639,7 +634,7 @@ by <em class="parameter"><code>newval</code></em>
 <p>Sets the data element corresponding to the given string identifier.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -675,7 +670,7 @@ corresponding to <em class="parameter"><code>k</code></em>
 and the function to be called when the data element is removed.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -723,7 +718,7 @@ g_datalist_get_data (<em class="parameter"><code><a class="link" href="glib-Keye
 <a class="link" href="glib-Keyed-Data-Lists.html#g-datalist-id-get-data" title="g_datalist_id_get_data ()"><code class="function">g_datalist_id_get_data()</code></a> because it compares strings.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -746,7 +741,6 @@ g_datalist_get_data (<em class="parameter"><code><a class="link" href="glib-Keye
 <div class="refsect3">
 <a name="id-1.6.16.7.13.6"></a><h4>Returns</h4>
 <p> the data element, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if it is not found.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -757,7 +751,7 @@ g_datalist_get_data (<em class="parameter"><code><a class="link" href="glib-Keye
 destroy function is called if it has been set.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -785,7 +779,7 @@ destroy function is called if it has been set.</p>
 <p>Removes an element, without calling its destroy notifier.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -823,7 +817,7 @@ from any modifications during invocation of this function, it should
 not be called.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -859,7 +853,7 @@ The data elements' destroy functions are called
 if they have been set.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -878,7 +872,7 @@ if they have been set.</p>
 <a name="g-datalist-set-flags"></a><h3>g_datalist_set_flags ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 g_datalist_set_flags (<em class="parameter"><code><a class="link" href="glib-Keyed-Data-Lists.html#GData" title="GData"><span class="type">GData</span></a> **datalist</code></em>,
-                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> flags</code></em>);</pre>
+                      <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="type">guint</span></a> flags</code></em>);</pre>
 <p>Turns on flag values for a data list. This function is used
 to keep a small number of boolean flags in an object with
 a data list without using any additional space. It is
@@ -887,7 +881,7 @@ is very tight. (It is used in the base <a href="https://developer.gnome.org/gobj
 example.)</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -912,18 +906,18 @@ an error.</p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.8</p>
+<p class="since">Since: <a class="link" href="api-index-2-8.html#api-index-2.8">2.8</a></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-datalist-unset-flags"></a><h3>g_datalist_unset_flags ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 g_datalist_unset_flags (<em class="parameter"><code><a class="link" href="glib-Keyed-Data-Lists.html#GData" title="GData"><span class="type">GData</span></a> **datalist</code></em>,
-                        <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> flags</code></em>);</pre>
+                        <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="type">guint</span></a> flags</code></em>);</pre>
 <p>Turns off flag values for a data list. See <a class="link" href="glib-Keyed-Data-Lists.html#g-datalist-unset-flags" title="g_datalist_unset_flags ()"><code class="function">g_datalist_unset_flags()</code></a></p>
 <div class="refsect3">
 <a name="id-1.6.16.7.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -948,18 +942,18 @@ an error.</p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.8</p>
+<p class="since">Since: <a class="link" href="api-index-2-8.html#api-index-2.8">2.8</a></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-datalist-get-flags"></a><h3>g_datalist_get_flags ()</h3>
-<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>
+<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint ()"><span class="returnvalue">guint</span></a>
 g_datalist_get_flags (<em class="parameter"><code><a class="link" href="glib-Keyed-Data-Lists.html#GData" title="GData"><span class="type">GData</span></a> **datalist</code></em>);</pre>
 <p>Gets flags values packed in together with the datalist.
 See <a class="link" href="glib-Keyed-Data-Lists.html#g-datalist-set-flags" title="g_datalist_set_flags ()"><code class="function">g_datalist_set_flags()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.16.7.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -975,9 +969,8 @@ See <a class="link" href="glib-Keyed-Data-Lists.html#g-datalist-set-flags" title
 <div class="refsect3">
 <a name="id-1.6.16.7.20.6"></a><h4>Returns</h4>
 <p> the flags of the datalist</p>
-<p></p>
 </div>
-<p class="since">Since 2.8</p>
+<p class="since">Since: <a class="link" href="api-index-2-8.html#api-index-2.8">2.8</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -1001,7 +994,6 @@ flags &amp; ~G_DATALIST_FLAGS_MASK != 0 is an error.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GObject Reference Manual: Parameters and Values</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Parameters and Values: GObject Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="gobject-Generic-values.html" title="Generic values">
 <link rel="next" href="gobject-GParamSpec.html" title="GParamSpec">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gobject-Standard-Parameter-and-Value-Types.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -1091,7 +1091,7 @@
 </div>
 <div class="refsect1">
 <a name="gobject-Standard-Parameter-and-Value-Types.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -1311,7 +1311,7 @@ All other characters are replaced by a '-' during construction.</p>
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-BOOLEAN:CAPS" title="G_TYPE_PARAM_BOOLEAN"><code class="literal">G_TYPE_PARAM_BOOLEAN</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1327,7 +1327,6 @@ All other characters are replaced by a '-' during construction.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.2.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1338,7 +1337,7 @@ All other characters are replaced by a '-' during construction.</p>
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecBoolean" title="struct GParamSpecBoolean"><span class="type">GParamSpecBoolean</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1360,7 +1359,7 @@ All other characters are replaced by a '-' during construction.</p>
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-BOOLEAN:CAPS" title="G_TYPE_BOOLEAN"><code class="literal">G_TYPE_BOOLEAN</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1376,7 +1375,6 @@ All other characters are replaced by a '-' during construction.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.4.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1389,11 +1387,14 @@ g_param_spec_boolean (<em class="parameter"><code>const <a href="https://develop
                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> default_value</code></em>,
                       <em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> flags</code></em>);</pre>
 <p>Creates a new <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecBoolean" title="struct GParamSpecBoolean"><span class="type">GParamSpecBoolean</span></a> instance specifying a <a class="link" href="gobject-Type-Information.html#G-TYPE-BOOLEAN:CAPS" title="G_TYPE_BOOLEAN"><code class="literal">G_TYPE_BOOLEAN</code></a>
-property.</p>
+property. In many cases, it may be more appropriate to use an enum with
+<a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-param-spec-enum" title="g_param_spec_enum ()"><code class="function">g_param_spec_enum()</code></a>, both to improve code clarity by using explicitly named
+values, and to allow for more values to be added in future without breaking
+API.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1444,7 +1445,7 @@ g_value_set_boolean (<em class="parameter"><code><a class="link" href="gobject-G
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1473,7 +1474,7 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-BOOLEAN:CAPS" title="G_TYPE_BOOLEAN"><code class="literal">G_TYPE_BOOLEAN</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1490,7 +1491,6 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <a name="id-1.4.9.7.7.6"></a><h4>Returns</h4>
 <p> boolean contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1501,7 +1501,7 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-CHAR:CAPS" title="G_TYPE_PARAM_CHAR"><code class="literal">G_TYPE_PARAM_CHAR</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1517,7 +1517,6 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <div class="refsect3">
 <a name="id-1.4.9.7.8.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1528,7 +1527,7 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecChar" title="struct GParamSpecChar"><span class="type">GParamSpecChar</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1550,7 +1549,7 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-CHAR:CAPS" title="G_TYPE_CHAR"><code class="literal">G_TYPE_CHAR</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1566,7 +1565,6 @@ g_value_get_boolean (<em class="parameter"><code>const <a class="link" href="gob
 <div class="refsect3">
 <a name="id-1.4.9.7.10.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1583,7 +1581,7 @@ g_param_spec_char (<em class="parameter"><code>const <a href="https://developer.
 <p>Creates a new <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecChar" title="struct GParamSpecChar"><span class="type">GParamSpecChar</span></a> instance specifying a <a class="link" href="gobject-Type-Information.html#G-TYPE-CHAR:CAPS" title="G_TYPE_CHAR"><code class="literal">G_TYPE_CHAR</code></a> property.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1648,7 +1646,7 @@ g_value_set_char (<em class="parameter"><code><a class="link" href="gobject-Gene
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.12.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1683,7 +1681,7 @@ type is unsigned, such as ARM and PowerPC.  See <a class="link" href="gobject-St
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-CHAR:CAPS" title="G_TYPE_CHAR"><code class="literal">G_TYPE_CHAR</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1700,7 +1698,6 @@ type is unsigned, such as ARM and PowerPC.  See <a class="link" href="gobject-St
 <a name="id-1.4.9.7.13.8"></a><h4>Returns</h4>
 <p> character contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1711,7 +1708,7 @@ g_value_get_schar (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-CHAR:CAPS" title="G_TYPE_CHAR"><code class="literal">G_TYPE_CHAR</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1728,9 +1725,8 @@ g_value_get_schar (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.14.6"></a><h4>Returns</h4>
 <p> signed 8 bit integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1742,7 +1738,7 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1762,7 +1758,7 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1772,7 +1768,7 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-UCHAR:CAPS" title="G_TYPE_PARAM_UCHAR"><code class="literal">G_TYPE_PARAM_UCHAR</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1788,7 +1784,6 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 <div class="refsect3">
 <a name="id-1.4.9.7.16.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1799,7 +1794,7 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecUChar" title="struct GParamSpecUChar"><span class="type">GParamSpecUChar</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1821,7 +1816,7 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-UCHAR:CAPS" title="G_TYPE_UCHAR"><code class="literal">G_TYPE_UCHAR</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1837,7 +1832,6 @@ g_value_set_schar (<em class="parameter"><code><a class="link" href="gobject-Gen
 <div class="refsect3">
 <a name="id-1.4.9.7.18.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1854,7 +1848,7 @@ g_param_spec_uchar (<em class="parameter"><code>const <a href="https://developer
 <p>Creates a new <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecUChar" title="struct GParamSpecUChar"><span class="type">GParamSpecUChar</span></a> instance specifying a <a class="link" href="gobject-Type-Information.html#G-TYPE-UCHAR:CAPS" title="G_TYPE_UCHAR"><code class="literal">G_TYPE_UCHAR</code></a> property.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1915,7 +1909,7 @@ g_value_set_uchar (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1944,7 +1938,7 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-UCHAR:CAPS" title="G_TYPE_UCHAR"><code class="literal">G_TYPE_UCHAR</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1961,7 +1955,6 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.21.6"></a><h4>Returns</h4>
 <p> unsigned character contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1972,7 +1965,7 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-INT:CAPS" title="G_TYPE_PARAM_INT"><code class="literal">G_TYPE_PARAM_INT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1988,7 +1981,6 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.22.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1999,7 +1991,7 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecInt" title="struct GParamSpecInt"><span class="type">GParamSpecInt</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2021,7 +2013,7 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-INT:CAPS" title="G_TYPE_INT"><code class="literal">G_TYPE_INT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2037,7 +2029,6 @@ g_value_get_uchar (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.24.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2055,7 +2046,7 @@ g_param_spec_int (<em class="parameter"><code>const <a href="https://developer.g
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.25.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2116,7 +2107,7 @@ g_value_set_int (<em class="parameter"><code><a class="link" href="gobject-Gener
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2145,7 +2136,7 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-INT:CAPS" title="G_TYPE_INT"><code class="literal">G_TYPE_INT</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2162,7 +2153,6 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <a name="id-1.4.9.7.27.6"></a><h4>Returns</h4>
 <p> integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2173,7 +2163,7 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-UINT:CAPS" title="G_TYPE_PARAM_UINT"><code class="literal">G_TYPE_PARAM_UINT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2189,7 +2179,6 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <div class="refsect3">
 <a name="id-1.4.9.7.28.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2200,7 +2189,7 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecUInt" title="struct GParamSpecUInt"><span class="type">GParamSpecUInt</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2222,7 +2211,7 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-UINT:CAPS" title="G_TYPE_UINT"><code class="literal">G_TYPE_UINT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2238,7 +2227,6 @@ g_value_get_int (<em class="parameter"><code>const <a class="link" href="gobject
 <div class="refsect3">
 <a name="id-1.4.9.7.30.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2256,7 +2244,7 @@ g_param_spec_uint (<em class="parameter"><code>const <a href="https://developer.
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.31.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2317,7 +2305,7 @@ g_value_set_uint (<em class="parameter"><code><a class="link" href="gobject-Gene
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2346,7 +2334,7 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-UINT:CAPS" title="G_TYPE_UINT"><code class="literal">G_TYPE_UINT</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2363,7 +2351,6 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <a name="id-1.4.9.7.33.6"></a><h4>Returns</h4>
 <p> unsigned integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2374,7 +2361,7 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-LONG:CAPS" title="G_TYPE_PARAM_LONG"><code class="literal">G_TYPE_PARAM_LONG</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.34.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2390,7 +2377,6 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <div class="refsect3">
 <a name="id-1.4.9.7.34.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2401,7 +2387,7 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecLong" title="struct GParamSpecLong"><span class="type">GParamSpecLong</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.35.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2423,7 +2409,7 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-LONG:CAPS" title="G_TYPE_LONG"><code class="literal">G_TYPE_LONG</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.36.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2439,7 +2425,6 @@ g_value_get_uint (<em class="parameter"><code>const <a class="link" href="gobjec
 <div class="refsect3">
 <a name="id-1.4.9.7.36.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2457,7 +2442,7 @@ g_param_spec_long (<em class="parameter"><code>const <a href="https://developer.
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.37.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2518,7 +2503,7 @@ g_value_set_long (<em class="parameter"><code><a class="link" href="gobject-Gene
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.38.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2547,7 +2532,7 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-LONG:CAPS" title="G_TYPE_LONG"><code class="literal">G_TYPE_LONG</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.39.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2564,7 +2549,6 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <a name="id-1.4.9.7.39.6"></a><h4>Returns</h4>
 <p> long integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2575,7 +2559,7 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-ULONG:CAPS" title="G_TYPE_PARAM_ULONG"><code class="literal">G_TYPE_PARAM_ULONG</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.40.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2591,7 +2575,6 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <div class="refsect3">
 <a name="id-1.4.9.7.40.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2602,7 +2585,7 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecULong" title="struct GParamSpecULong"><span class="type">GParamSpecULong</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.41.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2624,7 +2607,7 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-ULONG:CAPS" title="G_TYPE_ULONG"><code class="literal">G_TYPE_ULONG</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.42.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2640,7 +2623,6 @@ g_value_get_long (<em class="parameter"><code>const <a class="link" href="gobjec
 <div class="refsect3">
 <a name="id-1.4.9.7.42.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2659,7 +2641,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.43.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2720,7 +2702,7 @@ g_value_set_ulong (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.44.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2749,7 +2731,7 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-ULONG:CAPS" title="G_TYPE_ULONG"><code class="literal">G_TYPE_ULONG</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.45.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2766,7 +2748,6 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.45.6"></a><h4>Returns</h4>
 <p> unsigned long integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2777,7 +2758,7 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-INT64:CAPS" title="G_TYPE_PARAM_INT64"><code class="literal">G_TYPE_PARAM_INT64</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.46.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2793,7 +2774,6 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.46.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2804,7 +2784,7 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecInt64" title="struct GParamSpecInt64"><span class="type">GParamSpecInt64</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.47.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2826,7 +2806,7 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-INT64:CAPS" title="G_TYPE_INT64"><code class="literal">G_TYPE_INT64</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.48.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2842,7 +2822,6 @@ g_value_get_ulong (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.48.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2860,7 +2839,7 @@ g_param_spec_int64 (<em class="parameter"><code>const <a href="https://developer
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.49.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2921,7 +2900,7 @@ g_value_set_int64 (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.50.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2950,7 +2929,7 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-INT64:CAPS" title="G_TYPE_INT64"><code class="literal">G_TYPE_INT64</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.51.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2967,7 +2946,6 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.51.6"></a><h4>Returns</h4>
 <p> 64bit integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2978,7 +2956,7 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-UINT64:CAPS" title="G_TYPE_PARAM_UINT64"><code class="literal">G_TYPE_PARAM_UINT64</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.52.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2994,7 +2972,6 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.52.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3005,7 +2982,7 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecUInt64" title="struct GParamSpecUInt64"><span class="type">GParamSpecUInt64</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.53.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3027,7 +3004,7 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-UINT64:CAPS" title="G_TYPE_UINT64"><code class="literal">G_TYPE_UINT64</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.54.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3043,7 +3020,6 @@ g_value_get_int64 (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.54.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3062,7 +3038,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.55.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3123,7 +3099,7 @@ g_value_set_uint64 (<em class="parameter"><code><a class="link" href="gobject-Ge
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.56.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3152,7 +3128,7 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-UINT64:CAPS" title="G_TYPE_UINT64"><code class="literal">G_TYPE_UINT64</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.57.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3169,7 +3145,6 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <a name="id-1.4.9.7.57.6"></a><h4>Returns</h4>
 <p> unsigned 64bit integer contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3180,7 +3155,7 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-FLOAT:CAPS" title="G_TYPE_PARAM_FLOAT"><code class="literal">G_TYPE_PARAM_FLOAT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.58.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3196,7 +3171,6 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <div class="refsect3">
 <a name="id-1.4.9.7.58.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3207,7 +3181,7 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecFloat" title="struct GParamSpecFloat"><span class="type">GParamSpecFloat</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.59.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3229,7 +3203,7 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-FLOAT:CAPS" title="G_TYPE_FLOAT"><code class="literal">G_TYPE_FLOAT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.60.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3245,7 +3219,6 @@ g_value_get_uint64 (<em class="parameter"><code>const <a class="link" href="gobj
 <div class="refsect3">
 <a name="id-1.4.9.7.60.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3263,7 +3236,7 @@ g_param_spec_float (<em class="parameter"><code>const <a href="https://developer
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.61.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3324,7 +3297,7 @@ g_value_set_float (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.62.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3353,7 +3326,7 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-FLOAT:CAPS" title="G_TYPE_FLOAT"><code class="literal">G_TYPE_FLOAT</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.63.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3370,7 +3343,6 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.63.6"></a><h4>Returns</h4>
 <p> float contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3381,7 +3353,7 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-DOUBLE:CAPS" title="G_TYPE_PARAM_DOUBLE"><code class="literal">G_TYPE_PARAM_DOUBLE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.64.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3397,7 +3369,6 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.64.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3408,7 +3379,7 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecDouble" title="struct GParamSpecDouble"><span class="type">GParamSpecDouble</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.65.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3430,7 +3401,7 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-DOUBLE:CAPS" title="G_TYPE_DOUBLE"><code class="literal">G_TYPE_DOUBLE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.66.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3446,7 +3417,6 @@ g_value_get_float (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.66.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3465,7 +3435,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.67.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3526,7 +3496,7 @@ g_value_set_double (<em class="parameter"><code><a class="link" href="gobject-Ge
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.68.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3555,7 +3525,7 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-DOUBLE:CAPS" title="G_TYPE_DOUBLE"><code class="literal">G_TYPE_DOUBLE</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.69.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3572,7 +3542,6 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <a name="id-1.4.9.7.69.6"></a><h4>Returns</h4>
 <p> double contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3583,7 +3552,7 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-ENUM:CAPS" title="G_TYPE_PARAM_ENUM"><code class="literal">G_TYPE_PARAM_ENUM</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.70.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3599,7 +3568,6 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <div class="refsect3">
 <a name="id-1.4.9.7.70.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3610,7 +3578,7 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecEnum" title="struct GParamSpecEnum"><span class="type">GParamSpecEnum</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.71.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3632,7 +3600,7 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values derived from type <a class="link" href="gobject-Type-Information.html#G-TYPE-ENUM:CAPS" title="G_TYPE_ENUM"><code class="literal">G_TYPE_ENUM</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.72.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3648,7 +3616,6 @@ g_value_get_double (<em class="parameter"><code>const <a class="link" href="gobj
 <div class="refsect3">
 <a name="id-1.4.9.7.72.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3666,7 +3633,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.73.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3722,7 +3689,7 @@ g_value_set_enum (<em class="parameter"><code><a class="link" href="gobject-Gene
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.74.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3751,7 +3718,7 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-ENUM:CAPS" title="G_TYPE_ENUM"><code class="literal">G_TYPE_ENUM</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.75.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3768,7 +3735,6 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <a name="id-1.4.9.7.75.6"></a><h4>Returns</h4>
 <p> enum contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3779,7 +3745,7 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-FLAGS:CAPS" title="G_TYPE_PARAM_FLAGS"><code class="literal">G_TYPE_PARAM_FLAGS</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.76.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3795,7 +3761,6 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <div class="refsect3">
 <a name="id-1.4.9.7.76.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3806,7 +3771,7 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecFlags" title="struct GParamSpecFlags"><span class="type">GParamSpecFlags</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.77.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3828,7 +3793,7 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values derived from type <a class="link" href="gobject-Type-Information.html#G-TYPE-FLAGS:CAPS" title="G_TYPE_FLAGS"><code class="literal">G_TYPE_FLAGS</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.78.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3844,7 +3809,6 @@ g_value_get_enum (<em class="parameter"><code>const <a class="link" href="gobjec
 <div class="refsect3">
 <a name="id-1.4.9.7.78.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3862,7 +3826,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.79.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3918,7 +3882,7 @@ g_value_set_flags (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.80.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3947,7 +3911,7 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-FLAGS:CAPS" title="G_TYPE_FLAGS"><code class="literal">G_TYPE_FLAGS</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.81.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3964,7 +3928,6 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.81.6"></a><h4>Returns</h4>
 <p> flags contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3975,7 +3938,7 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-STRING:CAPS" title="G_TYPE_PARAM_STRING"><code class="literal">G_TYPE_PARAM_STRING</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.82.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3991,7 +3954,6 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.82.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4002,7 +3964,7 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecString" title="struct GParamSpecString"><span class="type">GParamSpecString</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.83.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4024,7 +3986,7 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-STRING:CAPS" title="G_TYPE_STRING"><code class="literal">G_TYPE_STRING</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.84.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4040,7 +4002,6 @@ g_value_get_flags (<em class="parameter"><code>const <a class="link" href="gobje
 <div class="refsect3">
 <a name="id-1.4.9.7.84.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4056,7 +4017,7 @@ g_param_spec_string (<em class="parameter"><code>const <a href="https://develope
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.85.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4080,8 +4041,8 @@ g_param_spec_string (<em class="parameter"><code>const <a href="https://develope
 </tr>
 <tr>
 <td class="parameter_name"><p>default_value</p></td>
-<td class="parameter_description"><p>default value for the property specified</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> default value for the property specified. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>flags</p></td>
@@ -4107,7 +4068,7 @@ g_value_set_string (<em class="parameter"><code><a class="link" href="gobject-Ge
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.86.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4140,7 +4101,7 @@ The string is assumed to be static, and is thus not duplicated
 when setting the <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.87.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4171,7 +4132,7 @@ g_value_take_string (<em class="parameter"><code><a class="link" href="gobject-G
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.88.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4191,7 +4152,7 @@ g_value_take_string (<em class="parameter"><code><a class="link" href="gobject-G
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4206,7 +4167,7 @@ g_value_set_string_take_ownership (<em class="parameter"><code><a class="link" h
 <p>This is an internal function introduced mainly for C marshallers.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.89.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4235,7 +4196,7 @@ g_value_get_string (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-STRING:CAPS" title="G_TYPE_STRING"><code class="literal">G_TYPE_STRING</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.90.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4252,7 +4213,6 @@ g_value_get_string (<em class="parameter"><code>const <a class="link" href="gobj
 <a name="id-1.4.9.7.90.6"></a><h4>Returns</h4>
 <p> string content of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4263,7 +4223,7 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Get a copy the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-STRING:CAPS" title="G_TYPE_STRING"><code class="literal">G_TYPE_STRING</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.91.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4280,7 +4240,6 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <a name="id-1.4.9.7.91.6"></a><h4>Returns</h4>
 <p> a newly allocated copy of the string content of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4291,7 +4250,7 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-PARAM:CAPS" title="G_TYPE_PARAM_PARAM"><code class="literal">G_TYPE_PARAM_PARAM</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.92.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4307,7 +4266,6 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <div class="refsect3">
 <a name="id-1.4.9.7.92.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4318,7 +4276,7 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecParam" title="struct GParamSpecParam"><span class="type">GParamSpecParam</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.93.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4340,7 +4298,7 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values derived from type <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.94.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4356,7 +4314,6 @@ g_value_dup_string (<em class="parameter"><code>const <a class="link" href="gobj
 <div class="refsect3">
 <a name="id-1.4.9.7.94.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4373,7 +4330,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.95.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4424,7 +4381,7 @@ g_value_set_param (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.96.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4456,9 +4413,10 @@ g_value_take_param (<em class="parameter"><code><a class="link" href="gobject-Ge
 over the ownership of the callers reference to <em class="parameter"><code>param</code></em>
 ; the caller
 doesn't have to unref it any more.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.97.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.97.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4478,7 +4436,7 @@ doesn't have to unref it any more.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4491,9 +4449,10 @@ g_value_set_param_take_ownership (<em class="parameter"><code><a class="link" hr
 <p>Use <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-value-take-param" title="g_value_take_param ()"><code class="function">g_value_take_param()</code></a> instead.</p>
 </div>
 <p>This is an internal function introduced mainly for C marshallers.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.98.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.98.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4522,7 +4481,7 @@ g_value_get_param (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.99.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4549,9 +4508,10 @@ g_value_get_param (<em class="parameter"><code>const <a class="link" href="gobje
 g_value_dup_param (<em class="parameter"><code>const <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>, increasing its
 reference count.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.100.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.100.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4565,11 +4525,10 @@ reference count.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.9.7.100.6"></a><h4>Returns</h4>
+<a name="id-1.4.9.7.100.7"></a><h4>Returns</h4>
 <p> <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> content of <em class="parameter"><code>value</code></em>
 , should be unreferenced when
 no longer needed.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4580,7 +4539,7 @@ no longer needed.</p>
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-BOXED:CAPS" title="G_TYPE_PARAM_BOXED"><code class="literal">G_TYPE_PARAM_BOXED</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.101.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4596,7 +4555,6 @@ no longer needed.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.101.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4607,7 +4565,7 @@ no longer needed.</p>
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecBoxed" title="struct GParamSpecBoxed"><span class="type">GParamSpecBoxed</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.102.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4630,7 +4588,7 @@ no longer needed.</p>
 from type <a class="link" href="gobject-Type-Information.html#G-TYPE-BOXED:CAPS" title="G_TYPE_BOXED"><code class="literal">G_TYPE_BOXED</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.103.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4646,7 +4604,6 @@ from type <a class="link" href="gobject-Type-Information.html#G-TYPE-BOXED:CAPS"
 <div class="refsect3">
 <a name="id-1.4.9.7.103.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4663,7 +4620,7 @@ derived property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.104.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4714,7 +4671,7 @@ g_value_set_boxed (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.105.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4747,7 +4704,7 @@ The boxed value is assumed to be static, and is thus not duplicated
 when setting the <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.106.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4781,7 +4738,7 @@ and takes over the ownership of the callers reference to <em class="parameter"><
 the caller doesn't have to unref it any more.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.107.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4801,7 +4758,7 @@ the caller doesn't have to unref it any more.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4816,7 +4773,7 @@ g_value_set_boxed_take_ownership (<em class="parameter"><code><a class="link" hr
 <p>This is an internal function introduced mainly for C marshallers.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.108.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4845,7 +4802,7 @@ g_value_get_boxed (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-BOXED:CAPS" title="G_TYPE_BOXED"><code class="literal">G_TYPE_BOXED</code></a> derived <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.109.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4875,9 +4832,10 @@ the boxed value is duplicated and needs to be later freed with
 <a class="link" href="gobject-Boxed-Types.html#g-boxed-free" title="g_boxed_free ()"><code class="function">g_boxed_free()</code></a>, e.g. like: g_boxed_free (G_VALUE_TYPE (<em class="parameter"><code>value</code></em>
 ),
 return_value);</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.110.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.110.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4891,10 +4849,9 @@ return_value);</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.9.7.110.6"></a><h4>Returns</h4>
+<a name="id-1.4.9.7.110.7"></a><h4>Returns</h4>
 <p> boxed contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4905,7 +4862,7 @@ return_value);</p>
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-POINTER:CAPS" title="G_TYPE_PARAM_POINTER"><code class="literal">G_TYPE_PARAM_POINTER</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.111.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4921,7 +4878,6 @@ return_value);</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.111.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4932,7 +4888,7 @@ return_value);</p>
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecPointer" title="struct GParamSpecPointer"><span class="type">GParamSpecPointer</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.112.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4954,7 +4910,7 @@ return_value);</p>
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-POINTER:CAPS" title="G_TYPE_POINTER"><code class="literal">G_TYPE_POINTER</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.113.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -4970,7 +4926,6 @@ return_value);</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.113.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -4981,11 +4936,13 @@ g_param_spec_pointer (<em class="parameter"><code>const <a href="https://develop
                       <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *nick</code></em>,
                       <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *blurb</code></em>,
                       <em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> flags</code></em>);</pre>
-<p>Creates a new <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecPointer" title="struct GParamSpecPointer"><span class="type">GParamSpecPointer</span></a> instance specifying a pointer property.</p>
+<p>Creates a new <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecPointer" title="struct GParamSpecPointer"><span class="type">GParamSpecPointer</span></a> instance specifying a pointer property.
+Where possible, it is better to use <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-param-spec-object" title="g_param_spec_object ()"><code class="function">g_param_spec_object()</code></a> or
+<a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-param-spec-boxed" title="g_param_spec_boxed ()"><code class="function">g_param_spec_boxed()</code></a> to expose memory management information.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.114.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5031,7 +4988,7 @@ g_value_set_pointer (<em class="parameter"><code><a class="link" href="gobject-G
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.115.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5060,7 +5017,7 @@ g_value_get_pointer (<em class="parameter"><code>const <a class="link" href="gob
 <p>Get the contents of a pointer <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.116.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5088,7 +5045,7 @@ g_value_get_pointer (<em class="parameter"><code>const <a class="link" href="gob
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-OBJECT:CAPS" title="G_TYPE_PARAM_OBJECT"><code class="literal">G_TYPE_PARAM_OBJECT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.117.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5104,7 +5061,6 @@ g_value_get_pointer (<em class="parameter"><code>const <a class="link" href="gob
 <div class="refsect3">
 <a name="id-1.4.9.7.117.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -5115,7 +5071,7 @@ g_value_get_pointer (<em class="parameter"><code>const <a class="link" href="gob
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecObject" title="struct GParamSpecObject"><span class="type">GParamSpecObject</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.118.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5137,7 +5093,7 @@ g_value_get_pointer (<em class="parameter"><code>const <a class="link" href="gob
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values derived from type <a class="link" href="gobject-Type-Information.html#G-TYPE-OBJECT:CAPS" title="G_TYPE_OBJECT"><code class="literal">G_TYPE_OBJECT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.119.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5153,7 +5109,6 @@ g_value_get_pointer (<em class="parameter"><code>const <a class="link" href="gob
 <div class="refsect3">
 <a name="id-1.4.9.7.119.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -5170,7 +5125,7 @@ derived property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.120.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5232,7 +5187,7 @@ own, or one it has taken) to ensure that the object won't be destroyed while
 the <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> still exists).</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.121.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5268,9 +5223,10 @@ count of the object is not increased).</p>
 <p>If you want the <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> to hold its own reference to <em class="parameter"><code>v_object</code></em>
 , use
 <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-value-set-object" title="g_value_set_object ()"><code class="function">g_value_set_object()</code></a> instead.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.122.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.122.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5290,7 +5246,7 @@ count of the object is not increased).</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5303,9 +5259,10 @@ g_value_set_object_take_ownership (<em class="parameter"><code><a class="link" h
 <p>Use <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-value-take-object" title="g_value_take_object ()"><code class="function">g_value_take_object()</code></a> instead.</p>
 </div>
 <p>This is an internal function introduced mainly for C marshallers.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.123.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.123.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5334,7 +5291,7 @@ g_value_get_object (<em class="parameter"><code>const <a class="link" href="gobj
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-OBJECT:CAPS" title="G_TYPE_OBJECT"><code class="literal">G_TYPE_OBJECT</code></a> derived <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.124.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5364,7 +5321,7 @@ its reference count. If the contents of the <a class="link" href="gobject-Generi
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.125.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5393,7 +5350,7 @@ should be unreferenced when no longer needed. </p>
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-UNICHAR:CAPS" title="G_TYPE_PARAM_UNICHAR"><code class="literal">G_TYPE_PARAM_UNICHAR</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.126.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5409,7 +5366,6 @@ should be unreferenced when no longer needed. </p>
 <div class="refsect3">
 <a name="id-1.4.9.7.126.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -5420,7 +5376,7 @@ should be unreferenced when no longer needed. </p>
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecUnichar" title="struct GParamSpecUnichar"><span class="type">GParamSpecUnichar</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.127.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5449,7 +5405,7 @@ property. <a class="link" href="gobject-Generic-values.html#GValue" title="GValu
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.128.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5502,7 +5458,7 @@ property. <a class="link" href="gobject-Generic-values.html#GValue" title="GValu
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-VALUE-ARRAY:CAPS" title="G_TYPE_PARAM_VALUE_ARRAY"><code class="literal">G_TYPE_PARAM_VALUE_ARRAY</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.129.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5518,7 +5474,6 @@ property. <a class="link" href="gobject-Generic-values.html#GValue" title="GValu
 <div class="refsect3">
 <a name="id-1.4.9.7.129.7"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -5533,7 +5488,7 @@ property. <a class="link" href="gobject-Generic-values.html#GValue" title="GValu
 <p>Cast a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecValueArray" title="struct GParamSpecValueArray"><span class="type">GParamSpecValueArray</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.130.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5561,9 +5516,10 @@ g_param_spec_value_array (<em class="parameter"><code>const <a href="https://dev
 <a class="link" href="gobject-Type-Information.html#G-TYPE-BOXED:CAPS" title="G_TYPE_BOXED"><code class="literal">G_TYPE_BOXED</code></a> type, as such, <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> structures for this property
 can be accessed with <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-value-set-boxed" title="g_value_set_boxed ()"><code class="function">g_value_set_boxed()</code></a> and <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#g-value-get-boxed" title="g_value_get_boxed ()"><code class="function">g_value_get_boxed()</code></a>.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.131.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.131.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5600,9 +5556,8 @@ arrays of this property, may be <a href="https://developer.gnome.org/glib/unstab
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.9.7.131.7"></a><h4>Returns</h4>
+<a name="id-1.4.9.7.131.8"></a><h4>Returns</h4>
 <p> a newly created parameter specification</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -5613,7 +5568,7 @@ arrays of this property, may be <a href="https://developer.gnome.org/glib/unstab
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-OVERRIDE:CAPS" title="G_TYPE_PARAM_OVERRIDE"><code class="literal">G_TYPE_PARAM_OVERRIDE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.132.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5629,9 +5584,8 @@ arrays of this property, may be <a href="https://developer.gnome.org/glib/unstab
 <div class="refsect3">
 <a name="id-1.4.9.7.132.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5641,7 +5595,7 @@ arrays of this property, may be <a href="https://developer.gnome.org/glib/unstab
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecOverride" title="struct GParamSpecOverride"><span class="type">GParamSpecOverride</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.133.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5654,7 +5608,7 @@ arrays of this property, may be <a href="https://developer.gnome.org/glib/unstab
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5665,9 +5619,10 @@ g_param_spec_override (<em class="parameter"><code>const <a href="https://develo
 <p>Creates a new property of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecOverride" title="struct GParamSpecOverride"><span class="type">GParamSpecOverride</span></a>. This is used
 to direct operations to another paramspec, and will not be directly
 useful unless you are implementing a new base type similar to GObject.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.9.7.134.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.9.7.134.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5688,11 +5643,10 @@ useful unless you are implementing a new base type similar to GObject.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.9.7.134.6"></a><h4>Returns</h4>
+<a name="id-1.4.9.7.134.7"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5702,7 +5656,7 @@ useful unless you are implementing a new base type similar to GObject.</p>
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-GTYPE:CAPS" title="G_TYPE_PARAM_GTYPE"><code class="literal">G_TYPE_PARAM_GTYPE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.135.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5718,9 +5672,8 @@ useful unless you are implementing a new base type similar to GObject.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.135.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success. </p>
-<p></p>
 </div>
-<p class="since">Since 2.10</p>
+<p class="since">Since: <a class="link" href="api-index-2-10.html#api-index-2.10">2.10</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5730,7 +5683,7 @@ useful unless you are implementing a new base type similar to GObject.</p>
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecGType" title="struct GParamSpecGType"><span class="type">GParamSpecGType</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.136.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5743,7 +5696,7 @@ useful unless you are implementing a new base type similar to GObject.</p>
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.10</p>
+<p class="since">Since: <a class="link" href="api-index-2-10.html#api-index-2.10">2.10</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5753,7 +5706,7 @@ useful unless you are implementing a new base type similar to GObject.</p>
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-GTYPE:CAPS" title="G_TYPE_GTYPE"><code class="literal">G_TYPE_GTYPE</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.137.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5769,9 +5722,8 @@ useful unless you are implementing a new base type similar to GObject.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.137.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5787,7 +5739,7 @@ g_param_spec_gtype (<em class="parameter"><code>const <a href="https://developer
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.138.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5828,7 +5780,7 @@ of the property (use <a class="link" href="gobject-Type-Information.html#G-TYPE-
 <p> a newly created parameter specification. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.10</p>
+<p class="since">Since: <a class="link" href="api-index-2-10.html#api-index-2.10">2.10</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5838,7 +5790,7 @@ g_value_get_gtype (<em class="parameter"><code>const <a class="link" href="gobje
 <p>Get the contents of a <a class="link" href="gobject-Type-Information.html#G-TYPE-GTYPE:CAPS" title="G_TYPE_GTYPE"><code class="literal">G_TYPE_GTYPE</code></a> <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.139.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5855,9 +5807,8 @@ g_value_get_gtype (<em class="parameter"><code>const <a class="link" href="gobje
 <a name="id-1.4.9.7.139.6"></a><h4>Returns</h4>
 <p> the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> stored in <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5869,7 +5820,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 .</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.140.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5889,7 +5840,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.12</p>
+<p class="since">Since: <a class="link" href="api-index-2-12.html#api-index-2.12">2.12</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5899,7 +5850,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 <p>Checks whether the given <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#G-TYPE-PARAM-VARIANT:CAPS" title="G_TYPE_PARAM_VARIANT"><code class="literal">G_TYPE_PARAM_VARIANT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.141.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5915,9 +5866,8 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 <div class="refsect3">
 <a name="id-1.4.9.7.141.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5927,7 +5877,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 <p>Casts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> into a <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecVariant" title="struct GParamSpecVariant"><span class="type">GParamSpecVariant</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.142.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5940,7 +5890,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5950,7 +5900,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 <p>Checks whether the given <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> can hold values of type <a class="link" href="gobject-Type-Information.html#G-TYPE-VARIANT:CAPS" title="G_TYPE_VARIANT"><code class="literal">G_TYPE_VARIANT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.143.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -5966,9 +5916,8 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 <div class="refsect3">
 <a name="id-1.4.9.7.143.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success.</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5976,7 +5925,7 @@ g_value_set_gtype (<em class="parameter"><code><a class="link" href="gobject-Gen
 <pre class="programlisting">#define G_TYPE_PARAM_VARIANT                (g_param_spec_types[22])
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> of <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecVariant" title="struct GParamSpecVariant"><span class="type">GParamSpecVariant</span></a>.</p>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -5995,7 +5944,7 @@ property.</p>
 <p>See <a class="link" href="gobject-GParamSpec.html#g-param-spec-internal" title="g_param_spec_internal ()"><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.145.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -6042,7 +5991,7 @@ use as the default value, or <a href="https://developer.gnome.org/glib/unstable/
 <p> the newly created <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -6052,7 +6001,7 @@ g_value_get_variant (<em class="parameter"><code>const <a class="link" href="gob
 <p>Get the contents of a variant <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.146.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -6069,9 +6018,8 @@ g_value_get_variant (<em class="parameter"><code>const <a class="link" href="gob
 <a name="id-1.4.9.7.146.6"></a><h4>Returns</h4>
 <p> variant contents of <em class="parameter"><code>value</code></em>
 </p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -6081,7 +6029,7 @@ g_value_dup_variant (<em class="parameter"><code>const <a class="link" href="gob
 <p>Get the contents of a variant <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>, increasing its refcount.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.147.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -6099,9 +6047,8 @@ g_value_dup_variant (<em class="parameter"><code>const <a class="link" href="gob
 <p> variant contents of <em class="parameter"><code>value</code></em>
 , should be unrefed using
 <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-unref"><code class="function">g_variant_unref()</code></a> when no longer needed</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -6114,7 +6061,7 @@ g_value_set_variant (<em class="parameter"><code><a class="link" href="gobject-G
 If the variant is floating, it is consumed.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.148.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -6134,7 +6081,7 @@ If the variant is floating, it is consumed.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -6157,7 +6104,7 @@ a hard reference.</p>
 <p>This is an internal function introduced mainly for C marshallers.</p>
 <div class="refsect3">
 <a name="id-1.4.9.7.149.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -6172,12 +6119,12 @@ a hard reference.</p>
 <tr>
 <td class="parameter_name"><p>variant</p></td>
 <td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -6200,7 +6147,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for boolean properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6242,7 +6189,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for character properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.5.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6294,7 +6241,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for unsigned character properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.7.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6346,7 +6293,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for integer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.9.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6398,7 +6345,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for unsigned integer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.11.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6450,7 +6397,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for long integer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.13.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6502,7 +6449,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for unsigned long integer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.15.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6554,7 +6501,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for 64bit integer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.17.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6606,7 +6553,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for unsigned 64bit integer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.19.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6659,7 +6606,7 @@ a hard reference.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for float properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.21.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6719,7 +6666,7 @@ by <a class="link" href="gobject-GParamSpec.html#g-param-values-cmp" title="g_pa
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for double properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.23.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6778,7 +6725,7 @@ by <a class="link" href="gobject-GParamSpec.html#g-param-values-cmp" title="g_pa
 properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.25.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6825,7 +6772,7 @@ properties.</p>
 properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.27.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6876,7 +6823,7 @@ properties.</p>
 properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.29.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6949,7 +6896,7 @@ or <em class="parameter"><code>cset_nth</code></em>
 properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.32.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -6980,7 +6927,7 @@ properties.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for boxed properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.34.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7011,7 +6958,7 @@ properties.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for pointer properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.36.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7042,7 +6989,7 @@ properties.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for object properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.38.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7075,7 +7022,7 @@ properties.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for unichar (unsigned integer) properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.40.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7119,7 +7066,7 @@ properties.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for <a class="link" href="gobject-Value-arrays.html#GValueArray" title="struct GValueArray"><span class="type">GValueArray</span></a> properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.42.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7151,7 +7098,7 @@ properties.</p>
 <pre class="programlisting">#define G_TYPE_PARAM_OVERRIDE		   (g_param_spec_types[20])
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> of <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecOverride" title="struct GParamSpecOverride"><span class="type">GParamSpecOverride</span></a>.</p>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -7167,7 +7114,7 @@ blurb, validating a value, and so forth. See
 property. <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecOverride" title="struct GParamSpecOverride"><span class="type">GParamSpecOverride</span></a> is used in implementing
 <a class="link" href="gobject-The-Base-Object-Type.html#g-object-class-override-property" title="g_object_class_override_property ()"><code class="function">g_object_class_override_property()</code></a>, and will not be directly useful
 unless you are implementing a new base type similar to GObject.</p>
-<p class="since">Since 2.4</p>
+<p class="since">Since: <a class="link" href="api-index-2-4.html#api-index-2.4">2.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -7175,7 +7122,7 @@ unless you are implementing a new base type similar to GObject.</p>
 <pre class="programlisting">#define G_TYPE_PARAM_GTYPE		   (g_param_spec_types[21])
 </pre>
 <p>The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> of <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecGType" title="struct GParamSpecGType"><span class="type">GParamSpecGType</span></a>.</p>
-<p class="since">Since 2.10</p>
+<p class="since">Since: <a class="link" href="api-index-2-10.html#api-index-2.10">2.10</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -7188,7 +7135,7 @@ unless you are implementing a new base type similar to GObject.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.46.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7208,7 +7155,7 @@ unless you are implementing a new base type similar to GObject.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.10</p>
+<p class="since">Since: <a class="link" href="api-index-2-10.html#api-index-2.10">2.10</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -7222,7 +7169,7 @@ unless you are implementing a new base type similar to GObject.</p>
 <p>A <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> derived structure that contains the meta data for <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> properties.</p>
 <div class="refsect3">
 <a name="id-1.4.9.8.47.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -7247,7 +7194,7 @@ unless you are implementing a new base type similar to GObject.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -7256,7 +7203,6 @@ unless you are implementing a new base type similar to GObject.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GApplication</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GApplication: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="application.html" title="Application support">
 <link rel="prev" href="application.html" title="Application support">
 <link rel="next" href="GApplicationCommandLine.html" title="GApplicationCommandLine">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GApplication.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -288,12 +288,36 @@
 <a class="link" href="GApplication.html#g-application-unmark-busy" title="g_application_unmark_busy ()">g_application_unmark_busy</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GApplication.html#g-application-get-is-busy" title="g_application_get_is_busy ()">g_application_get_is_busy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GApplication.html#g-application-bind-busy-property" title="g_application_bind_busy_property ()">g_application_bind_busy_property</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GApplication.html#g-application-unbind-busy-property" title="g_application_unbind_busy_property ()">g_application_unbind_busy_property</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GApplication.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -324,6 +348,11 @@
 </tr>
 <tr>
 <td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GApplication.html#GApplication--is-busy" title="The “is-busy” property">is-busy</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
 <td class="property_name"><a class="link" href="GApplication.html#GApplication--is-registered" title="The “is-registered” property">is-registered</a></td>
 <td class="property_flags">Read</td>
 </tr>
@@ -343,7 +372,7 @@
 </div>
 <div class="refsect1">
 <a name="GApplication.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -353,39 +382,39 @@
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GApplication.html#GApplication-activate" title="The “activate” signal">activate</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a></td>
 <td class="signal_name"><a class="link" href="GApplication.html#GApplication-command-line" title="The “command-line” signal">command-line</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a></td>
 <td class="signal_name"><a class="link" href="GApplication.html#GApplication-handle-local-options" title="The “handle-local-options” signal">handle-local-options</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GApplication.html#GApplication-open" title="The “open” signal">open</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GApplication.html#GApplication-shutdown" title="The “shutdown” signal">shutdown</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GApplication.html#GApplication-startup" title="The “startup” signal">startup</a></td>
-<td class="signal_flags">Run First</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GApplication.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -408,9 +437,7 @@
 </div>
 <div class="refsect1">
 <a name="GApplication.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GFlags
-    <span class="lineart">╰──</span> GApplicationFlags
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> GApplication
 </pre>
 </div>
@@ -552,8 +579,8 @@ characters.</p></li>
 <li class="listitem"><p>Application identifiers must not exceed 255 characters.</p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.2.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -567,10 +594,9 @@ characters.</p></li>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.2.9"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.2.9"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>application_id</code></em>
 is valid</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -585,8 +611,8 @@ g_application_new (<em class="parameter"><code>const <a href="https://developer.
 <p>If no application ID is given then some features of <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a>
 (most notably application uniqueness) will be disabled.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.3.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -607,9 +633,8 @@ g_application_new (<em class="parameter"><code>const <a href="https://developer.
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.3.8"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.3.8"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> instance</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -620,8 +645,8 @@ g_application_get_application_id (<em class="parameter"><code><a class="link" hr
 <p>Gets the unique identifier for <em class="parameter"><code>application</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -635,13 +660,12 @@ g_application_get_application_id (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.4.6"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.4.6"></a><h4>Returns</h4>
 <p> the identifier for <em class="parameter"><code>application</code></em>
 , owned by <em class="parameter"><code>application</code></em>
 </p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -657,8 +681,8 @@ been registered.</p>
 <p>If non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the application id must be valid.  See
 <a class="link" href="GApplication.html#g-application-id-is-valid" title="g_application_id_is_valid ()"><code class="function">g_application_id_is_valid()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.5.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -679,7 +703,7 @@ been registered.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -690,8 +714,8 @@ g_application_get_inactivity_timeout (<em class="parameter"><code><a class="link
 <p>This is the amount of time (in milliseconds) after the last call to
 <a class="link" href="GApplication.html#g-application-release" title="g_application_release ()"><code class="function">g_application_release()</code></a> before the application stops running.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.6.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -705,11 +729,10 @@ g_application_get_inactivity_timeout (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.6.7"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.6.7"></a><h4>Returns</h4>
 <p> the timeout, in milliseconds</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -724,8 +747,8 @@ g_application_set_inactivity_timeout (<em class="parameter"><code><a class="link
 used for next time <a class="link" href="GApplication.html#g-application-release" title="g_application_release ()"><code class="function">g_application_release()</code></a> drops the use count to
 zero.  Any timeouts currently in progress are not impacted.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.7.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -745,7 +768,7 @@ zero.  Any timeouts currently in progress are not impacted.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -756,8 +779,8 @@ g_application_get_flags (<em class="parameter"><code><a class="link" href="GAppl
 .</p>
 <p>See <a class="link" href="GApplication.html#GApplicationFlags" title="enum GApplicationFlags"><span class="type">GApplicationFlags</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -771,12 +794,11 @@ g_application_get_flags (<em class="parameter"><code><a class="link" href="GAppl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.8.7"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.8.7"></a><h4>Returns</h4>
 <p> the flags for <em class="parameter"><code>application</code></em>
 </p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -791,8 +813,8 @@ g_application_set_flags (<em class="parameter"><code><a class="link" href="GAppl
 registered.</p>
 <p>See <a class="link" href="GApplication.html#GApplicationFlags" title="enum GApplicationFlags"><span class="type">GApplicationFlags</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.9.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -813,7 +835,7 @@ registered.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -824,8 +846,8 @@ g_application_get_resource_base_path (<em class="parameter"><code><a class="link
 .</p>
 <p>See <a class="link" href="GApplication.html#g-application-set-resource-base-path" title="g_application_set_resource_base_path ()"><code class="function">g_application_set_resource_base_path()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -839,11 +861,11 @@ g_application_get_resource_base_path (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.10.7"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.10.7"></a><h4>Returns</h4>
 <p> the base resource path, if one is set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.42</p>
+<p class="since">Since: <a class="link" href="api-index-2-42.html#api-index-2.42">2.42</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -867,16 +889,21 @@ the default resource base path will be "/org/example/app".  If this
 is a <a href="http://developer.gnome.org/gtk2/GtkApplication.html"><span class="type">GtkApplication</span></a> (and you have not manually changed the path)
 then Gtk will then search for the menus of the application at
 "/org/example/app/gtk/menus.ui".</p>
-<p>See <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> for more information about adding resources to your
+<p>See <a class="link" href="GResource.html" title="GResource"><span class="type">GResource</span></a> for more information about adding resources to your
 application.</p>
 <p>You can disable automatic resource loading functionality by setting
 the path to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>Changing the resource base path once the application is running is
 not recommended.  The point at which the resource path is consulted
-for forming paths for various purposes is unspecified.</p>
+for forming paths for various purposes is unspecified.  When writing
+a sub-class of <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> you should either set the
+<a class="link" href="GApplication.html#GApplication--resource-base-path" title="The “resource-base-path” property"><span class="type">“resource-base-path”</span></a> property at construction time, or call
+this function during the instance initialization. Alternatively, you
+can call this function in the <a class="link" href="GApplication.html#GApplicationClass.startup"><span class="type">GApplicationClass.startup</span></a> virtual function,
+before chaining up to the parent implementation.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.11.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.11.11"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -896,7 +923,7 @@ for forming paths for various purposes is unspecified.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.42</p>
+<p class="since">Since: <a class="link" href="api-index-2-42.html#api-index-2.42">2.42</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -914,8 +941,8 @@ normally be in use but we were unable to connect to the bus.</p>
 <p>This function must not be called before the application has been
 registered.  See <a class="link" href="GApplication.html#g-application-get-is-registered" title="g_application_get_is_registered ()"><code class="function">g_application_get_is_registered()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.12.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.12.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -929,11 +956,11 @@ registered.  See <a class="link" href="GApplication.html#g-application-get-is-re
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.12.9"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.12.9"></a><h4>Returns</h4>
 <p> a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -952,8 +979,8 @@ normally be in use but we were unable to connect to the bus.</p>
 <p>This function must not be called before the application has been
 registered.  See <a class="link" href="GApplication.html#g-application-get-is-registered" title="g_application_get_is_registered ()"><code class="function">g_application_get_is_registered()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.13.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.13.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -967,11 +994,10 @@ registered.  See <a class="link" href="GApplication.html#g-application-get-is-re
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.13.9"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.13.9"></a><h4>Returns</h4>
 <p> the object path, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.34</p>
+<p class="since">Since: <a class="link" href="api-index-2-34.html#api-index-2.34">2.34</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -991,8 +1017,8 @@ action group), so you should really use <a class="link" href="GActionMap.html" t
 <p>This used to be how actions were associated with a <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a>.
 Now there is <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a> for that.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.14.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1012,7 +1038,7 @@ Now there is <a class="link" href="GActionMap.html" title="GActionMap"><span cla
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1024,8 +1050,8 @@ g_application_get_is_registered (<em class="parameter"><code><a class="link" hre
 <p>An application is registered if <a class="link" href="GApplication.html#g-application-register" title="g_application_register ()"><code class="function">g_application_register()</code></a> has been
 successfully called.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.15.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1039,12 +1065,11 @@ successfully called.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.15.7"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.15.7"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>application</code></em>
 is registered</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1063,8 +1088,8 @@ performed by the primary instance.</p>
 <a class="link" href="GApplication.html#g-application-register" title="g_application_register ()"><code class="function">g_application_register()</code></a> has been called.  See
 <a class="link" href="GApplication.html#g-application-get-is-registered" title="g_application_get_is_registered ()"><code class="function">g_application_get_is_registered()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.16.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1078,12 +1103,11 @@ performed by the primary instance.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.16.8"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.16.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>application</code></em>
 is remote</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1119,8 +1143,8 @@ is set appropriately.</p>
 instance is or is not the primary instance of the application.  See
 <a class="link" href="GApplication.html#g-application-get-is-remote" title="g_application_get_is_remote ()"><code class="function">g_application_get_is_remote()</code></a> for that.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.17.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.17.12"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1146,11 +1170,10 @@ instance is or is not the primary instance of the application.  See
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.17.13"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.17.13"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if registration succeeded</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1164,8 +1187,8 @@ continue to run.  For example, <a class="link" href="GApplication.html#g-applica
 when a toplevel window is on the screen.</p>
 <p>To cancel the hold, call <a class="link" href="GApplication.html#g-application-release" title="g_application_release ()"><code class="function">g_application_release()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.18.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1190,8 +1213,8 @@ g_application_release (<em class="parameter"><code><a class="link" href="GApplic
 <p>Never call this function except to cancel the effect of a previous
 call to <a class="link" href="GApplication.html#g-application-hold" title="g_application_hold ()"><code class="function">g_application_hold()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.19.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1217,8 +1240,8 @@ calling only the 'shutdown' function before doing so.</p>
 <p>The result of calling <a class="link" href="GApplication.html#g-application-run" title="g_application_run ()"><code class="function">g_application_run()</code></a> again after it returns is
 unspecified.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.20.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.20.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1231,7 +1254,7 @@ unspecified.</p>
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1243,8 +1266,8 @@ g_application_activate (<em class="parameter"><code><a class="link" href="GAppli
 emitted in the primary instance.</p>
 <p>The application must be registered before calling this function.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.21.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1257,7 +1280,7 @@ emitted in the primary instance.</p>
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1280,8 +1303,8 @@ for this functionality, you should use "".</p>
 <p>The application must be registered before calling this function
 and it must have the <a class="link" href="GApplication.html#G-APPLICATION-HANDLES-OPEN:CAPS"><code class="literal">G_APPLICATION_HANDLES_OPEN</code></a> flag set.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.22.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.22.9"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1312,7 +1335,7 @@ array</p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1320,7 +1343,7 @@ array</p></td>
 <pre class="programlisting"><span class="returnvalue">void</span>
 g_application_send_notification (<em class="parameter"><code><a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> *application</code></em>,
                                  <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
-                                 <em class="parameter"><code><a class="link" href="gio-GNotification.html#GNotification" title="GNotification"><span class="type">GNotification</span></a> *notification</code></em>);</pre>
+                                 <em class="parameter"><code><a class="link" href="GNotification.html" title="GNotification"><span class="type">GNotification</span></a> *notification</code></em>);</pre>
 <p>Sends a notification on behalf of <em class="parameter"><code>application</code></em>
  to the desktop shell.
 There is no guarantee that the notification is displayed immediately,
@@ -1350,8 +1373,8 @@ notifications without an id.</p>
  is no longer relevant, it can be withdrawn with
 <a class="link" href="GApplication.html#g-application-withdraw-notification" title="g_application_withdraw_notification ()"><code class="function">g_application_withdraw_notification()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.23.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.23.11"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1370,13 +1393,13 @@ notifications without an id.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>notification</p></td>
-<td class="parameter_description"><p>the <a class="link" href="gio-GNotification.html#GNotification" title="GNotification"><span class="type">GNotification</span></a> to send</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GNotification.html" title="GNotification"><span class="type">GNotification</span></a> to send</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1397,8 +1420,8 @@ the sent notification.</p>
 of the buttons in a notification or triggers its default action, so
 there is no need to explicitly withdraw the notification in that case.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.24.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.24.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1418,7 +1441,7 @@ there is no need to explicitly withdraw the notification in that case.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1478,11 +1501,9 @@ if the use count falls to zero the application will exit immediately,
 except in the case that <a class="link" href="GApplication.html#g-application-set-inactivity-timeout" title="g_application_set_inactivity_timeout ()"><code class="function">g_application_set_inactivity_timeout()</code></a> is in
 use.</p>
 <p>This function sets the prgname (<a href="https://developer.gnome.org/glib/unstable/glib-Miscellaneous-Utility-Functions.html#g-set-prgname"><code class="function">g_set_prgname()</code></a>), if not already set,
-to the basename of argv[0].  Since 2.38, if <a class="link" href="GApplication.html#G-APPLICATION-IS-SERVICE:CAPS"><code class="literal">G_APPLICATION_IS_SERVICE</code></a>
-is specified, the prgname is set to the application ID.  The main
-impact of this is is that the wmclass of windows created by Gtk+ will
-be set accordingly, which helps the window manager determine which
-application is showing the window.</p>
+to the basename of argv[0].</p>
+<p>Much like <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-main-loop-run"><code class="function">g_main_loop_run()</code></a>, this function will acquire the main context
+for the duration that the application is running.</p>
 <p>Since 2.40, applications that are not explicitly flagged as services
 or launchers (ie: neither <a class="link" href="GApplication.html#G-APPLICATION-IS-SERVICE:CAPS"><code class="literal">G_APPLICATION_IS_SERVICE</code></a> or
 <a class="link" href="GApplication.html#G-APPLICATION-IS-LAUNCHER:CAPS"><code class="literal">G_APPLICATION_IS_LAUNCHER</code></a> are given as flags) will check (from the
@@ -1500,8 +1521,8 @@ should not be used from applications like editors that need precise
 control over when processes invoked via the commandline will exit and
 what their exit status will be.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.25.14"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.25.15"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1528,11 +1549,10 @@ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.25.15"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.25.16"></a><h4>Returns</h4>
 <p> the exit status</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1582,9 +1602,21 @@ the options dictionary.  If you do use <a href="https://developer.gnome.org/glib
 need to handle these arguments for yourself because once they are
 consumed, they will no longer be visible to the default handling
 (which treats them as filenames to be opened).</p>
+<p>It is important to use the proper GVariant format when retrieving
+the options with <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-dict-lookup"><code class="function">g_variant_dict_lookup()</code></a>:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-NONE:CAPS"><code class="literal">G_OPTION_ARG_NONE</code></a>, use b</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-STRING:CAPS"><code class="literal">G_OPTION_ARG_STRING</code></a>, use &amp;s</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-INT:CAPS"><code class="literal">G_OPTION_ARG_INT</code></a>, use i</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-INT64:CAPS"><code class="literal">G_OPTION_ARG_INT64</code></a>, use x</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-DOUBLE:CAPS"><code class="literal">G_OPTION_ARG_DOUBLE</code></a>, use d</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-FILENAME:CAPS"><code class="literal">G_OPTION_ARG_FILENAME</code></a>, use ^ay</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-STRING-ARRAY:CAPS"><code class="literal">G_OPTION_ARG_STRING_ARRAY</code></a>, use &amp;as</p></li>
+<li class="listitem"><p>for <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#G-OPTION-ARG-FILENAME-ARRAY:CAPS"><code class="literal">G_OPTION_ARG_FILENAME_ARRAY</code></a>, use ^aay</p></li>
+</ul></div>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.26.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.26.13"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1605,7 +1637,7 @@ consumed, they will no longer be visible to the default handling
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1630,8 +1662,8 @@ be sent to the primary instance. See
 <a class="link" href="GApplication.html#g-application-add-main-option-entries" title="g_application_add_main_option_entries ()"><code class="function">g_application_add_main_option_entries()</code></a> for more details.</p>
 <p>See <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#GOptionEntry"><span class="type">GOptionEntry</span></a> for more documentation of the arguments.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.27.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.27.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1677,7 +1709,7 @@ parsed by the option in <code class="literal">--help</code> output. </p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.42</p>
+<p class="since">Since: <a class="link" href="api-index-2-42.html#api-index-2.42">2.42</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1708,8 +1740,8 @@ group to be parsed, but it does not cause you to be "opted in" to the
 new functionality whereby unrecognised options are rejected even if
 <a class="link" href="GApplication.html#G-APPLICATION-HANDLES-COMMAND-LINE:CAPS"><code class="literal">G_APPLICATION_HANDLES_COMMAND_LINE</code></a> was given.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.28.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.28.10"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1723,13 +1755,13 @@ new functionality whereby unrecognised options are rejected even if
 </tr>
 <tr>
 <td class="parameter_name"><p>group</p></td>
-<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#GOptionGroup"><span class="type">GOptionGroup</span></a></p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Commandline-option-parser.html#GOptionGroup"><span class="type">GOptionGroup</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1744,8 +1776,8 @@ by <a class="link" href="GApplication.html#g-application-get-default" title="g_a
  is destroyed then the default application will revert
 back to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.29.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.29.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1758,7 +1790,7 @@ back to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1771,11 +1803,11 @@ the default when it is created.  You can exercise more control over
 this by using <a class="link" href="GApplication.html#g-application-set-default" title="g_application_set_default ()"><code class="function">g_application_set_default()</code></a>.</p>
 <p>If there is no default application then <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.30.7"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.11.30.7"></a><h4>Returns</h4>
 <p> the default application for this process, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1791,8 +1823,8 @@ use that information to indicate the state to the user (e.g. with a
 spinner).</p>
 <p>To cancel the busy indication, use <a class="link" href="GApplication.html#g-application-unmark-busy" title="g_application_unmark_busy ()"><code class="function">g_application_unmark_busy()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.31.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.31.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1805,7 +1837,7 @@ spinner).</p>
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.38</p>
+<p class="since">Since: <a class="link" href="api-index-2-38.html#api-index-2.38">2.38</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1819,8 +1851,8 @@ to other processes.</p>
 <p>This function must only be called to cancel the effect of a previous
 call to <a class="link" href="GApplication.html#g-application-mark-busy" title="g_application_mark_busy ()"><code class="function">g_application_mark_busy()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.11.32.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.11.32.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1833,7 +1865,126 @@ call to <a class="link" href="GApplication.html#g-application-mark-busy" title="
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.38</p>
+<p class="since">Since: <a class="link" href="api-index-2-38.html#api-index-2.38">2.38</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-application-get-is-busy"></a><h3>g_application_get_is_busy ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+g_application_get_is_busy (<em class="parameter"><code><a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> *application</code></em>);</pre>
+<p>Gets the application's current busy state, as set through
+<a class="link" href="GApplication.html#g-application-mark-busy" title="g_application_mark_busy ()"><code class="function">g_application_mark_busy()</code></a> or <a class="link" href="GApplication.html#g-application-bind-busy-property" title="g_application_bind_busy_property ()"><code class="function">g_application_bind_busy_property()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.24.2.11.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>application</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.24.2.11.33.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>application</code></em>
+is currenty marked as busy</p>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-44.html#api-index-2.44">2.44</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-application-bind-busy-property"></a><h3>g_application_bind_busy_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+g_application_bind_busy_property (<em class="parameter"><code><a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> *application</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object</code></em>,
+                                  <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<p>Marks <em class="parameter"><code>application</code></em>
+ as busy (see <a class="link" href="GApplication.html#g-application-mark-busy" title="g_application_mark_busy ()"><code class="function">g_application_mark_busy()</code></a>) while
+<em class="parameter"><code>property</code></em>
+ on <em class="parameter"><code>object</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
+<p>The binding holds a reference to <em class="parameter"><code>application</code></em>
+ while it is active, but
+not to <em class="parameter"><code>object</code></em>
+. Instead, the binding is destroyed when <em class="parameter"><code>object</code></em>
+ is
+finalized.</p>
+<div class="refsect3">
+<a name="id-1.4.24.2.11.34.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>application</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GObject.Object]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>property</p></td>
+<td class="parameter_description"><p>the name of a boolean property of <em class="parameter"><code>object</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-44.html#api-index-2.44">2.44</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-application-unbind-busy-property"></a><h3>g_application_unbind_busy_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+g_application_unbind_busy_property (<em class="parameter"><code><a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> *application</code></em>,
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object</code></em>,
+                                    <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<p>Destroys a binding between <em class="parameter"><code>property</code></em>
+ and the busy state of
+<em class="parameter"><code>application</code></em>
+ that was previously created with
+<a class="link" href="GApplication.html#g-application-bind-busy-property" title="g_application_bind_busy_property ()"><code class="function">g_application_bind_busy_property()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.24.2.11.35.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>application</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GObject.Object]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>property</p></td>
+<td class="parameter_description"><p>the name of a boolean property of <em class="parameter"><code>object</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-44.html#api-index-2.44">2.44</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -1841,7 +1992,9 @@ call to <a class="link" href="GApplication.html#g-application-mark-busy" title="
 <div class="refsect2">
 <a name="GApplication-struct"></a><h3>GApplication</h3>
 <pre class="programlisting">typedef struct _GApplication GApplication;</pre>
-<p class="since">Since 2.28</p>
+<p><a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a> is an opaque data structure and can only be accessed
+using the following functions.</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1908,8 +2061,8 @@ call to <a class="link" href="GApplication.html#g-application-mark-busy" title="
 </pre>
 <p>Virtual function table for <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.12.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.12.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2009,21 +2162,22 @@ vfunc. Since: 2.34</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><em class="structfield"><code><a name="GApplicationClass.handle-local-options"></a>handle_local_options</code></em> ()</p></td>
-<td> </td>
-<td> </td>
+<td class="struct_member_description"><p>invoked locally after the parsing of the commandline
+options has occurred.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="GApplicationFlags"></a><h3>enum GApplicationFlags</h3>
 <p>Flags used to define the behaviour of a <a class="link" href="GApplication.html" title="GApplication"><span class="type">GApplication</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.12.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.12.4.4"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2082,7 +2236,7 @@ vfunc. Since: 2.34</p></td>
     launching process to the primary instance. Set this flag if your
     application is expected to behave differently depending on certain
     environment variables. For instance, an editor might be expected
-    to use the &lt;envar&gt;GIT_COMMITTER_NAME&lt;/envar&gt; environment variable
+    to use the <code class="literal">GIT_COMMITTER_NAME</code> environment variable
     when editing a git commit message. The environment is available
     to the <a class="link" href="GApplication.html#GApplication-command-line" title="The “command-line” signal"><span class="type">“command-line”</span></a> signal handler, via
     <a class="link" href="GApplicationCommandLine.html#g-application-command-line-getenv" title="g_application_command_line_getenv ()"><code class="function">g_application_command_line_getenv()</code></a>.</p>
@@ -2101,10 +2255,19 @@ vfunc. Since: 2.34</p></td>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
+<tr>
+<td class="enum_member_name"><p><a name="G-APPLICATION-CAN-OVERRIDE-APP-ID:CAPS"></a>G_APPLICATION_CAN_OVERRIDE_APP_ID</p></td>
+<td class="enum_member_description">
+<p>Allow users to override the
+    application ID from the command line with <code class="literal">--gapplication-app-id</code>.
+    Since: 2.48</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -2137,6 +2300,16 @@ vfunc. Since: 2.34</p></td>
 <p>Time (ms) to stay alive after becoming idle.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GApplication--is-busy"></a><h3>The <code class="literal">“is-busy”</code> property</h3>
+<pre class="programlisting">  “is-busy”                  <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Whether the application is currently marked as busy through
+<a class="link" href="GApplication.html#g-application-mark-busy" title="g_application_mark_busy ()"><code class="function">g_application_mark_busy()</code></a> or <a class="link" href="GApplication.html#g-application-bind-busy-property" title="g_application_bind_busy_property ()"><code class="function">g_application_bind_busy_property()</code></a>.</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+<p class="since">Since: <a class="link" href="api-index-2-44.html#api-index-2.44">2.44</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2173,8 +2346,8 @@ user_function (<a class="link" href="GApplication.html" title="GApplication"><sp
 <p>The ::activate signal is emitted on the primary instance when an
 activation occurs. See <a class="link" href="GApplication.html#g-application-activate" title="g_application_activate ()"><code class="function">g_application_activate()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.14.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2194,7 +2367,7 @@ activation occurs. See <a class="link" href="GApplication.html#g-application-act
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2207,8 +2380,8 @@ user_function (<a class="link" href="GApplication.html" title="GApplication"><sp
 a commandline is not handled locally. See <a class="link" href="GApplication.html#g-application-run" title="g_application_run ()"><code class="function">g_application_run()</code></a> and
 the <a class="link" href="GApplicationCommandLine.html" title="GApplicationCommandLine"><span class="type">GApplicationCommandLine</span></a> documentation for more information.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.14.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2235,12 +2408,11 @@ passed commandline</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.3.6"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.14.3.6"></a><h4>Returns</h4>
 <p> An integer that is set as the exit status for the calling
 process. See <a class="link" href="GApplicationCommandLine.html#g-application-command-line-set-exit-status" title="g_application_command_line_set_exit_status ()"><code class="function">g_application_command_line_set_exit_status()</code></a>.</p>
-<p></p>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2262,9 +2434,9 @@ decide to perform certain actions, including direct local handling
 (which may be useful for options like --version).</p>
 <p>In the event that the application is marked
 <a class="link" href="GApplication.html#G-APPLICATION-HANDLES-COMMAND-LINE:CAPS"><code class="literal">G_APPLICATION_HANDLES_COMMAND_LINE</code></a> the "normal processing" will
-send the <em class="parameter"><code>option</code></em>
+send the <em class="parameter"><code>options</code></em>
  dictionary to the primary instance where it can be
-read with <code class="function">g_application_command_line_get_options()</code>.  The signal
+read with <a class="link" href="GApplicationCommandLine.html#g-application-command-line-get-options-dict" title="g_application_command_line_get_options_dict ()"><code class="function">g_application_command_line_get_options_dict()</code></a>.  The signal
 handler can modify the dictionary before returning, and the
 modified dictionary will be sent.</p>
 <p>In the event that <a class="link" href="GApplication.html#G-APPLICATION-HANDLES-COMMAND-LINE:CAPS"><code class="literal">G_APPLICATION_HANDLES_COMMAND_LINE</code></a> is not set,
@@ -2287,8 +2459,8 @@ chain up then this signal will never be emitted.</p>
 capabilities than what is provided here, but this should not
 normally be required.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.4.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.14.4.12"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2314,15 +2486,14 @@ normally be required.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.4.13"></a><h4>Returns</h4>
+<a name="id-1.4.24.2.14.4.13"></a><h4>Returns</h4>
 <p> an exit code. If you have handled your options and want
 to exit the process, return a non-negative option, 0 for success,
 and a positive value for failure. To continue, return -1 to let
 the default option processing continue.</p>
-<p></p>
 </div>
-<p>Flags: Run Last</p>
-<p class="since">Since 2.40</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2336,8 +2507,8 @@ user_function (<a class="link" href="GApplication.html" title="GApplication"><sp
 <p>The ::open signal is emitted on the primary instance when there are
 files to open. See <a class="link" href="GApplication.html#g-application-open" title="g_application_open ()"><code class="function">g_application_open()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.14.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2373,7 +2544,7 @@ files to open. See <a class="link" href="GApplication.html#g-application-open" t
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2384,8 +2555,8 @@ user_function (<a class="link" href="GApplication.html" title="GApplication"><sp
 <p>The ::shutdown signal is emitted only on the registered primary instance
 immediately after the main loop terminates.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.14.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2405,7 +2576,7 @@ immediately after the main loop terminates.</p>
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2416,8 +2587,8 @@ user_function (<a class="link" href="GApplication.html" title="GApplication"><sp
 <p>The ::startup signal is emitted on the primary instance immediately
 after registration. See <a class="link" href="GApplication.html#g-application-register" title="g_application_register ()"><code class="function">g_application_register()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.22.2.14.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.24.2.14.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2437,12 +2608,11 @@ after registration. See <a class="link" href="GApplication.html#g-application-re
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run First</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

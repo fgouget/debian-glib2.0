@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GThemedIcon</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GThemedIcon: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="icons.html" title="Icons">
 <link rel="prev" href="GLoadableIcon.html" title="GLoadableIcon">
 <link rel="next" href="GEmblemedIcon.html" title="GEmblemedIcon">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GThemedIcon.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -94,7 +94,7 @@
 </div>
 <div class="refsect1">
 <a name="GThemedIcon.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -108,7 +108,7 @@
 <td class="property_flags">Write / Construct Only</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/gobject/unstable/gobject-Boxed-Types.html#GStrv"><span class="type">GStrv</span></a></td>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></td>
 <td class="property_name"><a class="link" href="GThemedIcon.html#GThemedIcon--names" title="The “names” property">names</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
@@ -122,7 +122,7 @@
 </div>
 <div class="refsect1">
 <a name="GThemedIcon.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -170,7 +170,7 @@ g_themed_icon_new (<em class="parameter"><code>const <span class="type">char</sp
 .</p>
 <div class="refsect3">
 <a name="id-1.4.10.6.10.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -199,7 +199,7 @@ g_themed_icon_new_from_names (<em class="parameter"><code><span class="type">cha
 .</p>
 <div class="refsect3">
 <a name="id-1.4.10.6.10.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -254,15 +254,15 @@ that can be created by shortening <em class="parameter"><code>iconname</code></e
 7
 8
 9</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> </span><span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">names</span><span class="symbol">[]</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal"> </span>
-<span class="normal">  </span><span class="string">"gnome-dev-cdrom-audio"</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"gnome-dev-cdrom"</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"gnome-dev"</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"gnome"</span>
-<span class="cbracket">}</span><span class="symbol">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">const char</span> <span class="gtkdoc opt">*</span>names<span class="gtkdoc opt">[] = {</span> 
+  <span class="string">&quot;gnome-dev-cdrom-audio&quot;</span><span class="gtkdoc opt">,</span>
+  <span class="string">&quot;gnome-dev-cdrom&quot;</span><span class="gtkdoc opt">,</span>
+  <span class="string">&quot;gnome-dev&quot;</span><span class="gtkdoc opt">,</span>
+  <span class="string">&quot;gnome&quot;</span>
+<span class="gtkdoc opt">};</span>
 
-<span class="normal">icon1 </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GThemedIcon.html#g-themed-icon-new-from-names">g_themed_icon_new_from_names</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">names</span><span class="symbol">,</span><span class="normal"> </span><span class="number">4</span><span class="symbol">);</span>
-<span class="normal">icon2 </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GThemedIcon.html#g-themed-icon-new-with-default-fallbacks">g_themed_icon_new_with_default_fallbacks</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"gnome-dev-cdrom-audio"</span><span class="symbol">);</span></pre></td>
+icon1 <span class="gtkdoc opt">=</span> <span class="function"><a href="GThemedIcon.html#g-themed-icon-new-from-names">g_themed_icon_new_from_names</a></span> <span class="gtkdoc opt">(</span>names<span class="gtkdoc opt">,</span> <span class="number">4</span><span class="gtkdoc opt">);</span>
+icon2 <span class="gtkdoc opt">=</span> <span class="function"><a href="GThemedIcon.html#g-themed-icon-new-with-default-fallbacks">g_themed_icon_new_with_default_fallbacks</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;gnome-dev-cdrom-audio&quot;</span><span class="gtkdoc opt">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -271,7 +271,7 @@ that can be created by shortening <em class="parameter"><code>iconname</code></e
 <p></p>
 <div class="refsect3">
 <a name="id-1.4.10.6.10.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -302,7 +302,7 @@ g_themed_icon_prepend_name (<em class="parameter"><code><a class="link" href="GT
 to <a class="link" href="GIcon.html#g-icon-hash" title="g_icon_hash ()"><code class="function">g_icon_hash()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.6.10.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -323,7 +323,7 @@ to <a class="link" href="GIcon.html#g-icon-hash" title="g_icon_hash ()"><code c
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.18</p>
+<p class="since">Since: <a class="link" href="api-index-2-18.html#api-index-2.18">2.18</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -337,7 +337,7 @@ g_themed_icon_append_name (<em class="parameter"><code><a class="link" href="GTh
 to <a class="link" href="GIcon.html#g-icon-hash" title="g_icon_hash ()"><code class="function">g_icon_hash()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.6.10.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -368,7 +368,7 @@ g_themed_icon_get_names (<em class="parameter"><code><a class="link" href="GThem
 .</p>
 <div class="refsect3">
 <a name="id-1.4.10.6.10.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -408,7 +408,7 @@ g_themed_icon_get_names (<em class="parameter"><code><a class="link" href="GThem
 <hr>
 <div class="refsect2">
 <a name="GThemedIcon--names"></a><h3>The <code class="literal">“names”</code> property</h3>
-<pre class="programlisting">  “names”                    <a href="https://developer.gnome.org/gobject/unstable/gobject-Boxed-Types.html#GStrv"><span class="type">GStrv</span></a></pre>
+<pre class="programlisting">  “names”                    <a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></pre>
 <p>A <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of icon names.</p>
 <p>Flags: Read / Write / Construct Only</p>
 </div>
@@ -435,13 +435,13 @@ would become</p>
 5
 6
 7</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
-<span class="normal">  </span><span class="string">"gnome-dev-cdrom-audio"</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"gnome-dev-cdrom"</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"gnome-dev"</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"gnome"</span><span class="symbol">,</span>
-<span class="normal">  <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span>
-<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">{</span>
+  <span class="string">&quot;gnome-dev-cdrom-audio&quot;</span><span class="gtkdoc opt">,</span>
+  <span class="string">&quot;gnome-dev-cdrom&quot;</span><span class="gtkdoc opt">,</span>
+  <span class="string">&quot;gnome-dev&quot;</span><span class="gtkdoc opt">,</span>
+  <span class="string">&quot;gnome&quot;</span><span class="gtkdoc opt">,</span>
+  NULL
+<span class="gtkdoc opt">};</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -458,7 +458,6 @@ would become</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

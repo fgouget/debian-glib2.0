@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GLoadableIcon</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GLoadableIcon: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="icons.html" title="Icons">
-<link rel="prev" href="gio-GBytesIcon.html" title="GBytesIcon">
+<link rel="prev" href="GBytesIcon.html" title="GBytesIcon">
 <link rel="next" href="GThemedIcon.html" title="GThemedIcon">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -22,7 +22,7 @@
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="icons.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
-<td><a accesskey="p" href="gio-GBytesIcon.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="GBytesIcon.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
 <td><a accesskey="n" href="GThemedIcon.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="refentry">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GLoadableIcon.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -71,7 +71,7 @@
 </div>
 <div class="refsect1">
 <a name="GLoadableIcon.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -90,7 +90,7 @@
 </div>
 <div class="refsect1">
 <a name="GLoadableIcon.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GLoadableIcon
 </pre>
 </div>
@@ -104,7 +104,7 @@ GLoadableIcon requires
 <a name="GLoadableIcon.implementations"></a><h2>Known Implementations</h2>
 <p>
 GLoadableIcon is implemented by
- <a class="link" href="GFileIcon.html" title="GFileIcon">GFileIcon</a>.</p>
+ <a class="link" href="GBytesIcon.html" title="GBytesIcon">GBytesIcon</a> and  <a class="link" href="GFileIcon.html" title="GFileIcon">GFileIcon</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GLoadableIcon.includes"></a><h2>Includes</h2>
@@ -130,7 +130,7 @@ g_loadable_icon_load (<em class="parameter"><code><a class="link" href="GLoadabl
 see <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-async" title="g_loadable_icon_load_async ()"><code class="function">g_loadable_icon_load_async()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.5.10.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -188,7 +188,7 @@ g_loadable_icon_load_async (<em class="parameter"><code><a class="link" href="GL
 version of this function, see <a class="link" href="GLoadableIcon.html#g-loadable-icon-load" title="g_loadable_icon_load ()"><code class="function">g_loadable_icon_load()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.5.10.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -236,7 +236,7 @@ g_loadable_icon_load_finish (<em class="parameter"><code><a class="link" href="G
 <p>Finishes an asynchronous icon load started in <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-async" title="g_loadable_icon_load_async ()"><code class="function">g_loadable_icon_load_async()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.10.5.10.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -310,7 +310,7 @@ as a stream.</p>
 <p>Interface for icons that can be loaded as a stream.</p>
 <div class="refsect3">
 <a name="id-1.4.10.5.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -348,7 +348,6 @@ as a stream.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

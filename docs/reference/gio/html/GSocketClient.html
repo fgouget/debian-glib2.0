@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GSocketClient</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GSocketClient: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="highlevel-socket.html" title="High-level network functionallity">
 <link rel="prev" href="highlevel-socket.html" title="High-level network functionallity">
 <link rel="next" href="GSocketConnection.html" title="GSocketConnection">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GSocketClient.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -303,7 +303,7 @@
 </div>
 <div class="refsect1">
 <a name="GSocketClient.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -362,7 +362,7 @@
 </div>
 <div class="refsect1">
 <a name="GSocketClient.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -371,13 +371,13 @@
 <tbody><tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GSocketClient.html#GSocketClient-event" title="The “event” signal">event</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GSocketClient.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -429,9 +429,8 @@ g_socket_client_new (<em class="parameter"><code><span class="type">void</span><
 <a name="id-1.4.14.2.10.2.5"></a><h4>Returns</h4>
 <p> a <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a>.
 Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -459,7 +458,7 @@ defaults to <a class="link" href="GSocket.html#G-SOCKET-TYPE-STREAM:CAPS"><code 
 socket will be bound to this address before connecting.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.3.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -494,7 +493,7 @@ socket will be bound to this address before connecting.</p>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -512,7 +511,7 @@ called. You can then call <a class="link" href="GSocketClient.html#g-socket-clie
 the result of the operation.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -547,7 +546,7 @@ the result of the operation.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -559,7 +558,7 @@ g_socket_client_connect_finish (<em class="parameter"><code><a class="link" href
 <p>Finishes an async connect operation. See <a class="link" href="GSocketClient.html#g-socket-client-connect-async" title="g_socket_client_connect_async ()"><code class="function">g_socket_client_connect_async()</code></a></p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -590,7 +589,7 @@ ignore.</p></td>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -632,7 +631,7 @@ connectable) <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Ma
 accordingly.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.6.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -672,7 +671,7 @@ accordingly.</p>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -691,7 +690,7 @@ called. You can then call <a class="link" href="GSocketClient.html#g-socket-clie
 the result of the operation.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -731,7 +730,7 @@ the result of the operation.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -744,7 +743,7 @@ g_socket_client_connect_to_host_finish
 <p>Finishes an async connect operation. See <a class="link" href="GSocketClient.html#g-socket-client-connect-to-host-async" title="g_socket_client_connect_to_host_async ()"><code class="function">g_socket_client_connect_to_host_async()</code></a></p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -775,7 +774,7 @@ ignore.</p></td>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -802,7 +801,7 @@ connectable) <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Ma
 accordingly.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.9.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -858,7 +857,7 @@ g_socket_client_connect_to_service_async
 <a class="link" href="GSocketClient.html#g-socket-client-connect-to-service" title="g_socket_client_connect_to_service ()"><code class="function">g_socket_client_connect_to_service()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -898,7 +897,7 @@ g_socket_client_connect_to_service_async
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -911,7 +910,7 @@ g_socket_client_connect_to_service_finish
 <p>Finishes an async connect operation. See <a class="link" href="GSocketClient.html#g-socket-client-connect-to-service-async" title="g_socket_client_connect_to_service_async ()"><code class="function">g_socket_client_connect_to_service_async()</code></a></p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -942,7 +941,7 @@ ignore.</p></td>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -974,7 +973,7 @@ connectable) <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Ma
 accordingly.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.12.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1014,7 +1013,7 @@ accordingly.</p>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1033,7 +1032,7 @@ called. You can then call <a class="link" href="GSocketClient.html#g-socket-clie
 the result of the operation.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.13.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1073,7 +1072,7 @@ the result of the operation.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1085,7 +1084,7 @@ g_socket_client_connect_to_uri_finish (<em class="parameter"><code><a class="lin
 <p>Finishes an async connect operation. See <a class="link" href="GSocketClient.html#g-socket-client-connect-to-uri-async" title="g_socket_client_connect_to_uri_async ()"><code class="function">g_socket_client_connect_to_uri_async()</code></a></p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1116,7 +1115,7 @@ ignore.</p></td>
 <p> a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1133,7 +1132,7 @@ connection to be an ipv4 socket, even though the address might
 be an ipv6 mapped to ipv4 address.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1153,7 +1152,7 @@ be an ipv6 mapped to ipv4 address.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1169,7 +1168,7 @@ side of the connection is on a specific port, or on
 a specific interface.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1189,7 +1188,7 @@ a specific interface.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1205,7 +1204,7 @@ protocol.</p>
 protocol for the socket family and type.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.17.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1225,7 +1224,7 @@ protocol for the socket family and type.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1240,7 +1239,7 @@ type.</p>
 as GSocketClient is used for connection oriented services.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.18.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1260,7 +1259,7 @@ as GSocketClient is used for connection oriented services.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1277,7 +1276,7 @@ so setting this may cause calls to <a class="link" href="GSocketClient.html#g-so
 to fail with <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.19.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1297,7 +1296,7 @@ to fail with <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS">
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1313,7 +1312,7 @@ needed, and automatically do the necessary proxy negotiation.</p>
 <p>See also <a class="link" href="GSocketClient.html#g-socket-client-set-proxy-resolver" title="g_socket_client_set_proxy_resolver ()"><code class="function">g_socket_client_set_proxy_resolver()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.20.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1333,7 +1332,7 @@ needed, and automatically do the necessary proxy negotiation.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1350,7 +1349,7 @@ depends on the setting of <a class="link" href="GSocketClient.html#GSocketClient
 changed by this function (but which is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> by default)</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.21.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1371,7 +1370,7 @@ default. </p></td>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.36</p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1401,7 +1400,7 @@ a chance to see the <a class="link" href="GTlsClientConnection.html" title="GTls
 starts.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1421,7 +1420,7 @@ starts.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1435,7 +1434,7 @@ via <em class="parameter"><code>client</code></em>
 . The default value is <a class="link" href="gio-TLS-Overview.html#G-TLS-CERTIFICATE-VALIDATE-ALL:CAPS"><code class="literal">G_TLS_CERTIFICATE_VALIDATE_ALL</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1455,7 +1454,7 @@ via <em class="parameter"><code>client</code></em>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1466,7 +1465,7 @@ g_socket_client_get_family (<em class="parameter"><code><a class="link" href="GS
 <p>See <a class="link" href="GSocketClient.html#g-socket-client-set-family" title="g_socket_client_set_family ()"><code class="function">g_socket_client_set_family()</code></a> for details.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.24.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1482,9 +1481,8 @@ g_socket_client_get_family (<em class="parameter"><code><a class="link" href="GS
 <div class="refsect3">
 <a name="id-1.4.14.2.10.24.7"></a><h4>Returns</h4>
 <p> a <a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="type">GSocketFamily</span></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1495,7 +1493,7 @@ g_socket_client_get_local_address (<em class="parameter"><code><a class="link" h
 <p>See <a class="link" href="GSocketClient.html#g-socket-client-set-local-address" title="g_socket_client_set_local_address ()"><code class="function">g_socket_client_set_local_address()</code></a> for details.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.25.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1513,7 +1511,7 @@ g_socket_client_get_local_address (<em class="parameter"><code><a class="link" h
 <p> a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. Do not free. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1524,7 +1522,7 @@ g_socket_client_get_protocol (<em class="parameter"><code><a class="link" href="
 <p>See <a class="link" href="GSocketClient.html#g-socket-client-set-protocol" title="g_socket_client_set_protocol ()"><code class="function">g_socket_client_set_protocol()</code></a> for details.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.26.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1540,9 +1538,8 @@ g_socket_client_get_protocol (<em class="parameter"><code><a class="link" href="
 <div class="refsect3">
 <a name="id-1.4.14.2.10.26.7"></a><h4>Returns</h4>
 <p> a <a class="link" href="GSocket.html#GSocketProtocol" title="enum GSocketProtocol"><span class="type">GSocketProtocol</span></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1553,7 +1550,7 @@ g_socket_client_get_socket_type (<em class="parameter"><code><a class="link" hre
 <p>See <a class="link" href="GSocketClient.html#g-socket-client-set-socket-type" title="g_socket_client_set_socket_type ()"><code class="function">g_socket_client_set_socket_type()</code></a> for details.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.27.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1569,9 +1566,8 @@ g_socket_client_get_socket_type (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="id-1.4.14.2.10.27.7"></a><h4>Returns</h4>
 <p> a <a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="type">GSocketFamily</span></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1583,7 +1579,7 @@ g_socket_client_get_timeout (<em class="parameter"><code><a class="link" href="G
 <p>See <a class="link" href="GSocketClient.html#g-socket-client-set-timeout" title="g_socket_client_set_timeout ()"><code class="function">g_socket_client_set_timeout()</code></a> for details.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.28.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1599,9 +1595,8 @@ g_socket_client_get_timeout (<em class="parameter"><code><a class="link" href="G
 <div class="refsect3">
 <a name="id-1.4.14.2.10.28.7"></a><h4>Returns</h4>
 <p> the timeout in seconds</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1611,7 +1606,7 @@ g_socket_client_get_enable_proxy (<em class="parameter"><code><a class="link" hr
 <p>Gets the proxy enable state; see <a class="link" href="GSocketClient.html#g-socket-client-set-enable-proxy" title="g_socket_client_set_enable_proxy ()"><code class="function">g_socket_client_set_enable_proxy()</code></a></p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1627,9 +1622,8 @@ g_socket_client_get_enable_proxy (<em class="parameter"><code><a class="link" hr
 <div class="refsect3">
 <a name="id-1.4.14.2.10.29.6"></a><h4>Returns</h4>
 <p> whether proxying is enabled</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1642,7 +1636,7 @@ be the resolver returned by <a class="link" href="GProxyResolver.html#g-proxy-re
 can override it with <a class="link" href="GSocketClient.html#g-socket-client-set-proxy-resolver" title="g_socket_client_set_proxy_resolver ()"><code class="function">g_socket_client_set_proxy_resolver()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1662,7 +1656,7 @@ can override it with <a class="link" href="GSocketClient.html#g-socket-client-se
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.36</p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1674,7 +1668,7 @@ g_socket_client_get_tls (<em class="parameter"><code><a class="link" href="GSock
 <a class="link" href="GSocketClient.html#g-socket-client-set-tls" title="g_socket_client_set_tls ()"><code class="function">g_socket_client_set_tls()</code></a> for details.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.31.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1691,9 +1685,8 @@ g_socket_client_get_tls (<em class="parameter"><code><a class="link" href="GSock
 <a name="id-1.4.14.2.10.31.6"></a><h4>Returns</h4>
 <p> whether <em class="parameter"><code>client</code></em>
 uses TLS</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1706,7 +1699,7 @@ g_socket_client_get_tls_validation_flags
 .</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1722,9 +1715,8 @@ g_socket_client_get_tls_validation_flags
 <div class="refsect3">
 <a name="id-1.4.14.2.10.32.6"></a><h4>Returns</h4>
 <p> the TLS validation flags</p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1751,7 +1743,7 @@ will be skipped. This is required to let the application do the proxy
 specific handshake.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.10.33.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1779,7 +1771,7 @@ specific handshake.</p>
 <a name="GSocketClient-struct"></a><h3>GSocketClient</h3>
 <pre class="programlisting">typedef struct _GSocketClient GSocketClient;</pre>
 <p>A helper class for network clients to make connections.</p>
-<p class="since">Since 2.22</p>
+<p class="since">Since: <a class="link" href="api-index-2-22.html#api-index-2.22">2.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1789,7 +1781,7 @@ specific handshake.</p>
 <p>Additional values may be added to this type in the future.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1869,7 +1861,7 @@ specific handshake.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -1910,7 +1902,7 @@ specific handshake.</p>
 <pre class="programlisting">  “proxy-resolver”           <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a> *</pre>
 <p>The proxy resolver to use</p>
 <p>Flags: Read / Write / Construct</p>
-<p class="since">Since 2.36</p>
+<p class="since">Since: <a class="link" href="api-index-2-36.html#api-index-2.36">2.36</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2027,7 +2019,7 @@ the future; unrecognized <em class="parameter"><code>event</code></em>
  values should be ignored.</p>
 <div class="refsect3">
 <a name="id-1.4.14.2.13.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2052,8 +2044,8 @@ is occurring on</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>connection</p></td>
-<td class="parameter_description"><p>the current representation of the connection</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> the current representation of the connection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
@@ -2063,8 +2055,8 @@ is occurring on</p></td>
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
-<p class="since">Since 2.32</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -2073,7 +2065,6 @@ is occurring on</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

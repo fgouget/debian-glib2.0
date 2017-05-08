@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GSettings</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GSettings: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="settings.html" title="Settings">
 <link rel="prev" href="settings.html" title="Settings">
 <link rel="next" href="GSettingsBackend.html" title="GSettingsBackend">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GSettings.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -445,7 +445,7 @@
 </div>
 <div class="refsect1">
 <a name="GSettings.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -497,7 +497,7 @@
 </div>
 <div class="refsect1">
 <a name="GSettings.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -507,29 +507,29 @@
 <tr>
 <td class="signal_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
 <td class="signal_name"><a class="link" href="GSettings.html#GSettings-change-event" title="The “change-event” signal">change-event</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GSettings.html#GSettings-changed" title="The “changed” signal">changed</a></td>
-<td class="signal_flags">Has Details</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-DETAILED:CAPS">Has Details</a></td>
 </tr>
 <tr>
 <td class="signal_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
 <td class="signal_name"><a class="link" href="GSettings.html#GSettings-writable-change-event" title="The “writable-change-event” signal">writable-change-event</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GSettings.html#GSettings-writable-changed" title="The “writable-changed” signal">writable-changed</a></td>
-<td class="signal_flags">Has Details</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-DETAILED:CAPS">Has Details</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GSettings.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -582,7 +582,8 @@ that describes the keys in your settings and their types and default
 values, as well as some other information.</p>
 <p>Normally, a schema has as fixed path that determines where the settings
 are stored in the conceptual global tree of settings. However, schemas
-can also be 'relocatable', i.e. not equipped with a fixed path. This is
+can also be '<a class="link" href="GSettings.html#gsettings-relocatable" title="Relocatable schemas">relocatable</a>', i.e. not equipped with
+a fixed path. This is
 useful e.g. when the schema describes an 'account', and you want to be
 able to store a arbitrary number of accounts.</p>
 <p>Paths must start with and end with a forward slash character ('/')
@@ -601,9 +602,42 @@ with a '-', and must not contain consecutive dashes.</p>
 <p>Similar to GConf, the default values in GSettings schemas can be
 localized, but the localized values are stored in gettext catalogs
 and looked up with the domain that is specified in the
-gettext-domain attribute of the &lt;schemalist&gt; or &lt;schema&gt;
-elements and the category that is specified in the l10n attribute of
-the &lt;key&gt; element.</p>
+<code class="literal">gettext-domain</code> attribute of the &lt;schemalist&gt; or &lt;schema&gt;
+elements and the category that is specified in the <code class="literal">l10n</code> attribute of
+the &lt;default&gt; element. The string which is translated includes all text in
+the &lt;default&gt; element, including any surrounding quotation marks.</p>
+<p>The <code class="literal">l10n</code> attribute must be set to <code class="literal">messages</code> or <code class="literal">time</code>, and sets the
+<a class="ulink" href="https://www.gnu.org/software/gettext/manual/html_node/Aspects.html#index-locale-categories-1" target="_top">locale category for
+translation</a>.
+The <code class="literal">messages</code> category should be used by default; use <code class="literal">time</code> for
+translatable date or time formats. A translation comment can be added as an
+XML comment immediately above the &lt;default&gt; element — it is recommended to
+add these comments to aid translators understand the meaning and
+implications of the default value. An optional translation <code class="literal">context</code>
+attribute can be set on the &lt;default&gt; element to disambiguate multiple
+defaults which use the same string.</p>
+<p>For example:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">&lt;!--</span> Translators<span class="gtkdoc opt">:</span> A list of words which are <span class="keyword">not</span> allowed to be typed<span class="gtkdoc opt">,</span> in
+     GVariant serialization syntax<span class="gtkdoc opt">.</span>
+     See<span class="gtkdoc opt">:</span> https<span class="gtkdoc opt">:</span><span class="gtkdoc slc">//developer.gnome.org/glib/stable/gvariant-text.html --&gt;</span>
+<span class="gtkdoc opt">&lt;</span><span class="keyword">default</span> l10n<span class="gtkdoc opt">=</span><span class="string">'messages'</span> context<span class="gtkdoc opt">=</span><span class="string">'Banned words'</span><span class="gtkdoc opt">&gt;[</span><span class="string">'bad'</span><span class="gtkdoc opt">,</span> <span class="string">'words'</span><span class="gtkdoc opt">]&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>Translations of default values must remain syntactically valid serialized
+<a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariants</span></a> (e.g. retaining any surrounding quotation marks) or runtime
+errors will occur.</p>
 <p>GSettings uses schemas in a compact binary form that is created
 by the <a href="glib-compile-schemas.html">glib-compile-schemas</a>
 utility. The input is a schema description in an XML format.</p>
@@ -648,23 +682,23 @@ corresponding to the string value of enum and flags keys.</p>
 15
 16
 17</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">&lt;</span><span class="normal">schemalist</span><span class="symbol">&gt;</span>
-<span class="normal">  </span><span class="symbol">&lt;</span><span class="usertype">schema</span><span class="normal"> id</span><span class="symbol">=</span><span class="string">"org.gtk.Test"</span><span class="normal"> path</span><span class="symbol">=</span><span class="string">"/org/gtk/Test/"</span><span class="normal"> gettext</span><span class="symbol">-</span><span class="normal">domain</span><span class="symbol">=</span><span class="string">"test"</span><span class="symbol">&gt;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">&lt;</span>schemalist<span class="gtkdoc opt">&gt;</span>
+  <span class="gtkdoc opt">&lt;</span>schema id<span class="gtkdoc opt">=</span><span class="string">&quot;org.gtk.Test&quot;</span> path<span class="gtkdoc opt">=</span><span class="string">&quot;/org/gtk/Test/&quot;</span> gettext<span class="gtkdoc opt">-</span>domain<span class="gtkdoc opt">=</span><span class="string">&quot;test&quot;</span><span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">key</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">"greeting"</span><span class="normal"> type</span><span class="symbol">=</span><span class="string">"s"</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="keyword">default</span><span class="normal"> l10n</span><span class="symbol">=</span><span class="string">"messages"</span><span class="symbol">&gt;</span><span class="string">"Hello, earthlings"</span><span class="symbol">&lt;/</span><span class="keyword">default</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">summary</span><span class="symbol">&gt;</span><span class="usertype">A</span><span class="normal"> greeting</span><span class="symbol">&lt;/</span><span class="normal">summary</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">description</span><span class="symbol">&gt;</span>
-<span class="normal">        Greeting of the invading martians</span>
-<span class="normal">      </span><span class="symbol">&lt;/</span><span class="normal">description</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">key</span><span class="symbol">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>key name<span class="gtkdoc opt">=</span><span class="string">&quot;greeting&quot;</span> type<span class="gtkdoc opt">=</span><span class="string">&quot;s&quot;</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span><span class="keyword">default</span> l10n<span class="gtkdoc opt">=</span><span class="string">&quot;messages&quot;</span><span class="gtkdoc opt">&gt;</span><span class="string">&quot;Hello, earthlings&quot;</span><span class="gtkdoc opt">&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span>summary<span class="gtkdoc opt">&gt;</span>A greeting<span class="gtkdoc opt">&lt;/</span>summary<span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span>description<span class="gtkdoc opt">&gt;</span>
+        Greeting of the invading martians
+      <span class="gtkdoc opt">&lt;/</span>description<span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;/</span>key<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">key</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">"box"</span><span class="normal"> type</span><span class="symbol">=</span><span class="string">"(ii)"</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="keyword">default</span><span class="symbol">&gt;(</span><span class="number">20</span><span class="symbol">,</span><span class="number">30</span><span class="symbol">)&lt;/</span><span class="keyword">default</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">key</span><span class="symbol">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>key name<span class="gtkdoc opt">=</span><span class="string">&quot;box&quot;</span> type<span class="gtkdoc opt">=</span><span class="string">&quot;(ii)&quot;</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;(</span><span class="number">20</span><span class="gtkdoc opt">,</span><span class="number">30</span><span class="gtkdoc opt">)&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;/</span>key<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">  </span><span class="symbol">&lt;/</span><span class="normal">schema</span><span class="symbol">&gt;</span>
-<span class="symbol">&lt;/</span><span class="normal">schemalist</span><span class="symbol">&gt;</span></pre></td>
+  <span class="gtkdoc opt">&lt;/</span>schema<span class="gtkdoc opt">&gt;</span>
+<span class="gtkdoc opt">&lt;/</span>schemalist<span class="gtkdoc opt">&gt;</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -718,48 +752,48 @@ corresponding to the string value of enum and flags keys.</p>
 40
 41
 42</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">&lt;</span><span class="normal">schemalist</span><span class="symbol">&gt;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">&lt;</span>schemalist<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">  </span><span class="symbol">&lt;</span><span class="keyword">enum</span><span class="normal"> id</span><span class="symbol">=</span><span class="string">"org.gtk.Test.myenum"</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">value</span><span class="normal"> nick</span><span class="symbol">=</span><span class="string">"first"</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">"1"</span><span class="symbol">/&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">value</span><span class="normal"> nick</span><span class="symbol">=</span><span class="string">"second"</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">"2"</span><span class="symbol">/&gt;</span>
-<span class="normal">  </span><span class="symbol">&lt;/</span><span class="keyword">enum</span><span class="symbol">&gt;</span>
+  <span class="gtkdoc opt">&lt;</span><span class="gtkdoc kwb">enum</span> id<span class="gtkdoc opt">=</span><span class="string">&quot;org.gtk.Test.myenum&quot;</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>value nick<span class="gtkdoc opt">=</span><span class="string">&quot;first&quot;</span> value<span class="gtkdoc opt">=</span><span class="string">&quot;1&quot;</span><span class="gtkdoc opt">/&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>value nick<span class="gtkdoc opt">=</span><span class="string">&quot;second&quot;</span> value<span class="gtkdoc opt">=</span><span class="string">&quot;2&quot;</span><span class="gtkdoc opt">/&gt;</span>
+  <span class="gtkdoc opt">&lt;/</span><span class="gtkdoc kwb">enum</span><span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">  </span><span class="symbol">&lt;</span><span class="usertype">flags</span><span class="normal"> id</span><span class="symbol">=</span><span class="string">"org.gtk.Test.myflags"</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">value</span><span class="normal"> nick</span><span class="symbol">=</span><span class="string">"flag1"</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">"1"</span><span class="symbol">/&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">value</span><span class="normal"> nick</span><span class="symbol">=</span><span class="string">"flag2"</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">"2"</span><span class="symbol">/&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">value</span><span class="normal"> nick</span><span class="symbol">=</span><span class="string">"flag3"</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">"4"</span><span class="symbol">/&gt;</span>
-<span class="normal">  </span><span class="symbol">&lt;/</span><span class="normal">flags</span><span class="symbol">&gt;</span>
+  <span class="gtkdoc opt">&lt;</span>flags id<span class="gtkdoc opt">=</span><span class="string">&quot;org.gtk.Test.myflags&quot;</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>value nick<span class="gtkdoc opt">=</span><span class="string">&quot;flag1&quot;</span> value<span class="gtkdoc opt">=</span><span class="string">&quot;1&quot;</span><span class="gtkdoc opt">/&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>value nick<span class="gtkdoc opt">=</span><span class="string">&quot;flag2&quot;</span> value<span class="gtkdoc opt">=</span><span class="string">&quot;2&quot;</span><span class="gtkdoc opt">/&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>value nick<span class="gtkdoc opt">=</span><span class="string">&quot;flag3&quot;</span> value<span class="gtkdoc opt">=</span><span class="string">&quot;4&quot;</span><span class="gtkdoc opt">/&gt;</span>
+  <span class="gtkdoc opt">&lt;/</span>flags<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">  </span><span class="symbol">&lt;</span><span class="usertype">schema</span><span class="normal"> id</span><span class="symbol">=</span><span class="string">"org.gtk.Test"</span><span class="symbol">&gt;</span>
+  <span class="gtkdoc opt">&lt;</span>schema id<span class="gtkdoc opt">=</span><span class="string">&quot;org.gtk.Test&quot;</span><span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">key</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">"key-with-range"</span><span class="normal"> type</span><span class="symbol">=</span><span class="string">"i"</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="usertype">range</span><span class="normal"> min</span><span class="symbol">=</span><span class="string">"1"</span><span class="normal"> max</span><span class="symbol">=</span><span class="string">"100"</span><span class="symbol">/&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="keyword">default</span><span class="symbol">&gt;</span><span class="number">10</span><span class="symbol">&lt;/</span><span class="keyword">default</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">key</span><span class="symbol">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>key name<span class="gtkdoc opt">=</span><span class="string">&quot;key-with-range&quot;</span> type<span class="gtkdoc opt">=</span><span class="string">&quot;i&quot;</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span>range min<span class="gtkdoc opt">=</span><span class="string">&quot;1&quot;</span> max<span class="gtkdoc opt">=</span><span class="string">&quot;100&quot;</span><span class="gtkdoc opt">/&gt;</span>
+      <span class="gtkdoc opt">&lt;</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span><span class="number">10</span><span class="gtkdoc opt">&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;/</span>key<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">key</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">"key-with-choices"</span><span class="normal"> type</span><span class="symbol">=</span><span class="string">"s"</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">choices</span><span class="symbol">&gt;</span>
-<span class="normal">        </span><span class="symbol">&lt;</span><span class="usertype">choice</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">'Elisabeth'</span><span class="symbol">/&gt;</span>
-<span class="normal">        </span><span class="symbol">&lt;</span><span class="usertype">choice</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">'Annabeth'</span><span class="symbol">/&gt;</span>
-<span class="normal">        </span><span class="symbol">&lt;</span><span class="usertype">choice</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">'Joe'</span><span class="symbol">/&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;/</span><span class="normal">choices</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">aliases</span><span class="symbol">&gt;</span>
-<span class="normal">        </span><span class="symbol">&lt;</span><span class="usertype">alias</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">'Anna'</span><span class="normal"> target</span><span class="symbol">=</span><span class="string">'Annabeth'</span><span class="symbol">/&gt;</span>
-<span class="normal">        </span><span class="symbol">&lt;</span><span class="usertype">alias</span><span class="normal"> value</span><span class="symbol">=</span><span class="string">'Beth'</span><span class="normal"> target</span><span class="symbol">=</span><span class="string">'Elisabeth'</span><span class="symbol">/&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;/</span><span class="normal">aliases</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="keyword">default</span><span class="symbol">&gt;</span><span class="string">'Joe'</span><span class="symbol">&lt;/</span><span class="keyword">default</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">key</span><span class="symbol">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>key name<span class="gtkdoc opt">=</span><span class="string">&quot;key-with-choices&quot;</span> type<span class="gtkdoc opt">=</span><span class="string">&quot;s&quot;</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span>choices<span class="gtkdoc opt">&gt;</span>
+        <span class="gtkdoc opt">&lt;</span>choice value<span class="gtkdoc opt">=</span><span class="string">'Elisabeth'</span><span class="gtkdoc opt">/&gt;</span>
+        <span class="gtkdoc opt">&lt;</span>choice value<span class="gtkdoc opt">=</span><span class="string">'Annabeth'</span><span class="gtkdoc opt">/&gt;</span>
+        <span class="gtkdoc opt">&lt;</span>choice value<span class="gtkdoc opt">=</span><span class="string">'Joe'</span><span class="gtkdoc opt">/&gt;</span>
+      <span class="gtkdoc opt">&lt;/</span>choices<span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span>aliases<span class="gtkdoc opt">&gt;</span>
+        <span class="gtkdoc opt">&lt;</span>alias value<span class="gtkdoc opt">=</span><span class="string">'Anna'</span> target<span class="gtkdoc opt">=</span><span class="string">'Annabeth'</span><span class="gtkdoc opt">/&gt;</span>
+        <span class="gtkdoc opt">&lt;</span>alias value<span class="gtkdoc opt">=</span><span class="string">'Beth'</span> target<span class="gtkdoc opt">=</span><span class="string">'Elisabeth'</span><span class="gtkdoc opt">/&gt;</span>
+      <span class="gtkdoc opt">&lt;/</span>aliases<span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span><span class="string">'Joe'</span><span class="gtkdoc opt">&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;/</span>key<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">key</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">'enumerated-key'</span><span class="normal"> </span><span class="keyword">enum</span><span class="symbol">=</span><span class="string">'org.gtk.Test.myenum'</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="keyword">default</span><span class="symbol">&gt;</span><span class="string">'first'</span><span class="symbol">&lt;/</span><span class="keyword">default</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">key</span><span class="symbol">&gt;</span>
+    <span class="gtkdoc opt">&lt;</span>key name<span class="gtkdoc opt">=</span><span class="string">'enumerated-key'</span> <span class="gtkdoc kwb">enum</span><span class="gtkdoc opt">=</span><span class="string">'org.gtk.Test.myenum'</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span><span class="string">'first'</span><span class="gtkdoc opt">&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;/</span>key<span class="gtkdoc opt">&gt;</span>
 
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">key</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">'flags-key'</span><span class="normal"> flags</span><span class="symbol">=</span><span class="string">'org.gtk.Test.myflags'</span><span class="symbol">&gt;</span>
-<span class="normal">      </span><span class="symbol">&lt;</span><span class="keyword">default</span><span class="symbol">&gt;[</span><span class="string">"flag1"</span><span class="symbol">,</span><span class="normal">flag2</span><span class="string">"]&lt;/default&gt;</span>
-<span class="string">    &lt;/key&gt;</span>
-<span class="string">  &lt;/schema&gt;</span>
-<span class="string">&lt;/schemalist&gt;</span></pre></td>
+    <span class="gtkdoc opt">&lt;</span>key name<span class="gtkdoc opt">=</span><span class="string">'flags-key'</span> flags<span class="gtkdoc opt">=</span><span class="string">'org.gtk.Test.myflags'</span><span class="gtkdoc opt">&gt;</span>
+      <span class="gtkdoc opt">&lt;</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;[</span><span class="string">&quot;flag1&quot;</span><span class="gtkdoc opt">,</span><span class="string">&quot;flag2&quot;</span><span class="gtkdoc opt">]&lt;/</span><span class="keyword">default</span><span class="gtkdoc opt">&gt;</span>
+    <span class="gtkdoc opt">&lt;/</span>key<span class="gtkdoc opt">&gt;</span>
+  <span class="gtkdoc opt">&lt;/</span>schema<span class="gtkdoc opt">&gt;</span>
+<span class="gtkdoc opt">&lt;/</span>schemalist<span class="gtkdoc opt">&gt;</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -767,7 +801,7 @@ corresponding to the string value of enum and flags keys.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.4.19.2.9.20"></a><h4>Vendor overrides</h4>
+<a name="id-1.4.19.2.9.25"></a><h4>Vendor overrides</h4>
 <p>Default values are defined in the schemas that get installed by
 an application. Sometimes, it is necessary for a vendor or distributor
 to adjust these defaults. Since patching the XML source for the schema
@@ -784,9 +818,9 @@ serialized GVariant form, as in the following example:</p>
         <td class="listing_lines" align="right"><pre>1
 2
 3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">[</span><span class="normal">org</span><span class="symbol">.</span><span class="normal">gtk</span><span class="symbol">.</span><span class="normal">Example</span><span class="symbol">]</span>
-<span class="normal">key1</span><span class="symbol">=</span><span class="string">'string'</span>
-<span class="normal">key2</span><span class="symbol">=</span><span class="number">1.5</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">[</span>org<span class="gtkdoc opt">.</span>gtk<span class="gtkdoc opt">.</span>Example<span class="gtkdoc opt">]</span>
+key1<span class="gtkdoc opt">=</span><span class="string">'string'</span>
+key2<span class="gtkdoc opt">=</span><span class="number">1.5</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -797,7 +831,7 @@ serialized GVariant form, as in the following example:</p>
 <code class="literal">.gschema.override</code>.</p>
 </div>
 <div class="refsect3">
-<a name="id-1.4.19.2.9.21"></a><h4>Binding</h4>
+<a name="id-1.4.19.2.9.26"></a><h4>Binding</h4>
 <p>A very convenient feature of GSettings lets you bind <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> properties
 directly to settings, using <a class="link" href="GSettings.html#g-settings-bind" title="g_settings_bind ()"><code class="function">g_settings_bind()</code></a>. Once a GObject property
 has been bound to a setting, changes on either side are automatically
@@ -809,6 +843,136 @@ looks for a boolean property with the name "sensitivity" and
 automatically binds it to the writability of the bound setting.
 If this 'magic' gets in the way, it can be suppressed with the
 <a class="link" href="GSettings.html#G-SETTINGS-BIND-NO-SENSITIVITY:CAPS"><span class="type">G_SETTINGS_BIND_NO_SENSITIVITY</span></a> flag.</p>
+</div>
+<div class="refsect3">
+<a name="gsettings-relocatable"></a><h4>Relocatable schemas</h4>
+<p>A relocatable schema is one with no <code class="literal">path</code> attribute specified on its
+&lt;schema&gt; element. By using <a class="link" href="GSettings.html#g-settings-new-with-path" title="g_settings_new_with_path ()"><code class="function">g_settings_new_with_path()</code></a>, a <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> object
+can be instantiated for a relocatable schema, assigning a path to the
+instance. Paths passed to <a class="link" href="GSettings.html#g-settings-new-with-path" title="g_settings_new_with_path ()"><code class="function">g_settings_new_with_path()</code></a> will typically be
+constructed dynamically from a constant prefix plus some form of instance
+identifier; but they must still be valid GSettings paths. Paths could also
+be constant and used with a globally installed schema originating from a
+dependency library.</p>
+<p>For example, a relocatable schema could be used to store geometry information
+for different windows in an application. If the schema ID was
+<code class="literal">org.foo.MyApp.Window</code>, it could be instantiated for paths
+<code class="literal">/org/foo/MyApp/main/</code>, <code class="literal">/org/foo/MyApp/document-1/</code>,
+<code class="literal">/org/foo/MyApp/document-2/</code>, etc. If any of the paths are well-known
+they can be specified as &lt;child&gt; elements in the parent schema, e.g.:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">&lt;</span>schema id<span class="gtkdoc opt">=</span><span class="string">&quot;org.foo.MyApp&quot;</span> path<span class="gtkdoc opt">=</span><span class="string">&quot;/org/foo/MyApp/&quot;</span><span class="gtkdoc opt">&gt;</span>
+  <span class="gtkdoc opt">&lt;</span>child name<span class="gtkdoc opt">=</span><span class="string">&quot;main&quot;</span> schema<span class="gtkdoc opt">=</span><span class="string">&quot;org.foo.MyApp.Window&quot;</span><span class="gtkdoc opt">/&gt;</span>
+<span class="gtkdoc opt">&lt;/</span>schema<span class="gtkdoc opt">&gt;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+</div>
+<div class="refsect3">
+<a name="gsettings-build-system"></a><h4>Build system integration</h4>
+<p>GSettings comes with autotools integration to simplify compiling and
+installing schemas. To add GSettings support to an application, add the
+following to your <code class="literal">configure.ac</code>:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">GLIB_GSETTINGS</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>In the appropriate <code class="literal">Makefile.am</code>, use the following snippet to compile and
+install the named schema:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting">gsettings_SCHEMAS <span class="gtkdoc opt">=</span> org<span class="gtkdoc opt">.</span>foo<span class="gtkdoc opt">.</span>MyApp<span class="gtkdoc opt">.</span>gschema<span class="gtkdoc opt">.</span>xml
+EXTRA_DIST <span class="gtkdoc opt">=</span> $<span class="gtkdoc opt">(</span>gsettings_SCHEMAS<span class="gtkdoc opt">)</span>
+
+&#64;GSETTINGS_RULES&#64;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>No changes are needed to the build system to mark a schema XML file for
+translation. Assuming it sets the <code class="literal">gettext-domain</code> attribute, a schema may
+be marked for translation by adding it to <code class="literal">POTFILES.in</code>, assuming gettext
+0.19 is in use (the preferred method for translation):</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">data<span class="gtkdoc opt">/</span>org<span class="gtkdoc opt">.</span>foo<span class="gtkdoc opt">.</span>MyApp<span class="gtkdoc opt">.</span>gschema<span class="gtkdoc opt">.</span>xml</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>Alternatively, if intltool 0.50.1 is in use:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">[</span>type<span class="gtkdoc opt">:</span> gettext<span class="gtkdoc opt">/</span>gsettings<span class="gtkdoc opt">]</span>data<span class="gtkdoc opt">/</span>org<span class="gtkdoc opt">.</span>foo<span class="gtkdoc opt">.</span>MyApp<span class="gtkdoc opt">.</span>gschema<span class="gtkdoc opt">.</span>xml</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>GSettings will use gettext to look up translations for the &lt;summary&gt; and
+&lt;description&gt; elements, and also any &lt;default&gt; elements which have a <code class="literal">l10n</code>
+attribute set. Translations must not be included in the <code class="literal">.gschema.xml</code> file
+by the build system, for example by using intltool XML rules with a
+<code class="literal">.gschema.xml.in</code> template.</p>
+<p>If an enumerated type defined in a C header file is to be used in a GSettings
+schema, it can either be defined manually using an &lt;enum&gt; element in the
+schema XML, or it can be extracted automatically from the C header. This
+approach is preferred, as it ensures the two representations are always
+synchronised. To do so, add the following to the relevant <code class="literal">Makefile.am</code>:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting">gsettings_ENUM_NAMESPACE <span class="gtkdoc opt">=</span> org<span class="gtkdoc opt">.</span>foo<span class="gtkdoc opt">.</span>MyApp
+gsettings_ENUM_FILES <span class="gtkdoc opt">=</span> my<span class="gtkdoc opt">-</span>app<span class="gtkdoc opt">-</span>enums<span class="gtkdoc opt">.</span>h my<span class="gtkdoc opt">-</span>app<span class="gtkdoc opt">-</span>misc<span class="gtkdoc opt">.</span>h</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p><code class="literal">gsettings_ENUM_NAMESPACE</code> specifies the schema namespace for the enum files,
+which are specified in <code class="literal">gsettings_ENUM_FILES</code>. This will generate a
+<code class="literal">org.foo.MyApp.enums.xml</code> file containing the extracted enums, which will be
+automatically included in the schema compilation, install and uninstall
+rules. It should not be committed to version control or included in
+<code class="literal">EXTRA_DIST</code>.</p>
 </div>
 </div>
 <div class="refsect1">
@@ -826,7 +990,7 @@ call to <a class="link" href="GSettings.html#g-settings-new" title="g_settings_n
 on the context.  See <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-main-context-push-thread-default"><code class="function">g_main_context_push_thread_default()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -842,9 +1006,8 @@ on the context.  See <a href="https://developer.gnome.org/glib/unstable/glib-The
 <div class="refsect3">
 <a name="id-1.4.19.2.10.2.7"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> object</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -866,7 +1029,7 @@ begins and ends with '/' and does not contain two consecutive '/'
 characters.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.3.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -889,9 +1052,8 @@ characters.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.3.9"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> object</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -909,7 +1071,7 @@ the system to get a settings object that modifies the system default
 settings instead of the settings for this user.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -932,9 +1094,8 @@ settings instead of the settings for this user.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.4.7"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> object</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -950,7 +1111,7 @@ g_settings_new_with_backend_and_path (<em class="parameter"><code>const <a href=
 <a class="link" href="GSettings.html#g-settings-new-with-path" title="g_settings_new_with_path ()"><code class="function">g_settings_new_with_path()</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -978,9 +1139,8 @@ g_settings_new_with_backend_and_path (<em class="parameter"><code>const <a href=
 <div class="refsect3">
 <a name="id-1.4.19.2.10.5.7"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> object</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -999,7 +1159,7 @@ etc).</p>
 4 things: a <a class="link" href="gio-GSettingsSchema-GSettingsSchemaSource.html#GSettingsSchema"><span class="type">GSettingsSchema</span></a>, a <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>, a path within that
 backend, and a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to which signals are dispatched.</p>
 <p>This constructor therefore gives you full control over constructing
-<a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> instances.  The first 4 parameters are given directly as
+<a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> instances.  The first 3 parameters are given directly as
 <em class="parameter"><code>schema</code></em>
 , <em class="parameter"><code>backend</code></em>
  and <em class="parameter"><code>path</code></em>
@@ -1009,14 +1169,14 @@ thread-default (as per <a class="link" href="GSettings.html#g-settings-new" titl
  is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then the default backend is used.</p>
 <p>If <em class="parameter"><code>path</code></em>
  is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then the path from the schema is used.  It is an
-error f <em class="parameter"><code>path</code></em>
+error if <em class="parameter"><code>path</code></em>
  is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and the schema has no path of its own or if
 <em class="parameter"><code>path</code></em>
  is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and not equal to the path that the schema does
 have.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.6.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1044,9 +1204,8 @@ have.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.6.11"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> object</p>
-<p></p>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1078,7 +1237,7 @@ schema for <em class="parameter"><code>settings</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1101,9 +1260,8 @@ schema for <em class="parameter"><code>settings</code></em>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.8.7"></a><h4>Returns</h4>
 <p> a new <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1126,7 +1284,7 @@ the schema.</p>
  is floating then this function consumes the reference.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1155,9 +1313,8 @@ the schema.</p>
 <a name="id-1.4.19.2.10.9.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1168,7 +1325,7 @@ g_settings_is_writable (<em class="parameter"><code><a class="link" href="GSetti
 <p>Finds out if a key can be written or not</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1192,9 +1349,8 @@ g_settings_is_writable (<em class="parameter"><code><a class="link" href="GSetti
 <a name="id-1.4.19.2.10.10.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the key <em class="parameter"><code>name</code></em>
 is writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1207,7 +1363,7 @@ mode, changes to <em class="parameter"><code>settings</code></em>
 backend, but kept locally until <a class="link" href="GSettings.html#g-settings-apply" title="g_settings_apply ()"><code class="function">g_settings_apply()</code></a> is called.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1220,7 +1376,7 @@ backend, but kept locally until <a class="link" href="GSettings.html#g-settings-
 </tr></tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1234,7 +1390,7 @@ see <a class="link" href="GSettings.html#g-settings-delay" title="g_settings_del
 applied immediately.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1261,7 +1417,7 @@ immediately.</p>
 <p>Change notifications will be emitted for affected keys.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.13.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1284,7 +1440,7 @@ g_settings_get_has_unapplied (<em class="parameter"><code><a class="link" href="
 changes.  This can only be the case if it is in 'delayed-apply' mode.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1301,9 +1457,8 @@ changes.  This can only be the case if it is in 'delayed-apply' mode.</p>
 <a name="id-1.4.19.2.10.14.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>settings</code></em>
 has unapplied changes</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1320,7 +1475,7 @@ in the schema of <em class="parameter"><code>settings</code></em>
  using a &lt;child&gt; element.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1345,7 +1500,7 @@ in the schema of <em class="parameter"><code>settings</code></em>
 <p> a 'child' settings object. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1360,7 +1515,7 @@ That might the value specified in the schema or the one set by the
 administrator.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1404,7 +1559,7 @@ schema for <em class="parameter"><code>settings</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.17.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1429,7 +1584,7 @@ schema for <em class="parameter"><code>settings</code></em>
 <p> the user's value, if set. </p>
 <p><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1457,7 +1612,7 @@ schema for <em class="parameter"><code>settings</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.18.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1482,7 +1637,7 @@ schema for <em class="parameter"><code>settings</code></em>
 <p> the default value. </p>
 <p><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.40</p>
+<p class="since">Since: <a class="link" href="api-index-2-40.html#api-index-2.40">2.40</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1496,14 +1651,15 @@ If you used <a class="link" href="GSettings.html#g-settings-list-schemas" title=
 a particular schema, use <a class="link" href="gio-GSettingsSchema-GSettingsSchemaSource.html#g-settings-schema-source-lookup" title="g_settings_schema_source_lookup ()"><code class="function">g_settings_schema_source_lookup()</code></a> instead
 of your whole loop.</p>
 </div>
+<p>&lt;!-- --&gt;</p>
 <div class="refsect3">
-<a name="id-1.4.19.2.10.19.6"></a><h4>Returns</h4>
+<a name="id-1.4.19.2.10.19.7"></a><h4>Returns</h4>
 <p>  a list of <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a>
 schemas that are available.  The list must not be modified or
 freed. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1514,20 +1670,22 @@ g_settings_list_relocatable_schemas (<em class="parameter"><code><span class="ty
 <p><code class="literal">g_settings_list_relocatable_schemas</code> has been deprecated since version 2.40 and should not be used in newly-written code.</p>
 <p>Use <a class="link" href="gio-GSettingsSchema-GSettingsSchemaSource.html#g-settings-schema-source-list-schemas" title="g_settings_schema_source_list_schemas ()"><code class="function">g_settings_schema_source_list_schemas()</code></a> instead</p>
 </div>
+<p>&lt;!-- --&gt;</p>
 <div class="refsect3">
-<a name="id-1.4.19.2.10.20.6"></a><h4>Returns</h4>
+<a name="id-1.4.19.2.10.20.7"></a><h4>Returns</h4>
 <p> a list of relocatable
 <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> schemas that are available.  The list must not be
 modified or freed. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-settings-list-keys"></a><h3>g_settings_list_keys ()</h3>
 <pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
 g_settings_list_keys (<em class="parameter"><code><a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> *settings</code></em>);</pre>
+<div class="warning"><p><code class="literal">g_settings_list_keys</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Introspects the list of keys on <em class="parameter"><code>settings</code></em>
 .</p>
 <p>You should probably not be calling this function from "normal" code
@@ -1536,8 +1694,8 @@ function is intended for introspection reasons.</p>
 <p>You should free the return value with <a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a> when you are done
 with it.</p>
 <div class="refsect3">
-<a name="id-1.4.19.2.10.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.19.2.10.21.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1551,7 +1709,7 @@ with it.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.19.2.10.21.8"></a><h4>Returns</h4>
+<a name="id-1.4.19.2.10.21.9"></a><h4>Returns</h4>
 <p> a list of the keys on <em class="parameter"><code>settings</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
@@ -1580,7 +1738,7 @@ useful there for introspection reasons, however.</p>
 with it.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.22.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1613,7 +1771,7 @@ g_settings_get_range (<em class="parameter"><code><a class="link" href="GSetting
 <p>Queries the range of a key.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1633,7 +1791,7 @@ g_settings_get_range (<em class="parameter"><code><a class="link" href="GSetting
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1652,7 +1810,7 @@ permitted range for <em class="parameter"><code>key</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1682,9 +1840,8 @@ permitted range for <em class="parameter"><code>key</code></em>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
 is valid for <em class="parameter"><code>key</code></em>
 </p>
-<p></p>
 </div>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1707,7 +1864,7 @@ schema for <em class="parameter"><code>settings</code></em>
 the type given in the schema.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.25.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1738,7 +1895,7 @@ the type given in the schema.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1762,7 +1919,7 @@ schema for <em class="parameter"><code>settings</code></em>
 the type given in the schema.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.26.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1797,9 +1954,8 @@ the type given in the schema.</p>
 <a name="id-1.4.19.2.10.26.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1817,7 +1973,7 @@ having a boolean type in the schema for <em class="parameter"><code>settings</co
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.27.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1840,9 +1996,8 @@ having a boolean type in the schema for <em class="parameter"><code>settings</co
 <div class="refsect3">
 <a name="id-1.4.19.2.10.27.8"></a><h4>Returns</h4>
 <p> a boolean</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1862,7 +2017,7 @@ having a boolean type in the schema for <em class="parameter"><code>settings</co
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.28.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1891,9 +2046,8 @@ having a boolean type in the schema for <em class="parameter"><code>settings</co
 <a name="id-1.4.19.2.10.28.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1911,7 +2065,7 @@ having a int32 type in the schema for <em class="parameter"><code>settings</code
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.29.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1934,9 +2088,8 @@ having a int32 type in the schema for <em class="parameter"><code>settings</code
 <div class="refsect3">
 <a name="id-1.4.19.2.10.29.8"></a><h4>Returns</h4>
 <p> an integer</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1956,7 +2109,7 @@ having a int32 type in the schema for <em class="parameter"><code>settings</code
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.30.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1985,9 +2138,8 @@ having a int32 type in the schema for <em class="parameter"><code>settings</code
 <a name="id-1.4.19.2.10.30.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2006,7 +2158,7 @@ having a uint32 type in the schema for <em class="parameter"><code>settings</cod
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.31.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2029,9 +2181,8 @@ having a uint32 type in the schema for <em class="parameter"><code>settings</cod
 <div class="refsect3">
 <a name="id-1.4.19.2.10.31.8"></a><h4>Returns</h4>
 <p> an unsigned integer</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2052,7 +2203,7 @@ having a uint32 type in the schema for <em class="parameter"><code>settings</cod
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.32.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2081,9 +2232,8 @@ having a uint32 type in the schema for <em class="parameter"><code>settings</cod
 <a name="id-1.4.19.2.10.32.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.30</p>
+<p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2101,7 +2251,7 @@ having a 'double' type in the schema for <em class="parameter"><code>settings</c
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.33.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2124,9 +2274,8 @@ having a 'double' type in the schema for <em class="parameter"><code>settings</c
 <div class="refsect3">
 <a name="id-1.4.19.2.10.33.8"></a><h4>Returns</h4>
 <p> a double</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2146,7 +2295,7 @@ having a 'double' type in the schema for <em class="parameter"><code>settings</c
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.34.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2175,9 +2324,8 @@ having a 'double' type in the schema for <em class="parameter"><code>settings</c
 <a name="id-1.4.19.2.10.34.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2195,7 +2343,7 @@ having a string type in the schema for <em class="parameter"><code>settings</cod
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.35.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2218,9 +2366,8 @@ having a string type in the schema for <em class="parameter"><code>settings</cod
 <div class="refsect3">
 <a name="id-1.4.19.2.10.35.8"></a><h4>Returns</h4>
 <p> a newly-allocated string</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2240,7 +2387,7 @@ having a string type in the schema for <em class="parameter"><code>settings</cod
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.36.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2269,9 +2416,8 @@ having a string type in the schema for <em class="parameter"><code>settings</cod
 <a name="id-1.4.19.2.10.36.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2286,7 +2432,7 @@ having an array of strings type in the schema for <em class="parameter"><code>se
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.37.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2315,7 +2461,7 @@ in <em class="parameter"><code>settings</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2338,7 +2484,7 @@ having an array of strings type in the schema for <em class="parameter"><code>se
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.38.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2367,9 +2513,8 @@ having an array of strings type in the schema for <em class="parameter"><code>se
 <a name="id-1.4.19.2.10.38.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if setting the key succeeded,
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the key was not writable</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2392,7 +2537,7 @@ value for the enumerated type then this function will return the
 default value.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.39.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2415,9 +2560,8 @@ default value.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.39.9"></a><h4>Returns</h4>
 <p> the enum value</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2444,7 +2588,7 @@ schema for <em class="parameter"><code>settings</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.40.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2473,7 +2617,6 @@ schema for <em class="parameter"><code>settings</code></em>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.40.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if the set succeeds</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2497,7 +2640,7 @@ value for the flags type then this function will return the default
 value.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.41.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2520,9 +2663,8 @@ value.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.41.9"></a><h4>Returns</h4>
 <p> the flags value</p>
-<p></p>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2550,7 +2692,7 @@ bit in <em class="parameter"><code>value</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.42.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2579,7 +2721,6 @@ bit in <em class="parameter"><code>value</code></em>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.42.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if the set succeeds</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2602,7 +2743,7 @@ given a "last chance" to successfully return a valid value.  <a href="https://de
 must be returned in this case.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.43.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2631,7 +2772,6 @@ must be returned in this case.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.43.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the conversion succeeded, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> in case of an error</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2671,7 +2811,7 @@ what is returned by this function.  <a href="https://developer.gnome.org/glib/un
 just as any other value would be.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.44.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2745,7 +2885,7 @@ If you bind the same property twice on the same object, the second
 binding overrides the first one.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.45.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2780,7 +2920,7 @@ binding overrides the first one.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2807,9 +2947,10 @@ settings and property values.</p>
 and that you can have only one binding per object property.
 If you bind the same property twice on the same object, the second
 binding overrides the first one.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.19.2.10.46.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.19.2.10.46.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2873,7 +3014,7 @@ and <em class="parameter"><code>set_mapping</code></em>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2906,7 +3047,7 @@ If you bind the same property twice on the same object, the second
 binding overrides the first one.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.47.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2941,7 +3082,7 @@ binding overrides the first one.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2957,7 +3098,7 @@ object is finalized, so it is rarely necessary to call this
 function.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.48.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2966,8 +3107,8 @@ function.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>object</p></td>
-<td class="parameter_description"><p>the object</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> the object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GObject.Object]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>property</p></td>
@@ -2977,7 +3118,7 @@ function.</p>
 </tbody>
 </table></div>
 </div>
-<p class="since">Since 2.26</p>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2990,7 +3131,7 @@ function.</p>
 value to a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> for storing it in <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a>.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.49.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3020,7 +3161,6 @@ value to a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html
 <p> a new <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> holding the data from <em class="parameter"><code>value</code></em>
 ,
 or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> in case of an error</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3036,7 +3176,7 @@ an object property. The <em class="parameter"><code>value</code></em>
 of the appropriate type.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.50.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3064,7 +3204,6 @@ of the appropriate type.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.50.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the conversion succeeded, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> in case of an error</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -3086,7 +3225,7 @@ activations take the new value for the key (which must have the
 correct type).</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.10.51.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3112,7 +3251,7 @@ correct type).</p>
 <p> a new <a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
-<p class="since">Since 2.32</p>
+<p class="since">Since: <a class="link" href="api-index-2-32.html#api-index-2.32">2.32</a></p>
 </div>
 </div>
 <div class="refsect1">
@@ -3120,6 +3259,8 @@ correct type).</p>
 <div class="refsect2">
 <a name="GSettings-struct"></a><h3>GSettings</h3>
 <pre class="programlisting">typedef struct _GSettings GSettings;</pre>
+<p><a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a> is an opaque data structure and can only be accessed
+using the following functions.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3129,7 +3270,7 @@ direction the binding works. The default is to synchronize in both
 directions.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.11.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -3204,7 +3345,7 @@ directions.</p>
 <a class="link" href="GSettings.html#g-settings-delay" title="g_settings_delay ()"><code class="function">g_settings_delay()</code></a> for details.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
-<p class="since">Since 2.28</p>
+<p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3293,7 +3434,7 @@ for each affected key.  If any other connected handler returns
 <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> then this default functionality will be suppressed.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.13.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3328,9 +3469,8 @@ array, or 0</p></td>
 <a name="id-1.4.19.2.13.2.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to stop other handlers from being invoked for the
 event. FALSE to propagate the event further.</p>
-<p></p>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3347,7 +3487,7 @@ detailed signal "changed::x" in order to only receive callbacks
 when key "x" changes.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.13.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3372,7 +3512,7 @@ when key "x" changes.</p>
 </tbody>
 </table></div>
 </div>
-<p>Flags: Has Details</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-DETAILED:CAPS">Has Details</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3401,7 +3541,7 @@ connected handler returns <a href="https://developer.gnome.org/glib/unstable/gli
 will be suppressed.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.13.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3430,9 +3570,8 @@ will be suppressed.</p>
 <a name="id-1.4.19.2.13.4.8"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to stop other handlers from being invoked for the
 event. FALSE to propagate the event further.</p>
-<p></p>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3449,7 +3588,7 @@ detailed signal "writable-changed::x" in order to only receive
 callbacks when the writability of "x" changes.</p>
 <div class="refsect3">
 <a name="id-1.4.19.2.13.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3474,12 +3613,11 @@ callbacks when the writability of "x" changes.</p>
 </tbody>
 </table></div>
 </div>
-<p>Flags: Has Details</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-DETAILED:CAPS">Has Details</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

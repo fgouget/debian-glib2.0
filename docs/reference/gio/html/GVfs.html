@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIO Reference Manual: GVfs</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>GVfs: GIO Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="extending.html" title="Extending GIO">
 <link rel="prev" href="extending.html" title="Extending GIO">
 <link rel="next" href="GIOModule.html" title="GIOModule">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GVfs.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -100,7 +100,7 @@
 </div>
 <div class="refsect1">
 <a name="GVfs.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -142,8 +142,8 @@ g_vfs_get_file_for_path (<em class="parameter"><code><a class="link" href="GVfs.
 <p>Gets a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> for <em class="parameter"><code>path</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.25.2.8.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -164,7 +164,7 @@ g_vfs_get_file_for_path (<em class="parameter"><code><a class="link" href="GVfs.
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.2.6"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.2.6"></a><h4>Returns</h4>
 <p> a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a>.
 Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -182,8 +182,8 @@ g_vfs_get_file_for_uri (<em class="parameter"><code><a class="link" href="GVfs.h
 might not support any I/O operation if the URI
 is malformed or if the URI scheme is not supported.</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.25.2.8.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -204,7 +204,7 @@ is malformed or if the URI scheme is not supported.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.3.7"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.3.7"></a><h4>Returns</h4>
 <p> a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a>.
 Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -221,8 +221,8 @@ not support any I/O operations if the <em class="parameter"><code>parse_name</co
  cannot
 be parsed by the <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a> module.</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.25.2.8.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -243,7 +243,7 @@ be parsed by the <a class="link" href="GVfs.html" title="GVfs"><span class="type
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.4.6"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.4.6"></a><h4>Returns</h4>
 <p> a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> for the given <em class="parameter"><code>parse_name</code></em>
 .
 Free the returned object with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
@@ -257,7 +257,7 @@ Free the returned object with <a href="https://developer.gnome.org/gobject/unsta
 g_vfs_get_default (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Gets the default <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a> for the system.</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.5.5"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.5.5"></a><h4>Returns</h4>
 <p> a <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -269,7 +269,7 @@ g_vfs_get_default (<em class="parameter"><code><span class="type">void</span></c
 g_vfs_get_local (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Gets the local <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a> for the system.</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.6.5"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.6.5"></a><h4>Returns</h4>
 <p> a <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -281,8 +281,8 @@ g_vfs_get_local (<em class="parameter"><code><span class="type">void</span></cod
 g_vfs_is_active (<em class="parameter"><code><a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a> *vfs</code></em>);</pre>
 <p>Checks if the VFS is active.</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.25.2.8.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -296,11 +296,10 @@ g_vfs_is_active (<em class="parameter"><code><a class="link" href="GVfs.html" ti
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.7.6"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.7.6"></a><h4>Returns</h4>
 <p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if construction of the <em class="parameter"><code>vfs</code></em>
 was successful
 and it is now active.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -311,8 +310,8 @@ g_vfs_get_supported_uri_schemes (<em class="parameter"><code><a class="link" hre
 <p>Gets a list of URI schemes supported by <em class="parameter"><code>vfs</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="id-1.4.25.2.8.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -326,7 +325,7 @@ g_vfs_get_supported_uri_schemes (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.23.2.8.8.6"></a><h4>Returns</h4>
+<a name="id-1.4.25.2.8.8.6"></a><h4>Returns</h4>
 <p> a <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of strings.
 The returned array belongs to GIO and must
 not be freed or modified. </p>
@@ -352,7 +351,6 @@ See Extending GIO.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>
