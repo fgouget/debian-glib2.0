@@ -1627,7 +1627,7 @@ fast_validate_len (const char *str,
  * g_utf8_validate:
  * @str: (array length=max_len) (element-type guint8): a pointer to character data
  * @max_len: max bytes to validate, or -1 to go until NUL
- * @end: (allow-none) (out) (transfer none): return location for end of valid data
+ * @end: (out) (optional) (transfer none): return location for end of valid data
  * 
  * Validates UTF-8 encoded text. @str is the text to validate;
  * if @str is nul-terminated, then @max_len can be -1, otherwise
@@ -1735,19 +1735,42 @@ g_utf8_strreverse (const gchar *str,
   return result;
 }
 
-
+/**
+ * g_utf8_make_valid:
+ * @str: string to coerce into UTF-8
+ * @len: the maximum length of @str to use, in bytes. If @len < 0,
+ *     then the string is nul-terminated.
+ *
+ * If the provided string is valid UTF-8, return a copy of it. If not,
+ * return a copy in which bytes that could not be interpreted as valid Unicode
+ * are replaced with the Unicode replacement character (U+FFFD).
+ *
+ * For example, this is an appropriate function to use if you have received
+ * a string that was incorrectly declared to be UTF-8, and you need a valid
+ * UTF-8 version of it that can be logged or displayed to the user, with the
+ * assumption that it is close enough to ASCII or UTF-8 to be mostly
+ * readable as-is.
+ *
+ * Returns: (transfer full): a valid UTF-8 string whose content resembles @str
+ *
+ * Since: 2.52
+ */
 gchar *
-_g_utf8_make_valid (const gchar *name)
+g_utf8_make_valid (const gchar *str,
+                   gssize       len)
 {
   GString *string;
   const gchar *remainder, *invalid;
-  gint remaining_bytes, valid_bytes;
+  gsize remaining_bytes, valid_bytes;
 
-  g_return_val_if_fail (name != NULL, NULL);
+  g_return_val_if_fail (str != NULL, NULL);
+
+  if (len < 0)
+    len = strlen (str);
 
   string = NULL;
-  remainder = name;
-  remaining_bytes = strlen (name);
+  remainder = str;
+  remaining_bytes = len;
 
   while (remaining_bytes != 0) 
     {
@@ -1767,11 +1790,12 @@ _g_utf8_make_valid (const gchar *name)
     }
   
   if (string == NULL)
-    return g_strdup (name);
+    return g_strndup (str, len);
   
   g_string_append (string, remainder);
+  g_string_append_c (string, '\0');
 
   g_assert (g_utf8_validate (string->str, -1, NULL));
-  
+
   return g_string_free (string, FALSE);
 }

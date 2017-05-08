@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GResource: GIO Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="resources.html" title="Resources">
 <link rel="prev" href="resources.html" title="Resources">
@@ -272,7 +272,7 @@ are combined into a binary resource bundle.</p>
 6
 7
 8</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">&lt;</span>?xml version<span class="gtkdoc opt">=</span><span class="string">&quot;1.0&quot;</span> encoding<span class="gtkdoc opt">=</span><span class="string">&quot;UTF-8&quot;</span>?<span class="gtkdoc opt">&gt;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc opt">&lt;?</span>xml version<span class="gtkdoc opt">=</span><span class="string">&quot;1.0&quot;</span> encoding<span class="gtkdoc opt">=</span><span class="string">&quot;UTF-8&quot;</span><span class="gtkdoc opt">?&gt;</span>
 <span class="gtkdoc opt">&lt;</span>gresources<span class="gtkdoc opt">&gt;</span>
   <span class="gtkdoc opt">&lt;</span>gresource prefix<span class="gtkdoc opt">=</span><span class="string">&quot;/org/gtk/Example&quot;</span><span class="gtkdoc opt">&gt;</span>
     <span class="gtkdoc opt">&lt;</span>file<span class="gtkdoc opt">&gt;</span>data<span class="gtkdoc opt">/</span>splashscreen<span class="gtkdoc opt">.</span>png<span class="gtkdoc opt">&lt;/</span>file<span class="gtkdoc opt">&gt;</span>
@@ -708,13 +708,13 @@ if found returns information about it.</p>
 <td class="parameter_name"><p>size</p></td>
 <td class="parameter_description"><p> a location to place the length of the contents of the file,
 or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the length is not needed. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>flags</p></td>
 <td class="parameter_description"><p> a location to place the flags about the file,
 or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the length is not needed. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
@@ -1050,13 +1050,13 @@ globally registered resources and if found returns information about it.</p>
 <td class="parameter_name"><p>size</p></td>
 <td class="parameter_description"><p> a location to place the length of the contents of the file,
 or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the length is not needed. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>flags</p></td>
 <td class="parameter_description"><p> a location to place the flags about the file,
 or <a href="../glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the length is not needed. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>

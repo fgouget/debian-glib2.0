@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The Main Event Loop: GLib Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-core.html" title="GLib Core Application Support">
 <link rel="prev" href="glib-core.html" title="GLib Core Application Support">
@@ -265,7 +265,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="returnvalue">gint</span></a>
+<a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="glib-The-Main-Event-Loop.html#g-main-context-check" title="g_main_context_check ()">g_main_context_check</a> <span class="c_punctuation">()</span>
@@ -988,7 +988,7 @@ g_main_loop_new (<em class="parameter"><code><a class="link" href="glib-The-Main
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>  (if <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the default context will be used). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>is_running</p></td>
@@ -1404,7 +1404,7 @@ be interrupted for other reasons than an event source becoming ready.</p>
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> (if <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the default context will be used). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>may_block</p></td>
@@ -1468,7 +1468,7 @@ g_main_context_pending (<em class="parameter"><code><a class="link" href="glib-T
 <tbody><tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> (if <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the default context will be used). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -1518,7 +1518,7 @@ wrong source.</p>
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> (if <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the default context will be used). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_id</p></td>
@@ -1595,7 +1595,7 @@ the first one found will be returned.</p>
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> (if <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the default context will be used). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>funcs</p></td>
@@ -1933,7 +1933,7 @@ of records that need to be stored.</p>
 <hr>
 <div class="refsect2">
 <a name="g-main-context-check"></a><h3>g_main_context_check ()</h3>
-<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="returnvalue">gint</span></a>
+<pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>
 g_main_context_check (<em class="parameter"><code><a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> *context</code></em>,
                       <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint ()"><span class="type">gint</span></a> max_priority</code></em>,
                       <em class="parameter"><code><a class="link" href="glib-The-Main-Event-Loop.html#GPollFD" title="struct GPollFD"><span class="type">GPollFD</span></a> *fds</code></em>,
@@ -2130,7 +2130,7 @@ a typical event source will use <a class="link" href="glib-The-Main-Event-Loop.h
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> (or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> for the default context). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>fd</p></td>
@@ -2444,7 +2444,7 @@ loop (and may prevent this call from returning).</p>
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>function</p></td>
@@ -2495,7 +2495,7 @@ thread or with any particular context acquired.</p>
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>priority</p></td>
@@ -2518,7 +2518,7 @@ thread or with any particular context acquired.</p>
 <td class="parameter_name"><p>notify</p></td>
 <td class="parameter_description"><p> a function to call when <em class="parameter"><code>data</code></em>
 is no longer in use, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -2619,7 +2619,7 @@ see <a href="https://developer.gnome.org/gio/unstable/GFile.html#g-file-supports
 <tbody><tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> for the global default context. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -2644,7 +2644,7 @@ it was on the top of the stack).</p>
 <tbody><tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> object, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -2849,7 +2849,7 @@ the range between <a class="link" href="glib-The-Main-Event-Loop.html#G-PRIORITY
 <tr>
 <td class="parameter_name"><p>notify</p></td>
 <td class="parameter_description"><p> function to call when the timeout is removed, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -2993,7 +2993,7 @@ the range between <a class="link" href="glib-The-Main-Event-Loop.html#G-PRIORITY
 <tr>
 <td class="parameter_name"><p>notify</p></td>
 <td class="parameter_description"><p> function to call when the timeout is removed, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -3116,7 +3116,7 @@ range between <a class="link" href="glib-The-Main-Event-Loop.html#G-PRIORITY-DEF
 <tr>
 <td class="parameter_name"><p>notify</p></td>
 <td class="parameter_description"><p> function to call when the idle is removed, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -3364,7 +3364,7 @@ Windows a handle for a process (which doesn't have to be a child).</p></td>
 <tr>
 <td class="parameter_name"><p>notify</p></td>
 <td class="parameter_description"><p> function to call when the idle is removed, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -3595,7 +3595,7 @@ that context. Remove it by calling <a class="link" href="glib-The-Main-Event-Loo
 <tr>
 <td class="parameter_name"><p>context</p></td>
 <td class="parameter_description"><p> a <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> (if <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the default context will be used). </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -4071,7 +4071,7 @@ whose <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="G
 <p> the <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a> with which the
 source is associated, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if the context has not
 yet been added to a source. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -4123,7 +4123,7 @@ to the type of source you are using.</p>
 <td class="parameter_name"><p>notify</p></td>
 <td class="parameter_description"><p> a function to call when <em class="parameter"><code>data</code></em>
 is no longer in use, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>

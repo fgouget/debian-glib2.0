@@ -506,7 +506,8 @@ add_token_result (const gchar *app_name,
 static void
 merge_token_results (gboolean first)
 {
-  qsort (static_token_results, static_token_results_size, sizeof (struct search_result), compare_results);
+  if (static_token_results_size != 0)
+    qsort (static_token_results, static_token_results_size, sizeof (struct search_result), compare_results);
 
   /* If this is the first token then we are basically merging a list with
    * itself -- we only perform de-duplication.
@@ -606,7 +607,8 @@ reset_total_search_results (void)
 static void
 sort_total_search_results (void)
 {
-  qsort (static_total_results, static_total_results_size, sizeof (struct search_result), compare_categories);
+  if (static_total_results_size != 0)
+    qsort (static_total_results, static_total_results_size, sizeof (struct search_result), compare_categories);
 }
 
 static void
@@ -620,9 +622,10 @@ merge_directory_results (void)
       static_total_results = g_renew (struct search_result, static_total_results, static_total_results_allocated);
     }
 
-  memcpy (static_total_results + static_total_results_size,
-          static_search_results,
-          static_search_results_size * sizeof (struct search_result));
+  if (static_total_results + static_total_results_size != 0)
+    memcpy (static_total_results + static_total_results_size,
+            static_search_results,
+            static_search_results_size * sizeof (struct search_result));
 
   static_total_results_size += static_search_results_size;
 
@@ -2401,7 +2404,7 @@ expand_application_parameters (GDesktopAppInfo   *info,
   if (exec_line == NULL)
     {
       g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_FAILED,
-                           _("Desktop file didn't specify Exec field"));
+                           _("Desktop file didn’t specify Exec field"));
       return FALSE;
     }
 
@@ -2971,13 +2974,13 @@ g_desktop_app_info_launch (GAppInfo           *appinfo,
  * g_desktop_app_info_launch_uris_as_manager:
  * @appinfo: a #GDesktopAppInfo
  * @uris: (element-type utf8): List of URIs
- * @launch_context: (allow-none): a #GAppLaunchContext
+ * @launch_context: (nullable): a #GAppLaunchContext
  * @spawn_flags: #GSpawnFlags, used for each process
- * @user_setup: (scope call) (allow-none): a #GSpawnChildSetupFunc, used once
+ * @user_setup: (scope call) (nullable): a #GSpawnChildSetupFunc, used once
  *     for each process.
- * @user_setup_data: (closure user_setup) (allow-none): User data for @user_setup
- * @pid_callback: (scope call) (allow-none): Callback for child processes
- * @pid_callback_data: (closure pid_callback) (allow-none): User data for @callback
+ * @user_setup_data: (closure user_setup) (nullable): User data for @user_setup
+ * @pid_callback: (scope call) (nullable): Callback for child processes
+ * @pid_callback_data: (closure pid_callback) (nullable): User data for @callback
  * @error: return location for a #GError, or %NULL
  *
  * This function performs the equivalent of g_app_info_launch_uris(),
@@ -3094,11 +3097,11 @@ ensure_dir (DirType   type,
   display_name = g_filename_display_name (path);
   if (type == APP_DIR)
     g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errsv),
-                 _("Can't create user application configuration folder %s: %s"),
+                 _("Can’t create user application configuration folder %s: %s"),
                  display_name, g_strerror (errsv));
   else
     g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errsv),
-                 _("Can't create user MIME configuration folder %s: %s"),
+                 _("Can’t create user MIME configuration folder %s: %s"),
                  display_name, g_strerror (errsv));
 
   g_free (display_name);
@@ -3596,7 +3599,7 @@ g_desktop_app_info_ensure_saved (GDesktopAppInfo  *info,
 
       display_name = g_filename_display_name (filename);
       g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
-                   _("Can't create user desktop file %s"), display_name);
+                   _("Can’t create user desktop file %s"), display_name);
       g_free (display_name);
       g_free (filename);
       g_free (data);
@@ -3677,7 +3680,7 @@ g_desktop_app_info_delete (GAppInfo *appinfo)
 /**
  * g_app_info_create_from_commandline:
  * @commandline: the commandline to use
- * @application_name: (allow-none): the application name, or %NULL to use @commandline
+ * @application_name: (nullable): the application name, or %NULL to use @commandline
  * @flags: flags that can specify details of the created #GAppInfo
  * @error: a #GError location to store the error occurring, %NULL to ignore.
  *
@@ -4508,7 +4511,7 @@ g_desktop_app_info_get_action_name (GDesktopAppInfo *info,
  * @info: a #GDesktopAppInfo
  * @action_name: the name of the action as from
  *   g_desktop_app_info_list_actions()
- * @launch_context: (allow-none): a #GAppLaunchContext
+ * @launch_context: (nullable): a #GAppLaunchContext
  *
  * Activates the named application action.
  *
