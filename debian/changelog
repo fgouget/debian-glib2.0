@@ -1,3 +1,26 @@
+glib2.0 (2.50.3-2+ma1) stretch; urgency=medium
+
+  [ Francois Gouget ]
+  * Backport the cross-compiling packaging improvements.
+    (Closes: #648621, #842442)
+    - Move glib-genmarshal and related files to a new M-A:foreign package
+      libglib2.0-dev-bin. Thanks to Helmut Grohne for the patch.
+    - Additionally move gdbus-codegen and gtester-report to
+      libglib2.0-dev-bin.  They are architecture-independent, so in
+      particular clearly Multi-Arch: foreign; they aren't large enough to
+      justify a separate Architecture: all package. This works around
+      dh_python3's postinst snippet failing when used in a Multi-Arch: same
+      package with more than one instance installed.
+    - Move gtester to libglib2.0-dev-bin. It is a test-runner that can
+      operate on any executable, and does not rely on a matching architecture.
+    - Move gobject-query to libglib2.0-dev-bin. It prints the same things on
+      all architectures, and it isn't clear what use it is; glib-2.0.m4
+      checks for it and AC_SUBSTs it, but according to codesearch.debian.net
+      no package actually seems to run it.
+    - Make libglib2.0-dev Multi-Arch: same
+
+ -- Francois Gouget <fgouget@codeweavers.com>  Mon, 08 May 2017 03:14:15 +0100
+
 glib2.0 (2.50.3-2) unstable; urgency=medium
 
   * debian/patches/tests-gdatetime-Use-a-real-rather-than-invented-time.patch:
